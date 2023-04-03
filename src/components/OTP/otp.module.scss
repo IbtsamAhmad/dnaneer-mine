@@ -1,0 +1,16 @@
+.otp-container {
+//   justify-content: center;
+  input {
+    height: 55px;
+    border-radius: 12px;
+    border:1px solid #DCDDE5;
+    &:focus{
+        border-color: #0d99ff;
+        outline: #0d99ff;
+    }
+  }
+  input:not(:last-child) {
+    margin-right: 17px;
+  }
+
+}
