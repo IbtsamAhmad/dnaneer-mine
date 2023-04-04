@@ -1,4 +1,4 @@
-import { default as ArrowDown } from "assets/svgs/ArrowDown.svg";
+import { ReactComponent as ArrowDown } from "assets/svgs/ArrowDown.svg";
 
 const DnaneerIntro = () => {
   return (
