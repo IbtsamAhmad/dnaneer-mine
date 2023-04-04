@@ -4,7 +4,7 @@ import "./radioGroup.scss";
 
 interface RadioProps {
   options: {
-    label: "string";
+    label: string;
     value: string | number;
   }[];
   onChange?: () => void;

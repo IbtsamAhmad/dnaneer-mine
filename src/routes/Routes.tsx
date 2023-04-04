@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 
 const Login = lazy(() => import("pages/Login"));
 const Signup = lazy(() => import("pages/Signup"));
+const UserInformation = lazy(() => import("pages/UserInformation"));
 const Home = lazy(() => import("pages/Home"));
 
 const Router = () => {
@@ -15,9 +16,10 @@ const Router = () => {
       path: "/signup",
       element: <Signup />,
     },
+    { path: "/", element: <Home /> },
     {
-      path: "/",
-      element: <Home />,
+      path: "/user-information",
+      element: <UserInformation />,
     },
   ]);
 

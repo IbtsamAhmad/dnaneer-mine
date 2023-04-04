@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { DatePicker } from "antd";
 
-import "./datePicker.scss"
+import "./datePicker.scss";
 interface MessageProps {
   onChange?: () => void;
   className?: string;
   icon?: JSX.Element | JSX.Element[];
   disabled?: boolean | undefined;
   block?: boolean;
-  value?: Date | string;
+  value?: any;
   prefix?: JSX.Element | JSX.Element[];
   placeholder?: string;
   label: string;
@@ -43,7 +43,7 @@ const AppDatePicker = ({
       onFocus={() => setFocus(true)}
     >
       <DatePicker
-        block={block}
+        // block={block}
         value={value}
         className={className ? className : "appInput"}
         onChange={onChange}

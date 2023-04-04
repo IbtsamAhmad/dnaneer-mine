@@ -2,10 +2,10 @@ import { Form, Radio } from "antd";
 
 import Input from "components/Input/Input";
 import Button from "components/Button/Button";
+import { default as FormUserIcon } from "assets/svgs/form-user-icon.svg";
+import { default as FormLockIcon } from "assets/svgs/form-lock-icon.svg";
 import DatePicker from "components/DatePicker/DatePicker";
-import { ReactComponent as FormUserIcon } from "assets/svgs/form-user-icon.svg";
-import { ReactComponent as FormLockIcon } from "assets/svgs/form-lock-icon.svg";
-import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
+import { default as BackArrow } from "assets/svgs/BackArrow.svg";
 
 const Password = ({ setShowPassword, setShowOtp }) => {
   const onFinish = (values) => {
