@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div style={{ textAlign: "center" }}>
@@ -7,6 +8,8 @@ const Home = () => {
       <br />
       <br />
       <a href="/signup">Sign up</a>
+      <br />
+      <Link to="/user-information">Personal Info</Link>
     </div>
   );
 };

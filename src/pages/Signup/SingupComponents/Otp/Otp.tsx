@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Otp from "components/OTP/Otp";
 import Button from "components/Button/Button";
-import { default as BackArrow } from "assets/svgs/BackArrow.svg";
+import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
 
 const OtpComponent = ({ setShowPassword, setShowPhone, setShowOtp }) => {
   const [time, setTime] = useState(60);
@@ -16,14 +16,14 @@ const OtpComponent = ({ setShowPassword, setShowPhone, setShowOtp }) => {
     return () => clearInterval(timer);
   }, []);
 
-  const backHandler =() =>{
+  const backHandler = () => {
     setShowOtp(false);
     setShowPhone(true);
-  }
-  const nextHandler = () =>{
- setShowOtp(false);
-    setShowPassword(true)
-  }
+  };
+  const nextHandler = () => {
+    setShowOtp(false);
+    setShowPassword(true);
+  };
   return (
     <div className="signUp-form-container">
       <Button

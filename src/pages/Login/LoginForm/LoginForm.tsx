@@ -2,19 +2,20 @@ import { Form } from "antd";
 import Input from "components/Input/Input";
 import RadioGroup from "components/RadioGroup/RadioGroup";
 import Button from "components/Button/Button";
-import FormLockIcon from "assets/svgs/form-lock-icon.svg";
-import FormUserIcon from "assets/svgs/form-user-icon.svg";
+import { ReactComponent as FormLockIcon } from "assets/svgs/form-lock-icon.svg";
+// import FormUserIcon from "assets/svgs/form-user-icon.svg";
+import { ReactComponent as FormUserIcon } from "assets/svgs/form-user-icon.svg";
 
-const options:{label:string; value:string|number}[] = [
-    {
-      label: "Individual",
-      value: "individual",
-    },
-    {
-      label: "Institution",
-      value: "institution",
-    },
-  ];
+const options: { label: string; value: string | number }[] = [
+  {
+    label: "Individual",
+    value: "individual",
+  },
+  {
+    label: "Institution",
+    value: "institution",
+  },
+];
 
 const LoginForm = () => {
   const onFinish = (values) => {
@@ -63,7 +64,7 @@ const LoginForm = () => {
           <Input
             label="Username"
             placeholder="Username"
-            prefix={<img src={FormUserIcon} alt="" />}
+            prefix={<FormUserIcon />}
           />
         </Form.Item>
         <Form.Item
@@ -78,7 +79,7 @@ const LoginForm = () => {
           ]}
         >
           <Input
-            prefix={<img src={FormLockIcon} alt="" />}
+            prefix={<FormLockIcon />}
             label="Password"
             placeholder="Password"
             iconRender
@@ -94,6 +95,5 @@ const LoginForm = () => {
     </div>
   );
 };
-
 
 export default LoginForm;

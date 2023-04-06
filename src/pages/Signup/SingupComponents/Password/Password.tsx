@@ -2,10 +2,10 @@ import { Form, Radio } from "antd";
 
 import Input from "components/Input/Input";
 import Button from "components/Button/Button";
-import { default as FormUserIcon } from "assets/svgs/form-user-icon.svg";
-import { default as FormLockIcon } from "assets/svgs/form-lock-icon.svg";
+import { ReactComponent as FormUserIcon } from "assets/svgs/form-user-icon.svg";
+import { ReactComponent as FormLockIcon } from "assets/svgs/form-lock-icon.svg";
 import DatePicker from "components/DatePicker/DatePicker";
-import { default as BackArrow } from "assets/svgs/BackArrow.svg";
+import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
 
 const Password = ({ setShowPassword, setShowOtp }) => {
   const onFinish = (values) => {
@@ -20,7 +20,7 @@ const Password = ({ setShowPassword, setShowOtp }) => {
     setShowOtp(true);
   };
   const nextHandler = () => {
-    console.log("register")
+    console.log("register");
     // setShowOtp(false);
     // setShowPassword(true);
   };
@@ -69,7 +69,7 @@ const Password = ({ setShowPassword, setShowOtp }) => {
           ]}
         >
           <DatePicker
-          block={true}
+            block={true}
             label="Birth date"
             placeholder="Birth date"
             prefix={<FormUserIcon />}

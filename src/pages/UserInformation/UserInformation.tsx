@@ -1,5 +1,6 @@
 import AppSteps from "components/Steps/Steps";
-import { Row, Col } from "antd";
+import { Row, Col, Checkbox, Button, Input, Radio } from "antd";
+
 const UserInformation = () => {
   return (
     <div>
@@ -9,7 +10,14 @@ const UserInformation = () => {
           {" "}
           <AppSteps />
         </Col>
-        <Col md={8}></Col>
+        <Col md={8}>
+          <Radio />
+          <Checkbox />
+          <Button shape="round" type="primary">
+            Button
+          </Button>
+          <Input />
+        </Col>
       </Row>
     </div>
   );

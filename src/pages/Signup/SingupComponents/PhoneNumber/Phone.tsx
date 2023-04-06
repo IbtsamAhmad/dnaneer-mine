@@ -1,5 +1,5 @@
 import { Form, Radio } from "antd";
-import FormUserIcon from "assets/svgs/form-user-icon.svg";
+import { ReactComponent as FormUserIcon } from "assets/svgs/form-user-icon.svg";
 import Input from "components/Input/Input";
 import Button from "components/Button/Button";
 const Phone = ({ setShowOtp, setShowPhone }) => {
@@ -10,8 +10,8 @@ const Phone = ({ setShowOtp, setShowPhone }) => {
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
-      setShowPhone(false);
-      setShowOtp(true);
+    setShowPhone(false);
+    setShowOtp(true);
   };
 
   const onChangeTerms = (e) => {
@@ -42,7 +42,7 @@ const Phone = ({ setShowOtp, setShowPhone }) => {
           <Input
             label="Mobile Number"
             placeholder="Mobile Number"
-            prefix={<img src={FormUserIcon} alt="" />}
+            prefix={<FormUserIcon />}
           />
         </Form.Item>
 
