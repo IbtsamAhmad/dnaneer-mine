@@ -68,7 +68,34 @@ export default function App({ setOpen }) {
       </Button>
       <h1>Complete your profile now</h1>
       <p>Fill the below information</p>
-      <Steps current={current} items={items} />
+      <Steps
+        labelPlacement="vertical"
+        current={current}
+        percent={0}
+        // progressDot={(props) => {
+        //   console.log(props);
+        //   return <p>propgress</p>;
+        // }}
+        items={[
+          {
+            title: (
+              <div className="step-title">
+                <span>Investor</span>
+                <span>Information</span>
+              </div>
+            ),
+          },
+          {
+            title: (
+              <div className="step-title">
+                <span>Financial</span>
+                <span>Information</span>
+              </div>
+            ),
+          },
+        ]}
+      />
+      {/* <Steps current={current} items={items} /> */}
       <div>{steps[current].content}</div>
       <div>
         <div className="drawer-next-container">

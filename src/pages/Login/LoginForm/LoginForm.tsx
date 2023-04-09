@@ -33,7 +33,7 @@ const LoginForm = (props) => {
     <div className="login-form-container">
     <Close/>
       <Start />
-      <h1>Login In form</h1>
+      <h1>Login In Form</h1>
 
       {/* <Form
         name="basic"
