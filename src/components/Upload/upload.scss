@@ -1,0 +1,35 @@
+.upload-container{
+    .ant-upload-btn{
+    border: none !important;
+    }
+    .ant-upload{
+//    height: 81px !important;
+    background: #FFFFFF !important;
+     border: 1px dashed #5B2CD3 !important;
+    border-radius: 95px !important;
+    span {
+            border: none !important;
+        }
+    }
+    .import{
+        font-weight: 500;
+            font-size: 12px;
+            text-align: center;
+            color: #8A8595;
+    }
+  .browse{
+        display: flex;
+            align-items: center;
+            justify-content: center;
+    font-weight: 500;
+        font-size: 14px;
+        text-align: center;
+        color: #5B2CD3;
+        margin-bottom: 0;
+        svg{
+            margin-right: 8px;
+        }
+  }
+
+  
+}

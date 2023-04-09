@@ -1,14 +1,13 @@
 .appRadioGroup {
     display: flex;
-    align-items: center;
-        justify-content: space-between;
+    // align-items: center;
+    // justify-content: space-between;
     margin-top: 10px;
-
     .appRadioBtn {
         border: 1px solid #DCDDE5;
-        border-radius: 58px;
-        height: 48px;
-        width: 167px;
+        border-radius: 43px;
+       width: 163px;
+        height: 60px;
         font-weight: 500;
         font-size: 14px;
         display: flex;
@@ -17,23 +16,23 @@
         text-align: center;
         background: transparent;
         color: #151515;
+        margin-right: 10px;
         &::before {
             display: none;
         }
     }
-
     :where(.css-dev-only-do-not-override-2cufig).ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):first-child {
         border-color: #4B5563;
     }
-      
     .ant-radio-button-wrapper-checked {
-        background: #4B5563;
+        background: #5B2CD3;
         color: #FFFFFF;
-        border: 1px solid #4B5563;
+        border: 1px solid #5B2CD3;
         outline: none;
         box-shadow: none;
-        &:hover{
-            border-color: #4B5563;
+
+        &:hover {
+            border-color: #5B2CD3;
             color: #FFFFFF;
         }
     }

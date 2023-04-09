@@ -27,6 +27,7 @@ i18next
     // react: { useSuspense: false },
     backend: {
       loadPath: "/assets/locales/{{lng}}/translation.json",
+      
     },
   });
 

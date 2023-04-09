@@ -2,6 +2,8 @@ import { Form } from "antd";
 import Input from "components/Input/Input";
 import RadioGroup from "components/RadioGroup/RadioGroup";
 import Button from "components/Button/Button";
+import { ReactComponent as Start } from "assets/svgs/Start.svg";
+import { ReactComponent as Close } from "assets/svgs/Close.svg";
 import { ReactComponent as FormLockIcon } from "assets/svgs/form-lock-icon.svg";
 // import FormUserIcon from "assets/svgs/form-user-icon.svg";
 import { ReactComponent as FormUserIcon } from "assets/svgs/form-user-icon.svg";
@@ -17,7 +19,9 @@ const options: { label: string; value: string | number }[] = [
   },
 ];
 
-const LoginForm = () => {
+const LoginForm = (props) => {
+  const { individual, setIndividual } = props;
+
   const onFinish = (values) => {
     console.log("Success:", values);
   };
@@ -27,7 +31,9 @@ const LoginForm = () => {
 
   return (
     <div className="login-form-container">
-      <h1>Getting started as</h1>
+    <Close/>
+      <Start />
+      <h1>Get Started As</h1>
 
       <Form
         name="basic"

@@ -8,13 +8,13 @@ const OtpComponent = ({ setShowPassword, setShowPhone, setShowOtp }) => {
   const [otp, setOtp] = useState("");
   //   console.log(otp);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTime((prevTime) => prevTime - 1);
-    }, 1000);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     setTime((prevTime) => prevTime - 1);
+  //   }, 1000);
 
-    return () => clearInterval(timer);
-  }, []);
+  //   return () => clearInterval(timer);
+  // }, []);
 
   const backHandler = () => {
     setShowOtp(false);
@@ -33,16 +33,18 @@ const OtpComponent = ({ setShowPassword, setShowPhone, setShowOtp }) => {
       >
         Back
       </Button>
-      <h1>Getting Started as Individual</h1>
-      <p>Please type the OTP received on your phone</p>
+      <p className="title">Individual Investor</p>
+      {/* <h1>Getting Started as Individual</h1> */}
+      <h2>Complete registration now</h2>
+      <p className="otp-description">Please type the OTP received on your phone</p>
       <Otp otp={otp} setOtp={setOtp} />
-      <small>Resend in : 00:{time}</small>
+      <p className="timer">
+        4:55 min <span>left</span>
+      </p>
       <Button block={true} onClick={nextHandler}>
         Next
       </Button>
-      <a href="/login">
-        <p className="form-bottom">Sign in</p>
-      </a>
+      <p className="form-bottom">Resend OTP</p>
     </div>
   );
 };

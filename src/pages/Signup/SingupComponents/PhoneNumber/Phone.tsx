@@ -1,8 +1,22 @@
 import { Form, Radio } from "antd";
-import { ReactComponent as FormUserIcon } from "assets/svgs/form-user-icon.svg";
+import { ReactComponent as PhoneIcon } from "assets/svgs/Phone.svg";
 import Input from "components/Input/Input";
 import Button from "components/Button/Button";
-const Phone = ({ setShowOtp, setShowPhone }) => {
+import RadioGroup from "components/RadioGroup/RadioGroup";
+import type { RadioChangeEvent } from "antd";
+
+const options: { label: string; value: string | number }[] = [
+  {
+    label: "Individual",
+    value: "individual",
+  },
+  {
+    label: "Institution",
+    value: "institution",
+  },
+];
+
+const Phone = ({ setShowOtp, setShowPhone, setIndividual }) => {
   const onFinish = (values) => {
     console.log("Success:", values);
     setShowPhone(false);
@@ -14,12 +28,21 @@ const Phone = ({ setShowOtp, setShowPhone }) => {
     setShowOtp(true);
   };
 
-  const onChangeTerms = (e) => {
+  const onChangeTerms = (e: RadioChangeEvent) => {
     console.log("radio checked", e.target.value);
   };
+  const onChangeIndividual = (e: RadioChangeEvent) => {
+    console.log("radio checkeddd", e.target.value);
+    if (e.target.value === "individual") {
+      setIndividual(true);
+    }
+    if (e.target.value === "institution") {
+      setIndividual(false);
+    }
+  };
   return (
-    <div className="signUp-form-container">
-      <h1>Getting started as individual</h1>
+    <>
+      <h1>Get Started As</h1>
       <Form
         name="basic"
         initialValues={{
@@ -30,39 +53,55 @@ const Phone = ({ setShowOtp, setShowPhone }) => {
         autoComplete="off"
       >
         <Form.Item
-          name="phone"
+          name="type"
           rules={[
             {
-              type: "number",
-              required: true,
-              message: "Please enter your mobile number",
+              // type: "email",
+              // required: true,
+              // message: "Please enter your email",
             },
           ]}
         >
-          <Input
-            label="Mobile Number"
-            placeholder="Mobile Number"
-            prefix={<FormUserIcon />}
-          />
+          <RadioGroup onChange={onChangeIndividual} options={options} />
         </Form.Item>
+        <div className="phone-item">
+          <Form.Item
+            name="phone"
+            rules={[
+              {
+                type: "number",
+                required: true,
+                message: "Please enter your mobile number",
+              },
+            ]}
+          >
+            <Input
+              label="Phone number"
+              placeholder="Phone number"
+              prefix={<PhoneIcon />}
+            />
+          </Form.Item>
+        </div>
+
+        <div className="terms-radio">
+          <Radio>
+            <span className="terms">
+              I approve on <a href="#">terms & conditions</a> &{" "}
+              <a href="#">Privacy Policy</a>
+            </span>
+          </Radio>
+        </div>
 
         <Form.Item>
           <Button htmlType="submit" block={true}>
-            Next
+            Register
           </Button>
         </Form.Item>
         <a href="/login">
-          <p className="form-bottom">Sign in</p>
+          <p className="form-bottom">Log in</p>
         </a>
       </Form>
-      <div className="terms-radio">
-        <Radio>
-          <span className="terms">
-            I approve on <a href="#">terms & conditions</a>
-          </span>
-        </Radio>
-      </div>
-    </div>
+    </>
   );
 };
 

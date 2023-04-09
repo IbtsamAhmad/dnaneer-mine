@@ -4,10 +4,14 @@ import Input from "components/Input/Input";
 import Button from "components/Button/Button";
 import { ReactComponent as FormUserIcon } from "assets/svgs/form-user-icon.svg";
 import { ReactComponent as FormLockIcon } from "assets/svgs/form-lock-icon.svg";
+import { ReactComponent as Date } from "assets/svgs/Date.svg";
+import { ReactComponent as Mail } from "assets/svgs/Mail.svg";
+import { ReactComponent as Tick } from "assets/svgs/Tick.svg";
+import { ReactComponent as Cross } from "assets/svgs/Cross.svg";
 import DatePicker from "components/DatePicker/DatePicker";
 import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
 
-const Password = ({ setShowPassword, setShowOtp }) => {
+const Password = ({ setShowPassword, setShowOtp, setAbsherCode }) => {
   const onFinish = (values) => {
     console.log("Success:", values);
   };
@@ -21,6 +25,8 @@ const Password = ({ setShowPassword, setShowOtp }) => {
   };
   const nextHandler = () => {
     console.log("register");
+        setShowPassword(false);
+    setAbsherCode(true);
     // setShowOtp(false);
     // setShowPassword(true);
   };
@@ -34,7 +40,9 @@ const Password = ({ setShowPassword, setShowOtp }) => {
       >
         Back
       </Button>
-      <h1>Getting started as individual</h1>
+      <p className="title">Individual Investor</p>
+
+      <h2>Complete registration now</h2>
       <Form
         name="basic"
         initialValues={{
@@ -72,8 +80,20 @@ const Password = ({ setShowPassword, setShowOtp }) => {
             block={true}
             label="Birth date"
             placeholder="Birth date"
-            prefix={<FormUserIcon />}
+            prefix={<Date />}
           />
+        </Form.Item>
+        <Form.Item
+          name="email"
+          rules={[
+            {
+              type: "email",
+              required: true,
+              message: "Please enter your email",
+            },
+          ]}
+        >
+          <Input label="Username" placeholder="Username" prefix={<Mail />} />
         </Form.Item>
 
         <Form.Item
@@ -93,12 +113,50 @@ const Password = ({ setShowPassword, setShowOtp }) => {
             prefix={<FormLockIcon />}
           />
         </Form.Item>
+        <div className="password-validations">
+          <p>
+            <Tick />
+            At least 8 characters
+          </p>
+          <p>
+            <Cross />
+            At least one Number (0-9)
+          </p>
+          <p>
+            <Tick />
+            At least 1 Uppercase
+          </p>
+          <p>
+            <Cross />
+            At least 1 Lowercase
+          </p>
+          <p>
+            <Tick />
+            At least one special character, e.g., ! @ # ? ]
+          </p>
+          <p>
+            <Cross />
+            Inclusion of at least one special character, e.g., ! @ # ? ]
+          </p>
+        </div>
+
+        <div className="terms-radio">
+          <Radio>
+            <span className="terms">
+              I approve on <a href="#">terms & conditions</a> &{" "}
+              <a href="#">Privacy Policy</a>
+            </span>
+          </Radio>
+        </div>
 
         <Form.Item>
           <Button htmlType="submit" block={true} onClick={nextHandler}>
-            Next
+            Register
           </Button>
         </Form.Item>
+        <a href="/login">
+          <p className="form-bottom-password">Log in</p>
+        </a>
       </Form>
     </div>
   );

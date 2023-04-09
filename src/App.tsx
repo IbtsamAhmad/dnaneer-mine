@@ -4,6 +4,7 @@ import cookies from "js-cookie";
 import "./App.scss";
 import Router from "routes/Routes";
 
+
 const languages = [
   {
     code: "en",
@@ -42,8 +43,9 @@ export default function App() {
   }, [currentLanguage, t]);
 
   return (
-  <div>
+    <>
       <Router />
+
       {/* <Login /> */}
       {/* <div className="container">
         <div className="language-select">
@@ -93,6 +95,6 @@ export default function App() {
           <p>{t("Testing")}</p>
         </div>
       </div> */}
-</div>  
+    </>
   );
 }

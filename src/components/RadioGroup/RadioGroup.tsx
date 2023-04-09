@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import type { RadioChangeEvent } from "antd";
 import { Radio } from "antd";
 import "./radioGroup.scss";
 
@@ -7,7 +7,7 @@ interface RadioProps {
     label: string;
     value: string | number;
   }[];
-  onChange?: () => void;
+  onChange?: (e: RadioChangeEvent) => void;
   className?: string;
   defaultValue?: string | number;
 }
