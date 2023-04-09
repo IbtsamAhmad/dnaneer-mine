@@ -69,11 +69,18 @@
         align-items: center;
         border: none;
         outline: none;
-
         svg {
             margin-top: -2px;
             margin-right: 8px;
         }
+                  &:hover,
+                  &:active,
+                  &:focus,
+                  &:focus-visible {
+                      box-shadow: none !important;
+                      color: #333333 !important;
+                      outline: none !important;
+                  }
     }
 
     h1 {

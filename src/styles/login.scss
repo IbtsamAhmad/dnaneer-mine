@@ -56,7 +56,8 @@
     }
   }
   .auth-col-two{
-    height: 881px;
+    height: auto;
+      min-height: 100vh;
   
   }
 }
