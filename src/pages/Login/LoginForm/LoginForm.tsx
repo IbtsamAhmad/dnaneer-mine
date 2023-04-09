@@ -33,9 +33,9 @@ const LoginForm = (props) => {
     <div className="login-form-container">
     <Close/>
       <Start />
-      <h1>Get Started As</h1>
+      <h1>Login In form</h1>
 
-      <Form
+      {/* <Form
         name="basic"
         initialValues={{
           remember: true,
@@ -97,7 +97,7 @@ const LoginForm = (props) => {
           </Button>
         </Form.Item>
         <p className="forgot">Forgot Password?</p>
-      </Form>
+      </Form> */}
     </div>
   );
 };
