@@ -1,6 +1,7 @@
 .upload-container{
     .ant-upload-btn{
     border: none !important;
+    padding: 14.1px 0!important;
     }
     .ant-upload{
 //    height: 81px !important;
@@ -10,6 +11,8 @@
     span {
             border: none !important;
         }
+
+      
     }
     .import{
         font-weight: 500;

@@ -6,24 +6,23 @@ import StepTwo from "./StepTwo";
 import { ReactComponent as CloseDrawer } from "assets/svgs/CloseDrawer.svg";
 import { ReactComponent as Aggrement } from "assets/svgs/Aggrement.svg";
 
-export default function App() {
+export default function App({ setOpen }) {
   const [data, setData] = useState({});
   const [step, setStep] = useState(1);
   const description = "This is a description.";
 
+  const handleSubmit = useCallback((data: any) => {
+    setData(data);
+    console.log("Data", data);
+  }, []);
 
-    const handleSubmit = useCallback((data: any) => {
+  const handlePrevStep = useCallback(
+    (data: any) => {
       setData(data);
-      console.log("Data", data);
-    }, []);
-
-      const handlePrevStep = useCallback(
-        (data: any) => {
-          setData(data);
-          setStep(step - 1);
-        },
-        [step]
-      );
+      setStep(step - 1);
+    },
+    [step]
+  );
 
   const steps = [
     {
@@ -38,17 +37,17 @@ export default function App() {
     },
   ];
 
-    const [current, setCurrent] = useState(0);
-    const next = () => {
-      setCurrent(current + 1);
-    };
-    const prev = () => {
-      setCurrent(current - 1);
-    };
-    const items = steps.map((item) => ({
-      key: item.title,
-      title: item.title,
-    }));
+  const [current, setCurrent] = useState(0);
+  const next = () => {
+    setCurrent(current + 1);
+  };
+  const prev = () => {
+    setCurrent(current - 1);
+  };
+  const items = steps.map((item) => ({
+    key: item.title,
+    title: item.title,
+  }));
 
   const handleNextStep = useCallback(
     (data: any) => {
@@ -58,13 +57,13 @@ export default function App() {
     [step]
   );
 
-
-
-
-
   return (
     <div className="institute-drawer-content-container">
-      <Button icon={<CloseDrawer />} className="closeDrawer-btn">
+      <Button
+        icon={<CloseDrawer />}
+        className="closeDrawer-btn"
+        onClick={() => setOpen(false)}
+      >
         Close
       </Button>
       <h1>Complete your profile now</h1>
@@ -83,31 +82,36 @@ export default function App() {
             </Button>
           )}
         </div>
-        <div className="drawer-final-container">
-          {current > 0 && (
-            <p className="skip" onClick={() => prev()}>
-              Skip for now
-            </p>
-          )}
-          {current > 0 && (
-            <p className="previous" onClick={() => prev()}>
-              Previous step
-            </p>
-          )}
-          {current === steps.length - 1 && (
-            <Button
-              type="primary"
-              className="complete-btn"
-              // onClick={() => message.success("Processing complete!")}
-            >
-              Complete
-            </Button>
-          )}
-        </div>
-        <p className="submit-description">
-          <Aggrement /> By submitting, you agree to the
-          <span> Investment POA agreement</span>
-        </p>
+        {current > 0 && (
+          <div className="drawer-final-container">
+            {current > 0 && (
+              <p className="skip" onClick={() => prev()}>
+                Skip for now
+              </p>
+            )}
+            {current > 0 && (
+              <p className="previous" onClick={() => prev()}>
+                Previous step
+              </p>
+            )}
+            {current === steps.length - 1 && (
+              <Button
+                type="primary"
+                className="complete-btn"
+                // onClick={() => message.success("Processing complete!")}
+              >
+                Complete
+              </Button>
+            )}
+          </div>
+        )}
+
+        {current > 0 && (
+          <p className="submit-description">
+            <Aggrement /> By submitting, you agree to the
+            <span> Investment POA agreement</span>
+          </p>
+        )}
       </div>
     </div>
   );

@@ -1,14 +1,12 @@
-import {useState} from "react"
+import { useState } from "react";
 import OtpComponent from "./Otp/Otp";
-import Phone from "../SingupComponents/PhoneNumber/Phone"
+import Phone from "../SingupComponents/PhoneNumber/Phone";
 import Password from "../SingupComponents/Password/Password";
 import Absher from "../SingupComponents/Absher/Absher";
 
 import { ReactComponent as Start } from "assets/svgs/Start.svg";
 import { ReactComponent as Close } from "assets/svgs/Close.svg";
 import { ReactComponent as FormLockIcon } from "assets/svgs/form-lock-icon.svg";
-
-
 
 const SingUpComponent = ({ individual, setIndividual }) => {
   const [showPhone, setShowPhone] = useState(true);
@@ -21,11 +19,11 @@ const SingUpComponent = ({ individual, setIndividual }) => {
       <div className="close-icon">
         <Close />
       </div>
-      <div className="start-icon">
-        <Start />
-      </div>
 
       <div className="signUp-form-container">
+        <div className="start-icon">
+          <Start />
+        </div>
         {showPhone && (
           <Phone
             setShowOtp={setShowOtp}

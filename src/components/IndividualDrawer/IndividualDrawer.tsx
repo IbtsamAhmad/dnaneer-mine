@@ -23,7 +23,7 @@ const App = () => {
           open={open}
           closable={false}
         >
-          <IndividualForms />
+          <IndividualForms setOpen={setOpen} />
         </Drawer>
       </div>
     </>

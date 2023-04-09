@@ -44,7 +44,15 @@
 }
 
 .signUp-form-container {
+    margin:0 auto;
     width: 365px;
+    .absher-description{
+    display: flex;
+    align-items: flex-start;
+    svg{
+        margin-right: 17px;
+    }
+    }
     .singUp-back-btn {
         background: rgba(191, 212, 228, 0.25);
         border-radius: 42px;
