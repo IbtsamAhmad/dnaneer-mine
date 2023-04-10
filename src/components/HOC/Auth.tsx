@@ -2,14 +2,14 @@ import { Row, Col } from "antd";
 
 // import { ReactComponent as Profits } from "assets/svgs/Profits.svg";
 
-// import { ReactComponent as PhoneIcon } from "assets/svgs/Phone.svg";
+import { ReactComponent as Charts } from "assets/svgs/Charts.svg";
 import { ReactComponent as Networks } from "assets/svgs/Networks.svg";
 
 
 const AuthWrapper = (Component):Function => {
   return function Auth({ ...props }):JSX.Element {
    const {individual, setIndividual} = props;
-   console.log("individual One", individual);
+  //  console.log("individual One", individual);
     return (
       <div className="auth-container">
         <Row align="stretch">
@@ -24,9 +24,7 @@ const AuthWrapper = (Component):Function => {
                 alt="login"
                 className="login-img"
               />
-              <div className="profits">
-                {/* <Profits /> */}
-              </div>
+              <div className="profits"><Charts /></div>
               <div className="networks">
                 <Networks />
               </div>
