@@ -18,6 +18,7 @@ const Absher = () => {
   // }, []);
 
   const backHandler = () => {
+    //back
     //  setAbsherCode(false);
     //   setShowPassword(true);
   };
