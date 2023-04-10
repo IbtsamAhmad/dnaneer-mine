@@ -4,7 +4,7 @@ import Button from "components/Button/Button";
 import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
 import { ReactComponent as AbsherIcon } from "assets/svgs/Absher.svg";
 
-const Absher = ({ setShowPassword, setAbsherCode }) => {
+const Absher = () => {
   const [time, setTime] = useState(60);
   const [otp, setOtp] = useState("");
   //   console.log(otp);
