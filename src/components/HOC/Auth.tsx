@@ -1,7 +1,7 @@
 import { Row, Col } from "antd";
 
-import { ReactComponent as Profits } from "assets/svgs/Profits.svg";
-import { ReactComponent as Networks } from "assets/svgs/Networks.svg";
+import { ReactComponent as Profits } from "/assets/svgs/Profits.svg";
+import { ReactComponent as Networks } from "/assets/svgs/Networks.svg";
 
 
 const AuthWrapper = (Component):Function => {
