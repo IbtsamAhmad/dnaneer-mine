@@ -5,7 +5,7 @@ import "./input.scss";
 // import Eye_open from "../../icons/Eye_open.svg"
 
 interface MessageProps {
-  onChange?: () => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
   icon?: JSX.Element | JSX.Element[];
   disabled?: boolean | undefined;

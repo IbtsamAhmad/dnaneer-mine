@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import Otp from "components/OTP/Otp";
 import Button from "components/Button/Button";
 import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
-import { ReactComponent as AbsherIcon } from "assets/svgs/AbsherIcon.svg";
+import { ReactComponent as AbsherIcon } from "assets/svgs/Absher.svg";
 
-const Absher = ({  }) => {
+const Absher = ({ setShowPassword, setAbsherCode }) => {
   const [time, setTime] = useState(60);
   const [otp, setOtp] = useState("");
   //   console.log(otp);
@@ -18,8 +18,8 @@ const Absher = ({  }) => {
   // }, []);
 
   const backHandler = () => {
-    // setShowOtp(false);
-    // setShowPhone(true);
+     setAbsherCode(false);
+      setShowPassword(true);
   };
   const nextHandler = () => {
     // setShowOtp(false);

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { Form, Radio } from "antd";
 
 import Input from "components/Input/Input";
@@ -12,6 +14,14 @@ import DatePicker from "components/DatePicker/DatePicker";
 import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
 
 const Password = ({ setShowPassword, setShowOtp, setAbsherCode }) => {
+
+
+  const [lengthVal, setLengthVal] = useState(false);
+  const [oneNumVal, setOneNumVal] = useState(false);
+  const [oneUpCaseVal, setOneUpCaseVal] = useState(false);
+  const [oneLowCaseVal, setOneLowCaseVal] = useState(false);
+  const [specialVal, setSpecialVal] = useState(false);
+
   const onFinish = (values) => {
     console.log("Success:", values);
   };
@@ -25,10 +35,37 @@ const Password = ({ setShowPassword, setShowOtp, setAbsherCode }) => {
   };
   const nextHandler = () => {
     console.log("register");
-        setShowPassword(false);
+    setShowPassword(false);
     setAbsherCode(true);
     // setShowOtp(false);
     // setShowPassword(true);
+  };
+
+  const onChangePassword = (e) => {
+    const { value } = e.target;
+    console.log("Value", value);
+
+        value.length >= 8 ? setLengthVal(true) : setLengthVal(false);
+
+    const numRegex = new RegExp("(?=.*[0-9])");
+    const numTest = numRegex.test(value);
+    numTest ? setOneNumVal(true) : setOneNumVal(false);
+
+      const upCaseRegex = new RegExp("(?=.*[A-Z])");
+      const upCaseTest = upCaseRegex.test(value);
+      upCaseTest ? setOneUpCaseVal(true) : setOneUpCaseVal(false);
+
+
+       const lowCaseRegex = new RegExp("(?=.*[a-z])");
+       const lowCaseTest = lowCaseRegex.test(value);
+       lowCaseTest ? setOneLowCaseVal(true) : setOneLowCaseVal(false);
+
+           const symbolRegex = new RegExp("(?=.*[!@#$%^&*])");
+           const symbolTest = symbolRegex.test(e.target.value);
+           symbolTest ? setSpecialVal(true) : setSpecialVal(false);
+
+
+
   };
 
   return (
@@ -44,6 +81,7 @@ const Password = ({ setShowPassword, setShowOtp, setAbsherCode }) => {
 
       <h2>Complete registration now</h2>
       <Form
+        style={{ marginTop: "34px" }}
         name="basic"
         initialValues={{
           remember: true,
@@ -54,12 +92,12 @@ const Password = ({ setShowPassword, setShowOtp, setAbsherCode }) => {
       >
         <Form.Item
           name="id"
-          rules={[
-            {
-              required: true,
-              message: "Please enter your national Id",
-            },
-          ]}
+          // rules={[
+          //   {
+          //     required: true,
+          //     message: "Please enter your national Id",
+          //   },
+          // ]}
         >
           <Input
             label="National ID"
@@ -69,12 +107,12 @@ const Password = ({ setShowPassword, setShowOtp, setAbsherCode }) => {
         </Form.Item>
         <Form.Item
           name="DOB"
-          rules={[
-            {
-              required: true,
-              message: "Please enter your birth date",
-            },
-          ]}
+          // rules={[
+          //   {
+          //     required: true,
+          //     message: "Please enter your birth date",
+          //   },
+          // ]}
         >
           <DatePicker
             block={true}
@@ -85,57 +123,55 @@ const Password = ({ setShowPassword, setShowOtp, setAbsherCode }) => {
         </Form.Item>
         <Form.Item
           name="email"
-          rules={[
-            {
-              type: "email",
-              required: true,
-              message: "Please enter your email",
-            },
-          ]}
+          // rules={[
+          //   {
+          //     type: "email",
+          //     required: true,
+          //     message: "Please enter your email",
+          //   },
+          // ]}
         >
-          <Input label="Username" placeholder="Username" prefix={<Mail />} />
+          <Input label="Email" placeholder="Email" prefix={<Mail />} />
         </Form.Item>
 
         <Form.Item
           name="password"
-          rules={[
-            {
-              type: "number",
-              required: true,
-              message: "Please enter your password",
-            },
-          ]}
+          // rules={[
+          //   {
+          //     type: "number",
+          //     required: true,
+          //     message: "Please enter your password",
+          //   },
+          // ]}
         >
           <Input
             iconRender={true}
             label="Create Password"
             placeholder="Create Password"
             prefix={<FormLockIcon />}
+            onChange={onChangePassword}
           />
         </Form.Item>
         <div className="password-validations">
-          <p>
-            <Tick />
+          <p style={{ color: lengthVal ? "#17B890" : "#C4C1CA" }}>
+            {lengthVal ? <Tick /> : <Cross />}
             At least 8 characters
           </p>
-          <p>
-            <Cross />
+          <p style={{ color: oneNumVal ? "#17B890" : "#C4C1CA" }}>
+            {oneNumVal ? <Tick /> : <Cross />}
             At least one Number (0-9)
           </p>
-          <p>
-            <Tick />
+          <p style={{ color: oneUpCaseVal ? "#17B890" : "#C4C1CA" }}>
+            {oneUpCaseVal ? <Tick /> : <Cross />}
             At least 1 Uppercase
           </p>
-          <p>
-            <Cross />
+          <p style={{ color: oneLowCaseVal ? "#17B890" : "#C4C1CA" }}>
+            {oneLowCaseVal ? <Tick /> : <Cross />}
             At least 1 Lowercase
           </p>
-          <p>
-            <Tick />
-            At least one special character, e.g., ! @ # ? ]
-          </p>
-          <p>
-            <Cross />
+
+          <p style={{ color: specialVal ? "#17B890" : "#C4C1CA" }}>
+            {specialVal ? <Tick /> : <Cross />}
             Inclusion of at least one special character, e.g., ! @ # ? ]
           </p>
         </div>

@@ -1,3 +1,4 @@
+
 import { Form, Radio } from "antd";
 import { ReactComponent as PhoneIcon } from "assets/svgs/Phone.svg";
 import Input from "components/Input/Input";
@@ -69,9 +70,9 @@ const Phone = ({ setShowOtp, setShowPhone, setIndividual }) => {
             name="phone"
             rules={[
               {
-                type: "number",
-                required: true,
-                message: "Please enter your mobile number",
+                // type: "number",
+                // required: true,
+                // message: "Please enter your mobile number",
               },
             ]}
           >
