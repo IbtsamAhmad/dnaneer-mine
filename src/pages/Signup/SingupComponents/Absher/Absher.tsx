@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import Otp from "components/OTP/Otp";
 import Button from "components/Button/Button";
 import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
-import { ReactComponent as AbsherIcon } from "assets/svgs/Absher.svg";
 
 const Absher = () => {
   const [time, setTime] = useState(60);
@@ -39,7 +38,8 @@ const Absher = () => {
       {/* <h1>Getting Started as Individual</h1> */}
       <h2>Complete registration now</h2>
       <h1 className="absher-description">
-        <AbsherIcon /> Enter Absher Code
+        <img src="/assets/svgs/Green.svg" alt="" />
+        Enter Absher Code
       </h1>
       <Otp otp={otp} setOtp={setOtp} />
       <p className="timer">
