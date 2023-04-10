@@ -18,8 +18,8 @@ const Absher = () => {
   // }, []);
 
   const backHandler = () => {
-     setAbsherCode(false);
-      setShowPassword(true);
+    //  setAbsherCode(false);
+    //   setShowPassword(true);
   };
   const nextHandler = () => {
     // setShowOtp(false);
