@@ -1,10 +1,15 @@
-import { Form } from "antd";
+import { Form, Divider, Select } from "antd";
 import { useState } from "react";
-import Input from "../DrawerInput/DrawerInput";
+import Input from "components/Input/Input";
 
 import Button from "components/Button/Button";
 import RadioGroup from "components/RadioGroup/RadioGroup";
-import Upload from "components/Upload/Upload";
+
+import AppSelect from "components/Select/Select";
+
+const { Option } = Select;
+
+import { ReactComponent as Aggrement } from "assets/svgs/Aggrement.svg";
 
 const incomeOptions: { label: string; value: string | number }[] = [
   {
@@ -25,6 +30,17 @@ const incomeOptions: { label: string; value: string | number }[] = [
   },
 ];
 
+const sourceOptions: { label: string; value: string | number }[] = [
+  {
+    label: "Individual",
+    value: "individual",
+  },
+  {
+    label: "Institution",
+    value: "institution",
+  },
+];
+
 const netWorthOptions: { label: string; value: string | number }[] = [
   {
     label: "5M SAR or less",
@@ -33,7 +49,7 @@ const netWorthOptions: { label: string; value: string | number }[] = [
   {
     label: "5M SAR or more",
     value: "5M SAR or more",
-  }
+  },
 ];
 
 const objectiveOptions: { label: string; value: string | number }[] = [
@@ -48,10 +64,8 @@ const objectiveOptions: { label: string; value: string | number }[] = [
   {
     label: "Additional income",
     value: "Additional income",
-  }
+  },
 ];
-
-
 
 const investmentOptions: { label: string; value: string | number }[] = [
   {
@@ -68,28 +82,11 @@ const investmentOptions: { label: string; value: string | number }[] = [
   },
 ];
 
-type BackProps = {
-  onBack: (data: any) => void;
-};
-
-function BackBtn({ onBack }: BackProps) {
-  //   const dataRef = useDataRef("/");
-
-  return (
-    <Button
-    //    onClick={() => onBack(dataRef.value)}
-    >
-      Back
-    </Button>
-  );
+interface Step2FormProps {
+  onBack: () => void;
 }
 
-type Props = BackProps & {
-  data: any;
-  onSuccess: (data: any) => void;
-};
-
-export default function Step2Form({ data, onSuccess, onBack }: Props) {
+function Step2Form({ onBack }: Step2FormProps) {
   return (
     <div className="stepForm-container">
       <h1>Financial Information</h1>
@@ -103,6 +100,28 @@ export default function Step2Form({ data, onSuccess, onBack }: Props) {
         // onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
+        <Form.Item
+          label="What is your primary source of income?"
+          name="source"
+          rules={[
+            {
+              // type: "email",
+              // required: true,
+              // message: "Please enter your email",
+            },
+          ]}
+        >
+          <AppSelect placeholder="Gender" label="Gender">
+            {sourceOptions.map((source, i) => {
+              return (
+                <Option key={i} value={source.value}>
+                  {source.label}
+                </Option>
+              );
+            })}
+          </AppSelect>
+        </Form.Item>
+
         <Form.Item name="income" label="Yearly income average ">
           <RadioGroup options={incomeOptions} />
         </Form.Item>
@@ -121,7 +140,7 @@ export default function Step2Form({ data, onSuccess, onBack }: Props) {
         >
           <RadioGroup options={investmentOptions} />
         </Form.Item>
-        <h2>Bank Information</h2>
+        <h1>Bank Information</h1>
         <div className="form-row">
           <Form.Item
             name="IBAN"
@@ -155,6 +174,30 @@ export default function Step2Form({ data, onSuccess, onBack }: Props) {
           </Form.Item>
         </div>
       </Form>
+      <Divider />
+      <div className="drawer-final-container-two">
+        <p className="skip" onClick={() => onBack()}>
+          Skip for now
+        </p>
+        <p className="previous" onClick={() => onBack()}>
+          Previous step
+        </p>
+        <Button
+          className="complete-btn"
+          // onClick={() => message.success("Processing complete!")}
+        >
+          Complete
+        </Button>
+      </div>
+
+      <Divider />
+      <p className="submit-description">
+        <Aggrement />
+        By submitting, you agree to the
+        <span> Investment POA agreement</span>
+      </p>
     </div>
   );
 }
+
+export default Step2Form;

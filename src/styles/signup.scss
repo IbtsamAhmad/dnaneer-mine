@@ -47,7 +47,7 @@
     display: flex;
     align-items: flex-start;
     margin-top: 38px;
-    svg{
+    img{
         margin-right: 17px;
     }
     }
@@ -102,6 +102,9 @@
         font-size: 12px;
         text-align: center;
         color: #333333;
+        &:hover{
+            cursor: pointer;
+        }
     }
 
         .form-bottom-password {
@@ -119,7 +122,6 @@
 
     .terms-radio {
         margin-top: 15px;
-        margin-bottom: 40px;
         .terms {
             font-weight: 500;
             font-size: 12px;

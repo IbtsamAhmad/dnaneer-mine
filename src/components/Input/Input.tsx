@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Input } from "antd";
 import { ReactComponent as EyeOpen } from "assets/svgs/Eye_open.svg";
-import "./input.scss";
+// import "./input.scss";
 // import Eye_open from "../../icons/Eye_open.svg"
 
 interface MessageProps {
@@ -61,6 +61,7 @@ const AppInput = ({
           prefix={prefix}
           //   placeholder={placeholder}
           //  autoFocus={true}
+          disabled={disabled}
           onChange={onChange}
           defaultValue={value}
           className={className ? className : "appInput"}

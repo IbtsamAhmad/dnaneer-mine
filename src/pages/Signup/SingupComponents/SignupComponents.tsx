@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import OtpComponent from "./Otp/Otp";
 import Phone from "../SingupComponents/PhoneNumber/Phone";
 import Password from "../SingupComponents/Password/Password";
@@ -6,7 +6,7 @@ import Absher from "../SingupComponents/Absher/Absher";
 
 import { ReactComponent as Start } from "assets/svgs/Start.svg";
 import { ReactComponent as Close } from "assets/svgs/Close.svg";
-import { ReactComponent as FormLockIcon } from "assets/svgs/form-lock-icon.svg";
+// import { ReactComponent as FormLockIcon } from "assets/svgs/form-lock-icon.svg";
 
 const SingUpComponent = ({ individual, setIndividual }) => {
   const [showPhone, setShowPhone] = useState(true);
@@ -14,6 +14,15 @@ const SingUpComponent = ({ individual, setIndividual }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [absherCode, setAbsherCode] = useState(false);
 
+  useLayoutEffect(() => {
+    if (individual === "individual") {
+      setShowPhone(true);
+      setShowOtp(false);
+    } else {
+      setShowPhone(false);
+      setShowOtp(true);
+    }
+  }, []);
   return (
     <div className="signUp-container">
       <div className="close-icon">
@@ -29,10 +38,13 @@ const SingUpComponent = ({ individual, setIndividual }) => {
             setShowOtp={setShowOtp}
             setShowPhone={setShowPhone}
             setIndividual={setIndividual}
+            setShowPassword={setShowPassword}
+            individual={individual}
           />
         )}
         {showOtp && (
           <OtpComponent
+            individual={individual}
             setShowPassword={setShowPassword}
             setShowPhone={setShowPhone}
             setShowOtp={setShowOtp}
@@ -43,9 +55,15 @@ const SingUpComponent = ({ individual, setIndividual }) => {
             setShowPassword={setShowPassword}
             setShowOtp={setShowOtp}
             setAbsherCode={setAbsherCode}
+            individual={individual}
           />
         )}
-        {absherCode && <Absher />}
+        {individual === "individual" && absherCode && (
+          <Absher
+            setShowPassword={setShowPassword}
+            setAbsherCode={setAbsherCode}
+          />
+        )}
       </div>
       <div className="copy-right">
         Dnaneer © Copyright 2023, All Rights Reserved

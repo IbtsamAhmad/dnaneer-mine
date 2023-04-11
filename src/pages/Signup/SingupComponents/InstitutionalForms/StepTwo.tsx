@@ -1,11 +1,13 @@
-import { Form } from "antd";
 import { useState } from "react";
-import Input from "../DrawerInput/DrawerInput";
+import { Form, Divider } from "antd";
+
+import Input from "components/Input/Input";
 
 import Button from "components/Button/Button";
 import RadioGroup from "components/RadioGroup/RadioGroup";
 import Upload from "components/Upload/Upload";
 
+import { ReactComponent as Aggrement } from "assets/svgs/Aggrement.svg";
 
 const incomeOptions: { label: string; value: string | number }[] = [
   {
@@ -25,7 +27,6 @@ const incomeOptions: { label: string; value: string | number }[] = [
     value: "others",
   },
 ];
-
 
 const anualOptions: { label: string; value: string | number }[] = [
   {
@@ -66,27 +67,16 @@ const approxyOptions: { label: string; value: string | number }[] = [
 ];
 
 type BackProps = {
-  onBack: (data: any) => void;
+  onBack: () => void;
 };
 
-function BackBtn({ onBack }: BackProps) {
-  //   const dataRef = useDataRef("/");
-
-  return (
-    <Button
-    //    onClick={() => onBack(dataRef.value)}
-    >
-      Back
-    </Button>
-  );
-}
 
 type Props = BackProps & {
   data: any;
   onSuccess: (data: any) => void;
 };
 
-export default function Step2Form({ data, onSuccess, onBack }: Props) {
+ function Step2Form({ data, onSuccess, onBack }: Props) {
   return (
     <div className="stepForm-container">
       <h1>Financial Information</h1>
@@ -137,7 +127,32 @@ export default function Step2Form({ data, onSuccess, onBack }: Props) {
         <Upload />
         <h2>Other Supporting Documents</h2>
         <Upload />
+        <Divider />
+        <div className="drawer-final-container">
+          <p className="skip" onClick={() => onBack()}>
+            Skip for now
+          </p>
+          <p className="previous" onClick={() => onBack()}>
+            Previous step
+          </p>
+
+          <Button
+            className="complete-btn"
+            // onClick={() => message.success("Processing complete!")}
+          >
+            Complete
+          </Button>
+        </div>
+        <Divider />
+        <p className="submit-description">
+          <Aggrement />
+          By submitting, you agree to the
+          <span> Investment POA agreement</span>
+        </p>
       </Form>
     </div>
   );
 }
+
+
+export default Step2Form;

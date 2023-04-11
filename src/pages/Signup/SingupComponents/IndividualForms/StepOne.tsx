@@ -1,6 +1,6 @@
-import { Form } from "antd";
-import { useState } from "react";
-import Input from "../DrawerInput/DrawerInput";
+import { Form, Divider } from "antd";
+import { SetStateAction, Dispatch } from "react";
+import Input from "components/Input/Input";
 
 import Button from "components/Button/Button";
 import RadioGroup from "components/RadioGroup/RadioGroup";
@@ -47,13 +47,13 @@ const infoOptions: { label: string; value: string | number }[] = [
   },
 ];
 
-
 type Props = {
   data: any;
   onSuccess: (data: any) => void;
+  setCurrent: Dispatch<SetStateAction<number>>;
 };
 
-export default function Step2Form({ data, onSuccess }: Props) {
+export default function Step2Form({ data, onSuccess, setCurrent }: Props) {
   return (
     <div className="stepForm-container">
       <h1>Personal Information</h1>
@@ -105,6 +105,15 @@ export default function Step2Form({ data, onSuccess }: Props) {
         >
           <RadioGroup options={infoOptions} />
         </Form.Item>
+        <Divider />
+        <div className="drawer-next-container-two">
+          <p className="skip" onClick={() => setCurrent(0)}>
+            Skip for now
+          </p>
+          <Button className="drawer-next-btn" onClick={() => setCurrent(1)}>
+            Next
+          </Button>
+        </div>
       </Form>
     </div>
   );

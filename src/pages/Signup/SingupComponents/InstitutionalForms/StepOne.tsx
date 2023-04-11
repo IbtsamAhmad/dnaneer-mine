@@ -1,16 +1,16 @@
 import * as React from "react";
-import { Form } from "antd";
+import { Form, Divider } from "antd";
 
-import Input from "../DrawerInput/DrawerInput";
+import Input from "components/Input/Input";
 import Button from "components/Button/Button";
-
 
 type Props = {
   data: any;
   onSuccess: (data: any) => void;
+  setCurrent: React.Dispatch<React.SetStateAction<number>>;
 };
 
-function Step1Form({ data, onSuccess }: Props) {
+function Step1Form({ data, onSuccess, setCurrent }: Props) {
   return (
     <div className="stepForm-container">
       <h1>Investor Information</h1>
@@ -43,18 +43,19 @@ function Step1Form({ data, onSuccess }: Props) {
         </div>
         <div className="form-row">
           <Form.Item
-            name="Name"
-            rules={[
-              {
-                required: true,
-                message: "Please enter your Name",
-              },
-            ]}
+            name="name"
+            // rules={[
+            //   {
+            //     required: true,
+            //     message: "Please enter your Name",
+            //   },
+            // ]}
           >
             <Input
               label="Company name"
               placeholder="Company name"
               className="drawer-input-two"
+              disabled
             />
           </Form.Item>
           <Form.Item
@@ -70,6 +71,7 @@ function Step1Form({ data, onSuccess }: Props) {
               label="Establishment date"
               placeholder="Establishment date"
               className="drawer-input-two"
+              disabled
             />
           </Form.Item>
         </div>
@@ -87,6 +89,7 @@ function Step1Form({ data, onSuccess }: Props) {
               label="Address"
               placeholder="Address"
               className="drawer-input-two"
+              disabled
             />
           </Form.Item>
           <Form.Item
@@ -102,6 +105,7 @@ function Step1Form({ data, onSuccess }: Props) {
               label="Company Legal Structure"
               placeholder="Company Legal Structure"
               className="drawer-input-two"
+              disabled
             />
           </Form.Item>
         </div>
@@ -170,6 +174,12 @@ function Step1Form({ data, onSuccess }: Props) {
               className="drawer-input-one"
             />
           </Form.Item>
+        </div>
+        <Divider />
+        <div className="drawer-next-container">
+          <Button className="drawer-next-btn" onClick={() => setCurrent(1)}>
+            Next
+          </Button>
         </div>
       </Form>
     </div>

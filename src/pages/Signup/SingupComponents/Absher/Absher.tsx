@@ -1,29 +1,38 @@
 import { useState, useEffect } from "react";
+import { message } from "antd";
+import { useNavigate } from "react-router-dom";
 import Otp from "components/OTP/Otp";
 import Button from "components/Button/Button";
 import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
-
-const Absher = () => {
-  const [time, setTime] = useState(60);
+import { timeConverter } from "utils/Helper";
+const Absher = ({ setAbsherCode, setShowPassword }) => {
+  const navigate = useNavigate();
+  const [time, setTime] = useState(5 * 60);
   const [otp, setOtp] = useState("");
   //   console.log(otp);
 
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     setTime((prevTime) => prevTime - 1);
-  //   }, 1000);
+  useEffect(() => {
+    let timer;
+    if (time !== 0) {
+      timer = setInterval(() => {
+        setTime((prev) => prev - 1);
+      }, 1000);
+    }
 
-  //   return () => clearInterval(timer);
-  // }, []);
+    return () => clearInterval(timer);
+  }, [time]);
 
   const backHandler = () => {
     //back
-    //  setAbsherCode(false);
-    //   setShowPassword(true);
+    setAbsherCode(false);
+    setShowPassword(true);
   };
   const nextHandler = () => {
-    // setShowOtp(false);
-    // setShowPassword(true);
+    if (otp.length >= 5) {
+      navigate("/");
+    } else {
+      message.error("Enter OTP");
+    }
   };
   return (
     <div className="signUp-form-container">
@@ -43,7 +52,8 @@ const Absher = () => {
       </h1>
       <Otp otp={otp} setOtp={setOtp} />
       <p className="timer">
-        4:55 min <span>left</span>
+        {time !== 0 ? timeConverter(time) : "OTP expired"}{" "}
+        {time ? <span>left</span> : null}
       </p>
       <Button block={true} onClick={nextHandler}>
         Next

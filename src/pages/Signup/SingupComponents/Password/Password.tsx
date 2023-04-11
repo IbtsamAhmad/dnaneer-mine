@@ -13,9 +13,12 @@ import { ReactComponent as Cross } from "assets/svgs/Cross.svg";
 import DatePicker from "components/DatePicker/DatePicker";
 import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
 
-const Password = ({ setShowPassword, setShowOtp, setAbsherCode }) => {
-
-
+const Password = ({
+  setShowPassword,
+  setShowOtp,
+  setAbsherCode,
+  individual,
+}) => {
   const [lengthVal, setLengthVal] = useState(false);
   const [oneNumVal, setOneNumVal] = useState(false);
   const [oneUpCaseVal, setOneUpCaseVal] = useState(false);
@@ -24,6 +27,7 @@ const Password = ({ setShowPassword, setShowOtp, setAbsherCode }) => {
 
   const onFinish = (values) => {
     console.log("Success:", values);
+    nextHandler();
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
@@ -45,27 +49,23 @@ const Password = ({ setShowPassword, setShowOtp, setAbsherCode }) => {
     const { value } = e.target;
     console.log("Value", value);
 
-        value.length >= 8 ? setLengthVal(true) : setLengthVal(false);
+    value.length >= 8 ? setLengthVal(true) : setLengthVal(false);
 
     const numRegex = new RegExp("(?=.*[0-9])");
     const numTest = numRegex.test(value);
     numTest ? setOneNumVal(true) : setOneNumVal(false);
 
-      const upCaseRegex = new RegExp("(?=.*[A-Z])");
-      const upCaseTest = upCaseRegex.test(value);
-      upCaseTest ? setOneUpCaseVal(true) : setOneUpCaseVal(false);
+    const upCaseRegex = new RegExp("(?=.*[A-Z])");
+    const upCaseTest = upCaseRegex.test(value);
+    upCaseTest ? setOneUpCaseVal(true) : setOneUpCaseVal(false);
 
+    const lowCaseRegex = new RegExp("(?=.*[a-z])");
+    const lowCaseTest = lowCaseRegex.test(value);
+    lowCaseTest ? setOneLowCaseVal(true) : setOneLowCaseVal(false);
 
-       const lowCaseRegex = new RegExp("(?=.*[a-z])");
-       const lowCaseTest = lowCaseRegex.test(value);
-       lowCaseTest ? setOneLowCaseVal(true) : setOneLowCaseVal(false);
-
-           const symbolRegex = new RegExp("(?=.*[!@#$%^&*])");
-           const symbolTest = symbolRegex.test(e.target.value);
-           symbolTest ? setSpecialVal(true) : setSpecialVal(false);
-
-
-
+    const symbolRegex = new RegExp("(?=.*[!@#$%^&*])");
+    const symbolTest = symbolRegex.test(e.target.value);
+    symbolTest ? setSpecialVal(true) : setSpecialVal(false);
   };
 
   return (
@@ -90,59 +90,64 @@ const Password = ({ setShowPassword, setShowOtp, setAbsherCode }) => {
         onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
-        <Form.Item
-          name="id"
-          // rules={[
-          //   {
-          //     required: true,
-          //     message: "Please enter your national Id",
-          //   },
-          // ]}
-        >
-          <Input
-            label="National ID"
-            placeholder="National ID"
-            prefix={<FormUserIcon />}
-          />
-        </Form.Item>
-        <Form.Item
-          name="DOB"
-          // rules={[
-          //   {
-          //     required: true,
-          //     message: "Please enter your birth date",
-          //   },
-          // ]}
-        >
-          <DatePicker
-            block={true}
-            label="Birth date"
-            placeholder="Birth date"
-            prefix={<Date />}
-          />
-        </Form.Item>
+        {individual === "individual" ? (
+          <>
+            {" "}
+            <Form.Item
+              name="id"
+              rules={[
+                {
+                  required: true,
+                  message: "Please enter your national Id",
+                },
+              ]}
+            >
+              <Input
+                label="National ID"
+                placeholder="National ID"
+                prefix={<FormUserIcon />}
+              />
+            </Form.Item>
+            <Form.Item
+              name="DOB"
+              rules={[
+                {
+                  required: true,
+                  message: "Please enter your birth date",
+                },
+              ]}
+            >
+              <DatePicker
+                block={true}
+                label="Birth date"
+                placeholder="Birth date"
+                prefix={<Date />}
+              />
+            </Form.Item>
+          </>
+        ) : null}
         <Form.Item
           name="email"
-          // rules={[
-          //   {
-          //     type: "email",
-          //     required: true,
-          //     message: "Please enter your email",
-          //   },
-          // ]}
+          rules={[
+            {
+              type: "email",
+              required: true,
+              message: "Please enter your email",
+            },
+          ]}
         >
           <Input label="Email" placeholder="Email" prefix={<Mail />} />
         </Form.Item>
 
         <Form.Item
           name="password"
-          // rules={[
-          //   {
-          //     type: "number",
-          //     required: true,
-          //     message: "Please enter your password",
-          //   },
-          // ]}
+          rules={[
+            {
+              type: "string",
+              required: true,
+              message: "Please enter your password",
+            },
+          ]}
         >
           <Input
             iconRender={true}
@@ -186,7 +191,7 @@ const Password = ({ setShowPassword, setShowOtp, setAbsherCode }) => {
         </div>
 
         <Form.Item>
-          <Button htmlType="submit" block={true} onClick={nextHandler}>
+          <Button htmlType="submit" block={true}>
             Register
           </Button>
         </Form.Item>

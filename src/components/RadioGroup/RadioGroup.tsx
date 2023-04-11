@@ -1,6 +1,6 @@
 import type { RadioChangeEvent } from "antd";
 import { Radio } from "antd";
-import "./radioGroup.scss";
+// import "./radioGroup.scss";
 
 interface RadioProps {
   options: {
