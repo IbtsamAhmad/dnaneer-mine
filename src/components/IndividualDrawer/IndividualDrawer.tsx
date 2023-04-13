@@ -1,6 +1,6 @@
 import { Button, Drawer } from "antd";
 import { useState } from "react";
-import IndividualForms from "../../pages/Signup/SingupComponents/IndividualForms";
+import IndividualForms from "../IndividualForms";
 const App = () => {
   const [open, setOpen] = useState(false);
   const showDrawer = () => {

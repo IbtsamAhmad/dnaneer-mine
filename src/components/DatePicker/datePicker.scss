@@ -1,22 +1,24 @@
-.ant-picker-input{
+.ant-picker-input {
     flex-direction: row-reverse;
-    .ant-picker-suffix{
-            padding-left: 7px !important;
+
+    .ant-picker-suffix {
+        padding-left: 7px !important;
     }
-    input{
-    font-weight: 600;
+
+    input {
+        font-weight: 600;
         font-size: 14px;
         color: #171717;
-            padding-left: 20px !important;
-                padding-top: 20px !important;
+        padding-left: 13px !important;
+        padding-top: 20px !important;
     }
 
 }
 
-.ant-picker-cell-inner{
-background: #fff !important;
+.ant-picker-cell-inner {
+    background: #fff !important;
 }
 
-.ant-picker-date-panel{
+.ant-picker-date-panel {
     background: #fff !important;
 }

@@ -46,16 +46,16 @@ const Absher = ({ setAbsherCode, setShowPassword }) => {
       <p className="title">Individual Investor</p>
       {/* <h1>Getting Started as Individual</h1> */}
       <h2>Complete registration now</h2>
-      <h1 className="absher-description">
-        <img src="/assets/svgs/Green.svg" alt="" />
-        Enter Absher Code
-      </h1>
+      <div className="absher-description">
+        <img src="/assets/images/Green.png" alt="" />
+        <h1> Enter Absher Code</h1>
+      </div>
       <Otp otp={otp} setOtp={setOtp} />
       <p className="timer">
         {time !== 0 ? timeConverter(time) : "OTP expired"}{" "}
         {time ? <span>left</span> : null}
       </p>
-      <Button block={true} onClick={nextHandler}>
+      <Button block={true} onClick={nextHandler} className="otp-next-btn">
         Next
       </Button>
       <p className="form-bottom">Resend OTP</p>

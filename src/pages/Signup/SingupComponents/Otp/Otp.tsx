@@ -47,6 +47,7 @@ const OtpComponent = ({
   return (
     <div className="signUp-form-container">
       <Button
+        style={{padding: "none"}}
         className="singUp-back-btn"
         icon={<BackArrow />}
         onClick={backHandler}
@@ -64,7 +65,7 @@ const OtpComponent = ({
         {time !== 0 ? timeConverter(time) : "OTP expired"}{" "}
         {time ? <span>left</span> : null}
       </p>
-      <Button block={true} onClick={nextHandler}>
+      <Button block={true} onClick={nextHandler} className="otp-next-btn">
         Next
       </Button>
       <p className="form-bottom">Resend OTP</p>

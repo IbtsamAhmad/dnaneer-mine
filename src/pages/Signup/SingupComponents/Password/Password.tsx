@@ -181,7 +181,7 @@ const Password = ({
           </p>
         </div>
 
-        <div className="terms-radio">
+        <div className="password-radio">
           <Radio>
             <span className="terms">
               I approve on <a href="#">terms & conditions</a> &{" "}
@@ -191,7 +191,7 @@ const Password = ({
         </div>
 
         <Form.Item>
-          <Button htmlType="submit" block={true}>
+          <Button htmlType="submit" block={true} className="password-next-btn">
             Register
           </Button>
         </Form.Item>

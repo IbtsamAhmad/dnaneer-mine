@@ -8,7 +8,7 @@ import { ReactComponent as Networks } from "assets/svgs/Networks.svg";
 const AuthWrapper = (Component): Function => {
   return function Auth({ ...props }): JSX.Element {
     const { individual } = props;
-    //  console.log("individual One", individual);
+      console.log("individual One", individual);
     return (
       <div className="auth-container">
         <Row align="stretch">
@@ -16,7 +16,7 @@ const AuthWrapper = (Component): Function => {
             <div className="auth-col-one">
               <img
                 src={
-                  individual
+                  individual === "individual"
                     ? "/assets/images/individual.png"
                     : "/assets/images/institutional.png"
                 }
@@ -30,10 +30,18 @@ const AuthWrapper = (Component): Function => {
                 <Networks />
               </div>
               <div className="description">
-                <h1 style={{ color: individual ? "#fff" : "#140A2B" }}>
+                <h1
+                  style={{
+                    color: individual === "individual" ? "#fff" : "#140A2B",
+                  }}
+                >
                   Discover new investment opportunities
                 </h1>
-                <p style={{ color: individual ? "#fff" : "#140A2B" }}>
+                <p
+                  style={{
+                    color: individual === "individual" ? "#fff" : "#140A2B",
+                  }}
+                >
                   Maximize your investments!
                 </p>
               </div>

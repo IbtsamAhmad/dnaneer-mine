@@ -11,6 +11,7 @@ interface MessageProps {
   loading?: boolean;
   disabled?: boolean | undefined;
   block?: boolean;
+  style?: React.CSSProperties;
 }
 
 
@@ -23,16 +24,20 @@ const AppButton = ({
   loading,
   disabled,
   block,
+  style
 }: MessageProps): JSX.Element => {
   return (
     <Button
       block={block}
       disabled={disabled}
       icon={icon}
-      className={className || "createApp-Button"}
+      className={
+        className ? `createApp-Button ${className}` : "createApp-Button"
+      }
       onClick={onClick}
       loading={loading}
       htmlType={htmlType || "button"}
+      style={style}
     >
       {children}
     </Button>

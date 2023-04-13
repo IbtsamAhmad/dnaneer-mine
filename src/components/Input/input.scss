@@ -3,15 +3,14 @@
     position: absolute;
     pointer-events: none;
     left: 50px;
-    top: 16px;
+    top: 17px;
     z-index: 100;
     transition: 0.2s ease all;
     font-size: 14px !important;
-
-    &::after {
-        content: '*';
-        color: #F63E50;
-    }
+    // &::after {
+    //     content: '*';
+    //     color: #F63E50;
+    // }
 }
 
 .as-placeholder {
@@ -45,14 +44,18 @@
         box-shadow: none !important;
     }
     .ant-input-prefix {
-        padding-left: 10px;
+        margin-left: 12px !important;
+        margin-right: 0px !important;
+        svg{
+            width: 14px !important;
+        }
     }
     .ant-input {
         background: #FFFFFF;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 14px;
         color: #171717;
-        padding-left: 14px !important;
+        padding-left: 12px !important;
         padding-top: 16px !important;
     }
     .ant-input-password-icon {

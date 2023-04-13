@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Checkbox, Form, Radio } from "antd";
+import { Form, Radio } from "antd";
 import { ReactComponent as PhoneIcon } from "assets/svgs/Phone.svg";
 import Input from "components/Input/Input";
 import Button from "components/Button/Button";
@@ -21,8 +21,8 @@ const options: { label: string; value: string | number }[] = [
     value: "individual",
   },
   {
-    label: "Institution",
-    value: "institution",
+    label: "Institutional",
+    value: "Institutional",
   },
 ];
 
@@ -97,7 +97,7 @@ const Phone = ({
         ))}
       </Radio.Group>
       <Form
-        name="signup-phone"
+        name="basic"
         initialValues={{
           type: "individual",
           phone: "",
@@ -133,7 +133,6 @@ const Phone = ({
                   prefix={<PhoneIcon />}
                   // disabled={disabled}
                   // onChange={onChange}
-
                   className={"appInput"}
                 />
               </Form.Item>{" "}
@@ -198,32 +197,26 @@ const Phone = ({
           </div>
         )}
         <Form.Item
-          valuePropName="checked"
-          name="term"
+          name="isApproved"
           rules={[
-            {
-              // type: "number",
-              required: true,
-              message: "Please accept terms & conditions",
-            },
+            { required: true, message: "Please accept terms & conditions" },
           ]}
         >
           <div className="terms-radio">
-            <Checkbox>
+            <Radio value={1}>
               <span className="terms">
-                I approve on <a href="#">terms & conditions</a> &{" "}
+                I agree to <a href="#"> Terms & Conditions</a>
+                <span>&</span>
                 <a href="#">Privacy Policy</a>
               </span>
-            </Checkbox>
+            </Radio>
           </div>
         </Form.Item>
-        <div style={{ marginTop: "40px" }}>
-          <Form.Item>
-            <Button htmlType="submit" block={true}>
-              Register
-            </Button>
-          </Form.Item>
-        </div>
+        <Form.Item>
+          <Button htmlType="submit" block={true} className="phone-submit">
+            Register
+          </Button>
+        </Form.Item>
         <a href="/login">
           <p className="form-bottom">Log in</p>
         </a>
