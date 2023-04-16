@@ -19,8 +19,10 @@ const Home = () => {
       <IndividualDrawer />
       <br />
       <br />
-      <br />
+      {/* <br />
       <Link to="/user-information">Personal Info</Link>
+      <br /> */}
+      <Link to="/dashboard">Dashboard</Link>
     </div>
   );
 };

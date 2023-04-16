@@ -10,6 +10,8 @@ interface RadioProps {
   onChange?: (e: RadioChangeEvent) => void;
   className?: string;
   defaultValue?: string | number;
+  height?:string;
+  padding?:string;
 }
 
 const AppInput = ({
@@ -17,18 +19,25 @@ const AppInput = ({
   className,
   defaultValue,
   options,
+  height,
+  padding
 }: RadioProps) => {
   return (
     <>
       <Radio.Group
         onChange={onChange}
         defaultValue={defaultValue}
+
         className="appRadioGroup"
       >
         {options.map((option, i) => (
           <Radio.Button
             key={i}
             value={option.value}
+            style={{
+              height,
+              padding,
+            }}
             className={className ? className : "appRadioBtn"}
           >
             {option.label}

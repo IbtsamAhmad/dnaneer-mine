@@ -1,0 +1,53 @@
+.greeting-container {
+    display: flex;
+    align-items: center;
+    .ant-avatar {
+            background: linear-gradient(white, white) padding-box, linear-gradient(to right, #2B48F4, #34A5FF) border-box;
+            border-radius: 50em;
+            border: 4px solid transparent;
+            width: 48px;
+            height: 48px;
+        }
+
+    .role {
+        border-radius: 38px;
+    background-color: #e7e7e7;
+   width: 97px;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+        span {
+            font-weight: 500;
+            font-size: 10px;
+            background: linear-gradient(270deg, #2B48F4 0%, #34A5FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+                
+        }
+    }
+
+    h1 {
+        font-weight: 700;
+        font-size: 20px;
+        letter-spacing: 0.02em;
+        color: #140A2B;
+        margin: 7px 0;
+        display: flex;
+        align-items: center;
+        svg{
+         margin-left: 10px;
+
+        }
+    }
+
+    p {
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: -0.045em;
+        color: #8A8595;
+        margin: 0px;
+    }
+
+}

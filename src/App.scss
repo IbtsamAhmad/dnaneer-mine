@@ -3,6 +3,7 @@
 @import "./styles/login.scss";
 @import "./styles/signup.scss";
 @import "./styles/drawers.scss";
+@import "./styles/dashboard.scss";
 @import "./styles/responsive.scss";
 @import "./components/RadioGroup/radioGroup.scss";
 @import './components/Input/input.scss';
@@ -22,6 +23,9 @@ body {
   // background-color: rgb(184, 184, 184);
   color: black;
 
+}
+p,a{
+  font-weight: 500;
 }
 
 .ant-radio-inner {
@@ -215,3 +219,13 @@ background: rgba(91, 44, 211, 0.1) !important;
 //    background-color: #006AB3;
 //    color: #fff !important;
 //  }
+
+.dashboard-page-header{
+  background: linear-gradient(270deg, #2B48F4 0%, #34A5FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-weight: 700;
+  font-size: 20px;
+}

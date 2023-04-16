@@ -1,0 +1,453 @@
+.layout-container {
+    background: #F8F8F8 !important;
+}
+
+
+.ant-layout {
+    background: #F8F8F8 !important;
+    padding-top: 20px;
+}
+
+.ant-layout-sider {
+    background: #FFFFFF !important;
+    min-width: 240px !important;
+    border: none;
+    border-radius: 20px;
+}
+
+.ant-menu {
+    background: #FFFFFF;
+    border-radius: 20px;
+    background: #fff;
+    padding: 88px 24px 100px 24px;
+    border: none !important;
+}
+
+.ant-menu-item {
+    margin: 25px 0 !important;
+
+    span {
+        font-weight: 700;
+        font-size: 14px;
+        color: #8A8595;
+    }
+}
+
+
+.ant-menu-item-selected {
+    border-radius: 6px !important;
+    position: relative;
+
+    &::before {
+        background: linear-gradient(270deg, #2B48F4 0%, #34A5FF 100%);
+        width: 4px !important;
+        height: 40px !important;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    svg {
+        path {
+            fill: #2B48F4 !important;
+        }
+    }
+
+    span {
+        background: linear-gradient(270deg, #2B48F4 0%, #34A5FF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+}
+
+
+.investment-row {
+    margin-top: 27px;
+    margin-bottom: 24px;
+}
+
+.investments-container{
+    background: #FFFFFF;
+        border-radius: 20px;
+        padding: 26px 24px;
+    .investment-header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h1{
+        background: linear-gradient(270deg, #2B48F4 0%, #34A5FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            font-weight: 700;
+            font-size: 20px;
+        }
+        .view-all-btn{
+        background: linear-gradient(270deg, #2B48F4 0%, #34A5FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 500;
+                font-size: 14px;
+                svg{
+                    margin-left: 5px;
+                }
+        }
+    }
+    .investment-list{
+        padding: 24px 26px;
+        margin-top: 10px;
+        border: 1px solid rgba(138, 133, 149, 0.2);
+            border-radius: 20px;
+     .investment-list-header{
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       .investment-list-one{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       }
+       .investment-list-two{
+        margin-left: 17px;
+    .id {
+        margin-bottom: 0px;
+        font-weight: 500;
+        font-size: 12px;
+        color: #8A8595;
+        margin-bottom: 3px;
+    }
+    h2 {
+        margin-bottom: 3px;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: -0.02em;
+        color: #140A2B;
+        sub {
+            color: #140A2B;
+            font-size: 12px;
+            font-weight: 500;
+        }
+    }
+    p {
+        font-weight: 500;
+        font-size: 12px;
+        color: #140A2B;
+        margin-bottom: 3px;
+    }
+
+
+       }
+       .active-btn{
+background: rgba(23, 184, 144, 0.1);
+    border-radius: 60px;
+    font-weight: 500;
+        font-size: 12px;
+        letter-spacing: -0.02em;
+        color: #17B890;
+        width: 88px;
+        height: 32px;
+        &:hover{
+            color: #17B890 !important;
+        }
+       }
+       .close-btn{
+background: rgba(138, 133, 149, 0.1);
+    border-radius: 60px;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: -0.02em;
+    color: #8A8595;
+    width: 88px;
+    height: 32px;
+
+    &:hover {
+        color: #8A8595 !important;
+    }
+       }
+
+     }
+                        .tags-container {
+                            margin-top: 14px;
+                            display: flex;
+                            align-items: center;
+                      
+            
+                            // .investment-tag {
+                            //     background: rgba(138, 133, 149, 0.1);
+                            //     border-radius: 60px;
+                            //     font-weight: 500;
+                            //     font-size: 12px;
+                            //     letter-spacing: -0.02em;
+                            //     color: #8A8595;
+                            // padding: 8px 10px;
+                            //     margin-bottom: 0px;
+                            //     margin-right: 10px;
+                            // }
+                        }
+    }
+}
+
+
+
+.activate-card {
+    background: #5B2CD3 !important;
+    border-radius: 20px;
+    padding: 18px !important;
+
+    .ant-card-body {
+        padding: 0px !important;
+    }
+
+    .activate-content {
+        display: flex;
+        align-items: center;
+
+        .ant-progress-inner {
+            width: 46px !important;
+            height: 46px !important;
+            margin-right: 15px;
+        }
+
+        .ant-progress-text {
+            font-weight: 500 !important;
+            font-size: 12px !important;
+            color: #FFFFFF !important;
+        }
+
+        h1 {
+            font-weight: 700;
+            font-size: 20px;
+            color: #FFFFFF;
+            margin-bottom: 0px;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 14px;
+            color: #C4C1CA;
+            margin-bottom: 0px;
+        }
+    }
+
+    .activate-btn {
+        background: #FFFFFF;
+        color: #5B2CD3;
+        font-weight: 500;
+        font-size: 12px;
+        height: 42px;
+        margin-top: 14px;
+        &:hover{
+            color: #5B2CD3 !important;
+        }
+    }
+}
+.wallet-card {
+    margin: 25px 0;
+    padding: 28px 26px;
+
+    .ant-card-body {
+        padding: 0px !important;
+    }
+
+    h1 {
+        background: linear-gradient(270deg, #2B48F4 0%, #34A5FF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .wallet-info-container {
+        background: linear-gradient(179.03deg, #5B2CD3 24.74%, #2B48F4 96.89%);
+        padding: 23px;
+        border-radius: 20px;
+
+        .wallet-user-info {
+            display: flex;
+            align-items: center;
+
+            .card-num {
+                font-weight: 500;
+                font-size: 14px;
+                letter-spacing: 0.5px;
+                color: #FFFFFF;
+                opacity: 0.75;
+                margin-bottom: 0px;
+                margin-left: 11px;
+            }
+
+            .card-name {
+                font-weight: 700;
+                font-size: 14px;
+                letter-spacing: 0.5px;
+                color: #FFFFFF;
+                opacity: 0.9;
+                margin-bottom: 0px;
+                margin-left: 11px;
+            }
+        }
+
+        .balance {
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: capitalize;
+            color: #FFFFFF;
+            opacity: 0.75;
+            margin-top: 24px;
+        }
+
+        h2 {
+            font-weight: 700;
+            font-size: 24px;
+            color: #FFFFFF;
+
+            sub {
+                font-size: 18px;
+            }
+        }
+
+        .wallet-btns {
+            display: flex;
+
+            .wallet-add-btn {
+                background: #FFFFFF;
+                box-shadow: 4px 11px 12px rgba(0, 0, 0, 0.1);
+                border-radius: 30px;
+                width: 207px;
+                height: 42px;
+                color: #5B2CD3;
+
+                &:hover {
+                    color: #5B2CD3 !important;
+                }
+            }
+
+            .wallet-transfer-btn {
+                border: 1px solid rgba(255, 255, 255, 0.45);
+                filter: drop-shadow(4px 11px 12px rgba(0, 0, 0, 0.1));
+                border-radius: 30px;
+                background: transparent;
+                font-weight: 700;
+                font-size: 12px;
+                color: #FFFFFF;
+                width: 84px;
+                height: 42px;
+                margin-left: 7px;
+
+            }
+        }
+    }
+
+}
+.advisor-card {
+    padding: 28px 26px !important;
+    margin-bottom: 50px;
+    .ant-card-body {
+        padding: 0px !important;
+    }
+
+    h1 {
+        background: linear-gradient(270deg, #2B48F4 0%, #34A5FF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    p {
+        font-weight: 500;
+        font-size: 12px;
+        color: #8A8595;
+        line-height: 20px;
+    }
+
+    .advisor-profile {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: baseline;
+
+        h2 {
+            font-weight: 700;
+            font-size: 20px;
+            text-align: center;
+            color: #140A2B;
+            margin-top: 10px;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 16px;
+            text-align: center;
+            color: #8A8595;
+            line-height: 20px;
+        }
+
+        .contact-icons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 138px;
+
+            .contact-icon {
+                border: 1px solid #C4C1CA;
+                border-radius: 60px;
+                padding: 11px 9px;
+                display: flex;
+
+                &:hover {
+                    background: #5B2CD3;
+
+                    svg {
+                        path {
+                            fill: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+    .dashboard-modal-content{
+        display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 44px 22px;
+                h1 {
+                        margin-top: 41px;
+                        margin-bottom: 13px;
+                        font-weight: 700;
+                        font-size: 16px;
+                        color: #140A2B;
+                    }
+                
+                    p {
+                        font-weight: 500;
+                        font-size: 12px;
+                        line-height: 14px;
+                        color: #8A8595;
+                        margin-bottom: 20px;
+                        width: 235px;
+                        text-align: center;
+                        line-height: 15px;
+                    }
+                
+                    .dashboard-ok-btn {
+                        border-radius: 113px;
+                        border-radius: 113px;
+                        height: 52px;
+                    }
+    }
+
+
