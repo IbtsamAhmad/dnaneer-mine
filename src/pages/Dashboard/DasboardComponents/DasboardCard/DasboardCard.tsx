@@ -64,7 +64,7 @@ const DasboardCard = ({
           <DasboardInfo />
           <h1>{modalHeading}</h1>
           <p>{modalInfo}</p>
-          <Button block className="dashboard-ok-btn">
+          <Button block className="dashboard-ok-btn" onClick={handleCancel}>
             Ok
           </Button>
         </div>

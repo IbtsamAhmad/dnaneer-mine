@@ -13,7 +13,7 @@ const OtpComponent = ({
   individual,
 }) => {
   const navigate = useNavigate();
-  const [time, setTime] = useState(5 * 60);
+  const [time, setTime] = useState(60);
   const [otp, setOtp] = useState("");
   //   console.log(otp);
 

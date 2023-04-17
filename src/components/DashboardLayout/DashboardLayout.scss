@@ -37,6 +37,7 @@
 .ant-menu-item-selected {
     border-radius: 6px !important;
     position: relative;
+    background: #F5F8FE !important;
 
     &::before {
         background: linear-gradient(270deg, #2B48F4 0%, #34A5FF 100%);
@@ -127,7 +128,7 @@
         font-size: 16px;
         letter-spacing: -0.02em;
         color: #140A2B;
-        sub {
+        span {
             color: #140A2B;
             font-size: 12px;
             font-weight: 500;
@@ -236,13 +237,14 @@ background: rgba(138, 133, 149, 0.1);
 
     .activate-btn {
         background: #FFFFFF;
-        color: #5B2CD3;
+        color: #5B2CD3 !important;
         font-weight: 500;
         font-size: 12px;
         height: 42px;
         margin-top: 14px;
         &:hover{
             color: #5B2CD3 !important;
+                background: #FFFFFF;
         }
     }
 }

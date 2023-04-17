@@ -7,7 +7,7 @@ import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
 import { timeConverter } from "utils/Helper";
 const Absher = ({ setAbsherCode, setShowPassword }) => {
   const navigate = useNavigate();
-  const [time, setTime] = useState(5 * 60);
+  const [time, setTime] = useState(60);
   const [otp, setOtp] = useState("");
   //   console.log(otp);
 

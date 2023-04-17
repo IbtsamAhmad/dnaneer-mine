@@ -11,41 +11,44 @@ import { ReactComponent as LogoutMenu } from "assets/svgs/LogoutMenu.svg";
 
 
 const Sidebar=()=>{
-    return <>
-    
-    <div className="logo" />
-          <Menu
-            mode="inline"
-            defaultSelectedKeys={["1"]}
-            items={[
-              {
-                key: "1",
-                icon: <DashboardMenu />,
-                label:<NavLink to="/dashboard" >Dashboard</NavLink>,
-              },
-              {
-                key: "2",
-                icon: <TransationMenu />,
-                label:<NavLink  to="/dashboard/opportunities" >Opportunities</NavLink>,
-              },
-              {
-                key: "3",
-                icon: <OppertunityMenu />,
-                label: "Transactions",
-              },
-              {
-                key: "4",
-                icon: <ProfileMenu />,
-                label: "My Profile",
-              },
-              {
-                key: "5",
-                icon: <LogoutMenu />,
-                label: "Log out",
-              },
-            ]}
-          />
-    </>
+    return (
+      <>
+        <div className="logo" />
+        <Menu
+          mode="inline"
+          defaultSelectedKeys={["1"]}
+          items={[
+            {
+              key: "1",
+              icon: <DashboardMenu />,
+              label: <NavLink to="/dashboard">Dashboard</NavLink>,
+            },
+            {
+              key: "2",
+              icon: <OppertunityMenu />,
+              label: (
+                <NavLink to="/dashboard/opportunities">Opportunities</NavLink>
+              ),
+            },
+            {
+              key: "3",
+              icon: <TransationMenu />,
+              label: "Transactions",
+            },
+            {
+              key: "4",
+              icon: <ProfileMenu />,
+              label: "My Profile",
+            },
+            {
+              key: "5",
+              icon: <LogoutMenu />,
+              label: "Log out",
+            },
+          ]}
+        />
+      </>
+    );
 }
 
 export default Sidebar

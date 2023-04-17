@@ -26,7 +26,9 @@ const SingUpComponent = ({ individual, setIndividual }) => {
   return (
     <div className="signUp-container">
       <div className="close-icon">
-        <Close />
+        <a href="https://staging.dnaneer.com/">
+          <Close />
+        </a>
       </div>
 
       <div className="signUp-form-container">

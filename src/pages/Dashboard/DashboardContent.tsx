@@ -3,12 +3,13 @@ import DasboardCard from "./DasboardComponents/DasboardCard/DasboardCard";
 import Greeting from "pages/Dashboard/DasboardComponents/Greeting/Greeting";
 import Card from "components/Card/Card";
 import Button from "components/Button/Button";
+import IndividualDrawer from "../../components/IndividualDrawer/IndividualDrawer";
 import { ReactComponent as Amount } from "assets/svgs/Amount.svg";
 import { ReactComponent as InvestIcon } from "assets/svgs/InvestIcon.svg";
 import { ReactComponent as RoiIcon } from "assets/svgs/RoiIcon.svg";
 import { ReactComponent as Profit } from "assets/svgs/Profit.svg";
 import { ReactComponent as Email } from "assets/svgs/Email.svg";
-import { ReactComponent as App } from "assets/svgs/App.svg";
+import { ReactComponent as Number } from "assets/svgs/Number.svg";
 import { ReactComponent as Call } from "assets/svgs/Call.svg";
 import { ReactComponent as User } from "assets/svgs/User.svg";
 import { ReactComponent as BlueArrow } from "assets/svgs/BlueArrow.svg";
@@ -139,7 +140,7 @@ const DashboardConent = () => {
         </Col>
       </Row>
       <Row gutter={32}>
-        <Col lg={16}>
+        <Col lg={17}>
           <div className="investments-container">
             <div className="investment-header">
               <h1>My Investments</h1>
@@ -157,7 +158,7 @@ const DashboardConent = () => {
                         <div className="investment-list-two">
                           <p className="id">{investment.id}</p>
                           <h2>
-                            {investment.price} <sub>SAR Invested</sub>
+                            {investment.price} <span>SAR Invested</span>
                           </h2>
                           <p className="company">{investment.company}</p>
                         </div>
@@ -188,7 +189,7 @@ const DashboardConent = () => {
             </div>
           </div>
         </Col>
-        <Col lg={8}>
+        <Col lg={7}>
           <Card className="activate-card">
             <div className="activate-content">
               <Progress
@@ -205,9 +206,10 @@ const DashboardConent = () => {
                 <p>Complete the KYC to start investing today.</p>
               </div>
             </div>
-            <Button className="activate-btn" block>
+            {/* <Button className="activate-btn" block>
               Activate Now
-            </Button>
+            </Button> */}
+            <IndividualDrawer/>
           </Card>
           <Card className="wallet-card">
             <h1>My Wallet</h1>
@@ -243,9 +245,19 @@ const DashboardConent = () => {
                 <div className="contact-icon">
                   <Email />
                 </div>
-                <div className="contact-icon">
-                  {/* <img src="assets/images/whatsapp.png" alt=""/> */}
-                  <Email />
+                <div
+                  className="contact-icon"
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    padding: "8px 9px",
+                  }}
+                >
+                  <img
+                    src="assets/images/whatsapp.png"
+                    alt=""
+                    style={{ width: "20px" }}
+                  />
                 </div>
                 <div className="contact-icon">
                   <Call />

@@ -11,8 +11,14 @@ const App = () => {
   };
   return (
     <>
-      <Button type="primary" onClick={showDrawer}>
-        Complete your Profile Individual
+      <Button
+        type="primary"
+        onClick={showDrawer}
+        className="activate-btn"
+        block
+        style={{ borderRadius: "56px" }}
+      >
+        Activate Now
       </Button>
       <div className="institute-drawer-container">
         <Drawer
