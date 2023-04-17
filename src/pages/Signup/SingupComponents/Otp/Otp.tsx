@@ -38,7 +38,7 @@ const OtpComponent = ({
         setShowOtp(false);
         setShowPassword(true);
       } else {
-        navigate("/");
+        navigate("/dashboard");
       }
     } else {
       message.error("Enter OTP");

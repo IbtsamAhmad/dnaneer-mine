@@ -29,7 +29,7 @@ const Absher = ({ setAbsherCode, setShowPassword }) => {
   };
   const nextHandler = () => {
     if (otp.length >= 5) {
-      navigate("/");
+      navigate("/dashboard");
     } else {
       message.error("Enter OTP");
     }

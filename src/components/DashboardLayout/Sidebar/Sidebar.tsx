@@ -43,7 +43,7 @@ const Sidebar=()=>{
             {
               key: "5",
               icon: <LogoutMenu />,
-              label: "Log out",
+              label: <NavLink to="https://staging.dnaneer.com/">Log out</NavLink>,
             },
           ]}
         />
