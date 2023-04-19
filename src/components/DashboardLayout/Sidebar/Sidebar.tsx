@@ -33,25 +33,22 @@ const Sidebar=()=>{
             {
               key: "3",
               icon: <TransationMenu />,
-              label: "Transactions",
+              label: "",
+              label: (
+                <NavLink to="/dashboard/transactions">Transactions</NavLink>
+              ),
             },
 
             {
-              type: 'divider',
+              type: "divider",
             },
             {
               key: "4",
-              label: (
-               <Divider/>
-              ),
-            },
-            {
-              key: "5",
               icon: <ProfileMenu />,
               label: "My Profile",
             },
             {
-              key: "6",
+              key: "5",
               icon: <LogoutMenu />,
               label: (
                 <NavLink to="https://staging.dnaneer.com/">Log out</NavLink>

@@ -6,6 +6,7 @@ const Login = lazy(() => import("pages/Login"));
 const Signup = lazy(() => import("pages/Signup"));
 const UserInformation = lazy(() => import("pages/UserInformation"));
 const Dashboard = lazy(() => import("pages/Dashboard"));
+const Transactions = lazy(() => import("pages/Transactions"));
 const Home = lazy(() => import("pages/Home"));
 import DashboardLayout from 'components/DashboardLayout/DashboardLayout'
 const Router = () => {
@@ -25,7 +26,7 @@ const Router = () => {
     },
     {
       path: "/dashboard",
-      element: <Dashboard/>,
+      element: <Dashboard />,
       // children:[
       //   // {
       //   //   path: "",
@@ -41,6 +42,10 @@ const Router = () => {
     {
       path: "/dashboard/opportunities",
       element: <Opportunities />,
+    },
+    {
+      path: "/dashboard/transactions",
+      element: <Transactions />,
     },
   ]);
 

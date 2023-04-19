@@ -1,0 +1,21 @@
+.transactions-container {
+    .banner {
+        border-radius: 20px;
+        margin-bottom: 2rem;
+        background: linear-gradient(270deg, #34A5FF 0%, #5B2CD3 100%);
+        padding: 3.3rem 2.3rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h1 {
+            font-size: 24px;
+            color: #FFFFFF;
+        }
+        h4 {
+            font-weight: 400;
+            font-size: 16px;
+            color: #FFFFFF;
+            opacity: 0.75;
+        }
+    }
+}

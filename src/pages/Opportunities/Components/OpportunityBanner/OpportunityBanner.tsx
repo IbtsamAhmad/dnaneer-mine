@@ -1,6 +1,6 @@
 import { ReactComponent as OpportunityIcon } from "assets/svgs/OpportunityIcon.svg";
 
-const OpportunityBanner = () => {
+const OpportunityBanner = ( ) => {
   return (
     <div
       style={{
