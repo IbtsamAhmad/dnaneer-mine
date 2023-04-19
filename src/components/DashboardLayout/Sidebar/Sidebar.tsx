@@ -33,7 +33,6 @@ const Sidebar=()=>{
             {
               key: "3",
               icon: <TransationMenu />,
-              label: "",
               label: (
                 <NavLink to="/dashboard/transactions">Transactions</NavLink>
               ),

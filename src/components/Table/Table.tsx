@@ -1,29 +1,15 @@
-// import React from 'react'
-// import "./Table.scss"
+import React from 'react'
+import { Table } from "antd"
+import "./Table.scss"
 
-// interface TableProps = {
-//   style?: React.CSSProperties;
-//   columns: any;
-//   data:any
-// }
-
-// const AppTable = ({
-//   children,
-//   className,
-//   style
-//   data,
-//   columns
-// }: MessageProps): JSX.Element => {
-//   return <Table columns={columns} dataSource={data} />;
-// }
-
-// export default AppTable;
-
-
-const Table = () => {
-  return (
-    <div>Table</div>
-  )
+interface TableProps {
+  style?: React.CSSProperties;
+  columns: any;
+  dataSource:any;
 }
 
-export default Table
+const AppTable = ({ dataSource, columns }: TableProps): JSX.Element => {
+  return <Table columns={columns} dataSource={dataSource} bordered={false} />;
+};
+
+export default AppTable;

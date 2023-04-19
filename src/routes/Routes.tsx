@@ -8,7 +8,8 @@ const UserInformation = lazy(() => import("pages/UserInformation"));
 const Dashboard = lazy(() => import("pages/Dashboard"));
 const Transactions = lazy(() => import("pages/Transactions"));
 const Home = lazy(() => import("pages/Home"));
-import DashboardLayout from 'components/DashboardLayout/DashboardLayout'
+const Opportunity = lazy(() => import("pages/Opportunity/Opportunity"));
+
 const Router = () => {
   const router = createBrowserRouter([
     {
@@ -27,16 +28,6 @@ const Router = () => {
     {
       path: "/dashboard",
       element: <Dashboard />,
-      // children:[
-      //   // {
-      //   //   path: "",
-      //   //   element: <div>hello</div>,
-      //   // },
-      //   {
-      //     path: "opportunities",
-      //     element:<DashboardLayout ><Opportunities /></DashboardLayout> ,
-      //   },
-      // ]
     },
 
     {
@@ -46,6 +37,10 @@ const Router = () => {
     {
       path: "/dashboard/transactions",
       element: <Transactions />,
+    },
+    {
+      path: "/dashboard/opportunities/:id",
+      element: <Opportunity />,
     },
   ]);
 
@@ -60,7 +55,7 @@ const Router = () => {
             alignItems: "center",
           }}
         >
-          <Spin size="large"/>
+          <Spin size="large" />
         </div>
       }
     >

@@ -8,11 +8,11 @@ const OpportuniesList = () => {
     <div style={{ padding: "0 29px" }}>
       {opportunitesList.map((listItem, index) => {
         if (index === opportunitesList.length - 1) {
-          return <OpportunitiesCard key={listItem} />;
+          return <OpportunitiesCard id={index} key={listItem} />;
         }
         return (
           <>
-            <OpportunitiesCard key={listItem} />
+            <OpportunitiesCard id={index} key={listItem} />
             <br />
           </>
         );
