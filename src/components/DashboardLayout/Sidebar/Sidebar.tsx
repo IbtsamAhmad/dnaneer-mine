@@ -1,4 +1,4 @@
-import {  Menu } from "antd";
+import {  Menu , Divider} from "antd";
 import { NavLink } from "react-router-dom";
 import { ReactComponent as DashboardMenu } from "assets/svgs/DashboardMenu.svg";
 import { ReactComponent as TransationMenu } from "assets/svgs/TransationMenu.svg";
@@ -35,15 +35,27 @@ const Sidebar=()=>{
               icon: <TransationMenu />,
               label: "Transactions",
             },
+
+            {
+              type: 'divider',
+            },
             {
               key: "4",
+              label: (
+               <Divider/>
+              ),
+            },
+            {
+              key: "5",
               icon: <ProfileMenu />,
               label: "My Profile",
             },
             {
-              key: "5",
+              key: "6",
               icon: <LogoutMenu />,
-              label: <NavLink to="https://staging.dnaneer.com/">Log out</NavLink>,
+              label: (
+                <NavLink to="https://staging.dnaneer.com/">Log out</NavLink>
+              ),
             },
           ]}
         />

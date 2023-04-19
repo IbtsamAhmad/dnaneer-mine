@@ -7,6 +7,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import App from "./App";
 import {appTheme} from 'config/theme'
 import {ConfigProvider } from "antd";
+import { RecoilRoot } from "recoil";
 import "antd/dist/reset.css";
 
 
@@ -40,11 +41,13 @@ const loadingMarkup = (
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   
     <React.StrictMode>
+      <RecoilRoot>
       <ConfigProvider
         theme={appTheme}
       >
         <App />
       </ConfigProvider>
+      </RecoilRoot>
     </React.StrictMode>
 
 );

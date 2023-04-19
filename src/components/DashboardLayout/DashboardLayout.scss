@@ -24,8 +24,11 @@
 }
 
 .ant-menu-item {
-    margin: 25px 0 !important;
-
+    margin: 20px 0 !important;
+        border-radius: 6px !important;
+        .ant-divider{
+         margin: 0px !important;
+        }
     span {
         font-weight: 700;
         font-size: 14px;

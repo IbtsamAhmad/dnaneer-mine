@@ -1,3 +1,4 @@
+$primary-color: #5b2cd3;
 .opportunites-wrapper {
   padding-bottom: 50px;
   .opportunites-radio {
@@ -12,12 +13,12 @@
       border-radius: 43px;
       font-weight: 600;
       font-size: 12px;
-    //   display: flex;
-    //   align-items: center;
-    //   justify-content: center;
+      //   display: flex;
+      //   align-items: center;
+      //   justify-content: center;
       text-align: center;
       background: transparent;
-      color: #4E4760;
+      color: #4e4760;
       margin-right: 10px;
       &::before {
         display: none;
@@ -38,7 +39,7 @@
       box-shadow: none;
 
       &:hover {
-        border-color: #5b2cd3;
+        border-color: $primary-color;
         color: #ffffff;
       }
     }
@@ -68,6 +69,24 @@
     .ant-progress-bg {
       height: 10px !important;
       // width: 160%!important;
+    }
+  }
+
+  .loading-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    &:hover{
+      cursor: pointer;
+    }
+    span {
+      &:nth-child(2) {
+        margin-left: 8px;
+        color: $primary-color;
+        font-size: 12px;
+        font-weight: 400;
+      }
     }
   }
 }

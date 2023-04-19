@@ -118,16 +118,14 @@ const Phone = ({
                     required: true,
                     message: "Please enter your mobile number",
                   },
+                  {
+                    pattern: /^9665\d{8}$/,
+                    message: "Please input a valid Saudi phone number!",
+                  },
                 ]}
               >
-                {/* <Input
-              label="Phone number"
-              placeholder="Phone number"
-              prefix={<PhoneIcon />}
-            /> */}
-
                 <Input
-                  // type={type}
+                  type="number"
                   label="Phone number"
                   placeholder="Phone number"
                   prefix={<PhoneIcon />}
