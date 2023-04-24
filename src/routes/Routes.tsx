@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { Spin } from "antd";
 import Opportunities from "pages/Opportunities/Opportunities";
+import Profile from "pages/Profile";
 const Login = lazy(() => import("pages/Login"));
 const Signup = lazy(() => import("pages/Signup"));
 const UserInformation = lazy(() => import("pages/UserInformation"));
@@ -37,6 +38,10 @@ const Router = () => {
     {
       path: "/dashboard/transactions",
       element: <Transactions />,
+    },
+    {
+      path: "/dashboard/profile",
+      element: <Profile />,
     },
     {
       path: "/dashboard/opportunities/:id",

@@ -1,14 +1,8 @@
-//import { Table } from "antd";
-// import type { ColumnsType } from "antd/es/table";
 import { ReactComponent as TransactionsIcon } from "assets/svgs/TransactionsIcon.svg";
 import DashboardLayout from "components/DashboardLayout/DashboardLayout";
 import Table from "components/Table/Table";
 import "./transactions.scss";
 
-
-// interface MyData {
-
-// }
 
 const Transactions = () => {
 interface MyData {

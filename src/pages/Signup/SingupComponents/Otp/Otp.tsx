@@ -5,6 +5,7 @@ import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
 import { message } from "antd";
 import { useNavigate } from "react-router-dom";
 import { timeConverter } from "utils/Helper";
+import { verifyOTP } from "services/Login";
 
 const OtpComponent = ({
   setShowPassword,
@@ -13,8 +14,10 @@ const OtpComponent = ({
   individual,
 }) => {
   const navigate = useNavigate();
-  const [time, setTime] = useState(60);
-  const [otp, setOtp] = useState("");
+  const [time, setTime] = useState<number>(60);
+  const [otp, setOtp] = useState<string>("");
+  const [loader, setLoader] = useState<boolean>(false);
+
   //   console.log(otp);
 
   useEffect(() => {
@@ -32,11 +35,15 @@ const OtpComponent = ({
     setShowOtp(false);
     setShowPhone(true);
   };
-  const nextHandler = () => {
+  const nextHandler = async () => {
     if (otp.length >= 5) {
       if (individual === "individual") {
-        setShowOtp(false);
-        setShowPassword(true);
+        // setShowOtp(false);
+        // setShowPassword(true);
+
+        verifyOTP({ user_id: 5, otp: otp })
+          .then((res) => console.log(res))
+          .catch((err) => console.log(err));
       } else {
         navigate("/dashboard");
       }
@@ -47,7 +54,7 @@ const OtpComponent = ({
   return (
     <div className="signUp-form-container">
       <Button
-        style={{padding: "none"}}
+        style={{ padding: "none" }}
         className="singUp-back-btn"
         icon={<BackArrow />}
         onClick={backHandler}
@@ -65,7 +72,12 @@ const OtpComponent = ({
         {time !== 0 ? timeConverter(time) : "OTP expired"}{" "}
         {time ? <span>left</span> : null}
       </p>
-      <Button block={true} onClick={nextHandler} className="otp-next-btn">
+      <Button
+        loading={loader}
+        block={true}
+        onClick={nextHandler}
+        className="otp-next-btn"
+      >
         Next
       </Button>
       <p className="form-bottom">Resend OTP</p>

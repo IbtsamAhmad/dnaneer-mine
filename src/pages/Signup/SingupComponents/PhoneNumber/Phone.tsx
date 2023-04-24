@@ -1,18 +1,14 @@
 import { useState } from "react";
-import { Form, Radio } from "antd";
+import { Form, Radio, message } from "antd";
 import { ReactComponent as PhoneIcon } from "assets/svgs/Phone.svg";
 import Input from "components/Input/Input";
 import Button from "components/Button/Button";
-// import { ReactComponent as FormUserIcon } from "assets/svgs/form-user-icon.svg";
 import { ReactComponent as FormLockIcon } from "assets/svgs/form-lock-icon.svg";
-// import { ReactComponent as Date } from "assets/svgs/Date.svg";
 import { ReactComponent as Mail } from "assets/svgs/Mail.svg";
 import { ReactComponent as Tick } from "assets/svgs/Tick.svg";
 import { ReactComponent as Cross } from "assets/svgs/Cross.svg";
-// import DatePicker from "components/DatePicker/DatePicker";
-// import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
+import { register } from "services/Login";
 
-// import RadioGroup from "components/RadioGroup/RadioGroup";
 import type { RadioChangeEvent } from "antd";
 
 const options: { label: string; value: string | number }[] = [
@@ -33,6 +29,7 @@ const Phone = ({
   setShowPassword,
   individual,
 }) => {
+  const [loader, setLoader] = useState<boolean>(false);
   const [lengthVal, setLengthVal] = useState(false);
   const [oneNumVal, setOneNumVal] = useState(false);
   const [oneUpCaseVal, setOneUpCaseVal] = useState(false);
@@ -61,10 +58,44 @@ const Phone = ({
     const symbolTest = symbolRegex.test(e.target.value);
     symbolTest ? setSpecialVal(true) : setSpecialVal(false);
   };
-  const onFinish = (values) => {
+
+  const registerUser = async (data) => {
+    setLoader(true);
+    try {
+      const response = await register(data);
+      if (response) {
+       console.log(response);
+       setShowPhone(false);
+       setShowOtp(true);
+      }
+
+    } catch (err) {
+      console.log(err);
+      message.error(err.response.data.message)
+    } finally {
+      setLoader(false);
+    }
+  };
+
+  const onFinish = async (values) => {
     console.log("Success:", values);
-    setShowPhone(false);
-    setShowOtp(true);
+    let data = null;
+
+    if (individual === "individual") {
+      data = {
+        user_type: 1,
+        phone_number: values.phone,
+      };
+    } else {
+      data = {
+        user_type: 2,
+        email: values.email,
+        password: values.passwor,
+      };
+    }
+    return registerUser(data);
+    // setShowPhone(false);
+    // setShowOtp(true);
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
@@ -211,7 +242,12 @@ const Phone = ({
           </div>
         </Form.Item>
         <Form.Item>
-          <Button htmlType="submit" block={true} className="phone-submit">
+          <Button
+            loading={loader}
+            htmlType="submit"
+            block={true}
+            className="phone-submit"
+          >
             Register
           </Button>
         </Form.Item>

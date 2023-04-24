@@ -44,7 +44,9 @@ const Sidebar=()=>{
             {
               key: "4",
               icon: <ProfileMenu />,
-              label: "My Profile",
+              label: (
+                <NavLink to="/dashboard/profile">My Profile</NavLink>
+              ),
             },
             {
               key: "5",
