@@ -64,14 +64,13 @@ const Phone = ({
     try {
       const response = await register(data);
       if (response) {
-       console.log(response);
-       setShowPhone(false);
-       setShowOtp(true);
+        console.log(response);
+        setShowPhone(false);
+        setShowOtp(true);
       }
-
     } catch (err) {
       console.log(err);
-      message.error(err.response.data.message)
+      message.error(err.response.data.message);
     } finally {
       setLoader(false);
     }
@@ -150,7 +149,7 @@ const Phone = ({
                     message: "Please enter your mobile number",
                   },
                   {
-                    pattern: /^9665\d{8}$/,
+                    pattern: /^966\d{9}$/,
                     message: "Please input a valid Saudi phone number!",
                   },
                 ]}
@@ -158,7 +157,7 @@ const Phone = ({
                 <Input
                   type="number"
                   label="Phone number"
-                  placeholder="Phone number"
+                  placeholder="966123456789"
                   prefix={<PhoneIcon />}
                   // disabled={disabled}
                   // onChange={onChange}

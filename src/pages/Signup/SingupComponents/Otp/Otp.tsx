@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Otp from "components/OTP/Otp";
 import Button from "components/Button/Button";
 import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
-import { message } from "antd";
+import { message, notification } from "antd";
 import { useNavigate } from "react-router-dom";
 import { timeConverter } from "utils/Helper";
 import { verifyOTP } from "services/Login";
@@ -13,6 +13,7 @@ const OtpComponent = ({
   setShowOtp,
   individual,
 }) => {
+  const [api, contextHolder] = notification.useNotification();
   const navigate = useNavigate();
   const [time, setTime] = useState<number>(60);
   const [otp, setOtp] = useState<string>("");
@@ -31,28 +32,44 @@ const OtpComponent = ({
     return () => clearInterval(timer);
   }, [time]);
 
+  const notificationHandler = (type, notifyData) => {
+    api[type]({
+      message: notifyData.message,
+      description: notifyData.description,
+    });
+  };
+
   const backHandler = () => {
     setShowOtp(false);
     setShowPhone(true);
   };
   const nextHandler = async () => {
-    if (otp.length >= 5) {
-      if (individual === "individual") {
-        // setShowOtp(false);
-        // setShowPassword(true);
-
-        verifyOTP({ user_id: 5, otp: otp })
-          .then((res) => console.log(res))
-          .catch((err) => console.log(err));
-      } else {
-        navigate("/dashboard");
-      }
+    if (otp.length >= 6) {
+      setLoader(true);
+      verifyOTP({ user_id: 5, otp: otp })
+        .then((res) => {
+          // console.log("res", res);
+          if (individual === "individual") {
+            setShowOtp(false);
+            setShowPassword(true);
+          } else {
+            navigate("/dashboard");
+          }
+        })
+        .catch((err) => {
+          // console.log("err", err);
+          message.error(err.response.data.message);
+        })
+        .finally(() => {
+          setLoader(false);
+        });
     } else {
       message.error("Enter OTP");
     }
   };
   return (
     <div className="signUp-form-container">
+      {/* {contextHolder} */}
       <Button
         style={{ padding: "none" }}
         className="singUp-back-btn"
