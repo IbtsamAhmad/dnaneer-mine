@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Form, Radio, message } from "antd";
+import { Form, Radio, message, Space, Select } from "antd";
 import { ReactComponent as PhoneIcon } from "assets/svgs/Phone.svg";
-import Input from "components/Input/Input";
+import AppInput from "components/Input/Input";
 import Button from "components/Button/Button";
 import { ReactComponent as FormLockIcon } from "assets/svgs/form-lock-icon.svg";
 import { ReactComponent as Mail } from "assets/svgs/Mail.svg";
@@ -10,6 +10,8 @@ import { ReactComponent as Cross } from "assets/svgs/Cross.svg";
 import { register } from "services/Login";
 
 import type { RadioChangeEvent } from "antd";
+
+const { Option } = Select;
 
 const options: { label: string; value: string | number }[] = [
   {
@@ -29,6 +31,7 @@ const Phone = ({
   setShowPassword,
   individual,
 }) => {
+  const [phoneNum,setPhoneNum] = useState('')
   const [loader, setLoader] = useState<boolean>(false);
   const [lengthVal, setLengthVal] = useState(false);
   const [oneNumVal, setOneNumVal] = useState(false);
@@ -59,21 +62,36 @@ const Phone = ({
     symbolTest ? setSpecialVal(true) : setSpecialVal(false);
   };
 
+  const onChangePhone = (e) =>{
+  //  console.log("value",e.target.value);
+  //  console.log(e.target.value.length)
+   if (e.target.value.length < 9) {
+       setPhoneNum(e.target.value);
+   }
+
+  }
+
   const registerUser = async (data) => {
-    setLoader(true);
-    try {
-      const response = await register(data);
-      if (response) {
-        console.log(response);
-        setShowPhone(false);
-        setShowOtp(true);
-      }
-    } catch (err) {
-      console.log(err);
-      message.error(err.response.data.message);
-    } finally {
-      setLoader(false);
-    }
+       setShowPhone(false);
+       setShowOtp(true);
+    //    if (lengthVal && oneNumVal && oneUpCaseVal && oneLowCaseVal && specialVal) {
+     
+    // }
+
+    // setLoader(true);
+    // try {
+    //   const response = await register(data);
+    //   if (response) {
+    //     message.success(response.data.message);
+    //     console.log(response);
+
+    //   }
+    // } catch (err) {
+    //   console.log(err);
+    //   message.error(err.response.data.message);
+    // } finally {
+    //   setLoader(false);
+    // }
   };
 
   const onFinish = async (values) => {
@@ -149,20 +167,39 @@ const Phone = ({
                     message: "Please enter your mobile number",
                   },
                   {
-                    pattern: /^966\d{9}$/,
-                    message: "Please input a valid Saudi phone number!",
+                    max: 9,
+                    message: "Value should be less than 10 character",
                   },
+                  // {
+                  //   pattern: /^966\d{9}$/,
+                  //   message: "Please input a valid Saudi phone number!",
+                  // },
                 ]}
               >
-                <Input
-                  type="number"
-                  label="Phone number"
-                  placeholder="966123456789"
-                  prefix={<PhoneIcon />}
-                  // disabled={disabled}
-                  // onChange={onChange}
-                  className={"appInput"}
-                />
+                <Space.Compact>
+                  <Select
+                    defaultValue="1"
+                  >
+                    <Option value="1">
+                      <img
+                        style={{ width: "15px" }}
+                        src="https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/SA.svg"
+                        alt="flag"
+                      />{" "}
+                      +966
+                    </Option>
+                  </Select>
+                  <AppInput
+                    type="number"
+                    label="Phone number"
+                    placeholder="XXXXXXXX"
+                    value={phoneNum}
+                    prefix={<PhoneIcon />}
+                    // disabled={disabled}
+                    onChange={onChangePhone}
+                    className={"appInput"}
+                  />
+                </Space.Compact>
               </Form.Item>{" "}
             </div>
           </>
@@ -178,7 +215,7 @@ const Phone = ({
                 },
               ]}
             >
-              <Input label="Email" placeholder="Email" prefix={<Mail />} />
+              <AppInput label="Email" placeholder="Email" prefix={<Mail />} />
             </Form.Item>
 
             <Form.Item
@@ -191,7 +228,7 @@ const Phone = ({
                 },
               ]}
             >
-              <Input
+              <AppInput
                 iconRender={true}
                 label="Create Password"
                 placeholder="Create Password"

@@ -27,7 +27,10 @@ const Password = ({
 
   const onFinish = (values) => {
     console.log("Success:", values);
-    nextHandler();
+    if (lengthVal && oneNumVal && oneUpCaseVal && oneLowCaseVal && specialVal) {
+          nextHandler();
+    }
+
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);

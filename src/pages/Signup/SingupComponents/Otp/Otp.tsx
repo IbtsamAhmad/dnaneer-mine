@@ -12,6 +12,7 @@ const OtpComponent = ({
   setShowPhone,
   setShowOtp,
   individual,
+  onFinish
 }) => {
   const [api, contextHolder] = notification.useNotification();
   const navigate = useNavigate();
@@ -45,24 +46,28 @@ const OtpComponent = ({
   };
   const nextHandler = async () => {
     if (otp.length >= 6) {
-      setLoader(true);
-      verifyOTP({ user_id: 5, otp: otp })
-        .then((res) => {
-          // console.log("res", res);
-          if (individual === "individual") {
-            setShowOtp(false);
-            setShowPassword(true);
-          } else {
-            navigate("/dashboard");
-          }
-        })
-        .catch((err) => {
-          // console.log("err", err);
-          message.error(err.response.data.message);
-        })
-        .finally(() => {
-          setLoader(false);
-        });
+      if (otp === "123456") {
+      setShowOtp(false);
+      setShowPassword(true);
+      // navigate("/dashboard");
+      }
+      // setLoader(true);
+      // verifyOTP({ user_id: 5, otp: otp })
+      //   .then((res) => {
+      //     // console.log("res", res);
+      //     if (individual === "individual") {
+
+      //     } else {
+      //       navigate("/dashboard");
+      //     }
+      //   })
+      //   .catch((err) => {
+      //     // console.log("err", err);
+      //     message.error(err.response.data.message);
+      //   })
+      //   .finally(() => {
+      //     setLoader(false);
+      //   });
     } else {
       message.error("Enter OTP");
     }
