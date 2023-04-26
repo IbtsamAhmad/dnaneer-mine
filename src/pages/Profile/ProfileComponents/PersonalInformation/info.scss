@@ -1,0 +1,30 @@
+.info-panel-container {
+    .ant-row {
+        margin-top: 42px;
+    }
+    h1 {
+        font-weight: 700;
+        font-size: 16px;
+        color: #140A2B;
+    }
+
+    p {
+        font-weight: 500;
+        font-size: 16px;
+        color: #8A8595;
+        margin-bottom: 10px;
+    }
+}
+.info-form-container{
+    .infoInput{
+  border: 1px solid rgba(138, 133, 149, 0.1);
+    background: #fff;
+    border-radius: 12px;
+    height: 52px;
+    width: 210px;
+    border-radius: 12px;
+    }
+   .ant-row{
+   margin-top: 10px;
+   }
+}
