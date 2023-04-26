@@ -12,7 +12,6 @@ const OtpComponent = ({
   setShowPhone,
   setShowOtp,
   individual,
-  onFinish
 }) => {
   const [api, contextHolder] = notification.useNotification();
   const navigate = useNavigate();
@@ -47,9 +46,12 @@ const OtpComponent = ({
   const nextHandler = async () => {
     if (otp.length >= 6) {
       if (otp === "123456") {
+        if (individual === "individual") {
       setShowOtp(false);
       setShowPassword(true);
-      // navigate("/dashboard");
+        }
+        else
+ navigate("/dashboard");
       }
       // setLoader(true);
       // verifyOTP({ user_id: 5, otp: otp })
