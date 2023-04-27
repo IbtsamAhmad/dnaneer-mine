@@ -19,7 +19,23 @@ const PersonalInformation = ({ editInfo }) => {
           defaultActiveKey={["1"]}
           expandIcon={({ isActive }) => <Expand />}
         >
-          <Panel header="Personal Information" key="1">
+          <Panel
+            header={
+              <span
+                style={{
+                  display: "inline-flex",
+                  background: "linear-gradient(270deg, #2b48f4, #34a5ff)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  // textFillColor: "transparent",
+                }}
+              >
+                Personal Information
+              </span>
+            }
+            key="1"
+          >
             {editInfo ? (
               <>
                 <Form
@@ -219,7 +235,23 @@ const PersonalInformation = ({ editInfo }) => {
         </Collapse>
 
         <Collapse expandIcon={({ isActive }) => <Expand />}>
-          <Panel header="Financial Information" key="1">
+          <Panel
+            header={
+              <span
+                style={{
+                  display: "inline-flex",
+                  background: "linear-gradient(270deg, #2b48f4, #34a5ff)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  // textFillColor: "transparent",
+                }}
+              >
+                Financial Information
+              </span>
+            }
+            key="1"
+          >
             Financial Information
           </Panel>
         </Collapse>
@@ -227,7 +259,23 @@ const PersonalInformation = ({ editInfo }) => {
           defaultActiveKey={["1"]}
           expandIcon={({ isActive }) => <Expand />}
         >
-          <Panel header="Banking Information" key="1">
+          <Panel
+            header={
+              <span
+                style={{
+                  display: "inline-flex",
+                  background: "linear-gradient(270deg, #2b48f4, #34a5ff)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                  // textFillColor: "transparent",
+                }}
+              >
+                Banking Information
+              </span>
+            }
+            key="1"
+          >
             <Row>
               <Col lg={5} sm={12}>
                 <p>Bank name</p>
