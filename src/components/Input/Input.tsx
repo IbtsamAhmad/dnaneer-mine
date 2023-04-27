@@ -16,6 +16,8 @@ interface MessageProps {
   placeholder?: string;
   label: string;
   type?: string;
+  maxLength?:number;
+  max?:number;
 }
 
 const AppInput = ({
@@ -24,12 +26,14 @@ const AppInput = ({
   icon,
   disabled,
   block,
+  maxLength,
   value,
   iconRender,
   prefix,
   placeholder,
   label,
   type,
+  max
 }: MessageProps) => {
   const [focus, setFocus] = useState(false);
   if (!placeholder) placeholder = label;
@@ -59,6 +63,8 @@ const AppInput = ({
         <Input
           type={type}
           prefix={prefix}
+          maxLength={maxLength}
+          max={max}
           //   placeholder={placeholder}
           //  autoFocus={true}
           disabled={disabled}

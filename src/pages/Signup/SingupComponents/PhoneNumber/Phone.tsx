@@ -167,19 +167,27 @@ const Phone = ({
                     message: "Please enter your mobile number",
                   },
                   {
-                    max: 9,
-                    message: "Value should be less than 10 character",
+                    pattern: /^\d+$/,
+                    message: "Please enter numbers only",
                   },
                   // {
-                  //   pattern: /^966\d{9}$/,
-                  //   message: "Please input a valid Saudi phone number!",
+                  //   validator: (_, value) => {
+                  //     if (value && value.length > 9) {
+                  //       return Promise.reject(
+                  //         "Value should be less than 10 characters"
+                  //       );
+                  //     }
+                  //     return Promise.resolve();
+                  //   },
                   // },
+                  {
+                    max: 9,
+                    message: "Value should be less than 10 characters",
+                  },
                 ]}
               >
                 <Space.Compact>
-                  <Select
-                    defaultValue="1"
-                  >
+                  <Select defaultValue="1">
                     <Option value="1">
                       <img
                         style={{ width: "15px" }}
@@ -190,7 +198,8 @@ const Phone = ({
                     </Option>
                   </Select>
                   <AppInput
-                    type="number"
+                    max={9}
+                    maxLength={9}
                     label="Phone number"
                     placeholder="XXXXXXXX"
                     value={phoneNum}
