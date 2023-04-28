@@ -128,7 +128,7 @@
 }
 
 .ant-collapse {
-    background: #FFFFFF !important;
+    // background: rgba(196, 193, 202,0.15) !important;
     border: 1px solid rgba(138, 133, 149, 0.1) !important;
     border-radius: 20px !important;
     padding: 26px 24px 25px 24px !important;
@@ -163,4 +163,17 @@
 
 .ant-collapse-header {
     padding: 0px !important;
+}
+.ant-collapse-item-active {
+    background-color: #ffffff !important;
+}
+
+.my-collapse.active {
+    background-color: #fff !important;
+}
+.my-collapse-two.active {
+    background-color: #fff !important;
+}
+.my-collapse-three.active {
+    background-color: #fff !important;
 }

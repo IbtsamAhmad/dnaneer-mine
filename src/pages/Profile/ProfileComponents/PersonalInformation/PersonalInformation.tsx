@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import Input from "components/Input/Input";
 import { Row, Col,  Collapse, Form } from "antd";
 import { ReactComponent as Expand } from "assets/svgs/Expand.svg";
@@ -6,6 +7,19 @@ import { ReactComponent as Expand } from "assets/svgs/Expand.svg";
 const { Panel } = Collapse;
 import "./info.scss"
 const PersonalInformation = ({ editInfo }) => {
+ const [activeKey, setActiveKey] = useState(1);
+  const [activeKeyTwo, setActiveKeyTwo] = useState(null);
+   const [activeKeyThree, setActiveKeyThree] = useState(null);
+
+ function handleCollapseChange(keys) {
+   setActiveKey(keys[0]);
+ }
+  function handleCollapseChangeTwo(keys) {
+    setActiveKeyTwo(keys[0]);
+  }
+   function handleCollapseChangeThree(keys) {
+     setActiveKeyThree(keys[0]);
+   }
     const onFinish = (values) => {
       console.log("Success:", values);
     };
@@ -18,6 +32,8 @@ const PersonalInformation = ({ editInfo }) => {
         <Collapse
           defaultActiveKey={["1"]}
           expandIcon={({ isActive }) => <Expand />}
+          className={`my-collapse ${activeKey ? "active" : ""}`}
+          onChange={handleCollapseChange}
         >
           <Panel
             header={
@@ -234,7 +250,11 @@ const PersonalInformation = ({ editInfo }) => {
           </Panel>
         </Collapse>
 
-        <Collapse expandIcon={({ isActive }) => <Expand />}>
+        <Collapse
+          expandIcon={({ isActive }) => <Expand />}
+          className={`my-collapse-two ${activeKeyTwo ? "active" : ""}`}
+          onChange={handleCollapseChangeTwo}
+        >
           <Panel
             header={
               <span
@@ -250,14 +270,15 @@ const PersonalInformation = ({ editInfo }) => {
                 Financial Information
               </span>
             }
-            key="1"
+            key="2"
           >
-            Financial Information
+            <h1> Financial Information</h1>
           </Panel>
         </Collapse>
         <Collapse
-          defaultActiveKey={["1"]}
           expandIcon={({ isActive }) => <Expand />}
+          className={`my-collapse-three ${activeKeyThree ? "active" : ""}`}
+          onChange={handleCollapseChangeThree}
         >
           <Panel
             header={
@@ -274,7 +295,7 @@ const PersonalInformation = ({ editInfo }) => {
                 Banking Information
               </span>
             }
-            key="1"
+            key="3"
           >
             <Row>
               <Col lg={5} sm={12}>
