@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Form, Radio, Space, Select } from "antd";
 import { ReactComponent as PhoneIcon } from "assets/svgs/Phone.svg";
 import AppInput from "components/Input/Input";
@@ -5,9 +6,16 @@ import Button from "components/Button/Button";
 import { ReactComponent as FormLockIcon } from "assets/svgs/form-lock-icon.svg";
 import { ReactComponent as Mail } from "assets/svgs/Mail.svg";
 
-const {Option} = Select;
+const { Option } = Select;
 
 const LoginFields = ({ onFinish, onFinishFailed, userType, loader }) => {
+  const [phoneNum, setPhoneNum] = useState("");
+    const onChangePhone = (e) => {
+
+      if (e.target.value.length < 9) {
+        setPhoneNum(e.target.value);
+      }
+    };
   return (
     <Form
       name="basic"
@@ -64,12 +72,12 @@ const LoginFields = ({ onFinish, onFinishFailed, userType, loader }) => {
                 <AppInput
                   max={9}
                   maxLength={9}
+                  value={phoneNum}
+                  onChange={onChangePhone}
                   label="Phone number"
                   placeholder="XXXXXXXX"
-                  // value={phoneNum}
                   prefix={<PhoneIcon />}
                   // disabled={disabled}
-                  // onChange={onChangePhone}
                   className={"appInput"}
                 />
               </Space.Compact>
@@ -111,7 +119,7 @@ const LoginFields = ({ onFinish, onFinishFailed, userType, loader }) => {
           </Form.Item>
         </div>
       )}
-      <div style={{ display: "flex", justifyContent: "end", fontSize: "12px" }}>
+      <div style={{ display: "flex", justifyContent: "end", fontSize: "12px", fontWeight:"500" }}>
         Forget passowrd?
       </div>
       <Form.Item>
