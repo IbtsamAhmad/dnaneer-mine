@@ -1,12 +1,9 @@
 import { useLayoutEffect, useState } from "react";
+import AuthContainer from "components/AuthContainer/AuthContainer";
 import OtpComponent from "./Otp/Otp";
 import Phone from "../SingupComponents/PhoneNumber/Phone";
 import Password from "../SingupComponents/Password/Password";
 import Absher from "../SingupComponents/Absher/Absher";
-
-import { ReactComponent as Start } from "assets/svgs/Start.svg";
-import { ReactComponent as Close } from "assets/svgs/Close.svg";
-// import { ReactComponent as FormLockIcon } from "assets/svgs/form-lock-icon.svg";
 
 const SingUpComponent = ({ individual, setIndividual }) => {
   const [showPhone, setShowPhone] = useState(true);
@@ -24,53 +21,39 @@ const SingUpComponent = ({ individual, setIndividual }) => {
     }
   }, []);
   return (
-    <div className="signUp-container">
-      <div className="close-icon">
-        <a href="https://staging.dnaneer.com/">
-          <Close />
-        </a>
-      </div>
-
-      <div className="signUp-form-container">
-        <div className="start-icon">
-          <Start />
-        </div>
-        {showPhone && (
-          <Phone
-            setShowOtp={setShowOtp}
-            setShowPhone={setShowPhone}
-            setIndividual={setIndividual}
-            setShowPassword={setShowPassword}
-            individual={individual}
-          />
-        )}
-        {showOtp && (
-          <OtpComponent
-            individual={individual}
-            setShowPassword={setShowPassword}
-            setShowPhone={setShowPhone}
-            setShowOtp={setShowOtp}
-          />
-        )}
-        {showPassword && (
-          <Password
-            setShowPassword={setShowPassword}
-            setShowOtp={setShowOtp}
-            setAbsherCode={setAbsherCode}
-            individual={individual}
-          />
-        )}
-        {individual === "individual" && absherCode && (
-          <Absher
-            setShowPassword={setShowPassword}
-            setAbsherCode={setAbsherCode}
-          />
-        )}
-      </div>
-      <div className="copy-right">
-        Dnaneer © Copyright 2023, All Rights Reserved
-      </div>
-    </div>
+    <AuthContainer>
+      {showPhone && (
+        <Phone
+          setShowOtp={setShowOtp}
+          setShowPhone={setShowPhone}
+          setIndividual={setIndividual}
+          setShowPassword={setShowPassword}
+          individual={individual}
+        />
+      )}
+      {showOtp && (
+        <OtpComponent
+          individual={individual}
+          setShowPassword={setShowPassword}
+          setShowPhone={setShowPhone}
+          setShowOtp={setShowOtp}
+        />
+      )}
+      {showPassword && (
+        <Password
+          setShowPassword={setShowPassword}
+          setShowOtp={setShowOtp}
+          setAbsherCode={setAbsherCode}
+          individual={individual}
+        />
+      )}
+      {individual === "individual" && absherCode && (
+        <Absher
+          setShowPassword={setShowPassword}
+          setAbsherCode={setAbsherCode}
+        />
+      )}
+    </AuthContainer>
   );
 };
 

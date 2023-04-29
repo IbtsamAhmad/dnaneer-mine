@@ -12,7 +12,24 @@ const AuthWrapper = (Component): Function => {
     return (
       <div className="auth-container">
         <Row align="stretch">
-          <Col lg={15} md={12} sm={24}>
+          <Col
+            lg={{
+              span: 15,
+              order: 1,
+            }}
+            md={{
+              span: 24,
+              order: 2,
+            }}
+            xs={{
+              order: 2,
+              span: 24,
+            }}
+            sm={{
+              span: 24,
+              order: 2,
+            }}
+          >
             <div className="auth-col-one">
               <img
                 src={
@@ -45,9 +62,35 @@ const AuthWrapper = (Component): Function => {
                   Maximize your investments!
                 </p>
               </div>
+              <p
+                className="copyright-two"
+                style={{
+                  color: individual === "individual" ? "#fff" : "#140A2B",
+                }}
+              >
+                {" "}
+                Dnaneer © Copyright 2023, All Rights Reserved
+              </p>
             </div>
           </Col>
-          <Col lg={9} md={12} sm={24}>
+          <Col
+            lg={{
+              span: 9,
+              order: 2,
+            }}
+            md={{
+              span: 24,
+              order: 1,
+            }}
+            xs={{
+              order: 1,
+              span: 24,
+            }}
+            sm={{
+              span: 24,
+              order: 1,
+            }}
+          >
             <div className="auth-col-two">
               <Component {...props} />
             </div>

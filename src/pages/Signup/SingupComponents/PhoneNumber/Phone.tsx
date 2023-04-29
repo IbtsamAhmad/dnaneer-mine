@@ -9,20 +9,9 @@ import { ReactComponent as Tick } from "assets/svgs/Tick.svg";
 import { ReactComponent as Cross } from "assets/svgs/Cross.svg";
 import { register } from "services/Login";
 
-import type { RadioChangeEvent } from "antd";
+import SwitchUser from "components/SwitchUser/SwitchUser";
 
 const { Option } = Select;
-
-const options: { label: string; value: string | number }[] = [
-  {
-    label: "Individual",
-    value: "individual",
-  },
-  {
-    label: "Institutional",
-    value: "Institutional",
-  },
-];
 
 const Phone = ({
   setShowOtp,
@@ -31,7 +20,7 @@ const Phone = ({
   setShowPassword,
   individual,
 }) => {
-  const [phoneNum,setPhoneNum] = useState('')
+  const [phoneNum, setPhoneNum] = useState("");
   const [loader, setLoader] = useState<boolean>(false);
   const [lengthVal, setLengthVal] = useState(false);
   const [oneNumVal, setOneNumVal] = useState(false);
@@ -62,20 +51,19 @@ const Phone = ({
     symbolTest ? setSpecialVal(true) : setSpecialVal(false);
   };
 
-  const onChangePhone = (e) =>{
-  //  console.log("value",e.target.value);
-  //  console.log(e.target.value.length)
-   if (e.target.value.length < 9) {
-       setPhoneNum(e.target.value);
-   }
-
-  }
+  const onChangePhone = (e) => {
+    //  console.log("value",e.target.value);
+    //  console.log(e.target.value.length)
+    if (e.target.value.length < 9) {
+      setPhoneNum(e.target.value);
+    }
+  };
 
   const registerUser = async (data) => {
-       setShowPhone(false);
-       setShowOtp(true);
+    setShowPhone(false);
+    setShowOtp(true);
     //    if (lengthVal && oneNumVal && oneUpCaseVal && oneLowCaseVal && specialVal) {
-     
+
     // }
 
     // setLoader(true);
@@ -120,30 +108,14 @@ const Phone = ({
     // setShowOtp(true);
   };
 
-  const onChangeTerms = (e: RadioChangeEvent) => {
-    console.log("radio checked", e.target.value);
-  };
-  const onChangeIndividual = (e: RadioChangeEvent) => {
-    console.log("radio checkeddd", e.target.value);
-    setIndividual(e.target.value);
-    // if(e.nativeEvent)
-  };
+  // const onChangeTerms = (e: RadioChangeEvent) => {
+  //   console.log("radio checked", e.target.value);
+  // };
+
   return (
     <>
-      {console.log(individual)}
       <h1>Get Started As</h1>
-      <Radio.Group
-        value={individual}
-        onChange={onChangeIndividual}
-        // defaultValue={defaultValue}
-        className="appRadioGroup"
-      >
-        {options.map((option, i) => (
-          <Radio.Button key={i} value={option.value} className={"appRadioBtn"}>
-            {option.label}
-          </Radio.Button>
-        ))}
-      </Radio.Group>
+      <SwitchUser userType={individual} setUserType={setIndividual} />
       <Form
         name="basic"
         initialValues={{

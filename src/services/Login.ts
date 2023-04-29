@@ -1,4 +1,4 @@
-import axios from "axios";
+import axiosInstance from "./Instance";
 type DataProps = {
   email?: string;
   user_type: 1 | 2;
@@ -7,7 +7,7 @@ type DataProps = {
 };
 
 export const register = (data: DataProps) => {
-  return axios.post("https://dan.htmlpro.net/api/register", data);
+  return axiosInstance.post("api/register", data);
 };
 
 type VerifyOTPProps = {
@@ -16,5 +16,5 @@ type VerifyOTPProps = {
 };
 
 export const verifyOTP = (data: VerifyOTPProps) => {
-  return axios.post("https://dan.htmlpro.net/api/verify", data);
+  return axiosInstance.post("api/verify", data);
 };

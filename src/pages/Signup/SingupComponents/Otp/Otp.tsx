@@ -47,11 +47,9 @@ const OtpComponent = ({
     if (otp.length >= 6) {
       if (otp === "123456") {
         if (individual === "individual") {
-      setShowOtp(false);
-      setShowPassword(true);
-        }
-        else
- navigate("/dashboard");
+          setShowOtp(false);
+          setShowPassword(true);
+        } else navigate("/dashboard");
       }
       // setLoader(true);
       // verifyOTP({ user_id: 5, otp: otp })

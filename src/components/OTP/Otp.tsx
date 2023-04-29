@@ -1,6 +1,6 @@
 import { SetStateAction, Dispatch } from "react";
 import OtpInput from "react-otp-input";
-import classes from "./otp.module.scss";
+import "./otp.scss";
 
 interface OtpProps {
   otp: string;
@@ -10,7 +10,7 @@ interface OtpProps {
 export default function Otp({ otp, setOtp }: OtpProps): JSX.Element {
   return (
     <OtpInput
-      containerStyle={classes["otp-container"]}
+      containerStyle={"otp-container"}
       shouldAutoFocus
       inputStyle={{
         width: "55px",
