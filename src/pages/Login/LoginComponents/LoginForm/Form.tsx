@@ -5,6 +5,8 @@ import Button from "components/Button/Button";
 import { ReactComponent as FormLockIcon } from "assets/svgs/form-lock-icon.svg";
 import { ReactComponent as Mail } from "assets/svgs/Mail.svg";
 
+const {Option} = Select;
+
 const LoginFields = ({ onFinish, onFinishFailed, userType, loader }) => {
   return (
     <Form
