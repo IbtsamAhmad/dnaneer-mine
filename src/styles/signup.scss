@@ -40,8 +40,7 @@
 }
 
 .signUp-form-container {
-    margin: 0 auto;
-    width: 345px;
+    margin: 0 13%;
 
     .ant-form-item-control-input {
         min-height: 10px !important;
@@ -139,23 +138,36 @@
         margin-bottom: 16px;
 
         .appInput {
-            border-radius: 55px !important;
+            // border-radius: 55px !important;
+            border-left: none !important;
+                border-top-right-radius: 55px !important;
+               border-bottom-right-radius: 55px !important;
+        }
+        .float-label{
+            width: 100%;
+        }
+        .ant-space-compact{
+            width: 100%;
         }
 
         .as-placeholder {
-            left: 155px;
+            left: 140px;
         }
 
         .as-label {
-            left: 140px;
+            left: 121px;
         }
 
         .ant-select {
             width: 110px !important;
         }
-
+        
         .ant-select-selector {
-            padding: 0px 15px !important;
+            padding: 0px 0px 0px 15px !important;
+            // border: 1px solid red !important;
+            border-bottom-left-radius: 55px !important;
+            border-top-left-radius: 55px !important;
+            border-right: none !important;
         }
     }
 

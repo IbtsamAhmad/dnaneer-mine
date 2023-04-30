@@ -2,7 +2,7 @@ import { useState } from "react";
 import LoginFields from "./Form";
 import { Link } from "react-router-dom";
 
-const LoginForm = ({ userType }) => {
+const LoginForm = ({ userType, setSwitchForm }) => {
   const [loader, setLoader] = useState<boolean>(false);
 
   const onFinish = async (values) => {
@@ -21,7 +21,8 @@ const LoginForm = ({ userType }) => {
         password: values.passwor,
       };
     }
-    return;
+    // return;
+    setSwitchForm("otp");
     // setShowPhone(false);
     // setShowOtp(true);
   };

@@ -73,7 +73,7 @@ const OtpComponent = ({
     }
   };
   return (
-    <div className="signUp-form-container">
+    <div>
       {/* {contextHolder} */}
       <Button
         style={{ padding: "none" }}

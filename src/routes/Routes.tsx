@@ -10,6 +10,8 @@ const Dashboard = lazy(() => import("pages/Dashboard"));
 const Transactions = lazy(() => import("pages/Transactions"));
 const Home = lazy(() => import("pages/Home"));
 const Opportunity = lazy(() => import("pages/Opportunity/Opportunity"));
+const ForgetPassword = lazy(() => import("pages/ForgetPassword"));
+const ConfirmPassword = lazy(() => import("pages/ConfirmPassword"));
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -20,6 +22,15 @@ const Router = () => {
     {
       path: "/signup",
       element: <Signup />,
+    },
+
+    {
+      path: "/forget-password",
+      element: <ForgetPassword />,
+    },
+    {
+      path: "/confirm-password",
+      element: <ConfirmPassword />,
     },
     { path: "/", element: <Home /> },
     {

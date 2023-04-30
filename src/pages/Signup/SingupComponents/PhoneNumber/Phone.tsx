@@ -52,7 +52,7 @@ const Phone = ({
   };
 
   const onChangePhone = (e) => {
-    //  console.log("value",e.target.value);
+    console.log("value",e.target.value);
     //  console.log(e.target.value.length)
     if (e.target.value.length < 9) {
       setPhoneNum(e.target.value);
@@ -159,7 +159,7 @@ const Phone = ({
                 ]}
               >
                 <Space.Compact>
-                  <Select defaultValue="1">
+                  <Select defaultValue="1" disabled>
                     <Option value="1">
                       <img
                         style={{ width: "15px" }}

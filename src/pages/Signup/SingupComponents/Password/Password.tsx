@@ -72,7 +72,7 @@ const Password = ({
   };
 
   return (
-    <div className="signUp-form-container">
+    <div>
       <Button
         className="singUp-back-btn"
         icon={<BackArrow />}
@@ -82,7 +82,7 @@ const Password = ({
       </Button>
       <p className="title">Individual Investor</p>
 
-      <h2>Complete registration now</h2>
+      <h2>Complete registration noww</h2>
       <Form
         style={{ marginTop: "34px" }}
         name="basic"

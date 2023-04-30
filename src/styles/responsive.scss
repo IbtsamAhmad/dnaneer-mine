@@ -6,6 +6,12 @@
 @media screen and (min-width: 1025px) and (max-width: 1280px) {}
 
 @media (max-width: 576px) {
+    .signUp-form-container {
+      margin: 0 30px;
+    }
+    .ant-layout-sider{
+        display: none !important;
+    }
     .auth-container {
         overflow: hidden;
         .auth-col-one {
@@ -61,4 +67,10 @@
             }
     
         }
+}
+
+@media (max-width: 376px) {
+    .signUp-form-container {
+        margin: 0 15px;
+    }
 }
