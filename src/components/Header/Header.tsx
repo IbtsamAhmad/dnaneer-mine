@@ -10,8 +10,8 @@ import { ReactComponent as Hamburger } from "assets/svgs/Hamburger.svg";
 import "./header.scss";
 
 type Props = {
-  collapsed: boolean;
-  setCollapsed: Dispatch<SetStateAction<boolean>>;
+  collapsed?: boolean;
+  setCollapsed?: Dispatch<SetStateAction<boolean>>;
 };
 function Header({ setCollapsed, collapsed }: Props) {
   return (
