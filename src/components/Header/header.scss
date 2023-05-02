@@ -10,6 +10,9 @@
     align-items: center;
     justify-content: space-between;
     // width: 37%;
+    .burger{
+       display: none;
+    }
 
     .start-icon {
       display: flex;

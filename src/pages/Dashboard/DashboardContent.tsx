@@ -88,7 +88,7 @@ const DashboardConent = () => {
         src="assets/images/Avatar 2.png"
       />
       <Row gutter={32} className="investment-row">
-        <Col lg={6} md={12} sm={24}>
+        <Col lg={6} md={12} sm={12} xs={12}>
           <DasboardCard
             icon={<Amount />}
             heading="1,400,000"
@@ -100,7 +100,7 @@ const DashboardConent = () => {
             modalInfo="It represents the total value of investments made by You in all the investment opportunities on the platform"
           />
         </Col>
-        <Col lg={6} md={12} sm={24}>
+        <Col lg={6} md={12} sm={12} xs={12}>
           {" "}
           <DasboardCard
             icon={<InvestIcon />}
@@ -113,7 +113,7 @@ const DashboardConent = () => {
             modalInfo="represents the average return on investment across all opportunities. It is calculated by dividing the total profits earned from all investments by the total cost of all investments."
           />
         </Col>
-        <Col lg={6} md={12} sm={24}>
+        <Col lg={6} md={12} sm={12} xs={12}>
           {" "}
           <DasboardCard
             icon={<RoiIcon />}
@@ -126,7 +126,7 @@ const DashboardConent = () => {
             modalInfo="represents the total return on investment across all opportunities. It is calculated by subtracting the total cost of all investments from the total profits earned from those investments."
           />
         </Col>
-        <Col lg={6} md={12} sm={24}>
+        <Col lg={6} md={12} sm={12} xs={12}>
           <DasboardCard
             icon={<Profit />}
             heading="110,000"
@@ -140,7 +140,20 @@ const DashboardConent = () => {
         </Col>
       </Row>
       <Row gutter={32}>
-        <Col lg={17}>
+        <Col
+          xs={{
+            span: 24,
+            order: 2,
+          }}
+          lg={{
+            span: 17,
+            order: 1,
+          }}
+          sm={{
+            span: 24,
+            order: 2,
+          }}
+        >
           <div className="investments-container">
             <div className="investment-header">
               <h1>My Investments</h1>
@@ -189,7 +202,20 @@ const DashboardConent = () => {
             </div>
           </div>
         </Col>
-        <Col lg={7}>
+        <Col
+          xs={{
+            span: 24,
+            order: 1,
+          }}
+          lg={{
+            span: 7,
+            order: 2,
+          }}
+          sm={{
+            span: 24,
+            order: 1,
+          }}
+        >
           <Card className="activate-card">
             <div className="activate-content">
               <Progress
@@ -209,7 +235,7 @@ const DashboardConent = () => {
             {/* <Button className="activate-btn" block>
               Activate Now
             </Button> */}
-            <IndividualDrawer/>
+            <IndividualDrawer />
           </Card>
           <Card className="wallet-card">
             <h1>My Wallet</h1>

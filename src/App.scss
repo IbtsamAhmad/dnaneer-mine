@@ -29,6 +29,13 @@ a {
   font-weight: 500;
 }
 
+
+.layout-container{
+  .menu-close-icon{
+    display: none;
+  }
+}
+
 .ant-radio-inner {
   border-color: #5b2cd3 !important;
   background-color: #fff !important;
