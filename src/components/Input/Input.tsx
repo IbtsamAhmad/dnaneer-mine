@@ -16,8 +16,8 @@ interface MessageProps {
   placeholder?: string;
   label: string;
   type?: string;
-  maxLength?:number;
-  max?:number;
+  maxLength?: number;
+  max?: number;
 }
 
 const AppInput = ({
@@ -33,7 +33,7 @@ const AppInput = ({
   placeholder,
   label,
   type,
-  max
+  max,
 }: MessageProps) => {
   const [focus, setFocus] = useState(false);
   if (!placeholder) placeholder = label;
@@ -49,13 +49,14 @@ const AppInput = ({
       className="float-label"
       onBlur={() => setFocus(false)}
       onFocus={() => setFocus(true)}
+      style={{ position: "relative" }}
     >
       {iconRender ? (
         <Input.Password
           //   placeholder={placeholder}
           prefix={prefix}
           onChange={onChange}
-          defaultValue={value}
+          value={value}
           className={className ? className : "appInput"}
           iconRender={(visible) => (visible ? <EyeOpen /> : <EyeOpen />)}
         />
@@ -69,7 +70,7 @@ const AppInput = ({
           //  autoFocus={true}
           disabled={disabled}
           onChange={onChange}
-          defaultValue={value}
+          value={value}
           className={className ? className : "appInput"}
         />
       )}

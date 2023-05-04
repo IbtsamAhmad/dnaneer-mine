@@ -102,6 +102,7 @@ function Step1Form({ data, onSuccess, setCurrent }: Props) {
             ]}
           >
             <Input
+              maxLength={10}
               label="Company Legal Structure"
               placeholder="Company Legal Structure"
               className="drawer-input-two"
@@ -133,6 +134,7 @@ function Step1Form({ data, onSuccess, setCurrent }: Props) {
               {
                 required: true,
                 message: "Please enter your Enter Saudi ID number",
+                pattern: /^\d+$/,
               },
             ]}
           >

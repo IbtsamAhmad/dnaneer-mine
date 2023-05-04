@@ -10,6 +10,7 @@ import { ReactComponent as Cross } from "assets/svgs/Cross.svg";
 import { register } from "services/Login";
 
 import SwitchUser from "components/SwitchUser/SwitchUser";
+// import { useForm } from "antd/es/form/Form";
 
 const { Option } = Select;
 
@@ -20,7 +21,9 @@ const Phone = ({
   setShowPassword,
   individual,
 }) => {
-  const [phoneNum, setPhoneNum] = useState("");
+  const [signUpForm] = Form.useForm();
+  const [passwordLength, setPasswordLength] = useState(0);
+  const [phoneNum, setPhoneNum] = useState("+966");
   const [loader, setLoader] = useState<boolean>(false);
   const [lengthVal, setLengthVal] = useState(false);
   const [oneNumVal, setOneNumVal] = useState(false);
@@ -30,6 +33,7 @@ const Phone = ({
 
   const onChangePassword = (e) => {
     const { value } = e.target;
+    setPasswordLength(value.length);
     console.log("Value", value);
 
     value.length >= 8 ? setLengthVal(true) : setLengthVal(false);
@@ -52,10 +56,10 @@ const Phone = ({
   };
 
   const onChangePhone = (e) => {
-    console.log("value",e.target.value);
     //  console.log(e.target.value.length)
-    if (e.target.value.length < 9) {
-      setPhoneNum(e.target.value);
+    const { value } = e.target;
+    if (value.length > 3 && /^\+\d*$/.test(value)) {
+      return setPhoneNum(value);
     }
   };
 
@@ -89,7 +93,7 @@ const Phone = ({
     if (individual === "individual") {
       data = {
         user_type: 1,
-        phone_number: values.phone,
+        phone_number: phoneNum,
       };
     } else {
       data = {
@@ -117,7 +121,7 @@ const Phone = ({
       <h1>Get Started As</h1>
       <SwitchUser userType={individual} setUserType={setIndividual} />
       <Form
-        name="basic"
+        name="signup"
         initialValues={{
           type: "individual",
           phone: "",
@@ -130,58 +134,17 @@ const Phone = ({
         {individual === "individual" ? (
           <>
             <div className="phone-item">
-              <Form.Item
-                name="phone"
-                rules={[
-                  {
-                    type: "string",
-                    required: true,
-                    message: "Please enter your mobile number",
-                  },
-                  {
-                    pattern: /^\d+$/,
-                    message: "Please enter numbers only",
-                  },
-                  // {
-                  //   validator: (_, value) => {
-                  //     if (value && value.length > 9) {
-                  //       return Promise.reject(
-                  //         "Value should be less than 10 characters"
-                  //       );
-                  //     }
-                  //     return Promise.resolve();
-                  //   },
-                  // },
-                  {
-                    max: 9,
-                    message: "Value should be less than 10 characters",
-                  },
-                ]}
-              >
-                <Space.Compact>
-                  <Select defaultValue="1" disabled>
-                    <Option value="1">
-                      <img
-                        style={{ width: "15px" }}
-                        src="https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/SA.svg"
-                        alt="flag"
-                      />{" "}
-                      +966
-                    </Option>
-                  </Select>
-                  <AppInput
-                    max={9}
-                    maxLength={9}
-                    label="Phone number"
-                    placeholder="XXXXXXXX"
-                    value={phoneNum}
-                    prefix={<PhoneIcon />}
-                    // disabled={disabled}
-                    onChange={onChangePhone}
-                    className={"appInput"}
-                  />
-                </Space.Compact>
-              </Form.Item>{" "}
+              <AppInput
+                // max={9}
+                maxLength={13}
+                label="Phone number"
+                placeholder="XXXXXXXX"
+                value={phoneNum}
+                prefix={<PhoneIcon />}
+                // disabled={disabled}
+                onChange={onChangePhone}
+                className={"appInput"}
+              />
             </div>
           </>
         ) : (
@@ -217,29 +180,31 @@ const Phone = ({
                 onChange={onChangePassword}
               />
             </Form.Item>
-            <div className="password-validations">
-              <p style={{ color: lengthVal ? "#17B890" : "#C4C1CA" }}>
-                {lengthVal ? <Tick /> : <Cross />}
-                At least 8 characters
-              </p>
-              <p style={{ color: oneNumVal ? "#17B890" : "#C4C1CA" }}>
-                {oneNumVal ? <Tick /> : <Cross />}
-                At least one Number (0-9)
-              </p>
-              <p style={{ color: oneUpCaseVal ? "#17B890" : "#C4C1CA" }}>
-                {oneUpCaseVal ? <Tick /> : <Cross />}
-                At least 1 Uppercase
-              </p>
-              <p style={{ color: oneLowCaseVal ? "#17B890" : "#C4C1CA" }}>
-                {oneLowCaseVal ? <Tick /> : <Cross />}
-                At least 1 Lowercase
-              </p>
+            {passwordLength >= 1 && (
+              <div className="password-validations">
+                <p style={{ color: lengthVal ? "#17B890" : "#C4C1CA" }}>
+                  {lengthVal ? <Tick /> : <Cross />}
+                  At least 8 characters
+                </p>
+                <p style={{ color: oneNumVal ? "#17B890" : "#C4C1CA" }}>
+                  {oneNumVal ? <Tick /> : <Cross />}
+                  At least one Number (0-9)
+                </p>
+                <p style={{ color: oneUpCaseVal ? "#17B890" : "#C4C1CA" }}>
+                  {oneUpCaseVal ? <Tick /> : <Cross />}
+                  At least 1 Uppercase
+                </p>
+                <p style={{ color: oneLowCaseVal ? "#17B890" : "#C4C1CA" }}>
+                  {oneLowCaseVal ? <Tick /> : <Cross />}
+                  At least 1 Lowercase
+                </p>
 
-              <p style={{ color: specialVal ? "#17B890" : "#C4C1CA" }}>
-                {specialVal ? <Tick /> : <Cross />}
-                Inclusion of at least one special character, e.g., ! @ # ? ]
-              </p>
-            </div>
+                <p style={{ color: specialVal ? "#17B890" : "#C4C1CA" }}>
+                  {specialVal ? <Tick /> : <Cross />}
+                  Inclusion of at least one special character, e.g., ! @ # ? ]
+                </p>
+              </div>
+            )}
           </div>
         )}
         <Form.Item

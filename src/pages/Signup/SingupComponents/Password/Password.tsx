@@ -6,7 +6,7 @@ import Input from "components/Input/Input";
 import Button from "components/Button/Button";
 import { ReactComponent as FormUserIcon } from "assets/svgs/form-user-icon.svg";
 import { ReactComponent as FormLockIcon } from "assets/svgs/form-lock-icon.svg";
-import { ReactComponent as Date } from "assets/svgs/Date.svg";
+import { ReactComponent as Date } from "assets/svgs/Calendar.svg";
 import { ReactComponent as Mail } from "assets/svgs/Mail.svg";
 import { ReactComponent as Tick } from "assets/svgs/Tick.svg";
 import { ReactComponent as Cross } from "assets/svgs/Cross.svg";
@@ -28,9 +28,8 @@ const Password = ({
   const onFinish = (values) => {
     console.log("Success:", values);
     if (lengthVal && oneNumVal && oneUpCaseVal && oneLowCaseVal && specialVal) {
-          nextHandler();
+      nextHandler();
     }
-
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
@@ -71,6 +70,18 @@ const Password = ({
     symbolTest ? setSpecialVal(true) : setSpecialVal(false);
   };
 
+    const validateDigits = (_, value) => {
+    const isDigitsOnly = /^\d+$/.test(value);
+    if (!isDigitsOnly) {
+      return Promise.reject("Please enter digits only");
+    }
+    const isLengthValid = value.length >= 10;
+    if (!isLengthValid) {
+      return Promise.reject("Please enter at least 10 digits");
+    }
+    return Promise.resolve();
+    };
+
   return (
     <div>
       <Button
@@ -82,7 +93,7 @@ const Password = ({
       </Button>
       <p className="title">Individual Investor</p>
 
-      <h2>Complete registration noww</h2>
+      <h2>Complete registration now</h2>
       <Form
         style={{ marginTop: "34px" }}
         name="basic"
@@ -103,12 +114,14 @@ const Password = ({
                   required: true,
                   message: "Please enter your national Id",
                 },
+                { validator: validateDigits },
               ]}
             >
               <Input
                 label="National ID"
                 placeholder="National ID"
                 prefix={<FormUserIcon />}
+                maxLength={10}
               />
             </Form.Item>
             <Form.Item
@@ -124,7 +137,7 @@ const Password = ({
                 block={true}
                 label="Birth date"
                 placeholder="Birth date"
-                prefix={<Date />}
+                // prefix={<Date />}
               />
             </Form.Item>
           </>

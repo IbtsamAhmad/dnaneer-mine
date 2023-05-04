@@ -11,10 +11,11 @@ const { Option } = Select;
 
 const LoginFields = ({ onFinish, onFinishFailed, userType, loader }) => {
   const navigate = useNavigate();
-  const [phoneNum, setPhoneNum] = useState("");
+  const [phoneNum, setPhoneNum] = useState("+966");
   const onChangePhone = (e) => {
-    if (e.target.value.length < 9) {
-      setPhoneNum(e.target.value);
+    const { value } = e.target;
+    if (value.length > 3 && /^\+\d*$/.test(value)) {
+      return setPhoneNum(value);
     }
   };
   return (
@@ -31,58 +32,17 @@ const LoginFields = ({ onFinish, onFinishFailed, userType, loader }) => {
       {userType === "individual" ? (
         <>
           <div className="phone-item">
-            <Form.Item
-              name="phone"
-              rules={[
-                {
-                  type: "string",
-                  required: true,
-                  message: "Please enter your mobile number",
-                },
-                {
-                  pattern: /^\d+$/,
-                  message: "Please enter numbers only",
-                },
-                // {
-                //   validator: (_, value) => {
-                //     if (value && value.length > 9) {
-                //       return Promise.reject(
-                //         "Value should be less than 10 characters"
-                //       );
-                //     }
-                //     return Promise.resolve();
-                //   },
-                // },
-                {
-                  max: 9,
-                  message: "Value should be less than 10 characters",
-                },
-              ]}
-            >
-              <Space.Compact>
-                <Select defaultValue="1">
-                  <Option value="1">
-                    <img
-                      style={{ width: "15px" }}
-                      src="https://cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/SA.svg"
-                      alt="flag"
-                    />{" "}
-                    +966
-                  </Option>
-                </Select>
-                <AppInput
-                  max={9}
-                  maxLength={9}
-                  value={phoneNum}
-                  onChange={onChangePhone}
-                  label="Phone number"
-                  placeholder="XXXXXXXX"
-                  prefix={<PhoneIcon />}
-                  // disabled={disabled}
-                  className={"appInput"}
-                />
-              </Space.Compact>
-            </Form.Item>{" "}
+            <AppInput
+              // max={9}
+              maxLength={13}
+              value={phoneNum}
+              onChange={onChangePhone}
+              label="Phone number"
+              placeholder="XXXXXXXX"
+              prefix={<PhoneIcon />}
+              // disabled={disabled}
+              className={"appInput"}
+            />
           </div>
         </>
       ) : (
