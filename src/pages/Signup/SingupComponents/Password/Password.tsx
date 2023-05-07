@@ -19,6 +19,7 @@ const Password = ({
   setAbsherCode,
   individual,
 }) => {
+  const [passwordLength, setPasswordLength] = useState(0);
   const [lengthVal, setLengthVal] = useState(false);
   const [oneNumVal, setOneNumVal] = useState(false);
   const [oneUpCaseVal, setOneUpCaseVal] = useState(false);
@@ -50,6 +51,8 @@ const Password = ({
   const onChangePassword = (e) => {
     const { value } = e.target;
     console.log("Value", value);
+    setPasswordLength(value.length);
+    
 
     value.length >= 8 ? setLengthVal(true) : setLengthVal(false);
 
@@ -173,29 +176,31 @@ const Password = ({
             onChange={onChangePassword}
           />
         </Form.Item>
-        <div className="password-validations">
-          <p style={{ color: lengthVal ? "#17B890" : "#C4C1CA" }}>
-            {lengthVal ? <Tick /> : <Cross />}
-            At least 8 characters
-          </p>
-          <p style={{ color: oneNumVal ? "#17B890" : "#C4C1CA" }}>
-            {oneNumVal ? <Tick /> : <Cross />}
-            At least one Number (0-9)
-          </p>
-          <p style={{ color: oneUpCaseVal ? "#17B890" : "#C4C1CA" }}>
-            {oneUpCaseVal ? <Tick /> : <Cross />}
-            At least 1 Uppercase
-          </p>
-          <p style={{ color: oneLowCaseVal ? "#17B890" : "#C4C1CA" }}>
-            {oneLowCaseVal ? <Tick /> : <Cross />}
-            At least 1 Lowercase
-          </p>
+        {passwordLength >= 1 && (
+          <div className="password-validations">
+            <p style={{ color: lengthVal ? "#17B890" : "#C4C1CA" }}>
+              {lengthVal ? <Tick /> : <Cross />}
+              At least 8 characters
+            </p>
+            <p style={{ color: oneNumVal ? "#17B890" : "#C4C1CA" }}>
+              {oneNumVal ? <Tick /> : <Cross />}
+              At least one Number (0-9)
+            </p>
+            <p style={{ color: oneUpCaseVal ? "#17B890" : "#C4C1CA" }}>
+              {oneUpCaseVal ? <Tick /> : <Cross />}
+              At least 1 Uppercase
+            </p>
+            <p style={{ color: oneLowCaseVal ? "#17B890" : "#C4C1CA" }}>
+              {oneLowCaseVal ? <Tick /> : <Cross />}
+              At least 1 Lowercase
+            </p>
 
-          <p style={{ color: specialVal ? "#17B890" : "#C4C1CA" }}>
-            {specialVal ? <Tick /> : <Cross />}
-            Inclusion of at least one special character, e.g., ! @ # ? ]
-          </p>
-        </div>
+            <p style={{ color: specialVal ? "#17B890" : "#C4C1CA" }}>
+              {specialVal ? <Tick /> : <Cross />}
+              Inclusion of at least one special character, e.g., ! @ # ? ]
+            </p>
+          </div>
+        )}
 
         <div className="password-radio">
           <Radio>

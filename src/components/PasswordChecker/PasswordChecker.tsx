@@ -15,7 +15,6 @@ const TestCategory = ({ type, text }) => {
       }}
     >
       <div style={{ marginTop: "0.5px" }}> {type ? <Tick /> : <Cross />}</div>
-
       <p style={{ marginLeft: "8px", fontSize: "12px" }}>{text}</p>
     </div>
   );

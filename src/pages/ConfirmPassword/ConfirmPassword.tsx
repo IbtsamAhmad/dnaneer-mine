@@ -1,4 +1,4 @@
-import {useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import { ReactComponent as Start } from "assets/svgs/Start.svg";
 import "./confirmPassword.scss";
 import { Button, Form } from "antd";
@@ -12,7 +12,7 @@ const FormItem = Form.Item;
 
 const ConfirmPassword = () => {
   const navigate = useNavigate();
-  
+  const [passwordLength, setPasswordLength] = useState(0);
   const [testPassword, setPasswordTest] = useState({
     lengthVal: false,
     oneNumVal: false,
@@ -22,6 +22,7 @@ const ConfirmPassword = () => {
   });
   const onChangePassword = (e) => {
     const { value } = e.target;
+    setPasswordLength(value.length);
     setPasswordTest(passwordTester(testPassword, value));
   };
   return (
@@ -41,6 +42,7 @@ const ConfirmPassword = () => {
                 prefix={<FormLockIcon />}
                 onChange={onChangePassword}
               />
+
               <PasswordChecker testPassword={testPassword} />
             </div>
           </FormItem>

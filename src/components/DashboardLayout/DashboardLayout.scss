@@ -267,6 +267,7 @@ background: rgba(138, 133, 149, 0.1);
         text-fill-color: transparent;
         font-weight: 700;
         font-size: 20px;
+                display: inline-flex;
     }
 
     .wallet-info-container {
@@ -327,9 +328,9 @@ background: rgba(138, 133, 149, 0.1);
                 border-radius: 30px;
                 width: 207px;
                 height: 42px;
-                color: #5B2CD3;
+                color: #5B2CD3 !important;
 
-                &:hover {
+                &:hover, &:active {
                     color: #5B2CD3 !important;
                 }
             }
@@ -359,13 +360,15 @@ background: rgba(138, 133, 149, 0.1);
     }
 
     h1 {
-        background: linear-gradient(270deg, #2B48F4 0%, #34A5FF 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
+         background: linear-gradient(270deg, #2B48F4 0%, #34A5FF 100%);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+         background-clip: text;
+         text-fill-color: transparent;
         font-weight: 700;
         font-size: 20px;
+         display: inline-flex;
+       
     }
 
     p {

@@ -93,9 +93,9 @@ function Header({ setCollapsed, collapsed }: Props) {
           }}
         >
           <div className="header-col-two">
-            <div className="language">
+            {/* <div className="language">
               <Web />
-            </div>
+            </div> */}
             <div className="badge-icon">
               <Badge count={1}>
                 <Bell />
