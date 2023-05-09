@@ -4,6 +4,7 @@ import Greeting from "pages/Dashboard/DasboardComponents/Greeting/Greeting";
 import Card from "components/Card/Card";
 import Button from "components/Button/Button";
 import IndividualDrawer from "../../components/IndividualDrawer/IndividualDrawer";
+import { ReactComponent as AdvisorImage } from "assets/svgs/AdvisorImage.svg";
 import { ReactComponent as Amount } from "assets/svgs/Amount.svg";
 import { ReactComponent as InvestIcon } from "assets/svgs/InvestIcon.svg";
 import { ReactComponent as RoiIcon } from "assets/svgs/RoiIcon.svg";
@@ -17,6 +18,7 @@ import { ReactComponent as InvestmentOne } from "assets/svgs/InvestmentOne.svg";
 import { ReactComponent as InvestmentTwo } from "assets/svgs/InvestmentTwo.svg";
 import { ReactComponent as InvestmentThree } from "assets/svgs/InvestmentThree.svg";
 import { ReactComponent as InvestmentFour } from "assets/svgs/InvestmentFour.svg";
+
 
 
 
@@ -146,7 +148,7 @@ const DashboardConent = () => {
             order: 2,
           }}
           lg={{
-            span: 17,
+            span: 16,
             order: 1,
           }}
           sm={{
@@ -208,7 +210,7 @@ const DashboardConent = () => {
             order: 1,
           }}
           lg={{
-            span: 7,
+            span: 8,
             order: 2,
           }}
           sm={{
@@ -223,6 +225,7 @@ const DashboardConent = () => {
                   "0%": "#73DCFA",
                   "100%": "#73DCFA",
                 }}
+                strokeWidth={12}
                 type="circle"
                 percent={75}
                 size="small"
@@ -264,7 +267,11 @@ const DashboardConent = () => {
               investment inquires. Reach out Directly.
             </p>
             <div className="advisor-profile">
-              <img src="assets/images/Baddar.png" alt="Baddar" />
+              {/* <AdvisorImage /> */}
+              <img
+                 src="assets/images/Baddar.png"
+                alt="Baddar"
+              />
               <h2>Bader Aljuhani</h2>
               <p>Financial advisor</p>
               <div className="contact-icons">

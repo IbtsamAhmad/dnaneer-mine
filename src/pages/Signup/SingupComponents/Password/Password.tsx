@@ -25,6 +25,7 @@ const Password = ({
   const [oneUpCaseVal, setOneUpCaseVal] = useState(false);
   const [oneLowCaseVal, setOneLowCaseVal] = useState(false);
   const [specialVal, setSpecialVal] = useState(false);
+  const [nationalId, setNationalId] = useState("");
 
   const onFinish = (values) => {
     console.log("Success:", values);
@@ -74,16 +75,34 @@ const Password = ({
   };
 
     const validateDigits = (_, value) => {
-    const isDigitsOnly = /^\d+$/.test(value);
-    if (!isDigitsOnly) {
-      return Promise.reject("Please enter digits only");
-    }
+    // const isDigitsOnly = /^\d+$/.test(value);
+    // console.log("isDigitsOnly", isDigitsOnly);
+    // if (isDigitsOnly) {
+    //   console.log("set")
+    //      setNationalId(value);
+    // }else{
+    //         console.log("Not set");
+    //    return Promise.reject("Please enter digits only");
+    // }
     const isLengthValid = value.length >= 10;
     if (!isLengthValid) {
       return Promise.reject("Please enter at least 10 digits");
     }
     return Promise.resolve();
     };
+
+    const nationalIdHandler = (event) =>{
+      const { value } = event.target;
+      // console.log("value", value);
+      const isDigitsOnly = /^\d+$/.test(value);
+      if (isDigitsOnly) {
+        setNationalId(value);
+    }
+        if (value === "") {
+          setNationalId(null);
+        }
+  
+  }
 
   return (
     <div>
@@ -110,23 +129,26 @@ const Password = ({
         {individual === "individual" ? (
           <>
             {" "}
-            <Form.Item
+            {/* <Form.Item
               name="id"
               rules={[
                 {
                   required: true,
                   message: "Please enter your national Id",
                 },
-                { validator: validateDigits },
+              { validator: validateDigits },
               ]}
-            >
+            > */}
               <Input
+              style={{marginBottom:"16px"}}
                 label="National ID"
                 placeholder="National ID"
                 prefix={<FormUserIcon />}
                 maxLength={10}
+                onChange={nationalIdHandler}
+               value={nationalId}
               />
-            </Form.Item>
+            {/* </Form.Item> */}
             <Form.Item
               name="DOB"
               rules={[

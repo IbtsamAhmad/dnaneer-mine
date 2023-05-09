@@ -5,7 +5,7 @@ import './opportunities.scss';
 const Opportunities = () => {
 //   console.log("hello");
   return (
-    <DashboardLayout>
+    <DashboardLayout sideKey="2">
       <OpportunitiesContainer />
     </DashboardLayout>
   );

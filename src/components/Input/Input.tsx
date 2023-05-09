@@ -7,6 +7,7 @@ import { ReactComponent as EyeOpen } from "assets/svgs/Eye_open.svg";
 interface MessageProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
+  style?: React.CSSProperties;
   icon?: JSX.Element | JSX.Element[];
   disabled?: boolean | undefined;
   block?: boolean;
@@ -34,6 +35,7 @@ const AppInput = ({
   label,
   type,
   max,
+  style,
 }: MessageProps) => {
   const [focus, setFocus] = useState(false);
   if (!placeholder) placeholder = label;
@@ -57,6 +59,7 @@ const AppInput = ({
           prefix={prefix}
           onChange={onChange}
           value={value}
+          style={style}
           className={className ? className : "appInput"}
           iconRender={(visible) => (visible ? <EyeOpen /> : <EyeOpen />)}
         />
@@ -66,6 +69,7 @@ const AppInput = ({
           prefix={prefix}
           maxLength={maxLength}
           max={max}
+          style={style}
           //   placeholder={placeholder}
           //  autoFocus={true}
           disabled={disabled}

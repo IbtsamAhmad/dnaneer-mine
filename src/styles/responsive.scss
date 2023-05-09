@@ -3,18 +3,78 @@
 
 @media screen and (min-width: 1281px) and (max-width: 1600px) {}
 
-@media screen and (min-width: 1025px) and (max-width: 1280px) {}
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+    .auth-container {
+        overflow: hidden;
+
+        .auth-col-one {
+            .copyright-two {
+                display: block;
+                margin-top: 145px;
+                position: relative;
+                padding-bottom: 20px;
+            }
+
+            .login-img {
+                // width: 110%;
+            }
+
+            .profits {
+                svg {
+                    width: 70%;
+                    margin: 0 auto;
+                    display: block;
+                }
+            }
+
+            .networks {
+                margin-top: -60px;
+
+                svg {
+                    width: 70%;
+                    margin: 0 auto;
+                    display: block;
+                }
+            }
+
+            .description {
+                h1 {
+                    font-size: 22px;
+                }
+
+                p {}
+            }
+
+            .copyright-two {
+                margin-top: 75px;
+            }
+        }
+
+        .auth-col-two {
+            min-height: auto !important;
+
+            .copy-right {
+                display: none;
+            }
+
+        }
+    }
+
+}
 
 @media (max-width: 576px) {
     .signUp-form-container {
         margin: 0 30px;
-    } 
-       .investment-row {
+    }
+
+    .investment-row {
         .ant-col {
             padding: 0px !important;
         }
+
         .DasboardCard {
             margin: 10px 5px;
+
             .ant-card-body {
                 padding: 20px 16px !important;
             }
@@ -23,6 +83,7 @@
 
     .investments-container .investment-list .tags-container {
         flex-wrap: wrap;
+
         .investment-tag {
             margin-top: 10px;
         }
@@ -30,22 +91,27 @@
 
     .greeting-container {
         position: relative;
+
         .ant-avatar {}
+
         .role {
             position: absolute;
             right: 0;
             top: 10px;
         }
+
         h1 {
             svg {
                 display: none;
             }
         }
+
         p {}
     }
 
     .header-container {
         padding: 20px !important;
+
         .header-col-one {
             .start-icon {
                 svg {}

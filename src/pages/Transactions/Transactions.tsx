@@ -112,7 +112,7 @@ const columns = [
 
 // ];
   return (
-    <DashboardLayout>
+    <DashboardLayout sideKey="3">
       <div className="transactions-container">
         <div className="banner">
           <div>

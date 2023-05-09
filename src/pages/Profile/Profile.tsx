@@ -25,7 +25,7 @@ const Profile = () => {
     },
   ];
   return (
-    <DashboardLayout>
+    <DashboardLayout sideKey="4">
       <div className="profile-container">
         <Row>
           <Col lg={2}>

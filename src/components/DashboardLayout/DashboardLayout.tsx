@@ -7,16 +7,15 @@ import "./DashboardLayout.scss";
 
 const { Sider, Content } = Layout;
 
-const DashboardLayout = ({ children }) => {
-    const [collapsed, setCollapsed] = useState(false);
-
+const DashboardLayout = ({ children, sideKey }) => {
+  const [collapsed, setCollapsed] = useState(false);
 
   return (
     <Layout style={{ paddingTop: "0" }} className="layout-container">
       <AppHeader setCollapsed={setCollapsed} collapsed={collapsed} />
       <Layout>
         <Sider trigger={null} collapsible collapsed={collapsed}>
-          <Sidebar setCollapsed={setCollapsed} />
+          <Sidebar setCollapsed={setCollapsed} sideKey={sideKey} />
         </Sider>
         <Layout style={{ paddingTop: "0" }}>
           <Content

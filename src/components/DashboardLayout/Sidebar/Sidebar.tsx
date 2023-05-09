@@ -10,9 +10,10 @@ import { ReactComponent as MenuClose } from "assets/svgs/MenuClose.svg";
 
 type Props = {
   setCollapsed: Dispatch<SetStateAction<boolean>>;
+  sideKey: string;
 };
 
-function Sidebar({ setCollapsed }: Props) {
+function Sidebar({ setCollapsed, sideKey }: Props) {
   return (
     <>
       <div className="menu-close-icon" onClick={() => setCollapsed(false)}>
@@ -20,7 +21,7 @@ function Sidebar({ setCollapsed }: Props) {
       </div>
       <Menu
         mode="inline"
-        defaultSelectedKeys={["1"]}
+        defaultSelectedKeys={[sideKey]}
         items={[
           {
             key: "1",
