@@ -2,7 +2,7 @@ import { Button, Input } from "antd";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
 import { ReactComponent as AppleLogo } from "assets/svgs/Apple-logo.svg";
-import { ReactComponent as GoogleStore } from "assets/svgs/google-store.svg";
+import { ReactComponent as GoogleStore } from "assets/svgs/GoogleStore.svg";
 // import { ReactComponent as NaftahLogo } from "assets/svgs/Naftah-logo.svg";
 import NafatLogo from "assets/images/Naftah-Logo.png";
 import classes from "./naftah.module.scss";
