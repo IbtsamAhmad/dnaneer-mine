@@ -18,6 +18,7 @@ const Password = ({
   setShowOtp,
   setAbsherCode,
   individual,
+  setShowNaftah,
 }) => {
   const [passwordLength, setPasswordLength] = useState(0);
   const [lengthVal, setLengthVal] = useState(false);
@@ -44,7 +45,8 @@ const Password = ({
   const nextHandler = () => {
     console.log("register");
     setShowPassword(false);
-    setAbsherCode(true);
+    // setAbsherCode(true);
+    setShowNaftah(true);
     // setShowOtp(false);
     // setShowPassword(true);
   };
@@ -53,7 +55,6 @@ const Password = ({
     const { value } = e.target;
     console.log("Value", value);
     setPasswordLength(value.length);
-    
 
     value.length >= 8 ? setLengthVal(true) : setLengthVal(false);
 
@@ -74,7 +75,7 @@ const Password = ({
     symbolTest ? setSpecialVal(true) : setSpecialVal(false);
   };
 
-    const validateDigits = (_, value) => {
+  const validateDigits = (_, value) => {
     // const isDigitsOnly = /^\d+$/.test(value);
     // console.log("isDigitsOnly", isDigitsOnly);
     // if (isDigitsOnly) {
@@ -89,20 +90,19 @@ const Password = ({
       return Promise.reject("Please enter at least 10 digits");
     }
     return Promise.resolve();
-    };
+  };
 
-    const nationalIdHandler = (event) =>{
-      const { value } = event.target;
-      // console.log("value", value);
-      const isDigitsOnly = /^\d+$/.test(value);
-      if (isDigitsOnly) {
-        setNationalId(value);
+  const nationalIdHandler = (event) => {
+    const { value } = event.target;
+    // console.log("value", value);
+    const isDigitsOnly = /^\d+$/.test(value);
+    if (isDigitsOnly) {
+      setNationalId(value);
     }
-        if (value === "") {
-          setNationalId(null);
-        }
-  
-  }
+    if (value === "") {
+      setNationalId(null);
+    }
+  };
 
   return (
     <div>
@@ -139,15 +139,15 @@ const Password = ({
               { validator: validateDigits },
               ]}
             > */}
-              <Input
-              style={{marginBottom:"16px"}}
-                label="National ID"
-                placeholder="National ID"
-                prefix={<FormUserIcon />}
-                maxLength={10}
-                onChange={nationalIdHandler}
-               value={nationalId}
-              />
+            <Input
+              style={{ marginBottom: "16px" }}
+              label="National ID"
+              placeholder="National ID"
+              prefix={<FormUserIcon />}
+              maxLength={10}
+              onChange={nationalIdHandler}
+              value={nationalId}
+            />
             {/* </Form.Item> */}
             <Form.Item
               name="DOB"

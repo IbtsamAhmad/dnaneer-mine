@@ -1,6 +1,7 @@
-import { Button, Drawer } from "antd";
+import { Drawer } from "antd";
 import { useState } from "react";
 import IndividualForms from "../IndividualForms";
+import Button from "components/Button/Button";
 const App = () => {
   const [open, setOpen] = useState(false);
   const showDrawer = () => {
@@ -12,11 +13,10 @@ const App = () => {
   return (
     <>
       <Button
-        type="primary"
         onClick={showDrawer}
         className="activate-btn"
         block
-        style={{ borderRadius: "56px" }}
+
       >
         Activate Now
       </Button>

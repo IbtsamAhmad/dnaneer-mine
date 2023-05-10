@@ -243,15 +243,15 @@ background: rgba(138, 133, 149, 0.1);
 
     .activate-btn {
         background: #FFFFFF;
-        color: #5B2CD3 !important;
-        font-weight: 500;
-        font-size: 12px;
-         height: 42px;
-        margin-top: 14px;
-        &:hover{
-        color: #5B2CD3 !important;
-        background: #FFFFFF;
-        }
+         color: #5B2CD3 !important;
+         font-weight: 500;
+         font-size: 12px;
+          height: 42px;
+         margin-top: 14px;
+        // &:hover{
+        // color: #5B2CD3 !important;
+        // background: #FFFFFF;
+        // }
     }
 }
 .wallet-card {

@@ -4,12 +4,13 @@ import OtpComponent from "./Otp/Otp";
 import Phone from "../SingupComponents/PhoneNumber/Phone";
 import Password from "../SingupComponents/Password/Password";
 import Absher from "../SingupComponents/Absher/Absher";
-
+import Naftah from "./Naftah/Naftah";
 const SingUpComponent = ({ individual, setIndividual }) => {
   const [showPhone, setShowPhone] = useState(true);
   const [showOtp, setShowOtp] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [absherCode, setAbsherCode] = useState(false);
+  const [showNaftah, setShowNaftah] = useState(false);
 
   useLayoutEffect(() => {
     if (individual === "individual") {
@@ -41,6 +42,7 @@ const SingUpComponent = ({ individual, setIndividual }) => {
       )}
       {showPassword && (
         <Password
+          setShowNaftah={setShowNaftah}
           setShowPassword={setShowPassword}
           setShowOtp={setShowOtp}
           setAbsherCode={setAbsherCode}
@@ -51,6 +53,13 @@ const SingUpComponent = ({ individual, setIndividual }) => {
         <Absher
           setShowPassword={setShowPassword}
           setAbsherCode={setAbsherCode}
+        />
+      )}
+
+      {showNaftah && (
+        <Naftah
+          setShowPassword={setShowPassword}
+          setShowNaftah={setShowNaftah}
         />
       )}
     </AuthContainer>

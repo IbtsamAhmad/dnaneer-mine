@@ -1,0 +1,55 @@
+.naftah-container {
+  position: relative;
+  height: 74vh;
+}
+.naftah-logo-container {
+  margin-top: 41px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  h5 {
+    margin: 0 0 0 12.5px;
+    color: #8a8595;
+    font-size: 16px;
+  }
+}
+.naftah-content {
+  margin-top: 21px;
+  margin-bottom: 26px;
+  h1 {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  p {
+    color: #140a2b;
+    font-size: 16px;
+  }
+}
+
+.naftah-input {
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+  background-color: #dcdde5;
+  color: #000000;
+  font-size: 20px;
+}
+.naftah-download {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  //   display: flex;
+  //   margin: 0 auto;
+  h5 {
+    font-size: 10px;
+    color: #8a8595;
+    margin-bottom: 14px;
+  }
+  .naftah-download-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
