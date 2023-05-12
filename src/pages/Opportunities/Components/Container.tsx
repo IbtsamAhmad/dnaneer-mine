@@ -11,7 +11,7 @@ const OpportunitiesContainer = () => {
         <Col xs={24}>
           <OpportunityBanner />
         </Col>
-        <Col md={18}>
+        <Col md={19}>
           <Container>
             <div style={{ padding: "0 26px" }}>
               <h1 className="dashboard-page-header">Opportunies</h1>
@@ -20,7 +20,7 @@ const OpportunitiesContainer = () => {
           </Container>
           <LoadMore />
         </Col>
-        <Col md={6}>
+        <Col md={5}>
           <SideCard />
         </Col>
       </Row>

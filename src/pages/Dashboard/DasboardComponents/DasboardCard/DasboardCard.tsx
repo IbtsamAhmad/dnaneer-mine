@@ -4,7 +4,7 @@ import Button from "components/Button/Button";
 import Modal from "components/Modal/Modal";
 
 import { ReactComponent as Info } from "assets/svgs/Info.svg";
-import { ReactComponent as DasboardInfo } from "assets/svgs/DasboardInfo.svg";
+import { ReactComponent as DashboardInfo } from "assets/svgs/DashboardInfo.svg";
 
 
 import "./DasboardCard.scss";
@@ -61,12 +61,13 @@ const DasboardCard = ({
         footer={null}
       >
         <div className="dashboard-modal-content">
-          <DasboardInfo />
-          <h1>{modalHeading}</h1>
-          <p>{modalInfo}</p>
-          <Button block className="dashboard-ok-btn" onClick={handleCancel}>
-            Ok
-          </Button>
+          <div>
+            <DashboardInfo />
+          </div>
+          <div style={{ marginLeft: "14px" }}>
+            <h1>{modalHeading}</h1>
+            <p>{modalInfo}</p>
+          </div>
         </div>
       </Modal>
       <Card

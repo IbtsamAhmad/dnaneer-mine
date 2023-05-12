@@ -14,10 +14,10 @@ const OpportunityBanner = ( ) => {
       }}
     >
       <div>
-        <h1 style={{ color: "#fff", fontSize: "20px" }}>
+        <h1 style={{ color: "#fff", fontSize: "24px", fontWeight:"700" }}>
           Find the best Opportunity for you
         </h1>
-        <h4 style={{ color: "#fff", fontSize: "16px" }}>
+        <h4 style={{ color: "#fff", fontSize: "16px", opacity:"0.75",fontWeight:"500" }}>
           Maximize your investments today!
         </h4>
       </div>

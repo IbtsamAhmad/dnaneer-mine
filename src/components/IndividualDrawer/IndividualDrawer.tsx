@@ -16,7 +16,6 @@ const App = () => {
         onClick={showDrawer}
         className="activate-btn"
         block
-
       >
         Activate Now
       </Button>

@@ -45,7 +45,9 @@ const CardInfo = ({ id }) => {
               SAR
             </span>
           </div>
-          <div style={{ fontSize: "12px", color: "#8A8595" }}>
+          <div
+            style={{ fontSize: "12px", color: "#8A8595", fontWeight: "500" }}
+          >
             70% Collected
           </div>
         </div>
@@ -69,7 +71,11 @@ const CardInfo = ({ id }) => {
               SAR
             </span>
           </div>
-          <div style={{ fontSize: "12px", color: "#8A8595" }}>Fund Needed</div>
+          <div
+            style={{ fontSize: "12px", color: "#8A8595", fontWeight: "500" }}
+          >
+            Fund Needed
+          </div>
         </div>
       </div>
       <Progress

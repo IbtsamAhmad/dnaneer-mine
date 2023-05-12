@@ -1,17 +1,21 @@
 .upload-container {
     .ant-upload-btn {
-        border: none !important;
         padding: 14.1px 0 !important;
+        border: none !important;
+         border: 1px dashed #5B2CD3 !important;
+            //     border-radius: 95px !important;
     }
 
     .ant-upload {
         //    height: 81px !important;
-        background: #FFFFFF !important;
-        border: 1px dashed #5B2CD3 !important;
+         background: transparent !important;
+         border: none;
+        //  border: 1px dashed #5B2CD3 !important;
         border-radius: 95px !important;
+        width: 100% !important;
 
         span {
-            border: none !important;
+            // border: none !important;
         }
     }
 

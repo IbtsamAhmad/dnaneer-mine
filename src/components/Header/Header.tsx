@@ -1,6 +1,6 @@
 import { SetStateAction, Dispatch } from "react";
 import { Input, Badge, Avatar, Row, Col } from "antd";
-
+import { Link } from "react-router-dom";
 import { ReactComponent as Start } from "assets/svgs/Start.svg";
 import { ReactComponent as NavSearch } from "assets/svgs/NavSearch.svg";
 import { ReactComponent as Web } from "assets/svgs/Web.svg";
@@ -8,6 +8,7 @@ import { ReactComponent as Bell } from "assets/svgs/Bell.svg";
 import { ReactComponent as Hamburger } from "assets/svgs/Hamburger.svg";
 
 import "./header.scss";
+
 
 type Props = {
   collapsed?: boolean;
@@ -38,13 +39,18 @@ function Header({ setCollapsed, collapsed }: Props) {
           }}
         >
           <div className="header-col-one">
-            <div className="start-icon">
-              <Start />
-              <h1>Dnaneer</h1>
-              <div className="burger" onClick={() => setCollapsed(!collapsed)}>
-                <Hamburger />
+            <Link to="/">
+              <div className="start-icon" style={{cursor:"pointer"}}>
+                <Start />
+                <h1>Dnaneer</h1>
+                <div
+                  className="burger"
+                  onClick={() => setCollapsed(!collapsed)}
+                >
+                  <Hamburger />
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         </Col>
         <Col

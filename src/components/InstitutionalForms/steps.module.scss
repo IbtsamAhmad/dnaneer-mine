@@ -1,0 +1,37 @@
+.step-heading {
+  //   font-family: "Typo Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  color: #140a2b;
+  margin: 0;
+}
+
+.iframe-wrapper {
+  margin: 24px 0;
+  background: rgba(196, 193, 202, 0.1);
+  border: none;
+  border-radius: 20px;
+  height: 441px;
+  overflow-y: auto;
+  iframe {
+    background: rgba(196, 193, 202, 0.1);
+    border: 1px solid #c4c1ca;
+    border-radius: 20px;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    // min-height: 300px;
+  }
+}
+
+.agreement-radio {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 19px;
+  /* identical to box height, or 158% */
+
+  /* Dark Purple */
+  margin: 2px 0 43px 0;
+  color: #140a2b;
+}

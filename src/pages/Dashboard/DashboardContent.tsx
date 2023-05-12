@@ -3,7 +3,8 @@ import DasboardCard from "./DasboardComponents/DasboardCard/DasboardCard";
 import Greeting from "pages/Dashboard/DasboardComponents/Greeting/Greeting";
 import Card from "components/Card/Card";
 import Button from "components/Button/Button";
-import IndividualDrawer from "../../components/IndividualDrawer/IndividualDrawer";
+import DashboardCardsContainer from "components/DashboardCardsContainer/DashboardCardsContainer";
+import IndividualDrawer from "components/IndividualDrawer/IndividualDrawer";
 import { ReactComponent as AdvisorImage } from "assets/svgs/AdvisorImage.svg";
 import { ReactComponent as Amount } from "assets/svgs/Amount.svg";
 import { ReactComponent as InvestIcon } from "assets/svgs/InvestIcon.svg";
@@ -99,7 +100,7 @@ const DashboardConent = () => {
             subHeadingClassName="subHeading-blue"
             headingSpan="SAR"
             modalHeading="Total Investments Amount"
-            modalInfo="It represents the total value of investments made by You in all the investment opportunities on the platform"
+            modalInfo="It represents the total value of investments made by you in all the investment opportunities on the platform"
           />
         </Col>
         <Col lg={6} md={12} sm={12} xs={12}>
@@ -148,7 +149,7 @@ const DashboardConent = () => {
             order: 2,
           }}
           lg={{
-            span: 16,
+            span: 18,
             order: 1,
           }}
           sm={{
@@ -204,13 +205,14 @@ const DashboardConent = () => {
             </div>
           </div>
         </Col>
+
         <Col
           xs={{
             span: 24,
             order: 1,
           }}
           lg={{
-            span: 8,
+            span: 6,
             order: 2,
           }}
           sm={{
@@ -218,86 +220,89 @@ const DashboardConent = () => {
             order: 1,
           }}
         >
-          <Card className="activate-card">
-            <div className="activate-content">
-              <Progress
-                strokeColor={{
-                  "0%": "#73DCFA",
-                  "100%": "#73DCFA",
-                }}
-                strokeWidth={12}
-                type="circle"
-                percent={75}
-                size="small"
-              />
-              <div>
-                <h1>Activate my account</h1>
-                <p>Complete the KYC to start investing today.</p>
+          <DashboardCardsContainer>
+            <Card className="activate-card">
+              <div className="activate-content">
+                <Progress
+                  strokeColor={{
+                    "0%": "#73DCFA",
+                    "100%": "#73DCFA",
+                  }}
+                  strokeWidth={12}
+                  type="circle"
+                  percent={75}
+                  size="small"
+                />
+                <div>
+                  <h1>Activate my account</h1>
+                  <p>Complete the KYC to start investing today.</p>
+                </div>
               </div>
-            </div>
-            {/* <Button className="activate-btn" block>
+              {/* <Button className="activate-btn" block>
               Activate Now
             </Button> */}
-            <IndividualDrawer />
-          </Card>
-          <Card className="wallet-card">
-            <h1>My Wallet</h1>
-            <div className="wallet-info-container">
-              <div className="wallet-user-info">
-                <User />
-                <div>
-                  <p className="card-num">966 2030 2030 2030</p>
-                  <p className="card-name">OMAR GAMAL</p>
+              <IndividualDrawer />
+            </Card>
+          </DashboardCardsContainer>
+          <DashboardCardsContainer>
+            <Card className="wallet-card">
+              <h1>My Wallet</h1>
+              <div className="wallet-info-container">
+                <div className="wallet-user-info">
+                  <User />
+                  <div>
+                    <p className="card-num">966 2030 2030 2030</p>
+                    <p className="card-name">OMAR GAMAL</p>
+                  </div>
+                </div>
+                <p className="balance">Your Balance</p>
+                <h2>
+                  1,200,000 <sub>SAR</sub>
+                </h2>
+                <div className="wallet-btns">
+                  <Button className="wallet-add-btn">Add Balance</Button>
+                  <Button className="wallet-transfer-btn">Transfer</Button>
                 </div>
               </div>
-              <p className="balance">Your Balance</p>
-              <h2>
-                1,200,000 <sub>SAR</sub>
-              </h2>
-              <div className="wallet-btns">
-                <Button className="wallet-add-btn">Add Balance</Button>
-                <Button className="wallet-transfer-btn">Transfer</Button>
-              </div>
-            </div>
-          </Card>
-          <Card className="advisor-card">
-            <h1>My Financial advisor</h1>
-            <p>
-              Your financial advisor is available to help you with your
-              investment inquires. Reach out Directly.
-            </p>
-            <div className="advisor-profile">
-              {/* <AdvisorImage /> */}
-              <img
-                 src="assets/images/Baddar.png"
-                alt="Baddar"
-              />
-              <h2>Bader Aljuhani</h2>
-              <p>Financial advisor</p>
-              <div className="contact-icons">
-                <div className="contact-icon">
-                  <Email />
-                </div>
-                <div
-                  className="contact-icon"
-                  style={{
-                    width: "40px",
-                    height: "40px",
-                    padding: "8px 9px",
-                  }}
-                >
-                  <img
-                    src="assets/images/whatsapp.png"
-                    alt=""
-                    style={{ width: "20px" }}
-                  />
-                </div>
-                <div className="contact-icon">
-                  <Call />
+            </Card>
+          </DashboardCardsContainer>
+          <DashboardCardsContainer>
+            <Card className="advisor-card">
+              <h1>My Financial advisor</h1>
+              <p>
+                Your financial advisor is available to help you with your
+                investment inquires. Reach out Directly.
+              </p>
+              <div className="advisor-profile">
+                {/* <AdvisorImage /> */}
+                <img src="assets/images/Baddar.png" alt="Baddar" />
+                <h2>Bader Aljuhani</h2>
+                <p>Financial advisor</p>
+                <div className="contact-icons">
+                  <div className="contact-icon">
+                    <Email />
+                  </div>
+                  <div
+                    className="contact-icon"
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      padding: "8px 9px",
+                    }}
+                  >
+                    <img
+                      src="assets/images/whatsapp.png"
+                      alt=""
+                      style={{ width: "20px" }}
+                    />
+                  </div>
+                  <div className="contact-icon">
+                    <Call />
+                  </div>
                 </div>
               </div>
-            </div>
-          </Card>
+            </Card>
+          </DashboardCardsContainer>
         </Col>
       </Row>
     </>

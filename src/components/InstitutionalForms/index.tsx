@@ -2,15 +2,21 @@ import { useState } from "react";
 import { Button, Steps } from "antd";
 import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
+import StepThree from "./StepThree";
+import { useNavigate } from "react-router-dom";
 
 import { ReactComponent as CloseDrawer } from "assets/svgs/CloseDrawer.svg";
 
 function InstitutionForms({ setOpen }) {
+  const navigate = useNavigate();
   const [data, setData] = useState({});
   const [current, setCurrent] = useState(0);
 
-  const handleSubmit = () => {
+  const handleSubmit = (step) => {
     console.log("Submit");
+    if (step === "3") {
+      navigate("/dashboard");
+    }
   };
 
   const nextHandler = () => {
@@ -19,6 +25,15 @@ function InstitutionForms({ setOpen }) {
 
   const handlePrevStep = () => {
     setCurrent(current - 1);
+  };
+
+  const handleSkip = (step) => {
+    if (step == "2") {
+      setCurrent(current + 1);
+    }
+    if (step == "3") {
+      ("/dashboard");
+    }
   };
 
   const steps = [
@@ -31,7 +46,23 @@ function InstitutionForms({ setOpen }) {
     {
       title: "Financial & Bank Information",
       content: (
-        <StepTwo data={data} onSuccess={handleSubmit} onBack={handlePrevStep} />
+        <StepTwo
+          data={data}
+          onSuccess={handleSubmit}
+          handleSkip={handleSkip}
+          onBack={handlePrevStep}
+        />
+      ),
+    },
+    {
+      title: "Investment POA agreement",
+      content: (
+        <StepThree
+          data={data}
+          handleSkip={handleSkip}
+          onSuccess={handleSubmit}
+          onBack={handlePrevStep}
+        />
       ),
     },
   ];
@@ -84,6 +115,28 @@ function InstitutionForms({ setOpen }) {
                       }}
                     >
                       Information
+                    </span>
+                  </div>
+                ),
+              },
+              {
+                title: (
+                  <div className="step-title">
+                    <span
+                      style={{
+                        color: current === 2 ? "#5B2CD3" : "#4E4760",
+                        opacity: current === 2 ? 1 : 0.4,
+                      }}
+                    >
+                      Investment POA
+                    </span>
+                    <span
+                      style={{
+                        color: current === 2 ? "#5B2CD3" : "#4E4760",
+                        opacity: current === 2 ? 1 : 0.4,
+                      }}
+                    >
+                      Agreement
                     </span>
                   </div>
                 ),

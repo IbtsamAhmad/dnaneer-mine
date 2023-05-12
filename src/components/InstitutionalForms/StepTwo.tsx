@@ -70,13 +70,13 @@ type BackProps = {
   onBack: () => void;
 };
 
-
 type Props = BackProps & {
   data: any;
   onSuccess: (data: any) => void;
+  handleSkip: (step: string) => void;
 };
 
- function Step2Form({ data, onSuccess, onBack }: Props) {
+function Step2Form({ data, onSuccess, onBack, handleSkip }: Props) {
   return (
     <div className="stepForm-container">
       <h1>Financial Information</h1>
@@ -86,7 +86,7 @@ type Props = BackProps & {
           remember: true,
         }}
         layout="vertical"
-        // onFinish={onFinish}
+        onFinish={onSuccess}
         // onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
@@ -129,7 +129,7 @@ type Props = BackProps & {
         <Upload />
         <Divider />
         <div className="drawer-final-container">
-          <p className="skip" onClick={() => onBack()}>
+          <p className="skip" onClick={() => handleSkip("2")}>
             Skip for now
           </p>
           <p className="previous" onClick={() => onBack()}>
@@ -144,15 +144,14 @@ type Props = BackProps & {
           </Button>
         </div>
         <Divider />
-        <p className="submit-description">
-          <Aggrement />
-          By submitting, you agree to the
-          <span> Investment POA agreement</span>
+        <p className="submit-description" style={{paddingBottom:"160px"}}>
+          {/* <Aggrement />
+          By submitting, you agree to theeeeeeeee
+          <span> Investment POA agreement</span> */}
         </p>
       </Form>
     </div>
   );
 }
-
 
 export default Step2Form;

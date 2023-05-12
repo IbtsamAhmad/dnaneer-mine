@@ -4,14 +4,14 @@
 }
 
 .ant-modal-body {
-    background: #FFFFFF;
+    background: #140A2B;
     border-radius: 20px;
-    margin-top: 37px;
-    padding: 0px !important;
+    // margin-top: 37px;
+    padding: 20px !important;
 }
 
 .ant-modal {
-    padding: 27px 47px 65px 47px !important;
+    // padding: 27px 47px 65px 47px !important;
     background: #140A2B;
     border-radius: 40px;
 }
@@ -20,4 +20,7 @@
     position: unset !important;
     background: transparent !important;
     padding: 0px !important;
+}
+.ant-modal-close-x{
+    display: none !important;
 }
