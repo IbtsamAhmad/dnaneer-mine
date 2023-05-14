@@ -42,7 +42,7 @@ const Naftah = ({ setShowNaftah, setShowPassword }) => {
         </p>
       </div>
       <div className={classes["naftah-code-container"]}>
-        <Input className={classes["naftah-input"]} />
+        <Input className={classes["naftah-input"]} readOnly />
       </div>
 
       <Button

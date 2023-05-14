@@ -40,7 +40,8 @@
 }
 
 .signUp-form-container {
-  margin: 0 16.67%;
+  margin: 0 auto;
+  max-width: 344px;
 
   .ant-form-item-control-input {
     min-height: 10px !important;
@@ -208,6 +209,7 @@
     margin-top: 45px;
     font-weight: 400;
     padding: 27.5px 0;
+    max-width: 344px;
   }
 
   .otp-next-btn {
