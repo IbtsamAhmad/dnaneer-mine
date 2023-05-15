@@ -149,7 +149,7 @@ const DashboardConent = () => {
             order: 2,
           }}
           lg={{
-            span: 18,
+            span: 17,
             order: 1,
           }}
           sm={{
@@ -212,7 +212,7 @@ const DashboardConent = () => {
             order: 1,
           }}
           lg={{
-            span: 6,
+            span: 7,
             order: 2,
           }}
           sm={{

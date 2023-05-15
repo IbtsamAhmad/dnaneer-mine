@@ -7,11 +7,25 @@ import OpportunityBanner from "./OpportunityBanner/OpportunityBanner";
 const OpportunitiesContainer = () => {
   return (
     <div className="opportunites-wrapper">
-      <Row>
+      <Row gutter={[32, 32]}>
         <Col xs={24}>
           <OpportunityBanner />
         </Col>
-        <Col md={19}>
+        <Col
+          md={19}
+          xs={{
+            span: 24,
+            order: 2,
+          }}
+          lg={{
+            span: 19,
+            order: 1,
+          }}
+          sm={{
+            span: 24,
+            order: 2,
+          }}
+        >
           <Container>
             <div style={{ padding: "0 26px" }}>
               <h1 className="dashboard-page-header">Opportunies</h1>
@@ -20,7 +34,20 @@ const OpportunitiesContainer = () => {
           </Container>
           <LoadMore />
         </Col>
-        <Col md={5}>
+        <Col
+          xs={{
+            span: 24,
+            order: 1,
+          }}
+          lg={{
+            span: 5,
+            order: 2,
+          }}
+          sm={{
+            span: 24,
+            order: 1,
+          }}
+        >
           <SideCard />
         </Col>
       </Row>

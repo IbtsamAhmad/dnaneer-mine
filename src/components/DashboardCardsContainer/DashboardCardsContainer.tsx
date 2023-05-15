@@ -4,7 +4,7 @@ interface MessageProps {
 }
 
 const DashboardCardsContainer = ({ children }: MessageProps): JSX.Element => {
-  return <div style={{ maxWidth: "388px", minWidth:"388px" }}>{children}</div>;
+  return <div style={{ maxWidth: "388px", marginLeft:"auto"}}>{children}</div>;
 };
 
 export default DashboardCardsContainer;

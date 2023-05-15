@@ -1,5 +1,5 @@
 import { SetStateAction, Dispatch } from "react";
-import { Input, Badge, Avatar, Row, Col } from "antd";
+import { Input, Badge, Avatar, Row, Col, Popover } from "antd";
 import { Link } from "react-router-dom";
 import { ReactComponent as Start } from "assets/svgs/Start.svg";
 import { ReactComponent as NavSearch } from "assets/svgs/NavSearch.svg";
@@ -14,6 +14,15 @@ type Props = {
   collapsed?: boolean;
   setCollapsed?: Dispatch<SetStateAction<boolean>>;
 };
+
+
+const content = (
+  <div>
+    <p>Notification</p>
+    <p>Notification</p>
+  </div>
+);
+
 function Header({ setCollapsed, collapsed }: Props) {
   return (
     <div className="header-container">
@@ -40,7 +49,7 @@ function Header({ setCollapsed, collapsed }: Props) {
         >
           <div className="header-col-one">
             <Link to="/">
-              <div className="start-icon" style={{cursor:"pointer"}}>
+              <div className="start-icon" style={{ cursor: "pointer" }}>
                 <Start />
                 <h1>Dnaneer</h1>
                 <div
@@ -103,9 +112,11 @@ function Header({ setCollapsed, collapsed }: Props) {
               <Web />
             </div> */}
             <div className="badge-icon">
-              <Badge count={1}>
-                <Bell />
-              </Badge>
+              <Popover content={content} title="Notifications" trigger="click">
+                <Badge count={1}>
+                  <Bell />
+                </Badge>
+              </Popover>
             </div>
 
             <Avatar src="/assets/images/Avatar 2.png" />
