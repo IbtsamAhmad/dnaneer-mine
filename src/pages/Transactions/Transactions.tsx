@@ -121,7 +121,7 @@ const columns = [
           </div>
           <TransactionsIcon />
         </div>
-        <Table columns={columns} dataSource={data} pagination={false} />;
+        <Table columns={columns} dataSource={data} />;
       </div>
     </DashboardLayout>
   );
