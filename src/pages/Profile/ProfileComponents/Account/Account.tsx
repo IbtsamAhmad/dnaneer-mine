@@ -4,7 +4,7 @@ import { Row, Col, Form, Input } from "antd";
 import { ReactComponent as EditProfile } from "assets/svgs/EditProfile.svg";
 import "./Account.scss";
 
-const AccountContent = () => {
+const AccountContent = ({}) => {
   const [editAccount, setEditAccount] = useState(false);
   const onFinish = (values) => {
     console.log("Success:", values);

@@ -22,7 +22,7 @@ const beforeUpload = (file) => {
 //code here
 const ImageUpload = () => {
   const [loading, setLoading] = useState(false);
-  const [profileUrl, setProfileUrl] = useState("");
+  const [profileUrl, setProfileUrl] = useState("/assets/images/Mask Group.png");
 
   const handleChange = async (info) => {
     // console.log("onChange", info);

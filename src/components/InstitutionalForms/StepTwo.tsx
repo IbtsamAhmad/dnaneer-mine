@@ -138,13 +138,14 @@ function Step2Form({ data, onSuccess, onBack, handleSkip }: Props) {
 
           <Button
             className="complete-btn"
+            onClick={() => handleSkip("2")}
             // onClick={() => message.success("Processing complete!")}
           >
             Complete
           </Button>
         </div>
         <Divider />
-        <p className="submit-description" style={{paddingBottom:"160px"}}>
+        <p className="submit-description" style={{ paddingBottom: "160px" }}>
           {/* <Aggrement />
           By submitting, you agree to theeeeeeeee
           <span> Investment POA agreement</span> */}

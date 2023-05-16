@@ -10,7 +10,7 @@ const MainDetail = () => {
         <div className="main-detail-col1">
           <InvestmentOne />
           <div className="opportunity-code-container">
-            <h3>#3456122</h3>
+            <h3 style={{ fontWeight: "bold" }}>#3456122</h3>
             <h5 className="secondary-text">Software/AI Solutions</h5>
           </div>
         </div>

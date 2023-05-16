@@ -34,6 +34,7 @@ const PersonalInformation = ({ editInfo }) => {
           expandIcon={({ isActive }) => <Expand />}
           className={`my-collapse ${activeKey ? "active" : ""}`}
           onChange={handleCollapseChange}
+          accordion
         >
           <Panel
             header={
@@ -135,7 +136,7 @@ const PersonalInformation = ({ editInfo }) => {
                       </Form.Item>
                     </Col>
                   </Row>
-                  <Row gutter={[32, 32]} style={{marginTop:"-6px"}}>
+                  <Row gutter={[32, 32]} style={{ marginTop: "-6px" }}>
                     <Col lg={6} sm={12}>
                       <Form.Item
                         name="experience"
@@ -272,7 +273,138 @@ const PersonalInformation = ({ editInfo }) => {
             }
             key="2"
           >
-            <h1> Financial Information</h1>
+            {editInfo ? (
+              <>
+                <Form
+                  name="basic"
+                  className="info-form-container"
+                  initialValues={{
+                    remember: true,
+                  }}
+                  layout="vertical"
+                  onFinish={onFinish}
+                  onFinishFailed={onFinishFailed}
+                  autoComplete="off"
+                >
+                  <Row gutter={[32, 32]}>
+                    <Col lg={6} sm={12}>
+                      <Form.Item
+                        name="source"
+                        rules={[
+                          {
+                            required: true,
+                            message: "Please enter your Source of income!",
+                          },
+                        ]}
+                      >
+                        <Input
+                          label="Source of income"
+                          placeholder="Source of income"
+                          className={"infoInput"}
+                        />
+                      </Form.Item>
+                    </Col>
+                    <Col lg={6} sm={12}>
+                      <Form.Item
+                        name="averageIncome"
+                        rules={[
+                          {
+                            required: true,
+                            message: "Please enter your Yearly Average income!",
+                          },
+                        ]}
+                      >
+                        <Input
+                          label="Yearly Average income"
+                          placeholder="Yearly Average income"
+                          className={"infoInput"}
+                        />
+                      </Form.Item>
+                    </Col>
+                    <Col lg={6} sm={12}>
+                      <Form.Item
+                        name="worth"
+                        rules={[
+                          {
+                            required: true,
+                            message: "Please enter your Net worth!",
+                          },
+                        ]}
+                      >
+                        <Input
+                          label="Net worth"
+                          placeholder="Net worth"
+                          className={"infoInput"}
+                        />
+                      </Form.Item>
+                    </Col>
+                    <Col lg={6} sm={12}>
+                      <Form.Item
+                        name="position"
+                        rules={[
+                          {
+                            required: true,
+                            message: "Please enter your position!",
+                          },
+                        ]}
+                      >
+                        <Input
+                          label="Position"
+                          placeholder="Position"
+                          className={"infoInput"}
+                        />
+                      </Form.Item>
+                    </Col>
+                  </Row>
+                  <Row gutter={[32, 32]} style={{ marginTop: "-6px" }}>
+                    <Col lg={6} sm={12}>
+                      <Form.Item
+                        name="knowledge"
+                        rules={[
+                          {
+                            required: true,
+                            message: "Please enter your Investment knowledge!",
+                          },
+                        ]}
+                      >
+                        <Input
+                          label="Investment knowledge"
+                          placeholder="Investment knowledge"
+                          className={"infoInput"}
+                        />
+                      </Form.Item>
+                    </Col>
+                  </Row>
+                </Form>
+              </>
+            ) : (
+              <>
+                <Row>
+                  <Col lg={5} sm={12}>
+                    <p>Source of income</p>
+                    <h1>Job</h1>
+                  </Col>
+                  <Col lg={5} sm={12}>
+                    <p>Yearly Avgrage income</p>
+                    <h1>300k - 600k SAR</h1>
+                  </Col>
+                  <Col lg={5} sm={12}>
+                    <p>Net worth</p>
+                    <h1>Capital growth</h1>
+                  </Col>
+                  <Col lg={5} sm={12}>
+                    <p>Position</p>
+                    <h1>Senior UI Designer</h1>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col lg={5} sm={12}>
+                    <p>Investment knowledge.</p>
+                    <h1>Medium</h1>
+                  </Col>
+                </Row>
+              </>
+            )}
           </Panel>
         </Collapse>
         <Collapse
@@ -297,16 +429,71 @@ const PersonalInformation = ({ editInfo }) => {
             }
             key="3"
           >
-            <Row>
-              <Col lg={5} sm={12}>
-                <p>Bank name</p>
-                <h1>Alinma Bank</h1>
-              </Col>
-              <Col lg={5} sm={12}>
-                <p>IBAN</p>
-                <h1>544675233463564</h1>
-              </Col>
-            </Row>
+            {editInfo ? (
+              <>
+                <Form
+                  name="basic"
+                  className="info-form-container"
+                  initialValues={{
+                    remember: true,
+                  }}
+                  layout="vertical"
+                  onFinish={onFinish}
+                  onFinishFailed={onFinishFailed}
+                  autoComplete="off"
+                >
+                  <Row gutter={[32, 32]}>
+                    <Col lg={6} sm={12}>
+                      <Form.Item
+                        name="bank"
+                        rules={[
+                          {
+                            required: true,
+                            message: "Please enter your Bank name!",
+                          },
+                        ]}
+                      >
+                        <Input
+                          label="Bank name"
+                          placeholder="Bank name"
+                          className={"infoInput"}
+                        />
+                      </Form.Item>
+                    </Col>
+                    <Col lg={6} sm={12}>
+                      <Form.Item
+                        name="IBAN"
+                        rules={[
+                          {
+                            required: true,
+                            message: "Please enter your IBAN!",
+                          },
+                        ]}
+                      >
+                        <Input
+                          label="IBAN"
+                          placeholder="IBAN"
+                          className={"infoInput"}
+                        />
+                      </Form.Item>
+                    </Col>
+                  </Row>
+                </Form>
+              </>
+            ) : (
+              <>
+                <Row>
+                  <Col lg={5} sm={12}>
+                    <p>Bank name</p>
+                    <h1>Alinma Bank</h1>
+                  </Col>
+                  <Col lg={5} sm={12}>
+                    <p>IBAN</p>
+                    <h1>544675233463564</h1>
+                  </Col>
+                </Row>
+              </>
+            )}
           </Panel>
         </Collapse>
       </div>

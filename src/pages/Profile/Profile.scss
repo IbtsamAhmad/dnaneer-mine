@@ -9,13 +9,19 @@
         display: flex;
         align-items: flex-start;
         position: relative;
+        .ant-upload-select{
+                border: none !important;
+        }
+    //     .ant-upload{
+    // border: none !important;
+    //     }
         .profile-col-two {
             display: flex;
             flex-direction: column;
             margin-left: 24px;
             .user-role {
                 border-radius: 38px;
-                background-color: #e7e7e7;
+                background-color: rgba(163, 167, 177,0.1);
                 width: 97px;
                 padding: 6px;
                 display: flex;
