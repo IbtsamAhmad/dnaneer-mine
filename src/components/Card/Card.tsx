@@ -12,18 +12,18 @@ interface CardProps {
   headingClassName?: string;
   subHeadingClassName?: string;
   subHeading?: string;
-  headingSpan?:string;
+  headingSpan?: string;
+  style?: { [index: string]: string };
 }
 
-const AppCard = ({
-  className,
-  children,
-}: CardProps) => {
+const AppCard = ({ className, children, style }: CardProps) => {
   return (
     <Card
+      style={style}
       className={className ? `createApp-Card ${className}` : "createApp-Card"}
-      hoverable>
-       {children}
+      hoverable
+    >
+      {children}
     </Card>
   );
 };

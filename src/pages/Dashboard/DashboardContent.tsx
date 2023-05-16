@@ -3,6 +3,7 @@ import DashboardCard from "./DasboardComponents/DasboardCard/DasboardCard";
 import Greeting from "pages/Dashboard/DasboardComponents/Greeting/Greeting";
 import Card from "components/Card/Card";
 import Button from "components/Button/Button";
+import AppCard from "components/Card/Card";
 import DashboardCardsContainer from "components/DashboardCardsContainer/DashboardCardsContainer";
 import IndividualDrawer from "components/IndividualDrawer/IndividualDrawer";
 import { ReactComponent as AdvisorImage } from "assets/svgs/AdvisorImage.svg";
@@ -88,7 +89,7 @@ const DashboardConent = () => {
         name="Omar"
         src="assets/images/Avatar 2.png"
       />
-      <Row gutter={[32,32]} className="investment-row">
+      <Row gutter={[32, 32]} className="investment-row">
         <Col lg={6} md={12} sm={12} xs={12}>
           <DashboardCard
             icon={<Amount />}
@@ -140,7 +141,7 @@ const DashboardConent = () => {
           />
         </Col>
       </Row>
-      <Row gutter={[32,32]}>
+      <Row gutter={[22, 16]}>
         <Col
           flex="auto"
           xs={{
@@ -163,104 +164,104 @@ const DashboardConent = () => {
             <div className="investment-lists">
               {investmentList.map((investment, i) => {
                 return (
-                  <div className="investment-list" key={i}>
-                    <div className="investment-list-header">
-                      <div className="investment-list-one">
-                        <div>{investment.icon}</div>
-                        <div className="investment-list-two">
-                          <p className="id">{investment.id}</p>
-                          <h2>
-                            {investment.price} <span>SAR Invested</span>
-                          </h2>
-                          <p className="company">{investment.company}</p>
+                  <AppCard style={{ marginTop: i > 0 ? "10px" : "" }}>
+                    <div className="investment-list" key={i}>
+                      <div className="investment-list-header">
+                        <div className="investment-list-one">
+                          <div>{investment.icon}</div>
+                          <div className="investment-list-two">
+                            <p className="id">{investment.id}</p>
+                            <h2>
+                              {investment.price} <span>SAR Invested</span>
+                            </h2>
+                            <p className="company">{investment.company}</p>
+                          </div>
+                        </div>
+
+                        <div>
+                          <Button
+                            className={
+                              investment.active ? "active-btn" : "close-btn"
+                            }
+                          >
+                            {investment.active ? "Active" : "Close"}
+                          </Button>
                         </div>
                       </div>
-
-                      <div>
-                        <Button
-                          className={
-                            investment.active ? "active-btn" : "close-btn"
-                          }
-                        >
-                          {investment.active ? "Active" : "Close"}
-                        </Button>
+                      <div className="tags-container">
+                        {investment.tags.map((tag, i) => {
+                          return (
+                            <p className="investment-tag" key={i}>
+                              {tag}
+                            </p>
+                          );
+                        })}
                       </div>
                     </div>
-                    <div className="tags-container">
-                      {investment.tags.map((tag, i) => {
-                        return (
-                          <p className="investment-tag" key={i}>
-                            {tag}
-                          </p>
-                        );
-                      })}
-                    </div>
-                  </div>
+                  </AppCard>
                 );
               })}
             </div>
           </div>
         </Col>
         <Col
-
-        xs={{
-          order: 1,
-        }}
-        lg={{
-          order: 2,
-        }}
-        sm={{
-          order: 1,
-        }}
+          xs={{
+            order: 1,
+          }}
+          lg={{
+            order: 2,
+          }}
+          sm={{
+            order: 1,
+          }}
         >
-              <DashboardCardsContainer>
-                <Card className="activate-card">
-                  <div className="activate-content">
-                    <Progress
-                      strokeColor={{
-                        "0%": "#73DCFA",
-                        "100%": "#73DCFA",
-                      }}
-                      strokeWidth={12}
-                      type="circle"
-                      percent={75}
-                      size="small"
-                    />
-                    <div>
-                      <h1>Activate my account</h1>
-                      <p>Complete the KYC to start investing today.</p>
-                    </div>
-                  </div>
-                  {/* <Button className="activate-btn" block>
+          <DashboardCardsContainer>
+            <Card className="activate-card">
+              <div className="activate-content">
+                <Progress
+                  strokeColor={{
+                    "0%": "#73DCFA",
+                    "100%": "#73DCFA",
+                  }}
+                  strokeWidth={12}
+                  type="circle"
+                  percent={75}
+                  size="small"
+                />
+                <div>
+                  <h1>Activate my account</h1>
+                  <p>Complete the KYC to start investing today.</p>
+                </div>
+              </div>
+              {/* <Button className="activate-btn" block>
               Activate Now
             </Button> */}
-                  <IndividualDrawer />
-                </Card>
-              </DashboardCardsContainer>
+              <IndividualDrawer />
+            </Card>
+          </DashboardCardsContainer>
 
-
-              <DashboardCardsContainer>
-                <Card className="wallet-card">
-                  <h1>My Wallet</h1>
-                  <div className="wallet-info-container">
-                    <div className="wallet-user-info">
-                      <User />
-                      <div>
-                        <p className="card-num">966 2030 2030 2030</p>
-                        <p className="card-name">OMAR GAMAL</p>
-                      </div>
-                    </div>
-                    <p className="balance">Your Balance</p>
-                    <h2>
-                      1,200,000 <sub>SAR</sub>
-                    </h2>
-                    <div className="wallet-btns">
-                      <Button className="wallet-add-btn">Add Balance</Button>
-                      <Button className="wallet-transfer-btn">Transfer</Button>
-                    </div>
+          <DashboardCardsContainer>
+            <Card className="wallet-card">
+              <h1>My Wallet</h1>
+              <div className="wallet-info-container">
+                <div className="wallet-user-info">
+                  <User />
+                  <div>
+                    <p className="card-num">966 2030 2030 2030</p>
+                    <p className="card-name">OMAR GAMAL</p>
                   </div>
-                </Card>
-              </DashboardCardsContainer>
+                </div>
+                <p className="balance">Your Balance</p>
+                <h2>
+                  1,200,000 <sub>SAR</sub>
+                </h2>
+                <div className="wallet-btns">
+                  <Button className="wallet-add-btn">Add Balance</Button>
+                  <Button className="wallet-transfer-btn">Transfer</Button>
+                </div>
+              </div>
+            </Card>
+          </DashboardCardsContainer>
           <DashboardCardsContainer>
             <Card className="advisor-card">
               <h1>My Financial advisor</h1>

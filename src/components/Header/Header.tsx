@@ -9,12 +9,10 @@ import { ReactComponent as Hamburger } from "assets/svgs/Hamburger.svg";
 
 import "./header.scss";
 
-
 type Props = {
   collapsed?: boolean;
   setCollapsed?: Dispatch<SetStateAction<boolean>>;
 };
-
 
 const content = (
   <div className="header-notifications-content">
@@ -42,7 +40,7 @@ const content = (
       </p>
       <span>Today at 9:42 AM</span>
     </div>
-    <div className="header-footer-line"/>
+    <div className="header-footer-line" />
   </div>
 );
 
@@ -146,7 +144,6 @@ function Header({ setCollapsed, collapsed }: Props) {
                   </div>
                 }
                 trigger="click"
-                
               >
                 <Badge count={1}>
                   <Bell />
@@ -154,7 +151,9 @@ function Header({ setCollapsed, collapsed }: Props) {
               </Popover>
             </div>
 
-            <Avatar src="/assets/images/Avatar 2.png" />
+            <Link to={"/dashboard/profile"}>
+              <Avatar src="/assets/images/Avatar 2.png" />
+            </Link>
           </div>
         </Col>
       </Row>

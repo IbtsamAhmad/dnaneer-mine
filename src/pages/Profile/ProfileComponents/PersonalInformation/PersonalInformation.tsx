@@ -65,8 +65,8 @@ const PersonalInformation = ({ editInfo }) => {
                   onFinishFailed={onFinishFailed}
                   autoComplete="off"
                 >
-                  <Row>
-                    <Col lg={5} sm={12}>
+                  <Row gutter={[32, 32]}>
+                    <Col lg={6} sm={12}>
                       <Form.Item
                         name="education"
                         rules={[
@@ -83,7 +83,7 @@ const PersonalInformation = ({ editInfo }) => {
                         />
                       </Form.Item>
                     </Col>
-                    <Col lg={5} sm={12}>
+                    <Col lg={6} sm={12}>
                       <Form.Item
                         name="employed"
                         rules={[
@@ -100,7 +100,7 @@ const PersonalInformation = ({ editInfo }) => {
                         />
                       </Form.Item>
                     </Col>
-                    <Col lg={5} sm={12}>
+                    <Col lg={6} sm={12}>
                       <Form.Item
                         name="company"
                         rules={[
@@ -117,7 +117,7 @@ const PersonalInformation = ({ editInfo }) => {
                         />
                       </Form.Item>
                     </Col>
-                    <Col lg={5} sm={12}>
+                    <Col lg={6} sm={12}>
                       <Form.Item
                         name="position"
                         rules={[
@@ -135,8 +135,8 @@ const PersonalInformation = ({ editInfo }) => {
                       </Form.Item>
                     </Col>
                   </Row>
-                  <Row>
-                    <Col lg={5} sm={12}>
+                  <Row gutter={[32, 32]} style={{marginTop:"-6px"}}>
+                    <Col lg={6} sm={12}>
                       <Form.Item
                         name="experience"
                         rules={[
@@ -153,7 +153,7 @@ const PersonalInformation = ({ editInfo }) => {
                         />
                       </Form.Item>
                     </Col>
-                    <Col lg={5} sm={12}>
+                    <Col lg={6} sm={12}>
                       <Form.Item
                         name="id"
                         rules={[
@@ -170,7 +170,7 @@ const PersonalInformation = ({ editInfo }) => {
                         />
                       </Form.Item>
                     </Col>
-                    <Col lg={5} sm={12}>
+                    <Col lg={6} sm={12}>
                       <Form.Item
                         name="address"
                         rules={[
@@ -187,7 +187,7 @@ const PersonalInformation = ({ editInfo }) => {
                         />
                       </Form.Item>
                     </Col>
-                    <Col lg={5} sm={12}>
+                    <Col lg={6} sm={12}>
                       <Form.Item
                         name="email"
                         rules={[

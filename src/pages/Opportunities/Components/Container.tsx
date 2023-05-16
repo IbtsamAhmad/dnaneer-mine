@@ -7,7 +7,7 @@ import OpportunityBanner from "./OpportunityBanner/OpportunityBanner";
 const OpportunitiesContainer = () => {
   return (
     <div className="opportunites-wrapper">
-      <Row gutter={[32, 32]}>
+      <Row gutter={[22, 32]}>
         <Col xs={24}>
           <OpportunityBanner />
         </Col>

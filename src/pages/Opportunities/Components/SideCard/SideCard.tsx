@@ -6,7 +6,7 @@ import "./SideCard.scss";
 const SideCard = () => {
   return (
     <Row justify="end">
-      <Col style={{ minWidth: "388px", maxWidth: "388px" }}>
+      <Col style={{ minWidth: "262px", maxWidth: "262px" }}>
         <div className="sideCard-container">
           <div style={{ marginBottom: "-2rem" }}>
             <AppCard>
