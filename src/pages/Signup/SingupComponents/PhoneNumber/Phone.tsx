@@ -12,6 +12,7 @@ import { register } from "services/Login";
 import SwitchUser from "components/SwitchUser/SwitchUser";
 import AuthContainer from "components/AuthContainer/AuthContainer";
 // import { useForm } from "antd/es/form/Form";
+import classes from "./phone.module.scss";
 
 const { Option } = Select;
 
@@ -118,7 +119,7 @@ const Phone = ({
   // };
 
   return (
-    <AuthContainer>
+    <AuthContainer containerClass={classes["phone-container"]}>
       <h1>Get Started As</h1>
       <SwitchUser userType={individual} setUserType={setIndividual} />
       <Form

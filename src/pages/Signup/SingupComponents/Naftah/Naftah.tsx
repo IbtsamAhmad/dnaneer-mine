@@ -36,7 +36,7 @@ const Naftah = ({ setShowNaftah, setShowPassword }) => {
         </div>
         <div>
           <Button
-            className="singUp-back-btn"
+            className={classes["singUp-back-btn"]}
             icon={<BackArrow />}
             onClick={backHandler}
           >

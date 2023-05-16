@@ -9,13 +9,16 @@ interface AuthContainerProps {
 
 const AuthContainer = ({ children, containerClass }: AuthContainerProps) => {
   return (
-    <div className={containerClass ? containerClass : "signUp-container"}>
+    <div className={"signUp-container"}>
       <div className="close-icon">
         <a href="https://staging.dnaneer.com/">
           <Close />
         </a>
       </div>
-      <div className="signUp-form-container">
+      <div
+        // className={containerClass ? containerClass : "signUp-form-container"}
+        className={`signUp-form-container ${containerClass}`}
+      >
         <div className="start-icon">
           <Start />
         </div>
