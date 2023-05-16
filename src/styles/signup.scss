@@ -6,6 +6,10 @@
 }
 
 .signUp-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   .close-icon {
     position: absolute;
     top: 47px;
@@ -42,6 +46,7 @@
 .signUp-form-container {
   margin: 0 auto;
   max-width: 344px;
+  min-width: 344px;
 
   .ant-form-item-control-input {
     min-height: 10px !important;

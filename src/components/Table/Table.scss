@@ -29,3 +29,13 @@
 .ant-pagination {
     justify-content: center !important;
 }
+
+.ant-table-row{
+&:hover{
+    background: rgba(91, 44, 211, 0.05) !important; 
+}
+}
+
+tr:hover>td {
+background: rgba(91, 44, 211, 0.05) !important;
+}

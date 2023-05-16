@@ -12,17 +12,14 @@ const OpportunitiesContainer = () => {
           <OpportunityBanner />
         </Col>
         <Col
-          md={19}
+          flex="auto"
           xs={{
-            span: 24,
             order: 2,
           }}
           lg={{
-            span: 19,
             order: 1,
           }}
           sm={{
-            span: 24,
             order: 2,
           }}
         >
@@ -36,15 +33,12 @@ const OpportunitiesContainer = () => {
         </Col>
         <Col
           xs={{
-            span: 24,
             order: 1,
           }}
           lg={{
-            span: 5,
             order: 2,
           }}
           sm={{
-            span: 24,
             order: 1,
           }}
         >

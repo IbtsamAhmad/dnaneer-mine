@@ -17,7 +17,7 @@ export default function Otp({ otp, setOtp }: OtpProps): JSX.Element {
       }}
       value={otp}
       onChange={setOtp}
-      numInputs={6}
+      numInputs={4}
       renderSeparator={""}
       renderInput={(props) => <input {...props} />}
     />

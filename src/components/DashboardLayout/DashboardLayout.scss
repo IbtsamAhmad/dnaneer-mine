@@ -28,10 +28,12 @@
 
 .ant-menu-item {
     margin: 15px 0 !important;
-        border-radius: 6px !important;
-        .ant-divider{
-         margin: 0px !important;
-        }
+    border-radius: 6px !important;
+
+    .ant-divider {
+        margin: 0px !important;
+    }
+
     span {
         font-weight: 700;
         font-size: 14px;
@@ -76,16 +78,18 @@
     margin-bottom: 24px;
 }
 
-.investments-container{
+.investments-container {
     background: #FFFFFF;
-        border-radius: 20px;
-        padding: 26px 24px;
-    .investment-header{
+    border-radius: 20px;
+    padding: 26px 24px;
+
+    .investment-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        h1{
-        background: linear-gradient(270deg, #2B48F4 0%, #34A5FF 100%);
+
+        h1 {
+            background: linear-gradient(270deg, #2B48F4 0%, #34A5FF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -93,118 +97,136 @@
             font-weight: 700;
             font-size: 20px;
         }
-        .view-all-btn{
-        background: linear-gradient(270deg, #2B48F4 0%, #34A5FF 100%);
+
+        .view-all-btn {
+            background: linear-gradient(270deg, #2B48F4 0%, #34A5FF 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-weight: 500;
-                font-size: 14px;
-                svg{
-                    margin-left: 5px;
-                }
+            font-size: 14px;
+
+            svg {
+                margin-left: 5px;
+            }
         }
     }
-    .investment-list{
+
+    .investment-list {
         padding: 24px 26px;
         margin-top: 10px;
         border: 1px solid rgba(138, 133, 149, 0.2);
-            border-radius: 20px;
-     .investment-list-header{
-       display: flex;
-       align-items: center;
-       justify-content: space-between;
-       .investment-list-one{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-       }
-       .investment-list-two{
-        margin-left: 17px;
-    .id {
-        margin-bottom: 0px;
-        font-weight: 500;
-        font-size: 12px;
-        color: #8A8595;
-        margin-bottom: 3px;
-    }
-    h2 {
-        margin-bottom: 3px;
-        font-weight: 700;
-        font-size: 16px;
-        letter-spacing: -0.02em;
-        color: #140A2B;
-        span {
-            color: #140A2B;
-            font-size: 12px;
-            font-weight: 500;
+        border-radius: 20px;
+
+        .investment-list-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .investment-list-one {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .investment-list-two {
+                margin-left: 17px;
+
+                .id {
+                    margin-bottom: 0px;
+                    font-weight: 500;
+                    font-size: 12px;
+                    color: #8A8595;
+                    margin-bottom: 3px;
+                }
+
+                h2 {
+                    margin-bottom: 3px;
+                    font-weight: 700;
+                    font-size: 16px;
+                    letter-spacing: -0.02em;
+                    color: #140A2B;
+
+                    span {
+                        color: #140A2B;
+                        font-size: 12px;
+                        font-weight: 500;
+                    }
+                }
+
+                p {
+                    font-weight: 500;
+                    font-size: 12px;
+                    color: #140A2B;
+                    margin-bottom: 3px;
+                }
+
+
+            }
+
+            .active-btn {
+                background: rgba(23, 184, 144, 0.1);
+                border-radius: 60px;
+                font-weight: 500;
+                font-size: 12px;
+                letter-spacing: -0.02em;
+                color: #17B890;
+                width: 88px;
+                height: 32px;
+
+                &:hover {
+                    color: #17B890 !important;
+                }
+            }
+
+            .close-btn {
+                background: rgba(138, 133, 149, 0.1);
+                border-radius: 60px;
+                font-weight: 500;
+                font-size: 12px;
+                letter-spacing: -0.02em;
+                color: #8A8595;
+                width: 88px;
+                height: 32px;
+
+                &:hover {
+                    color: #8A8595 !important;
+                }
+            }
+
         }
-    }
-    p {
-        font-weight: 500;
-        font-size: 12px;
-        color: #140A2B;
-        margin-bottom: 3px;
-    }
+
+        .tags-container {
+            margin-top: 14px;
+            display: flex;
+            align-items: center;
 
 
-       }
-       .active-btn{
-background: rgba(23, 184, 144, 0.1);
-    border-radius: 60px;
-    font-weight: 500;
-        font-size: 12px;
-        letter-spacing: -0.02em;
-        color: #17B890;
-        width: 88px;
-        height: 32px;
-        &:hover{
-            color: #17B890 !important;
+            // .investment-tag {
+            //     background: rgba(138, 133, 149, 0.1);
+            //     border-radius: 60px;
+            //     font-weight: 500;
+            //     font-size: 12px;
+            //     letter-spacing: -0.02em;
+            //     color: #8A8595;
+            // padding: 8px 10px;
+            //     margin-bottom: 0px;
+            //     margin-right: 10px;
+            // }
         }
-       }
-       .close-btn{
-background: rgba(138, 133, 149, 0.1);
-    border-radius: 60px;
-    font-weight: 500;
-    font-size: 12px;
-    letter-spacing: -0.02em;
-    color: #8A8595;
-    width: 88px;
-    height: 32px;
-
-    &:hover {
-        color: #8A8595 !important;
-    }
-       }
-
-     }
-                        .tags-container {
-                            margin-top: 14px;
-                            display: flex;
-                            align-items: center;
-                      
-            
-                            // .investment-tag {
-                            //     background: rgba(138, 133, 149, 0.1);
-                            //     border-radius: 60px;
-                            //     font-weight: 500;
-                            //     font-size: 12px;
-                            //     letter-spacing: -0.02em;
-                            //     color: #8A8595;
-                            // padding: 8px 10px;
-                            //     margin-bottom: 0px;
-                            //     margin-right: 10px;
-                            // }
-                        }
     }
 }
 
 
 
 .activate-card {
-    background: #5B2CD3 !important;
+
     border-radius: 20px;
     padding: 18px !important;
+
+    background: red;
+    background-image: url("/assets/images/Activate.png") !important;
+    background-size: cover !important;
 
     .ant-card-body {
         padding: 0px !important;
@@ -243,20 +265,22 @@ background: rgba(138, 133, 149, 0.1);
 
     .activate-btn {
         background: #FFFFFF;
-         color: #5B2CD3 !important;
-         font-weight: 500;
-         font-size: 12px;
-          height: 42px;
-         margin-top: 14px;
+        color: #5B2CD3 !important;
+        font-weight: 500;
+        font-size: 12px;
+        height: 42px;
+        margin-top: 14px;
         // &:hover{
         // color: #5B2CD3 !important;
         // background: #FFFFFF;
         // }
     }
 }
+
 .wallet-card {
     margin: 25px 0;
     padding: 28px 26px;
+
 
     .ant-card-body {
         padding: 0px !important;
@@ -270,11 +294,13 @@ background: rgba(138, 133, 149, 0.1);
         text-fill-color: transparent;
         font-weight: 700;
         font-size: 20px;
-                display: inline-flex;
+        display: inline-flex;
     }
 
     .wallet-info-container {
-        background: linear-gradient(179.03deg, #5B2CD3 24.74%, #2B48F4 96.89%);
+        // background: linear-gradient(179.03deg, #5B2CD3 24.74%, #2B48F4 96.89%);
+        background-image: url("/assets/images/walletBG.png") !important;
+        background-size: cover !important;
         padding: 23px;
         border-radius: 20px;
         border: 1px solid rgba(240, 240, 240, 0.8666666667);
@@ -334,7 +360,8 @@ background: rgba(138, 133, 149, 0.1);
                 height: 42px;
                 color: #5B2CD3 !important;
 
-                &:hover, &:active {
+                &:hover,
+                &:active {
                     color: #5B2CD3 !important;
                 }
             }
@@ -353,32 +380,36 @@ background: rgba(138, 133, 149, 0.1);
 
             }
         }
-        &:hover{
-        border-color: transparent;
-        box-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09);
+
+        &:hover {
+            border-color: transparent;
+            box-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09);
         }
     }
-    &:hover{
+
+    &:hover {
         box-shadow: none !important;
     }
 }
+
 .advisor-card {
     padding: 28px 26px !important;
     margin-bottom: 50px;
+
     .ant-card-body {
         padding: 0px !important;
     }
 
     h1 {
-         background: linear-gradient(270deg, #2B48F4 0%, #34A5FF 100%);
-         -webkit-background-clip: text;
-         -webkit-text-fill-color: transparent;
-         background-clip: text;
-         text-fill-color: transparent;
+        background: linear-gradient(270deg, #2B48F4 0%, #34A5FF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
         font-weight: 700;
         font-size: 20px;
-         display: inline-flex;
-       
+        display: inline-flex;
+
     }
 
     p {
@@ -393,6 +424,19 @@ background: rgba(138, 133, 149, 0.1);
         align-items: center;
         flex-direction: column;
         justify-content: baseline;
+        position: relative;
+        margin-top: 32px;
+
+        .advisor-image {
+            position: relative;
+
+            .advisor-logo {
+                position: absolute;
+                top: -5px;
+                right: -3px;
+            }
+        }
+
 
         h2 {
             font-weight: 700;
@@ -438,37 +482,40 @@ background: rgba(138, 133, 149, 0.1);
     }
 }
 
-    .dashboard-modal-content{
-        display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            // padding: 44px 22px;
-            svg{
 
-            }
-                h1 {
-                        margin-top: 41px;
-                        margin-bottom: 0px;
-                        font-weight: 700;
-                        font-size: 16px;
-                        color: #ffff;
-                    }
-                
-                    p {
-                        margin-top: 10px;
-                        font-weight: 500;
-                        font-size: 12px;
-                        line-height: 14px;
-                        color: #8A8595;
-                        margin-bottom: 20px;
-                        line-height: 15px;
-                    }
-                
-                    .dashboard-ok-btn {
-                        border-radius: 113px;
-                        border-radius: 113px;
-                        height: 52px;
-                    }
+.dashboard-modal-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    background: #140A2B !important;
+    box-shadow: 0px 40px 60px rgba(30, 23, 61, 0.15) !important;
+    border-radius: 20px !important;
+
+    svg {}
+
+    h1 {
+        // margin-top: 41px;
+        margin-bottom: 0px;
+        font-weight: 700;
+        font-size: 16px;
+        color: #ffff;
     }
 
+    p {
+        margin-top: 5px;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        color: #8A8595;
+        margin-bottom: 0px;
+        line-height: 15px;
+        max-width: 349px;
+    }
 
+    .dashboard-ok-btn {
+        border-radius: 113px;
+        border-radius: 113px;
+        height: 52px;
+    }
+}

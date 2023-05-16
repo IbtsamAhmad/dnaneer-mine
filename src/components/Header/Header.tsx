@@ -17,9 +17,32 @@ type Props = {
 
 
 const content = (
-  <div>
-    <p>Notification</p>
-    <p>Notification</p>
+  <div className="header-notifications-content">
+    <div className="notification">
+      <h1>Account verified</h1>
+      <p>
+        It is a long established fact that a reader will be distracted by the
+        readable.
+      </p>
+      <span>Today at 9:42 AM</span>
+    </div>
+    <div className="notification">
+      <h1>Account verified</h1>
+      <p>
+        It is a long established fact that a reader will be distracted by the
+        readable.
+      </p>
+      <span>Today at 9:42 AM</span>
+    </div>
+    <div className="notification">
+      <h1>Account verified</h1>
+      <p>
+        It is a long established fact that a reader will be distracted by the
+        readable.
+      </p>
+      <span>Today at 9:42 AM</span>
+    </div>
+    <div className="header-footer-line"/>
   </div>
 );
 
@@ -112,7 +135,19 @@ function Header({ setCollapsed, collapsed }: Props) {
               <Web />
             </div> */}
             <div className="badge-icon">
-              <Popover content={content} title="Notifications" trigger="click">
+              <Popover
+                placement="bottom"
+                content={content}
+                title={
+                  <div className="header-notifications-title">
+                    {" "}
+                    <Bell />
+                    Notifications
+                  </div>
+                }
+                trigger="click"
+                
+              >
                 <Badge count={1}>
                   <Bell />
                 </Badge>

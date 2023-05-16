@@ -1,6 +1,30 @@
+.naftah-wrapper {
+  height: 100vh;
+  // position: relative;
+  margin: 0 auto;
+  min-width: 344px;
+  max-width: 344px;
+  // display: flex;
+  // justify-content: center;
+  // flex-direction: column;
+  // align-items: center;
+}
+.close-icon {
+  position: absolute;
+  top: 47px;
+  right: 67px;
+}
 .naftah-container {
   position: relative;
-  height: 74vh;
+  // height: 72vh;
+  padding-top: 170px;
+  height: 100%;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+  .start-icon {
+    margin-bottom: 41px;
+  }
 }
 .naftah-logo-container {
   margin-top: 41px;
@@ -31,13 +55,15 @@
   width: 55px;
   height: 55px;
   border-radius: 12px;
-  background-color: #dcdde5;
   color: #000000;
   font-size: 20px;
+  background: rgba(196, 193, 202, 0.25);
+  border: 1px solid #DCDDE5;
+  border-radius: 12px;
 }
 .naftah-download {
-  position: absolute;
-  bottom: 0;
+  // position: absolute;
+  // bottom: 0;
   width: 100%;
   text-align: center;
   //   display: flex;
@@ -51,5 +77,19 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 35px;
   }
+}
+
+.copy-right {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 30px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #140a2b;
+  left: 50%;
+  transform: translateX(-50%);
 }

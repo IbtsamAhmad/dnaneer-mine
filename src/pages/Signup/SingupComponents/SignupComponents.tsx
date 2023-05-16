@@ -1,5 +1,5 @@
 import { useLayoutEffect, useState } from "react";
-import AuthContainer from "components/AuthContainer/AuthContainer";
+// import AuthContainer from "components/AuthContainer/AuthContainer";
 import OtpComponent from "./Otp/Otp";
 import Phone from "../SingupComponents/PhoneNumber/Phone";
 import Password from "../SingupComponents/Password/Password";
@@ -22,7 +22,7 @@ const SingUpComponent = ({ individual, setIndividual }) => {
     }
   }, []);
   return (
-    <AuthContainer>
+    <>
       {showPhone && (
         <Phone
           setShowOtp={setShowOtp}
@@ -62,7 +62,7 @@ const SingUpComponent = ({ individual, setIndividual }) => {
           setShowNaftah={setShowNaftah}
         />
       )}
-    </AuthContainer>
+    </>
   );
 };
 

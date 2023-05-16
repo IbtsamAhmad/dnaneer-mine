@@ -6,6 +6,7 @@ import { message, notification } from "antd";
 import { useNavigate } from "react-router-dom";
 import { timeConverter } from "utils/Helper";
 import { verifyOTP } from "services/Login";
+import AuthContainer from "components/AuthContainer/AuthContainer";
 
 const OtpComponent = ({
   setShowPassword,
@@ -44,8 +45,8 @@ const OtpComponent = ({
     setShowPhone(true);
   };
   const nextHandler = async () => {
-    if (otp.length >= 6) {
-      if (otp === "123456") {
+    if (otp.length >= 4) {
+      if (otp === "1234") {
         if (individual === "individual") {
           setShowOtp(false);
           setShowPassword(true);
@@ -73,7 +74,7 @@ const OtpComponent = ({
     }
   };
   return (
-    <div>
+    <AuthContainer>
       {/* {contextHolder} */}
       <Button
         style={{ padding: "none" }}
@@ -103,7 +104,7 @@ const OtpComponent = ({
         Next
       </Button>
       <p className="form-bottom">Resend OTP</p>
-    </div>
+    </AuthContainer>
   );
 };
 

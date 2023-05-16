@@ -1,5 +1,5 @@
 import { ReactNode, useState } from "react";
-import { Card } from "antd";
+import { Card, Popover } from "antd";
 import Button from "components/Button/Button";
 import Modal from "components/Modal/Modal";
 
@@ -23,7 +23,7 @@ interface CardProps {
   modalInfo?: string;
 }
 
-const DasboardCard = ({
+const DashboardCard = ({
   className,
   children,
   icon,
@@ -36,24 +36,38 @@ const DasboardCard = ({
   modalInfo
 }: CardProps) => {
 
-   const [isModalOpen, setIsModalOpen] = useState(false);
+  //  const [isModalOpen, setIsModalOpen] = useState(false);
 
-   const showModal = () => {
-     console.log("showw");
-     setIsModalOpen(true);
-   };
+  //  const showModal = () => {
+  //    console.log("showw");
+  //    setIsModalOpen(true);
+  //  };
 
-   const handleOk = () => {
-     setIsModalOpen(false);
-   };
+  //  const handleOk = () => {
+  //    setIsModalOpen(false);
+  //  };
 
-   const handleCancel = () => {
-     setIsModalOpen(false);
-   };
+  //  const handleCancel = () => {
+  //    setIsModalOpen(false);
+  //  };
+
+  const content = (
+    <>
+      <div className="dashboard-modal-content">
+        <div>
+          <DashboardInfo />
+        </div>
+        <div style={{ marginLeft: "14px" }}>
+          <h1>{modalHeading}</h1>
+          <p>{modalInfo}</p>
+        </div>
+      </div>
+    </>
+  );
 
   return (
     <>
-      <Modal
+      {/* <Modal
         isModalVisible={isModalOpen}
         centered
         onOk={handleOk}
@@ -69,14 +83,21 @@ const DasboardCard = ({
             <p>{modalInfo}</p>
           </div>
         </div>
-      </Modal>
+      </Modal> */}
       <Card
         className={className ? `DasboardCard ${className}` : "DasboardCard"}
         hoverable
       >
-        <div className="info-icon" onClick={showModal}>
-          <Info />
-        </div>
+        <Popover
+          content={content}
+          placement="top"
+          className="dashboard-popover"
+        >
+          <div className="info-icon">
+            <Info />
+          </div>
+        </Popover>
+
         <div className="card-icon">{icon}</div>
         <h1
           className={
@@ -102,4 +123,4 @@ const DasboardCard = ({
   );
 };
 
-export default DasboardCard;
+export default DashboardCard;

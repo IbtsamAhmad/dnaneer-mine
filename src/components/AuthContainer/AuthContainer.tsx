@@ -1,8 +1,15 @@
 import { ReactComponent as Close } from "assets/svgs/Close.svg";
 import { ReactComponent as Start } from "assets/svgs/Start.svg";
-const AuthContainer = ({ children }) => {
+import { ReactNode } from "react";
+
+interface AuthContainerProps {
+  children: ReactNode;
+  containerClass?: string;
+}
+
+const AuthContainer = ({ children, containerClass }: AuthContainerProps) => {
   return (
-    <div className="signUp-container">
+    <div className={containerClass ? containerClass : "signUp-container"}>
       <div className="close-icon">
         <a href="https://staging.dnaneer.com/">
           <Close />

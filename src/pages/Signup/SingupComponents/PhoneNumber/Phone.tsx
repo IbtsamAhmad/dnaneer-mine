@@ -10,6 +10,7 @@ import { ReactComponent as Cross } from "assets/svgs/Cross.svg";
 import { register } from "services/Login";
 
 import SwitchUser from "components/SwitchUser/SwitchUser";
+import AuthContainer from "components/AuthContainer/AuthContainer";
 // import { useForm } from "antd/es/form/Form";
 
 const { Option } = Select;
@@ -117,7 +118,7 @@ const Phone = ({
   // };
 
   return (
-    <>
+    <AuthContainer>
       <h1>Get Started As</h1>
       <SwitchUser userType={individual} setUserType={setIndividual} />
       <Form
@@ -237,7 +238,7 @@ const Phone = ({
           <p className="form-bottom">Log in</p>
         </a>
       </Form>
-    </>
+    </AuthContainer>
   );
 };
 

@@ -12,6 +12,7 @@ import { ReactComponent as Tick } from "assets/svgs/Tick.svg";
 import { ReactComponent as Cross } from "assets/svgs/Cross.svg";
 import DatePicker from "components/DatePicker/DatePicker";
 import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
+import AuthContainer from "components/AuthContainer/AuthContainer";
 
 const Password = ({
   setShowPassword,
@@ -30,9 +31,9 @@ const Password = ({
 
   const onFinish = (values) => {
     console.log("Success:", values);
-    if (lengthVal && oneNumVal && oneUpCaseVal && oneLowCaseVal && specialVal) {
-      nextHandler();
-    }
+    // if (lengthVal && oneNumVal && oneUpCaseVal && oneLowCaseVal && specialVal) {
+    nextHandler();
+    // }
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
@@ -105,7 +106,7 @@ const Password = ({
   };
 
   return (
-    <div>
+    <AuthContainer>
       <Button
         className="singUp-back-btn"
         icon={<BackArrow />}
@@ -153,7 +154,7 @@ const Password = ({
               name="DOB"
               rules={[
                 {
-                  required: true,
+                   required: true,
                   message: "Please enter your birth date",
                 },
               ]}
@@ -172,7 +173,7 @@ const Password = ({
           rules={[
             {
               type: "email",
-              required: true,
+              // required: true,
               message: "Please enter your email",
             },
           ]}
@@ -185,7 +186,7 @@ const Password = ({
           rules={[
             {
               type: "string",
-              required: true,
+              // required: true,
               message: "Please enter your password",
             },
           ]}
@@ -242,7 +243,7 @@ const Password = ({
           <p className="form-bottom-password">Log in</p>
         </a>
       </Form>
-    </div>
+    </AuthContainer>
   );
 };
 

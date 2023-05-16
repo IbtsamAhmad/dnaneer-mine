@@ -1,25 +1,12 @@
 import { ReactComponent as OpportunityIcon } from "assets/svgs/OpportunityIcon.svg";
+import "./banner.scss";
 
-const OpportunityBanner = ( ) => {
+const OpportunityBanner = () => {
   return (
-    <div
-      style={{
-        borderRadius: "20px",
-        marginBottom: "2rem",
-        background: "linear-gradient(270deg, #34A5FF 0%, #5B2CD3 100%)",
-        padding: "3.3rem 2.3rem",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-      }}
-    >
+    <div className="banner-container">
       <div>
-        <h1 style={{ color: "#fff", fontSize: "24px", fontWeight:"700" }}>
-          Find the best Opportunity for you
-        </h1>
-        <h4 style={{ color: "#fff", fontSize: "16px", opacity:"0.75",fontWeight:"500" }}>
-          Maximize your investments today!
-        </h4>
+        <h1>Find the best Opportunity for you</h1>
+        <h4>Maximize your investments today!</h4>
       </div>
       <OpportunityIcon />
     </div>
