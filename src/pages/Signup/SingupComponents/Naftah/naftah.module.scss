@@ -1,20 +1,22 @@
 .naftah-wrapper {
   height: 100vh;
   // position: relative;
-  margin: 0 auto;
-  min-width: 344px;
-  max-width: 344px;
+  // margin: 0 auto;
+  // min-width: 344px;
+  // max-width: 344px;
   display: grid;
-  grid-template-rows: 5fr 1fr;
+  grid-template-rows: 1fr 6fr 1fr;
   // display: flex;
   // justify-content: center;
   // flex-direction: column;
   // align-items: center;
 }
 .close-icon {
-  position: absolute;
-  top: 47px;
-  right: 67px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: start;
+  margin-right: 10%;
+  margin-top: 10%;
   svg {
     width: 18px;
     height: 18px;
@@ -28,6 +30,7 @@
   // display: flex;
   // flex-direction: column;
   // justify-content: space-between;
+  max-width: 344px;
   justify-self: center;
   align-self: center;
   .start-icon {

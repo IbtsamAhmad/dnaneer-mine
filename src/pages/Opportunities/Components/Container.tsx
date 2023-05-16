@@ -2,7 +2,7 @@ import Container from "components/Container/Container";
 import OpportuniesTabs from "./OpportunitiesTabs/OpportunitiesTabs";
 import { Row, Col } from "antd";
 import SideCard from "./SideCard/SideCard";
-import LoadMore from "./LoadMore/LoadMore";
+
 import OpportunityBanner from "./OpportunityBanner/OpportunityBanner";
 const OpportunitiesContainer = () => {
   return (
@@ -29,7 +29,7 @@ const OpportunitiesContainer = () => {
             </div>
             <OpportuniesTabs />
           </Container>
-          <LoadMore />
+
         </Col>
         <Col
           xs={{

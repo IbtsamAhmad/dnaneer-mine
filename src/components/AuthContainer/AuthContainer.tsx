@@ -17,7 +17,7 @@ const AuthContainer = ({ children, containerClass }: AuthContainerProps) => {
       </div>
       <div
         // className={containerClass ? containerClass : "signUp-form-container"}
-        className={`signUp-form-container ${containerClass}`}
+        className={`signUp-form-container`}
       >
         <div className="start-icon">
           <Start />

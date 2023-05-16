@@ -1,252 +1,261 @@
-@media screen and (min-width: 1601px) and (max-width: 1920px) {}
+// @media screen and (min-width: 1601px) and (max-width: 1920px) {
+// }
 
+// @media screen and (min-width: 1281px) and (max-width: 1600px) {
+// }
 
-@media screen and (min-width: 1281px) and (max-width: 1600px) {}
+// @media screen and (min-width: 1025px) and (max-width: 1280px) {
+//   .auth-container {
+//     overflow: hidden;
 
-@media screen and (min-width: 1025px) and (max-width: 1280px) {
-    .auth-container {
-        overflow: hidden;
+//     .auth-col-one {
+//       .copyright-two {
+//         display: block;
+//         margin-top: 145px;
+//         position: relative;
+//         padding-bottom: 20px;
+//       }
 
-        .auth-col-one {
-            .copyright-two {
-                display: block;
-                margin-top: 145px;
-                position: relative;
-                padding-bottom: 20px;
-            }
+//       .login-img {
+//         // width: 110%;
+//       }
 
-            .login-img {
-                // width: 110%;
-            }
+//       .profits {
+//         svg {
+//           width: 70%;
+//           margin: 0 auto;
+//           display: block;
+//         }
+//       }
 
-            .profits {
-                svg {
-                    width: 70%;
-                    margin: 0 auto;
-                    display: block;
-                }
-            }
+//       .networks {
+//         margin-top: -60px;
 
-            .networks {
-                margin-top: -60px;
+//         svg {
+//           width: 70%;
+//           margin: 0 auto;
+//           display: block;
+//         }
+//       }
 
-                svg {
-                    width: 70%;
-                    margin: 0 auto;
-                    display: block;
-                }
-            }
+//       .description {
+//         h1 {
+//           font-size: 22px;
+//         }
 
-            .description {
-                h1 {
-                    font-size: 22px;
-                }
+//         p {
+//         }
+//       }
 
-                p {}
-            }
+//       .copyright-two {
+//         margin-top: 75px;
+//       }
+//     }
 
-            .copyright-two {
-                margin-top: 75px;
-            }
-        }
+//     .auth-col-two {
+//       min-height: auto !important;
 
-        .auth-col-two {
-            min-height: auto !important;
+//       // .copy-right {
+//       //     display: none;
+//       // }
+//     }
+//   }
+// }
 
-            .copy-right {
-                display: none;
-            }
+// @media (max-width: 576px) {
+//   .signUp-form-container {
+//     margin: 0 30px;
+//   }
 
-        }
-    }
+//   .investment-row {
+//     .ant-col {
+//       padding: 0px !important;
+//     }
 
-}
+//     .DasboardCard {
+//       margin: 10px 5px;
 
-@media (max-width: 576px) {
-    .signUp-form-container {
-        margin: 0 30px;
-    }
+//       .ant-card-body {
+//         padding: 20px 16px !important;
+//       }
+//     }
+//   }
 
-    .investment-row {
-        .ant-col {
-            padding: 0px !important;
-        }
+//   .investments-container .investment-list .tags-container {
+//     flex-wrap: wrap;
 
-        .DasboardCard {
-            margin: 10px 5px;
+//     .investment-tag {
+//       margin-top: 10px;
+//     }
+//   }
 
-            .ant-card-body {
-                padding: 20px 16px !important;
-            }
-        }
-    }
+//   .greeting-container {
+//     position: relative;
 
-    .investments-container .investment-list .tags-container {
-        flex-wrap: wrap;
+//     .ant-avatar {
+//     }
 
-        .investment-tag {
-            margin-top: 10px;
-        }
-    }
+//     .role {
+//       position: absolute;
+//       right: 0;
+//       top: 10px;
+//     }
 
-    .greeting-container {
-        position: relative;
+//     h1 {
+//       svg {
+//         display: none;
+//       }
+//     }
 
-        .ant-avatar {}
+//     p {
+//     }
+//   }
 
-        .role {
-            position: absolute;
-            right: 0;
-            top: 10px;
-        }
+//   .header-container {
+//     padding: 20px !important;
 
-        h1 {
-            svg {
-                display: none;
-            }
-        }
+//     .header-col-one {
+//       .start-icon {
+//         svg {
+//         }
 
-        p {}
-    }
+//         h1 {
+//           display: none;
+//         }
 
-    .header-container {
-        padding: 20px !important;
+//         .burger {
+//           display: block;
+//           margin-left: 14px;
+//         }
+//       }
+//     }
 
-        .header-col-one {
-            .start-icon {
-                svg {}
+//     .header-search {
+//       .ant-input-affix-wrapper {
+//         width: 100% !important;
+//         margin-top: 10px;
+//       }
 
-                h1 {
-                    display: none;
-                }
+//       input {
+//       }
+//     }
 
-                .burger {
-                    display: block;
-                    margin-left: 14px;
-                }
-            }
-        }
+//     .header-col-two {
+//       .ant-badge-count {
+//       }
 
-        .header-search {
-            .ant-input-affix-wrapper {
-                width: 100% !important;
-                margin-top: 10px;
-            }
+//       .language {
+//       }
 
-            input {}
-        }
+//       .badge-icon {
+//       }
 
-        .header-col-two {
-            .ant-badge-count {}
+//       .ant-avatar {
+//       }
+//     }
+//   }
 
-            .language {}
+//   .ant-layout-sider {
+//     display: none;
+//   }
 
-            .badge-icon {}
+//   .layout-container {
+//     .menu-close-icon {
+//       position: absolute;
+//       top: 10%;
+//       left: 20px;
+//       display: block !important;
+//       cursor: pointer;
+//     }
+//   }
 
-            .ant-avatar {}
-        }
-    }
+//   .ant-layout-sider-collapsed {
+//     display: block !important;
+//     position: absolute !important;
+//     z-index: 10 !important;
+//     top: 0 !important;
+//     left: 0 !important;
+//     width: 100% !important;
+//     right: 0 !important;
+//     max-width: 100% !important;
 
-    .ant-layout-sider {
-        display: none;
-    }
+//     .ant-menu-item {
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//     }
 
-    .layout-container {
-        .menu-close-icon {
-            position: absolute;
-            top: 10%;
-            left: 20px;
-            display: block !important;
-            cursor: pointer;
-        }
-    }
+//     span {
+//       opacity: 1 !important;
+//     }
+//   }
 
+//   .auth-container {
+//     overflow: hidden;
 
-    .ant-layout-sider-collapsed {
-        display: block !important;
-        position: absolute !important;
-        z-index: 10 !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        right: 0 !important;
-        max-width: 100% !important;
+//     .auth-col-one {
+//       .copyright-two {
+//         display: block;
+//         margin-top: 145px;
+//         position: relative;
+//         padding-bottom: 20px;
+//       }
 
-        .ant-menu-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+//       .login-img {
+//         // width: 110%;
+//       }
 
-        span {
-            opacity: 1 !important;
-        }
-    }
+//       .profits {
+//         svg {
+//           width: 90%;
+//           margin: 0 auto;
+//           display: block;
+//         }
+//       }
 
-    .auth-container {
-        overflow: hidden;
+//       .networks {
+//         svg {
+//           width: 90%;
+//           margin: 0 auto;
+//           display: block;
+//         }
+//       }
 
-        .auth-col-one {
-            .copyright-two {
-                display: block;
-                margin-top: 145px;
-                position: relative;
-                padding-bottom: 20px;
-            }
+//       .description {
+//         h1 {
+//         }
 
-            .login-img {
-                // width: 110%;
-            }
+//         p {
+//         }
+//       }
+//     }
 
-            .profits {
-                svg {
-                    width: 90%;
-                    margin: 0 auto;
-                    display: block;
-                }
-            }
+//     .auth-col-two {
+//       min-height: auto !important;
 
-            .networks {
-                svg {
-                    width: 90%;
-                    margin: 0 auto;
-                    display: block;
-                }
-            }
+//       // .copy-right {
+//       //     display: none;
+//       // }
+//     }
+//   }
 
-            .description {
-                h1 {}
+//   .otp-container {
+//     input {
+//       width: 50px !important;
+//       height: 50px !important;
 
-                p {}
-            }
-        }
+//       &:focus {
+//       }
+//     }
 
-        .auth-col-two {
-            min-height: auto !important;
+//     input:not(:last-child) {
+//       margin-right: 10px !important;
+//     }
+//   }
+// }
 
-            .copy-right {
-                display: none;
-            }
-        }
-    }
-
-    .otp-container {
-        input {
-            width: 50px !important;
-            height: 50px !important;
-
-            &:focus {}
-        }
-
-        input:not(:last-child) {
-            margin-right: 10px !important;
-        }
-
-    }
-}
-
-@media (max-width: 376px) {
-    .signUp-form-container {
-        margin: 0 15px;
-    }
-}
+// @media (max-width: 376px) {
+//   .signUp-form-container {
+//     margin: 0 15px;
+//   }
+// }

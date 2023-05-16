@@ -164,7 +164,7 @@ const AccountContent = () => {
       </div>
       <div className="deactivate-row">
         <p>Deactivate my account</p>
-        <Button className="deactivate-btn">Upgrade</Button>
+        <Button className="deactivate-btn">Deactivate</Button>
       </div>
     </div>
   );

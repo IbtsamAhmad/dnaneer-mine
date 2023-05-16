@@ -1,7 +1,9 @@
 .sideCard-container {
     // margin: 0 0 0 auto;
     padding: 14px;
-    background: linear-gradient(270deg, #34A5FF 0%, #5B2CD3 100%);
+    background-image: url("/assets/images/walletBG.png") !important;
+        background-size: cover !important;
+            background-position: center;
     border-radius: 20px;
     // width: 100%;
     // max-width: 300px;

@@ -8,10 +8,10 @@ import { ReactComponent as Networks } from "assets/svgs/Networks.svg";
 const AuthWrapper = (Component): Function => {
   return function Auth({ ...props }): JSX.Element {
     const { individual } = props;
-      console.log("individual One", individual);
+    console.log("individual One", individual);
     return (
       <div className="auth-container">
-        <Row align="stretch">
+        <Row style={{ overflow: "hidden" }} align="stretch">
           <Col
             lg={{
               span: 15,
