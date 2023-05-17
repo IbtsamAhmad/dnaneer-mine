@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Select } from "antd";
 
 import { ReactComponent as Selecticon } from "assets/svgs/Selecticon.svg";
+import "./Select.scss";
 
 interface SelectProps {
   options?: {
@@ -47,6 +48,7 @@ const FloatSelect = ({
         // filterOption={filterOption}
         //  autoFocus={true}
         // showSearch={showSearch}
+        className={className}
         placeholder={placeholder}
         optionFilterProp="children"
         onChange={onChange}

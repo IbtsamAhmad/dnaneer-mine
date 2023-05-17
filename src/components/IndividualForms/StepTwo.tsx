@@ -54,16 +54,20 @@ const netWorthOptions: { label: string; value: string | number }[] = [
 
 const objectiveOptions: { label: string; value: string | number }[] = [
   {
-    label: "Capital growth",
-    value: "Capital growth",
+    label: "Less than 0 , 15,000",
+    value: "Less than 0 , 15,000",
   },
   {
-    label: "Saving",
-    value: "Saving",
+    label: "15,000 -50,000",
+    value: "15,000 -50,000",
   },
   {
-    label: "Additional income",
-    value: "Additional income",
+    label: "50,000-300,000",
+    value: "50,000-300,000",
+  },
+  {
+    label: "More than 300,000+",
+    value: "More than 300,000+",
   },
 ];
 
@@ -84,9 +88,10 @@ const investmentOptions: { label: string; value: string | number }[] = [
 
 interface Step2FormProps {
   onBack: () => void;
+  handleSkip: (step: string) => void;
 }
 
-function Step2Form({ onBack }: Step2FormProps) {
+function Step2Form({ onBack, handleSkip }: Step2FormProps) {
   return (
     <div className="stepForm-container">
       <h1>Financial Information</h1>
@@ -130,16 +135,16 @@ function Step2Form({ onBack }: Step2FormProps) {
         </Form.Item>
         <Form.Item
           name="objective"
-          label="What are your general investment objectives?"
+          label="How much are you planning to invest?"
         >
           <RadioGroup options={objectiveOptions} />
         </Form.Item>
-        <Form.Item
+        {/* <Form.Item
           name="investment"
           label="Do you have any knowledge related to Investments?"
         >
           <RadioGroup options={investmentOptions} />
-        </Form.Item>
+        </Form.Item> */}
         <h1>Bank Information</h1>
         <div className="form-row">
           <Form.Item
@@ -176,26 +181,23 @@ function Step2Form({ onBack }: Step2FormProps) {
       </Form>
       <Divider />
       <div className="drawer-final-container-two">
-        <p className="skip" onClick={() => onBack()}>
+        <p className="skip" onClick={() => handleSkip("2")}>
           Skip for now
         </p>
         <p className="previous" onClick={() => onBack()}>
           Previous step
         </p>
-        <Button
-          className="complete-btn"
-          // onClick={() => message.success("Processing complete!")}
-        >
+        <Button className="complete-btn" onClick={() => handleSkip("2")}>
           Complete
         </Button>
       </div>
 
-      <Divider />
+      {/* <Divider />
       <p className="submit-description">
         <Aggrement />
         By submitting, you agree to the
         <span> Investment POA agreement</span>
-      </p>
+      </p> */}
     </div>
   );
 }

@@ -8,6 +8,7 @@ import RadioGroup from "components/RadioGroup/RadioGroup";
 import Upload from "components/Upload/Upload";
 
 import { ReactComponent as Aggrement } from "assets/svgs/Aggrement.svg";
+import FloatSelect from "components/Select/Select";
 
 const incomeOptions: { label: string; value: string | number }[] = [
   {
@@ -99,14 +100,25 @@ function Step2Form({ data, onSuccess, onBack, handleSkip }: Props) {
         >
           <RadioGroup options={anualOptions} />
         </Form.Item>
-        <Form.Item
-          name="type"
-          label="Approximate of annual investments amount (SAR)"
-        >
-          <RadioGroup options={anualOptions} />
-        </Form.Item>
         <h2>Bank Information</h2>
+        <Divider style={{ margin: 0 }} />
         <div className="register-input-container">
+          <Form.Item
+            name="Name"
+            rules={[
+              {
+                required: true,
+                message: "Please enter your IBAN number",
+              },
+            ]}
+          >
+            <FloatSelect
+              // style={{ borderRadius: "24px" }}
+              label="Select"
+              placeholder="Select"
+              className="drawer-select"
+            />
+          </Form.Item>
           <Form.Item
             name="Name"
             rules={[
@@ -124,10 +136,12 @@ function Step2Form({ data, onSuccess, onBack, handleSkip }: Props) {
           </Form.Item>
         </div>
         <h2>Legal Documents</h2>
+        <Divider style={{ margin: "10px 0 19px 0" }} />
         <Upload />
         <h2>Other Supporting Documents</h2>
+        <Divider style={{ margin: "10px 0 19px 0" }} />
         <Upload />
-        <Divider />
+        <Divider style={{ margin: "10px 0 19px 0" }} />
         <div className="drawer-final-container">
           <p className="skip" onClick={() => handleSkip("2")}>
             Skip for now
@@ -144,12 +158,12 @@ function Step2Form({ data, onSuccess, onBack, handleSkip }: Props) {
             Complete
           </Button>
         </div>
-        <Divider />
+        {/* <Divider />
         <p className="submit-description" style={{ paddingBottom: "160px" }}>
-          {/* <Aggrement />
+          <Aggrement />
           By submitting, you agree to theeeeeeeee
-          <span> Investment POA agreement</span> */}
-        </p>
+          <span> Investment POA agreement</span>
+        </p> */}
       </Form>
     </div>
   );

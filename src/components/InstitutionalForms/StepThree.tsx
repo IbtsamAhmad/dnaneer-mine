@@ -2,7 +2,7 @@ import { Button, Divider, RadioChangeEvent, Radio } from "antd";
 import classes from "./steps.module.scss";
 const StepThree = ({ data, handleSkip, onSuccess, onBack }) => {
   return (
-    <div style={{ marginBottom: "10rem" }}>
+    <div>
       <div>
         <h1 style={{ fontSize: "20px" }} className={classes["step-heading"]}>
           Investment POA agreement
@@ -17,15 +17,18 @@ const StepThree = ({ data, handleSkip, onSuccess, onBack }) => {
         <Radio>I agree on the Investment POA Agreement</Radio>
       </div>
       <Divider />
-      <div className="drawer-final-container">
-        <p className="skip" onClick={() => handleSkip("3")}>
+      <div className={classes["drawer-final-container"]}>
+        <p className={classes["skip"]} onClick={() => handleSkip("3")}>
           Skip for now
         </p>
-        <p className="previous" onClick={() => onBack()}>
+        <p className={classes["previous"]} onClick={() => onBack()}>
           Previous step
         </p>
 
-        <Button className="complete-btn" onClick={() => onSuccess("3")}>
+        <Button
+          className={classes["complete-btn"]}
+          onClick={() => onSuccess("3")}
+        >
           Complete
         </Button>
       </div>

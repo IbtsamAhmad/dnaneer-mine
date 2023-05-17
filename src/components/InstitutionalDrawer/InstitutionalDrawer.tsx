@@ -14,18 +14,18 @@ const App = () => {
       <Button type="primary" onClick={showDrawer}>
         Complete your Profile Institute
       </Button>
-      <div className="institute-drawer-container">
-        <Drawer
-          className="institute-drawer-container"
-          title={false}
-          placement="right"
-          onClose={onClose}
-          open={open}
-          closable={false}
-        >
-          <InstitutionalForms setOpen={setOpen} />
-        </Drawer>
-      </div>
+      {/* <div className="institute-drawer-container"> */}
+      <Drawer
+        className="institute-drawer-container"
+        title={false}
+        placement="right"
+        onClose={onClose}
+        open={open}
+        closable={false}
+      >
+        <InstitutionalForms setOpen={setOpen} />
+      </Drawer>
+      {/* </div> */}
     </>
   );
 };

@@ -112,7 +112,8 @@ function Step1Form({ data, onSuccess, setCurrent }: Props) {
         </div>
 
         <h2>Institutional Investor's Manager (Contact Person)</h2>
-        <div className="form-row">
+        <Divider />
+        <div style={{ marginTop: "27px" }} className="form-row">
           <Form.Item
             name="Name"
             rules={[
@@ -177,8 +178,25 @@ function Step1Form({ data, onSuccess, setCurrent }: Props) {
             />
           </Form.Item>
         </div>
+        <div className="form-row">
+          <Form.Item
+            name="dob"
+            // rules={[
+            //   {
+            //     required: true,
+            //     message: "Please enter your Enter Saudi ID number",
+            //   },
+            // ]}
+          >
+            <Input
+              label="Date of Birth"
+              placeholder="Date of Birth"
+              className="drawer-input-one"
+            />
+          </Form.Item>
+        </div>
         <Divider />
-        <div className="drawer-next-container">
+        <div style={{ marginTop: "27px" }} className="drawer-next-container">
           <Button className="drawer-next-btn" onClick={() => setCurrent(1)}>
             Next
           </Button>

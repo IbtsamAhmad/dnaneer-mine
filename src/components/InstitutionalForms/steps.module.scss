@@ -35,3 +35,44 @@
   margin: 2px 0 43px 0;
   color: #140a2b;
 }
+
+.drawer-final-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  margin-top: 20px;
+  .skip {
+    font-weight: 500;
+    font-size: 14px;
+    color: #4e4760;
+    align-self: center;
+    margin-bottom: 0;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .previous {
+    font-weight: 500;
+    font-size: 14px;
+    color: #4e4760;
+    margin-bottom: 0;
+    align-self: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .complete-btn {
+    align-self: center;
+    background: #5b2cd3;
+    border-radius: 58px;
+    width: 156px;
+    height: 55px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    color: #ffffff;
+    border-color: #5b2cd3;
+  }
+}

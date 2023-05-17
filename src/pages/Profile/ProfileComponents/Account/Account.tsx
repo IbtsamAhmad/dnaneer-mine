@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { Row, Col, Form, Input } from "antd";
+import { Row, Col, Form, Input, message } from "antd";
 import Modal from "components/Modal/Modal";
 import Button from "components/Button/Button";
 import Otp from "components/OTP/Otp";
@@ -45,6 +45,9 @@ const AccountContent = ({}) => {
     setIsModalOpen(false);
   };
   const confirmDeactivate = () => {
+    if (otp.length < 4) {
+         message.error("Enter OTP");
+    }
     if (otp === "1234") {
       setIsModalOpen(false);
       setConfirmDeactivateModal(true)

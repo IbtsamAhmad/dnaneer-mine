@@ -4,6 +4,7 @@ import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
 
 import { ReactComponent as CloseDrawer } from "assets/svgs/CloseDrawer.svg";
+import StepThree from "components/InstitutionalForms/StepThree";
 // import { ReactComponent as Aggrement } from "assets/svgs/Aggrement.svg";
 
 export default function App({ setOpen }) {
@@ -21,7 +22,14 @@ export default function App({ setOpen }) {
   const handlePrevStep = () => {
     setCurrent(current - 1);
   };
-
+  const handleSkip = (step) => {
+    if (step == "2") {
+      setCurrent(current + 1);
+    }
+    if (step == "3") {
+      ("/dashboard");
+    }
+  };
   const steps = [
     {
       title: "Personal Information",
@@ -35,6 +43,18 @@ export default function App({ setOpen }) {
         <StepTwo
           // data={data}
           // onSuccess={handleSubmit}
+          handleSkip={handleSkip}
+          onBack={handlePrevStep}
+        />
+      ),
+    },
+    {
+      title: "Investment POA agreement",
+      content: (
+        <StepThree
+          data={data}
+          handleSkip={handleSkip}
+          onSuccess={handleSubmit}
           onBack={handlePrevStep}
         />
       ),
@@ -85,6 +105,28 @@ export default function App({ setOpen }) {
                       }}
                     >
                       Information
+                    </span>
+                  </div>
+                ),
+              },
+              {
+                title: (
+                  <div className="step-title">
+                    <span
+                      style={{
+                        color: current === 2 ? "#5B2CD3" : "#4E4760",
+                        opacity: current === 2 ? 1 : 0.4,
+                      }}
+                    >
+                      Investment POA
+                    </span>
+                    <span
+                      style={{
+                        color: current === 2 ? "#5B2CD3" : "#4E4760",
+                        opacity: current === 2 ? 1 : 0.4,
+                      }}
+                    >
+                      Agreement
                     </span>
                   </div>
                 ),

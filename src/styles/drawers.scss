@@ -10,6 +10,9 @@
     width: 653px;
     padding-left: 28px !important;
     padding-top: 15px !important;
+    .ant-select-selector {
+      border-radius: 28px;
+    }
   }
 
   .checkBtn {
@@ -77,6 +80,7 @@
 }
 
 .institute-drawer-content-container {
+  // margin-bottom: 20px;
   .label {
     font-weight: 600;
     position: absolute;
@@ -105,7 +109,7 @@
   .content {
     width: 653px;
     margin: 0 auto;
-    margin-top: 48px;
+    // margin-top: 48px;
 
     .closeDrawer-btn {
       background: rgba(196, 193, 202, 0.15);
@@ -167,6 +171,9 @@
         color: #4e4760;
         align-self: center;
         margin-bottom: 0;
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       .previous {
@@ -175,7 +182,9 @@
         color: #4e4760;
         margin-bottom: 0;
         align-self: center;
-        cursor: pointer;
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       .complete-btn {
@@ -208,7 +217,7 @@
       font-weight: 700;
       font-size: 24px;
       color: #140a2b;
-      margin-bottom: 24px;
+      // margin-bottom: 24px;
     }
     p {
       font-weight: 500;
@@ -231,7 +240,7 @@
       }
 
       .ant-divider {
-        margin: 20px 0 !important;
+        margin: 0;
       }
 
       .drawer-next-container {
@@ -304,7 +313,7 @@
   .content {
     width: 653px;
     margin: 0 auto;
-    margin-top: 48px;
+    // margin-top: 48px;
 
     .closeDrawer-btn {
       background: rgba(196, 193, 202, 0.15);
@@ -444,7 +453,7 @@
       font-weight: 500;
       font-size: 16px;
       color: #8a8595;
-      margin-bottom: 32px;
+      // margin-bottom: 32px;
     }
 
     .stepForm-container {
