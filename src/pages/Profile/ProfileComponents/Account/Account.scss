@@ -66,14 +66,12 @@
         border-radius: 20px;
         margin-top: 35px;
         border: 1px solid rgba(138, 133, 149, 0.1);
-
         p {
             font-size: 16px;
             margin-bottom: 0px;
             color: #8A8595;
 
         }
-
         .deactivate-btn {
             width: 122px;
             height: 42px;
@@ -82,7 +80,7 @@
             border-radius: 56px;
             color: #ED615C;
 
-            &:hover {
+            &:hover, &:active, &:focus {
                 color: #ED615C !important;
             }
         }
