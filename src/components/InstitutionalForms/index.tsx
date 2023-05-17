@@ -32,7 +32,7 @@ function InstitutionForms({ setOpen }) {
       setCurrent(current + 1);
     }
     if (step == "3") {
-      ("/dashboard");
+      navigate("/dashboard");
     }
   };
 

@@ -5,9 +5,11 @@ import StepTwo from "./StepTwo";
 
 import { ReactComponent as CloseDrawer } from "assets/svgs/CloseDrawer.svg";
 import StepThree from "components/InstitutionalForms/StepThree";
+import { useNavigate } from "react-router-dom";
 // import { ReactComponent as Aggrement } from "assets/svgs/Aggrement.svg";
 
 export default function App({ setOpen }) {
+  const navigate = useNavigate();
   const [data, setData] = useState({});
   const [current, setCurrent] = useState(0);
 
@@ -27,7 +29,7 @@ export default function App({ setOpen }) {
       setCurrent(current + 1);
     }
     if (step == "3") {
-      ("/dashboard");
+      navigate("/dashboard");
     }
   };
   const steps = [

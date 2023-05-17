@@ -1,12 +1,15 @@
-import { SetStateAction, Dispatch } from "react";
+import { SetStateAction, Dispatch, useState } from "react";
 import { Menu } from "antd";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import Modal from "components/Modal/Modal";
+import Button from "components/Button/Button";
 import { ReactComponent as DashboardMenu } from "assets/svgs/DashboardMenu.svg";
 import { ReactComponent as TransationMenu } from "assets/svgs/TransationMenu.svg";
 import { ReactComponent as OppertunityMenu } from "assets/svgs/OppertunityMenu.svg";
 import { ReactComponent as ProfileMenu } from "assets/svgs/ProfileMenu.svg";
 import { ReactComponent as LogoutMenu } from "assets/svgs/LogoutMenu.svg";
 import { ReactComponent as MenuClose } from "assets/svgs/MenuClose.svg";
+import { ReactComponent as Logout } from "assets/svgs/Logout.svg";
 
 type Props = {
   setCollapsed: Dispatch<SetStateAction<boolean>>;
@@ -14,8 +17,40 @@ type Props = {
 };
 
 function Sidebar({ setCollapsed, sideKey }: Props) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+    navigate("/");
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
   return (
     <>
+      <Modal
+        centered
+        className="logout-modal"
+        isModalVisible={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        footer={false}
+      >
+        <div className="log-icon">
+          <Logout />
+        </div>
+
+        <h1>Are you sure you want to log out</h1>
+        <Button onClick={handleOk} block className="logout-btn">
+          Logout
+        </Button>
+        <p className="cancel" onClick={() => handleCancel()}>
+          Cancel
+        </p>
+      </Modal>
       <div className="menu-close-icon" onClick={() => setCollapsed(false)}>
         <MenuClose />
       </div>
@@ -51,8 +86,12 @@ function Sidebar({ setCollapsed, sideKey }: Props) {
           },
           {
             key: "5",
-            icon: <LogoutMenu />,
-            label: <NavLink to="https://staging.dnaneer.com/">Log out</NavLink>,
+            icon: (
+              <div onClick={() => showModal()}>
+                <LogoutMenu />
+              </div>
+            ),
+            label: <div onClick={() => showModal()}>Log out</div>,
           },
         ]}
       />

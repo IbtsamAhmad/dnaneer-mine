@@ -63,6 +63,7 @@ const AccountContent = ({}) => {
   return (
     <div className="account-panel-container">
       <Modal
+        centered
         className="deactivate-modal"
         isModalVisible={confirmDeactivateModal}
         onOk={confirmAccountDelete}
@@ -92,6 +93,7 @@ const AccountContent = ({}) => {
       </Modal>
 
       <Modal
+        centered
         className="deactivate-modal"
         isModalVisible={isModalOpen}
         onOk={handleOk}

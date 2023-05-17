@@ -2,33 +2,30 @@
     top: 27px !important;
     right: 34px !important;
 }
-
 .ant-modal-body {
     background: #ffffff;
     border-radius: 20px;
     padding: 20px !important;
 }
-
 .ant-modal {
     padding: 81px 47px 67px 47px !important;
     background: #140A2B;
     border-radius: 40px;
 }
+
 .ant-modal-content {
     position: unset !important;
     background: transparent !important;
     padding: 0px !important;
 }
-
 .ant-modal-close-x {
     // display: none !important;
 }
 .deactivate-modal {
-    .icon{
+    .icon {
         margin-top: 53px;
-            display: flex;
-        
-                justify-content: center;
+        display: flex;
+        justify-content: center;
     }
     h2 {
         font-weight: 700;
@@ -37,12 +34,12 @@
         margin-bottom: 20px;
         margin-top: 52px;
     }
-    h1{
+    h1 {
         text-align: center;
         margin-top: 44px;
         margin-bottom: 0px;
-    font-weight: 700;
-    font-size: 18px;
+        font-weight: 700;
+        font-size: 18px;
     }
     .deactivate-otp-container {
         width: 216.52px;
@@ -62,18 +59,60 @@
             color: #8a8595;
         }
     }
+
     .confirm-deactivate-btn {
         margin-top: 63px;
         background: #ED615C;
         border-radius: 113px;
         height: 52px;
     }
+
     .cancel {
         margin-top: 20px;
         //  font-weight: 400;
         font-size: 12px;
         text-align: center;
         color: #8A8595;
+        cursor: pointer;
+    }
+}
+
+.logout-modal {
+    .log-icon {
+        display: flex;
+        justify-content: center;
+        margin-top: 72px;
+    }
+    h1 {
+        margin-top: 25px;
+        font-weight: 700;
+        font-size: 16px;
+        text-align: center;
+        color: #140A2B;
+    }
+    .logout-btn {
+        margin-top: 59px;
+        border: 1px solid #C4C1CA;
+        border-radius: 113px;
+        height: 52px;
+        color: #ED615C;
+        font-weight: 500;
+        font-size: 12px;
+        background: transparent !important;
+
+        &:hover,
+        &:focus,
+        &:active {
+            border: 1px solid #C4C1CA !important;
+            color: #ED615C !important;
+        }
+    }
+    p {
+        margin-top: 25px;
+        //  font-weight: 400;
+        font-size: 12px;
+        text-align: center;
+        color: #140A2B;
         cursor: pointer;
     }
 }

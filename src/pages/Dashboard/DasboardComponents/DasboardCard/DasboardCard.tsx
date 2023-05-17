@@ -1,19 +1,17 @@
 import { ReactNode, useState } from "react";
 import { Card, Popover } from "antd";
-import Button from "components/Button/Button";
-import Modal from "components/Modal/Modal";
+// import Button from "components/Button/Button";
+// import Modal from "components/Modal/Modal";
 
 import { ReactComponent as Info } from "assets/svgs/Info.svg";
 import { ReactComponent as DashboardInfo } from "assets/svgs/DashboardInfo.svg";
-
-
 import "./DasboardCard.scss";
 
 interface CardProps {
   onClick?: () => void;
   children?: ReactNode | ReactNode[] | string;
   className?: string;
-  icon?: ReactNode | ReactNode[];
+  icon?: string;
   heading?: string;
   headingClassName?: string;
   subHeadingClassName?: string;
@@ -98,7 +96,7 @@ const DashboardCard = ({
           </div>
         </Popover>
 
-        <div className="card-icon">{icon}</div>
+        <div className="card-icon">{<img src={icon} alt="icon" />}</div>
         <h1
           className={
             headingClassName

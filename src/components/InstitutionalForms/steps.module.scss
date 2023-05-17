@@ -76,3 +76,42 @@
     border-color: #5b2cd3;
   }
 }
+.uploaed-file-wrapper {
+  margin: 24px 0;
+}
+
+.uploaded-file-container {
+  background: rgba(91, 44, 211, 0.05);
+  border-radius: 95px;
+  display: grid;
+  grid-template-columns: 20fr 1fr;
+  padding: 11.5px 15px;
+  .delete-file {
+    justify-self: center;
+    align-self: center;
+
+    background: rgb(237 97 92 / 10%);
+    /* opacity: 0.1; */
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    color: #ed615c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 29px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .uploaded-file-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4rem;
+    span {
+      margin-left: 10px;
+    }
+  }
+}

@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { Form, Divider } from "antd";
+import classes from "./steps.module.scss";
+
+import { ReactComponent as Doc } from "assets/svgs/Doc.svg";
+import { ReactComponent as Cross } from "assets/svgs/Cross.svg";
 
 import Input from "components/Input/Input";
 
@@ -7,7 +11,7 @@ import Button from "components/Button/Button";
 import RadioGroup from "components/RadioGroup/RadioGroup";
 import Upload from "components/Upload/Upload";
 
-import { ReactComponent as Aggrement } from "assets/svgs/Aggrement.svg";
+// import { ReactComponent as Aggrement } from "assets/svgs/Aggrement.svg";
 import FloatSelect from "components/Select/Select";
 
 const incomeOptions: { label: string; value: string | number }[] = [
@@ -138,17 +142,28 @@ function Step2Form({ data, onSuccess, onBack, handleSkip }: Props) {
         <h2>Legal Documents</h2>
         <Divider style={{ margin: "10px 0 19px 0" }} />
         <Upload />
+        <div className={classes["uploaed-file-wrapper"]}>
+          <div className={classes["uploaded-file-container"]}>
+            <div className={classes["uploaded-file-name"]}>
+              <Doc />
+              <span>Article of association.pdf</span>
+            </div>
+            <div className={classes["delete-file"]}>
+              <Cross />
+            </div>
+          </div>
+        </div>
         <h2>Other Supporting Documents</h2>
         <Divider style={{ margin: "10px 0 19px 0" }} />
         <Upload />
-        <Divider style={{ margin: "10px 0 19px 0" }} />
+        <Divider style={{ margin: "35px 0 19px 0" }} />
         <div className="drawer-final-container">
-          <p className="skip" onClick={() => handleSkip("2")}>
+          <div className="skip" onClick={() => handleSkip("2")}>
             Skip for now
-          </p>
-          <p className="previous" onClick={() => onBack()}>
+          </div>
+          <div className="previous" onClick={() => onBack()}>
             Previous step
-          </p>
+          </div>
 
           <Button
             className="complete-btn"

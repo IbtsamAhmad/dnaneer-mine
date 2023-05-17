@@ -18,12 +18,12 @@ const StepThree = ({ data, handleSkip, onSuccess, onBack }) => {
       </div>
       <Divider />
       <div className={classes["drawer-final-container"]}>
-        <p className={classes["skip"]} onClick={() => handleSkip("3")}>
+        <div className={classes["skip"]} onClick={() => handleSkip("3")}>
           Skip for now
-        </p>
-        <p className={classes["previous"]} onClick={() => onBack()}>
+        </div>
+        <div className={classes["previous"]} onClick={() => onBack()}>
           Previous step
-        </p>
+        </div>
 
         <Button
           className={classes["complete-btn"]}

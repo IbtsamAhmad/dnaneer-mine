@@ -8,10 +8,10 @@ import DashboardCardsContainer from "components/DashboardCardsContainer/Dashboar
 import IndividualDrawer from "components/IndividualDrawer/IndividualDrawer";
 import { ReactComponent as AdvisorImage } from "assets/svgs/AdvisorImage.svg";
 import { ReactComponent as AdvisorLogo } from "assets/svgs/AdvisorLogo.svg";
-import { ReactComponent as Amount } from "assets/svgs/Amount.svg";
-import { ReactComponent as InvestIcon } from "assets/svgs/InvestIcon.svg";
-import { ReactComponent as RoiIcon } from "assets/svgs/RoiIcon.svg";
-import { ReactComponent as Profit } from "assets/svgs/Profit.svg";
+// import { ReactComponent as Amount } from "assets/svgs/Amount.svg";
+// import { ReactComponent as InvestIcon } from "assets/svgs/InvestIcon.svg";
+// import { ReactComponent as RoiIcon } from "assets/svgs/RoiIcon.svg";
+// import { ReactComponent as Profit } from "assets/svgs/Profit.svg";
 import { ReactComponent as Email } from "assets/svgs/Email.svg";
 import { ReactComponent as Number } from "assets/svgs/Number.svg";
 import { ReactComponent as Call } from "assets/svgs/Call.svg";
@@ -92,7 +92,7 @@ const DashboardConent = () => {
       <Row gutter={[32, 32]} className="investment-row">
         <Col lg={6} md={12} sm={12} xs={12}>
           <DashboardCard
-            icon={<Amount />}
+            icon={"/assets/images/Inves.png"}
             heading="1,400,000"
             subHeading="Total Investments Amount"
             headingClassName="heading-black"
@@ -105,7 +105,7 @@ const DashboardConent = () => {
         <Col lg={6} md={12} sm={12} xs={12}>
           {" "}
           <DashboardCard
-            icon={<InvestIcon />}
+            icon={"/assets/images/Return.png"}
             heading="17.2"
             subHeading="Return of Investments (ROI)"
             headingClassName="heading-black"
@@ -118,7 +118,7 @@ const DashboardConent = () => {
         <Col lg={6} md={12} sm={12} xs={12}>
           {" "}
           <DashboardCard
-            icon={<RoiIcon />}
+            icon={"/assets/images/ROI.png"}
             heading="85,000"
             subHeading="Total Net ROI"
             headingClassName="heading-black"
@@ -130,7 +130,7 @@ const DashboardConent = () => {
         </Col>
         <Col lg={6} md={12} sm={12} xs={12}>
           <DashboardCard
-            icon={<Profit />}
+            icon={"/assets/images/Profit.png"}
             heading="110,000"
             subHeading="Unrealized profit"
             headingClassName="heading-black"

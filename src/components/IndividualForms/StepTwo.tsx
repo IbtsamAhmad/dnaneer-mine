@@ -181,12 +181,12 @@ function Step2Form({ onBack, handleSkip }: Step2FormProps) {
       </Form>
       <Divider />
       <div className="drawer-final-container-two">
-        <p className="skip" onClick={() => handleSkip("2")}>
+        <div className="skip" onClick={() => handleSkip("2")}>
           Skip for now
-        </p>
-        <p className="previous" onClick={() => onBack()}>
+        </div>
+        <div className="previous" onClick={() => onBack()}>
           Previous step
-        </p>
+        </div>
         <Button className="complete-btn" onClick={() => handleSkip("2")}>
           Complete
         </Button>

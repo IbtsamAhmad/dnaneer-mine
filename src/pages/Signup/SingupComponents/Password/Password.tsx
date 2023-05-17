@@ -113,7 +113,7 @@ const Password = ({
           <Close />
         </a>
       </div>
-      <div style={{ height: "89%", overflowY: "auto", width: "100%" }}>
+      <div style={{ height: "98%", overflowY: "auto", width: "100%" }}>
         <div
           style={{ marginTop: "15px" }}
           // className={containerClass ? containerClass : "signUp-form-container"}
