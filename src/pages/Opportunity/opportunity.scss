@@ -13,6 +13,12 @@ $small-font: 12px;
   h5 {
     margin: 0;
   }
+  span{
+    font-weight: 500 !important;
+  }
+  div{
+    font-weight: 500;
+  }
   .secondary-text {
     font-size: $small-font;
     font-weight: 400;

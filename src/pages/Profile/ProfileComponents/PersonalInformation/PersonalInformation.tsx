@@ -59,7 +59,7 @@ const PersonalInformation = ({ editInfo }) => {
                   name="basic"
                   className="info-form-container"
                   initialValues={{
-                    remember: true,
+                    id: "965965767",
                   }}
                   layout="vertical"
                   onFinish={onFinish}
@@ -165,9 +165,12 @@ const PersonalInformation = ({ editInfo }) => {
                         ]}
                       >
                         <Input
+                          style={{ background: "rgba(138, 133, 149,0.2)" }}
                           label="ID number"
                           placeholder="ID number"
                           className={"infoInput"}
+                          value="965965767"
+                          disabled
                         />
                       </Form.Item>
                     </Col>

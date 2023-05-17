@@ -41,6 +41,7 @@ const AppInput = ({
   if (!placeholder) placeholder = label;
 
   const isOccupied = focus || (value && value.length !== 0);
+  console.log("value", value)
 
   const labelClass = isOccupied ? "label as-label" : "label as-placeholder";
 
