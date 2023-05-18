@@ -1,5 +1,6 @@
 import { Button, Divider, RadioChangeEvent, Radio } from "antd";
 import classes from "./steps.module.scss";
+import pdf from "assets/terms.pdf";
 const StepThree = ({ data, handleSkip, onSuccess, onBack }) => {
   return (
     <div>
@@ -11,7 +12,9 @@ const StepThree = ({ data, handleSkip, onSuccess, onBack }) => {
 
       <Divider style={{ margin: "0" }} />
       <div className={classes["iframe-wrapper"]}>
-        <iframe>Content not available</iframe>
+        <iframe src={pdf + "#toolbar=0&navpanes=0&scrollbar=0"}>
+          Content not available
+        </iframe>
       </div>
       <div className={classes["agreement-radio"]}>
         <Radio>I agree on the Investment POA Agreement</Radio>

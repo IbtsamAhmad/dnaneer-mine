@@ -107,9 +107,9 @@ export default function Step2Form({ data, onSuccess, setCurrent }: Props) {
         </Form.Item>
         <Divider />
         <div className="drawer-next-container-two">
-          <p className="skip" onClick={() => setCurrent(0)}>
+          <div className="skip" onClick={() => setCurrent(0)}>
             Skip for now
-          </p>
+          </div>
           <Button className="drawer-next-btn" onClick={() => setCurrent(1)}>
             Next
           </Button>

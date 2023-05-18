@@ -81,6 +81,7 @@
 
 .institute-drawer-content-container {
   // margin-bottom: 20px;
+  padding: 40px 0;
   .label {
     font-weight: 600;
     position: absolute;
@@ -363,6 +364,9 @@
         color: #4e4760;
         align-self: center;
         margin-bottom: 0;
+        &:hover {
+          cursor: pointer;
+        }
       }
 
       .drawer-next-btn {

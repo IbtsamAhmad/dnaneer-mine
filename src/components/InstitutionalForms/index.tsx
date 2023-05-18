@@ -28,12 +28,12 @@ function InstitutionForms({ setOpen }) {
   };
 
   const handleSkip = (step) => {
-    if (step == "2") {
-      setCurrent(current + 1);
-    }
-    if (step == "3") {
-      navigate("/dashboard");
-    }
+    // if (step == "2") {
+    //   setCurrent(current + 1);
+    // }
+    // if (step == "3") {
+    navigate("/dashboard");
+    // }
   };
 
   const steps = [

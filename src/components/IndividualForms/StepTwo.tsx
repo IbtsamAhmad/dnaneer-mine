@@ -1,15 +1,11 @@
 import { Form, Divider, Select } from "antd";
-import { useState } from "react";
+import classes from "./steps.module.scss";
 import Input from "components/Input/Input";
-
 import Button from "components/Button/Button";
 import RadioGroup from "components/RadioGroup/RadioGroup";
-
 import AppSelect from "components/Select/Select";
 
 const { Option } = Select;
-
-import { ReactComponent as Aggrement } from "assets/svgs/Aggrement.svg";
 
 const incomeOptions: { label: string; value: string | number }[] = [
   {
@@ -89,16 +85,17 @@ const investmentOptions: { label: string; value: string | number }[] = [
 interface Step2FormProps {
   onBack: () => void;
   handleSkip: (step: string) => void;
+  onComplete: (step: string) => void;
 }
 
-function Step2Form({ onBack, handleSkip }: Step2FormProps) {
+function Step2Form({ onBack, handleSkip, onComplete }: Step2FormProps) {
   return (
     <div className="stepForm-container">
       <h1>Financial Information</h1>
       <Form
-        name="basic"
+        name="financialInformation"
         initialValues={{
-          remember: true,
+          IBAN: "SA-",
         }}
         layout="vertical"
         // onFinish={onFinish}
@@ -116,7 +113,11 @@ function Step2Form({ onBack, handleSkip }: Step2FormProps) {
             },
           ]}
         >
-          <AppSelect placeholder="Gender" label="Gender">
+          <AppSelect
+            className="drawer-select"
+            placeholder="Gender"
+            label="Gender"
+          >
             {sourceOptions.map((source, i) => {
               return (
                 <Option key={i} value={source.value}>
@@ -157,11 +158,13 @@ function Step2Form({ onBack, handleSkip }: Step2FormProps) {
             ]}
           >
             <Input
+              value="SA-"
               label="IBAN "
               placeholder="IBAN "
-              className="drawer-input-two"
+              className={`drawer-input-two ${classes["bank-input"]}`}
             />
           </Form.Item>
+
           <Form.Item
             name="Alinma bank"
             rules={[
@@ -187,7 +190,7 @@ function Step2Form({ onBack, handleSkip }: Step2FormProps) {
         <div className="previous" onClick={() => onBack()}>
           Previous step
         </div>
-        <Button className="complete-btn" onClick={() => handleSkip("2")}>
+        <Button className="complete-btn" onClick={() => onComplete("2")}>
           Complete
         </Button>
       </div>

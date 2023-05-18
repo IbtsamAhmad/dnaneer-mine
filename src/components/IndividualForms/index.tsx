@@ -25,12 +25,19 @@ export default function App({ setOpen }) {
     setCurrent(current - 1);
   };
   const handleSkip = (step) => {
-    if (step == "2") {
-      setCurrent(current + 1);
+    // if (step == "2") {
+    //   setCurrent(current + 1);
+    // }
+    // if (step == "3") {
+    navigate("/dashboard");
+    // }
+  };
+
+  const onComplete = (step) => {
+    if (step == "2" || step == "1") {
+      return nextHandler();
     }
-    if (step == "3") {
-      navigate("/dashboard");
-    }
+    handleSkip("4");
   };
   const steps = [
     {
@@ -47,6 +54,7 @@ export default function App({ setOpen }) {
           // onSuccess={handleSubmit}
           handleSkip={handleSkip}
           onBack={handlePrevStep}
+          onComplete={onComplete}
         />
       ),
     },
