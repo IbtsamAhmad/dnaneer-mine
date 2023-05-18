@@ -1,37 +1,45 @@
-
 import { useState } from "react";
 import Input from "components/Input/Input";
-import { Row, Col,  Collapse, Form } from "antd";
+import { Row, Col, Collapse, Form } from "antd";
 import { ReactComponent as Expand } from "assets/svgs/Expand.svg";
 
 const { Panel } = Collapse;
-import "./info.scss"
+import "./info.scss";
 const PersonalInformation = ({ editInfo }) => {
- const [activeKey, setActiveKey] = useState(1);
+  const [activeKey, setActiveKey] = useState(1);
   const [activeKeyTwo, setActiveKeyTwo] = useState(null);
-   const [activeKeyThree, setActiveKeyThree] = useState(null);
+  const [activeKeyThree, setActiveKeyThree] = useState(null);
 
- function handleCollapseChange(keys) {
-   setActiveKey(keys[0]);
- }
+  function handleCollapseChange(keys) {
+    setActiveKey(keys[0]);
+  }
   function handleCollapseChangeTwo(keys) {
     setActiveKeyTwo(keys[0]);
   }
-   function handleCollapseChangeThree(keys) {
-     setActiveKeyThree(keys[0]);
-   }
-    const onFinish = (values) => {
-      console.log("Success:", values);
-    };
-    const onFinishFailed = (errorInfo) => {
-      console.log("Failed:", errorInfo);
-    };
+  function handleCollapseChangeThree(keys) {
+    setActiveKeyThree(keys[0]);
+  }
+  const onFinish = (values) => {
+    console.log("Success:", values);
+  };
+  const onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+  };
   return (
     <div>
       <div className="info-panel-container">
         <Collapse
           defaultActiveKey={["1"]}
-          expandIcon={({ isActive }) => <Expand />}
+          // expandIcon={({ isActive }) => }
+          expandIcon={({ isActive }) => (
+            <div
+              style={{
+                transform: !isActive ? "rotate(0deg)" : "rotate(180deg)",
+              }}
+            >
+              <Expand />
+            </div>
+          )}
           className={`my-collapse ${activeKey ? "active" : ""}`}
           onChange={handleCollapseChange}
           accordion
@@ -60,6 +68,13 @@ const PersonalInformation = ({ editInfo }) => {
                   className="info-form-container"
                   initialValues={{
                     id: "965965767",
+                    education: "Undergraduate",
+                    employed: "Yes",
+                    company: "Immrsv studio.",
+                    position: "Senior UI Designer",
+                    experience: "5",
+                    address: "Value",
+                    email: "omar@immrsvafrica.com",
                   }}
                   layout="vertical"
                   onFinish={onFinish}
@@ -165,7 +180,7 @@ const PersonalInformation = ({ editInfo }) => {
                         ]}
                       >
                         <Input
-                          style={{ background: "rgba(138, 133, 149,0.2)" }}
+                          style={{ background: "#f3f3f4" }}
                           label="ID number"
                           placeholder="ID number"
                           className={"infoInput"}
@@ -255,7 +270,15 @@ const PersonalInformation = ({ editInfo }) => {
         </Collapse>
 
         <Collapse
-          expandIcon={({ isActive }) => <Expand />}
+          expandIcon={({ isActive }) => (
+            <div
+              style={{
+                transform: !isActive ? "rotate(0deg)" : "rotate(180deg)",
+              }}
+            >
+              <Expand />
+            </div>
+          )}
           className={`my-collapse-two ${activeKeyTwo ? "active" : ""}`}
           onChange={handleCollapseChangeTwo}
         >
@@ -411,7 +434,15 @@ const PersonalInformation = ({ editInfo }) => {
           </Panel>
         </Collapse>
         <Collapse
-          expandIcon={({ isActive }) => <Expand />}
+          expandIcon={({ isActive }) => (
+            <div
+              style={{
+                transform: !isActive ? "rotate(0deg)" : "rotate(180deg)",
+              }}
+            >
+              <Expand />
+            </div>
+          )}
           className={`my-collapse-three ${activeKeyThree ? "active" : ""}`}
           onChange={handleCollapseChangeThree}
         >

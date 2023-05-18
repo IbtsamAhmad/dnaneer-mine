@@ -90,7 +90,41 @@
     .log-icon {
         display: flex;
         justify-content: center;
-        margin-top: 72px;
+        margin-top: 25px;
+        img{
+            width: 150px;
+        }
+    }
+    .contact-rows{
+         margin-top: 30px;
+        .contact-row{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+            h2{
+                text-align: left;
+                width: 45px;
+                text-align: left;
+                margin: 0;
+                font-weight: 700;
+                    font-size: 14px;
+                    color: #140A2B;
+            }
+            p{
+                margin: 0;
+                margin-left: 15px;
+               font-weight: 700;
+            }
+        }
+
+    }
+    .close-btn{
+        margin-top: 39px;
+        background: #5B2CD3;
+        border-radius: 113px;
+        height: 52px;
+        margin-bottom: 25px;
     }
 
     h1 {

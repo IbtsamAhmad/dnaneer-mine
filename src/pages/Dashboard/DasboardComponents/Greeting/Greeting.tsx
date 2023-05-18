@@ -17,9 +17,9 @@ const Greeting = ({ className, name, role, src }: GreetingProps) => {
         className ? `greeting-container ${className}` : "greeting-container"
       }
     >
-      <Avatar src="/assets/images/Avatar 2.png" />
+      <Avatar src="/assets/images/Vector.png" />
 
-      <div style={{marginLeft:"16px"}}>
+      <div style={{ marginLeft: "16px" }}>
         <div className="role">
           <span>{role}</span>{" "}
         </div>

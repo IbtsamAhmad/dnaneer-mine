@@ -7,15 +7,18 @@ import Otp from "components/OTP/Otp";
 import { timeConverter } from "utils/Helper";
 import { ReactComponent as EditProfile } from "assets/svgs/EditProfile.svg";
 import { ReactComponent as DeActivate } from "assets/svgs/DeActivate.svg";
+import { ReactComponent as PDF } from "assets/svgs/PDF.svg";
+import { ReactComponent as View } from "assets/svgs/View.svg";
+import { ReactComponent as Download } from "assets/svgs/Download.svg";
 
 import "./Account.scss";
 
-const AccountContent = ({}) => {
-  const [editAccount, setEditAccount] = useState(false);
+const AccountContent = ({ tabKey, editAccount, setEditAccount }) => {
+  // const [editAccount, setEditAccount] = useState(false);
   const [otp, setOtp] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [time, setTime] = useState<number>(60);
-  const [confirmDeactivateModal, setConfirmDeactivateModal] = useState(false)
+  const [confirmDeactivateModal, setConfirmDeactivateModal] = useState(false);
 
   useEffect(() => {
     let timer;
@@ -46,19 +49,19 @@ const AccountContent = ({}) => {
   };
   const confirmDeactivate = () => {
     if (otp.length < 4) {
-         message.error("Enter OTP");
+      message.error("Enter OTP");
     }
     if (otp === "1234") {
       setIsModalOpen(false);
-      setConfirmDeactivateModal(true)
+      setConfirmDeactivateModal(true);
     }
   };
-    const handleConfirmCancel = () => {
-      setConfirmDeactivateModal(false);
-    };
-    const confirmAccountDelete = () =>{
-       setConfirmDeactivateModal(false);
-    }
+  const handleConfirmCancel = () => {
+    setConfirmDeactivateModal(false);
+  };
+  const confirmAccountDelete = () => {
+    setConfirmDeactivateModal(false);
+  };
 
   return (
     <div className="account-panel-container">
@@ -124,7 +127,7 @@ const AccountContent = ({}) => {
         <Button className="upgrade-btn">Upgrade</Button>
       </div>
       <div className="account-info">
-        {editAccount ? (
+        {editAccount && tabKey === "2" ? (
           <>
             <Form
               name="basic"
@@ -252,16 +255,29 @@ const AccountContent = ({}) => {
               <Col lg={4} sm={12}>
                 <div
                   className="edit-profile-icon"
-                  onClick={() => setEditAccount(true)}
+                  onClick={() => {
+                    setEditAccount(true);
+                  }}
                 >
                   <EditProfile />
                 </div>
               </Col>
             </Row>
             <Row>
-              <Col lg={5} sm={12}>
+              <Col lg={5} sm={12} style={{ marginTop: "39px" }}>
                 <p>Contract</p>
-                <h1>File</h1>
+                <div className="document-view-container">
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    {/* <PDF width="16px" height="16px" /> */}
+                    <span style={{ marginLeft: "10px", fontWeight: "800" }}>
+                      عقد الوكالة بالاستثمار
+                    </span>
+                  </div>
+                  <div>
+                    <View />
+                    <Download style={{ marginLeft: "10px" }} />
+                  </div>
+                </div>
               </Col>
             </Row>
           </>

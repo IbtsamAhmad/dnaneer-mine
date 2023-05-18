@@ -21,7 +21,7 @@
             margin-left: 24px;
             .user-role {
                 border-radius: 38px;
-                background-color: rgba(163, 167, 177,0.1);
+       background: linear-gradient(to right, #edf6fe, #ededfc) border-box;
                 width: 97px;
                 padding: 6px;
                 display: flex;
@@ -89,6 +89,7 @@ h1 {
             }
 
             h2 {
+                margin-top: 6px;
                 font-weight: 700;
                 font-size: 14px;
                 color: #140A2B;

@@ -10,8 +10,9 @@ import { ReactComponent as EditIcon } from "assets/svgs/EditIcon.svg";
 import "./Profile.scss";
 
 const Profile = () => {
-  const [editInfo,setEditInfo] = useState(false)
-
+  const [editInfo, setEditInfo] = useState(false);
+  const [editAccount,setEditAccount] = useState(false)
+  const [tabKey, setTabKey] = useState("1");
   const items = [
     {
       key: "1",
@@ -21,9 +22,24 @@ const Profile = () => {
     {
       key: "2",
       label: "Account",
-      children: <AccountContent />,
+      children: (
+        <AccountContent
+          tabKey={tabKey}
+          editAccount={editAccount}
+          setEditAccount={setEditAccount}
+        />
+      ),
     },
   ];
+
+  const onChange = (key) => {
+    if (key === "1") {
+     setEditAccount(false);     
+    }
+    setTabKey(key);
+
+    setEditInfo(false);
+  };
   return (
     <DashboardLayout sideKey="4">
       <div className="profile-container">
@@ -69,19 +85,21 @@ const Profile = () => {
                       Save
                     </Button>
                   </div>
-                ) : (
-                  <Button
-                    className="profile-edit-btn"
-                    icon={<EditIcon />}
-                    onClick={() => setEditInfo(true)}
-                  >
-                    Edit
-                  </Button>
-                )}
+                ) : tabKey === "1" ? (
+                  <div>
+                    <Button
+                      className="profile-edit-btn"
+                      icon={<EditIcon />}
+                      onClick={() => setEditInfo(true)}
+                    >
+                      Edit
+                    </Button>
+                  </div>
+                ) : null}
               </div>
             </div>
 
-            <Tabs items={items} />
+            <Tabs items={items} onChange={onChange} />
           </Col>
         </Row>
       </div>

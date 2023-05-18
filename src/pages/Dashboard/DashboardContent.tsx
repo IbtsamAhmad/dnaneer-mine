@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { Col, Progress, Row } from "antd";
 import DashboardCard from "./DasboardComponents/DasboardCard/DasboardCard";
 import Greeting from "pages/Dashboard/DasboardComponents/Greeting/Greeting";
 import Card from "components/Card/Card";
 import Button from "components/Button/Button";
 import AppCard from "components/Card/Card";
+import Modal from "components/Modal/Modal";
 import DashboardCardsContainer from "components/DashboardCardsContainer/DashboardCardsContainer";
 import IndividualDrawer from "components/IndividualDrawer/IndividualDrawer";
 import { ReactComponent as AdvisorImage } from "assets/svgs/AdvisorImage.svg";
@@ -21,6 +23,8 @@ import { ReactComponent as InvestmentOne } from "assets/svgs/InvestmentOne.svg";
 import { ReactComponent as InvestmentTwo } from "assets/svgs/InvestmentTwo.svg";
 import { ReactComponent as InvestmentThree } from "assets/svgs/InvestmentThree.svg";
 import { ReactComponent as InvestmentFour } from "assets/svgs/InvestmentFour.svg";
+import { ReactComponent as ContactModal } from "assets/svgs/ContactModal.svg";
+
 
 const investmentList = [
   {
@@ -82,8 +86,49 @@ const investmentList = [
 ];
 
 const DashboardConent = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const showModal = () => {
+      setIsModalOpen(true);
+    };
+    const handleOk = () => {
+      setIsModalOpen(false);
+    };
+    const handleCancel = () => {
+      setIsModalOpen(false);
+    };
   return (
     <>
+      <Modal
+        centered
+        className="logout-modal"
+        isModalVisible={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        footer={false}
+      >
+        <div className="log-icon">
+          <img src="assets/images/Baddar.png" alt="Baddar" />
+        </div>
+
+        <h1>
+          Your financial advisor is available to help you with your investment
+          inquires. Reach out Directly.
+        </h1>
+        <div className="contact-rows">
+          <div className="contact-row">
+            <h2>Email: </h2>
+            <p>aljuhani@dnaneer.com</p>
+          </div>
+          <div className="contact-row">
+            <h2 style={{ marginLeft: "-39px" }}>Phone: </h2>
+            <p>+966 54 100 1992</p>
+          </div>
+        </div>
+        <Button onClick={handleOk} block className="close-btn">
+          Close
+        </Button>
+      </Modal>
       <Greeting
         role="Individual investor"
         name="Omar"
@@ -280,7 +325,7 @@ const DashboardConent = () => {
                 <h2>Bader Aljuhani</h2>
                 <p>Financial advisor</p>
                 <div className="contact-icons">
-                  <div className="contact-icon">
+                  <div className="contact-icon" onClick={() => showModal()}>
                     <Email />
                   </div>
                   <div
@@ -297,7 +342,7 @@ const DashboardConent = () => {
                       style={{ width: "20px" }}
                     />
                   </div>
-                  <div className="contact-icon">
+                  <div className="contact-icon" onClick={() => showModal()}>
                     <Call />
                   </div>
                 </div>

@@ -152,7 +152,7 @@ function Header({ setCollapsed, collapsed }: Props) {
             </div>
 
             <Link to={"/dashboard/profile"}>
-              <Avatar src="/assets/images/Avatar 2.png" />
+              <Avatar src="/assets/images/Vector.png" />
             </Link>
           </div>
         </Col>

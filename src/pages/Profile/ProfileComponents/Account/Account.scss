@@ -25,10 +25,11 @@
             background: #ffff;
             color: #5B2CD3;
 
-            &:hover {
+            &:hover, &:active,&:focus {
                 color: #5B2CD3 !important;
             }
         }
+                 
     }
 
     .account-info {
@@ -59,6 +60,22 @@
             color: #8A8595;
             margin-bottom: 10px;
         }
+                .document-view-container {
+                    border: 1px solid #dcdde5;
+                    background: rgba(217, 217, 217,0.2);
+                    border-radius: 12px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 13px;
+        
+                    svg {
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
     }
 
     .deactivate-row {

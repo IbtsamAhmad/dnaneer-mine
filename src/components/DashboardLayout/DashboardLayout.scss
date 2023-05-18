@@ -426,6 +426,9 @@
 
     .advisor-image {
       position: relative;
+      img{
+        width: 81px;
+      }
 
       .advisor-logo {
         position: absolute;
