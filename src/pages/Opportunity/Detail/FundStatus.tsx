@@ -4,7 +4,7 @@ const FundStatus = () => {
     <>
       <Row>
         <Col xs={24}>
-          <div style={{ marginBottom: "27px" }}>
+          <div style={{ marginBottom: "20px" }}>
             <h3 className="large-heading">Fund status</h3>
           </div>
         </Col>
@@ -47,7 +47,7 @@ const FundStatus = () => {
                 </span>
               </div>
               <div style={{ fontSize: "12px", color: "#8A8595" }}>
-                70% Collected
+              Collected
               </div>
             </div>
             <div

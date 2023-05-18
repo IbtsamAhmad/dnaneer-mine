@@ -17,10 +17,10 @@ const Opportunity = () => {
         <OpportunityBanner />
         <br />
         <Row gutter={[24, 8]}>
-          <Col md={16}>
+          <Col flex="auto">
             <Detail />
           </Col>
-          <Col md={8}>
+          <Col>
             <Invest />
           </Col>
         </Row>
