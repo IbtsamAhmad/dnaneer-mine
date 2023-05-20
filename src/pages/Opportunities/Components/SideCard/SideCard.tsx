@@ -2,25 +2,42 @@ import { useState } from "react";
 import Button from "components/Button/Button";
 import AppCard from "components/Card/Card";
 import TransferBalance from "components/TransferBalance/TransferBalance";
+import AddBalance from "components/TransferBalance/AddBalance";
+
 import { Col, Row } from "antd";
 
 import "./SideCard.scss";
 
 const SideCard = () => {
-  const [transferModalOpen, setTransferModalOpen] = useState(false);
+    const [transferModalOpen, setTransferModalOpen] = useState(false);
+    const [balanceModalOpen, setBalanceModalOpen] = useState(false);
+    const onOk = () => {
+      setTransferModalOpen(false);
+    };
+    const onCancel = () => {
+      setTransferModalOpen(false);
+    };
 
-   const handleOk = () => {
-     setTransferModalOpen(false);
-   };
-   const handleCancel = () => {
-     setTransferModalOpen(false);
-   };
+     const balanceModelOk = () => {
+       setBalanceModalOpen(false);
+     };
+     const balanceModelCancel = () => {
+       setBalanceModalOpen(false);
+     };
+
+
   return (
     <>
       <TransferBalance
         isModalVisible={transferModalOpen}
-        onOk={handleOk}
-        onCancel={handleCancel}
+        setIsModalVisible={setTransferModalOpen}
+        onOk={onOk}
+        onCancel={onCancel}
+      />
+      <AddBalance
+        isModalVisible={balanceModalOpen}
+        onOk={balanceModelOk}
+        setIsModalVisible={setBalanceModalOpen}
       />
       <Row justify="end">
         <Col style={{ minWidth: "262px", maxWidth: "262px" }}>
@@ -53,11 +70,16 @@ const SideCard = () => {
                 </div>
                 <Button
                   style={{ width: "100%", height: "42px" }}
-                  onClick={() => setTransferModalOpen(true)}
+                  onClick={() => setBalanceModalOpen(true)}
                 >
                   Add Balance
                 </Button>
-                <Button className="transfer-card-btn">Transfer</Button>
+                <Button
+                  className="transfer-card-btn"
+                  onClick={() => setTransferModalOpen(true)}
+                >
+                  Transfer
+                </Button>
               </AppCard>
             </div>
           </div>

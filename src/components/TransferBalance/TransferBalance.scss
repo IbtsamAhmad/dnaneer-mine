@@ -74,32 +74,37 @@
             color: #5B2CD3;
             font-weight: 700;
         }
-        h2{
-            font-weight: 700;
-                font-size: 14px;
-                color: #140A2B;
-        }
-                   .deactivate-otp-container {
-                       width: 216.52px;
-                       margin-top: 20px;
 
-        
-                       input {
-                           width: 45px !important;
-                           height: 45px !important;
-                       }
-                   }
-                                           .timer {
-                                               font-weight: 500;
-                                               font-size: 14px;
-                                        text-align: left;
-                                               color: #ed615c;
-                                               margin: 15px 0 0 0;
-                    
-                                               span {
-                                                   color: #8a8595;
-                                               }
-                                           }
+        h2 {
+            font-weight: 700;
+            font-size: 14px;
+            color: #140A2B;
+        }
+
+        .deactivate-otp-container {
+            width: 216.52px;
+            margin-top: 20px;
+
+
+            input {
+                width: 45px !important;
+                height: 45px !important;
+            }
+        }
+
+        .timer {
+            font-weight: 500;
+            font-size: 14px;
+            text-align: left;
+            color: #ed615c;
+            margin: 15px 0 0 0;
+
+            span {
+                color: #8a8595;
+            }
+        }
+
+
     }
 }
 
@@ -125,6 +130,7 @@
         border-radius: 20px;
         padding: 25px;
         cursor: pointer;
+        height: 86px;
 
         h2 {
             font-weight: 700;
@@ -145,4 +151,46 @@
             margin: 0;
         }
     }
+
+    .modal-content {
+        padding: 27px 29px 44px 29px;
+        background: #fff;
+        border-radius: 20px;
+
+        .transfer-document-container {
+            h2 {
+                font-weight: 700;
+                font-size: 14px;
+                color: #4E4760;
+                margin-bottom: 29px;
+            }
+
+            .document {
+                background: rgba(196, 193, 202, 0.15);
+                border-radius: 12px;
+                padding: 11px 14px;
+                margin-top: 8px;
+            }
+        }
+
+        .document-info {
+            border: 1px solid rgba(196, 193, 202, 0.15);
+            border-radius: 12px;
+           padding: 10px 17px;
+   
+            p {
+                font-size: 10px;
+                color: #8A8595;
+                margin-bottom: 9px;
+            }
+
+            h1 {
+                font-size: 14px;
+                line-height: 16px;
+                color: #140A2B;
+                margin-bottom: 0;
+            }
+        }
+    }
+
 }

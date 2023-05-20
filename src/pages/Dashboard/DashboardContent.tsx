@@ -6,6 +6,8 @@ import Card from "components/Card/Card";
 import Button from "components/Button/Button";
 import AppCard from "components/Card/Card";
 import Modal from "components/Modal/Modal";
+import TransferBalance from "components/TransferBalance/TransferBalance";
+import AddBalance from "components/TransferBalance/AddBalance";
 import DashboardCardsContainer from "components/DashboardCardsContainer/DashboardCardsContainer";
 import IndividualDrawer from "components/IndividualDrawer/IndividualDrawer";
 import { ReactComponent as AdvisorImage } from "assets/svgs/AdvisorImage.svg";
@@ -87,6 +89,10 @@ const investmentList = [
 
 const DashboardConent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [transferModalOpen, setTransferModalOpen] = useState(false);
+  const [balanceModalOpen, setBalanceModalOpen] = useState(false);
+
+  
 
     const showModal = () => {
       setIsModalOpen(true);
@@ -97,6 +103,23 @@ const DashboardConent = () => {
     const handleCancel = () => {
       setIsModalOpen(false);
     };
+
+
+       const onOk = () => {
+         setTransferModalOpen(false);
+       };
+       const onCancel = () => {
+         setTransferModalOpen(false);
+       };
+
+            const balanceModelOk = () =>{
+            setBalanceModalOpen(false)
+            }
+            const balanceModelCancel = () =>{
+            setBalanceModalOpen(false);
+            }
+
+
   return (
     <>
       <Modal
@@ -284,7 +307,17 @@ const DashboardConent = () => {
               <IndividualDrawer />
             </Card>
           </DashboardCardsContainer>
-
+          <TransferBalance
+            isModalVisible={transferModalOpen}
+            setIsModalVisible={setTransferModalOpen}
+            onOk={onOk}
+             onCancel={onCancel}
+          />
+          <AddBalance
+            isModalVisible={balanceModalOpen}
+            onOk={balanceModelOk}
+            setIsModalVisible={setBalanceModalOpen}
+          />
           <DashboardCardsContainer>
             <Card className="wallet-card">
               <h1>My Wallet</h1>
@@ -298,11 +331,21 @@ const DashboardConent = () => {
                 </div>
                 <p className="balance">Your Balance</p>
                 <h2>
-                  1,200,000 <sub>SAR</sub>
+                  1,200,000 <span>SAR</span>
                 </h2>
                 <div className="wallet-btns">
-                  <Button className="wallet-add-btn">Add Balance</Button>
-                  <Button className="wallet-transfer-btn">Transfer</Button>
+                  <Button
+                    className="wallet-add-btn"
+                    onClick={() => setBalanceModalOpen(true)}
+                  >
+                    Add Balance
+                  </Button>
+                  <Button
+                    className="wallet-transfer-btn"
+                    onClick={() => setTransferModalOpen(true)}
+                  >
+                    Transfer
+                  </Button>
                 </div>
               </div>
             </Card>

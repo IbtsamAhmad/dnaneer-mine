@@ -1,16 +1,12 @@
 import { SetStateAction, Dispatch, useState } from "react";
-import { Form, Row , Col} from "antd";
+// import { Form, Row, Col } from "antd";
 import Modal from "components/Modal/Modal";
 import Transfer from "./Transfer";
+import TransferDocument from "./TransferDocument";
 import TransferBank from "./TransferBank";
 import Confirm from "./Confirm";
 import TransferOtp from "./TransferOtp";
 import Finish from "./Finish";
-
-
-
-
-
 
 import "./TransferBalance.scss";
 
@@ -27,7 +23,7 @@ const TransferBalance = ({
   onOk,
   onCancel,
 }: ModalProps): JSX.Element => {
-//   const [transferInfo, setTransferInfo] = useState(false);
+  //   const [transferInfo, setTransferInfo] = useState(false);
   const [currentDivIndex, setCurrentDivIndex] = useState(0);
 
   const handleNext = () => {
@@ -37,18 +33,19 @@ const TransferBalance = ({
   const handleBack = () => {
     setCurrentDivIndex((prevIndex) => prevIndex - 1);
   };
-
-
-
+  
+  const handleBackFirst = () =>{
+    setIsModalVisible(false)
+        setCurrentDivIndex(0);
+  }
 
   const divContents = [
-    <Transfer handleNext={handleNext} />,
-    <TransferBank handleBack={handleBack} handleNext={handleNext} />,
+    <TransferBank handleBack={handleBackFirst} handleNext={handleNext} />,
     <Confirm handleBack={handleBack} handleNext={handleNext} />,
     <TransferOtp handleBack={handleBack} handleNext={handleNext} />,
     <Finish
       handleBack={handleBack}
-      setIsModalVisible={onCancel}
+      setIsModalVisible={setIsModalVisible}
       setCurrentDivIndex={setCurrentDivIndex}
     />,
   ];
@@ -57,12 +54,9 @@ const TransferBalance = ({
   return (
     <div>
       <Modal
+        width={671}
         centered
-        className={
-          currentDivIndex >= 1
-            ? "transfer-info-model"
-            : "transfer-balance-model"
-        }
+        className="transfer-info-model"
         isModalVisible={isModalVisible}
         onOk={onOk}
         onCancel={onCancel}

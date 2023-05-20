@@ -13,7 +13,7 @@ const App = () => {
   return (
     <>
       <Button onClick={showDrawer} className="activate-btn" block>
-        Individual Kyc Form
+       Activate Now
       </Button>
       <div className="institute-drawer-container">
         <Drawer

@@ -58,12 +58,12 @@ const netWorthOptions: { label: string; value: string | number }[] = [
 
 const objectiveOptions: { label: string; value: string | number }[] = [
   {
-    label: "Less than 0 , 15,000",
-    value: "Less than 0 , 15,000",
+    label: "Less than 0-15,000",
+    value: "Less than 0-5,000",
   },
   {
-    label: "15,000 -50,000",
-    value: "15,000 -50,000",
+    label: "15,000-50,000",
+    value: "15,000-50,000",
   },
   {
     label: "50,000-300,000",
