@@ -91,35 +91,41 @@
         display: flex;
         justify-content: center;
         margin-top: 25px;
-        img{
+
+        img {
             width: 150px;
         }
     }
-    .contact-rows{
-         margin-top: 30px;
-        .contact-row{
+
+    .contact-rows {
+        margin-top: 30px;
+
+        .contact-row {
             display: flex;
             align-items: center;
             justify-content: center;
             margin-top: 10px;
-            h2{
+
+            h2 {
                 text-align: left;
                 width: 45px;
                 text-align: left;
                 margin: 0;
                 font-weight: 700;
-                    font-size: 14px;
-                    color: #140A2B;
+                font-size: 14px;
+                color: #140A2B;
             }
-            p{
+
+            p {
                 margin: 0;
                 margin-left: 15px;
-               font-weight: 700;
+                font-weight: 700;
             }
         }
 
     }
-    .close-btn{
+
+    .close-btn {
         margin-top: 39px;
         background: #5B2CD3;
         border-radius: 113px;
@@ -160,5 +166,103 @@
         text-align: center;
         color: #140A2B;
         cursor: pointer;
+    }
+}
+
+
+.pdf-modal {
+    padding: 34px 41px 34px 41px !important;
+    background: #ffffff !important;
+    border-radius: 40px;
+    width: 60% !important;
+    .ant-modal-content{
+        box-shadow: none !important;
+    }
+
+    .ant-modal-body {
+        background: transparent !important;
+        border-radius: 0px !important;
+        padding: 0px !important;
+    }
+      h1{
+        font-weight: 700;
+            font-size: 16px;
+          text-align: left;
+            color: #140A2B;
+            margin-top: 0px;
+      }
+}
+
+.vip-modal{
+    h1{
+        font-weight: 700;
+            font-size: 16px;
+       color: #140A2B;
+    }
+    p{
+        font-size: 12px;        
+        color: #8A8595;
+    }
+    h2{
+    font-weight: 700;
+        font-size: 14px;    
+        color: #FFFFFF;
+        text-align: center;
+    }
+    .sar{
+        text-align: center;
+        font-size: 12px;
+            color: #FFFFFF;
+            opacity: 0.75;
+    }
+    .col{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+                height: 105px;
+                border-radius: 20px;
+    }
+    .col-one{
+
+        background: linear-gradient(270deg, #2B48F4 0%, #34A5FF 100%);
+    }
+    .col-two{
+
+        background: linear-gradient(270deg, #2B48F4 0%, #34A5FF 100%);
+    }
+    .col-three{
+
+background-image: url("/assets/images/walletBG.png");
+    background-size: cover;
+    }
+    .criteria-container{
+        margin-top: 32px;
+        margin-bottom: 49px;
+        h1{
+            font-weight: 700;
+                font-size: 16px;            
+                color: #140A2B;
+        }
+        .ant-checkbox-group{
+            flex-direction: column;
+           align-items: baseline;
+        }
+        .ant-checkbox-group-item{
+       margin-top: 23px;
+        }
+        .ant-checkbox-inner{
+            border-radius: 4px !important;
+             background: #fff !important;
+            border: 1px solid #5B2CD3;
+        }
+        .ant-checkbox-checked{
+            background: #5B2CD3 !important;
+                                border-radius: 4px !important;
+            .ant-checkbox-inner {
+            background: #5B2CD3 !important;
+    
+            }
+        }
     }
 }

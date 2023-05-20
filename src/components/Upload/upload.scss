@@ -43,4 +43,34 @@
     }
 
 
+    .upload-file-container{
+        margin-top: 24px;
+         position: relative;
+        height: 55px;
+        background: rgba(91, 44, 211, 0.05);
+            border-radius: 95px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        .file-col-one{
+          display: flex;
+          align-items: center;
+          h2{
+            font-size: 14px;
+                    
+                color: #140A2B;
+                margin: 0;
+                margin-left: 10px;
+          }
+        }
+        .file-delete-icon{
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            cursor: pointer;
+   
+        }
+    }
+
+
 }

@@ -4,13 +4,17 @@ import classes from "./steps.module.scss";
 import pdf from "assets/dnaneer-terms.pdf";
 import { useState } from "react";
 
-const StepThree = ({ data, handleSkip, onSuccess, onBack }) => {
+const StepThree = ({ data, handleSkip, onSuccess, onBack, setOpen }) => {
   const [openAbsherOtp, setAbsherOtp] = useState(false);
 
   return (
     <>
       {openAbsherOtp && (
-        <AbsherOtp openAbsherOtp={openAbsherOtp} setAbsherOtp={setAbsherOtp} />
+        <AbsherOtp
+          openAbsherOtp={openAbsherOtp}
+          setAbsherOtp={setAbsherOtp}
+          setOpen={setOpen}
+        />
       )}
       <div>
         <div>

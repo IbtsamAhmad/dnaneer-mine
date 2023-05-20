@@ -13,7 +13,7 @@ const App = () => {
   return (
     <>
       <Button onClick={showDrawer} className="activate-btn" block>
-       Activate Now
+        Activate Now
       </Button>
       <div className="institute-drawer-container">
         <Drawer
@@ -24,7 +24,7 @@ const App = () => {
           open={open}
           closable={false}
         >
-          <IndividualForms setOpen={setOpen} />
+          <IndividualForms setOpen={setOpen}/>
         </Drawer>
       </div>
     </>

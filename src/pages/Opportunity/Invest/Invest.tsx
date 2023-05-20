@@ -7,6 +7,7 @@ const Invest = () => {
   const [investInpuVal, setInvestInput] = useState("");
   const [showInvestment, setShowInvestment] = useState(false);
 
+
   return (
     <div>
       <Row justify="end">
@@ -31,7 +32,7 @@ const Invest = () => {
                 <h1 className="large-heading">You will receive</h1>
                 <div className="invest-net" style={{ marginTop: "9px" }}>
                   <span className="net-unit">
-                    {investInpuVal}
+                    {+investInpuVal.replaceAll(",", "") * 1.75 * 4}
                     <span style={{ marginLeft: "8px" }}>SAR</span>
                   </span>
                 </div>
@@ -73,7 +74,7 @@ const Invest = () => {
                 </div>
                 <div className="invest-net">
                   <span className="net-unit">
-                    {investInpuVal}
+                    {+investInpuVal.replaceAll(",", "") * 1.75 * 4}
                     <span style={{ marginLeft: "8px" }}>SAR</span>
                   </span>
                   <span className="net-text">Net return of investment</span>

@@ -25,11 +25,12 @@ export default function App({ setOpen }) {
     setCurrent(current - 1);
   };
   const handleSkip = (step) => {
+    setOpen(false);
     // if (step == "2") {
     //   setCurrent(current + 1);
     // }
     // if (step == "3") {
-    navigate("/dashboard");
+    // navigate("/dashboard");
     // }
   };
 
@@ -71,6 +72,7 @@ export default function App({ setOpen }) {
           handleSkip={handleSkip}
           onSuccess={handleSubmit}
           onBack={handlePrevStep}
+          setOpen={setOpen}
         />
       ),
     },

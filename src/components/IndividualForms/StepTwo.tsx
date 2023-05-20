@@ -1,4 +1,4 @@
-import { Form, Divider, Select } from "antd";
+import { Form, Divider, Select , Row, Col} from "antd";
 import classes from "./steps.module.scss";
 import Input from "components/Input/Input";
 import Button from "components/Button/Button";
@@ -45,6 +45,17 @@ const sourceOptions: { label: string; value: string | number }[] = [
   },
 ];
 
+const bankOptions: { label: string; value: string | number }[] = [
+  {
+    label: "Alinma Bank",
+    value: "Alinma Bank",
+  },
+  {
+    label: "XYZ Bank",
+    value: "XYZ Bank",
+  },
+];
+
 const netWorthOptions: { label: string; value: string | number }[] = [
   {
     label: "5M SAR or less",
@@ -58,20 +69,20 @@ const netWorthOptions: { label: string; value: string | number }[] = [
 
 const objectiveOptions: { label: string; value: string | number }[] = [
   {
-    label: "Less than 0-15,000",
-    value: "Less than 0-5,000",
+    label: "0 - 15,000",
+    value: "0-5,000",
   },
   {
-    label: "15,000-50,000",
+    label: "15,000 - 50,000",
     value: "15,000-50,000",
   },
   {
-    label: "50,000-300,000",
+    label: "50,000 - 300,000",
     value: "50,000-300,000",
   },
   {
-    label: "More than 300,000+",
-    value: "More than 300,000+",
+    label: "300,000+",
+    value: "300,000+",
   },
 ];
 
@@ -155,40 +166,56 @@ function Step2Form({ onBack, handleSkip, onComplete }: Step2FormProps) {
           <RadioGroup options={investmentOptions} />
         </Form.Item> */}
         <h1>Bank Information</h1>
-        <div className="form-row">
-          <Form.Item
-            name="IBAN"
-            rules={[
-              {
-                required: true,
-                message: "Please enter your IBAN",
-              },
-            ]}
-          >
-            <Input
-              value="SA-"
-              label="IBAN "
-              placeholder="IBAN "
-              className={`drawer-input-two ${classes["bank-input"]}`}
-            />
-          </Form.Item>
+        {/* <div className="form-row"> */}
+        <Row>
+          <Col span={12}>
+            <Form.Item
+              name="IBAN"
+              rules={[
+                {
+                  required: true,
+                  message: "Please enter your IBAN",
+                },
+              ]}
+            >
+              <Input
+                value="SA-"
+                label="IBAN "
+                placeholder="IBAN "
+                className={`drawer-input-two ${classes["bank-input"]}`}
+              />
+            </Form.Item>
+          </Col>
+          <Col span={12}>
+            <Form.Item
+              // label="What is your Bank?"
+              name="bank"
+              rules={[
+                {
+                  // type: "email",
+                  // required: true,
+                  // message: "Please enter your email",
+                },
+              ]}
+            >
+              <AppSelect
+                className="drawer-select"
+                placeholder="Select"
+                label="Select"
+              >
+                {bankOptions.map((bank, i) => {
+                  return (
+                    <Option key={i} value={bank.value}>
+                      {bank.label}
+                    </Option>
+                  );
+                })}
+              </AppSelect>
+            </Form.Item>
+          </Col>
+        </Row>
 
-          <Form.Item
-            name="Alinma bank"
-            rules={[
-              {
-                required: true,
-                message: "Please enter your Alinma bank number",
-              },
-            ]}
-          >
-            <Input
-              label="Alinma bank"
-              placeholder="Alinma bank"
-              className="drawer-input-two"
-            />
-          </Form.Item>
-        </div>
+        {/* </div> */}
       </Form>
       <Divider />
       <div className="drawer-final-container-two">

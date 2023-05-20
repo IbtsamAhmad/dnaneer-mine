@@ -6,7 +6,7 @@ import classes from "./steps.module.scss";
 import { timeConverter } from "utils/Helper";
 import { useNavigate } from "react-router-dom";
 
-const AbsherOtp = ({ openAbsherOtp, setAbsherOtp }) => {
+const AbsherOtp = ({ openAbsherOtp, setAbsherOtp, setOpen }) => {
   const navigate = useNavigate();
   const [otp, setOtp] = useState("");
   const [time, setTime] = useState<number>(60);
@@ -20,10 +20,14 @@ const AbsherOtp = ({ openAbsherOtp, setAbsherOtp }) => {
 
     return () => clearInterval(timer);
   }, [time]);
+
   const onOtpConfirm = () => {
     if (otp === "1234") {
+        setOpen(false);
+        setAbsherOtp(false);
       navigate("/dashboard");
-    } else message.error("Invalid OTP");
+    } 
+    else message.error("Invalid OTP");
   };
   return (
     <AppModal
