@@ -54,7 +54,7 @@ const TransferBalance = ({
   return (
     <div>
       <Modal
-        width={671}
+        // width={671}
         centered
         className="transfer-info-model"
         isModalVisible={isModalVisible}

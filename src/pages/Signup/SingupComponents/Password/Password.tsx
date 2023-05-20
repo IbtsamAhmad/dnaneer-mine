@@ -10,7 +10,7 @@ import { ReactComponent as FormLockIcon } from "assets/svgs/form-lock-icon.svg";
 import { ReactComponent as Date } from "assets/svgs/Calendar.svg";
 import { ReactComponent as Mail } from "assets/svgs/Mail.svg";
 import { ReactComponent as Tick } from "assets/svgs/Tick.svg";
-import { ReactComponent as Cross } from "assets/svgs/Cross.svg";
+import { ReactComponent as Cross } from "assets/svgs/Cut.svg";
 import DatePicker from "components/DatePicker/DatePicker";
 import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
 import AuthContainer from "components/AuthContainer/AuthContainer";

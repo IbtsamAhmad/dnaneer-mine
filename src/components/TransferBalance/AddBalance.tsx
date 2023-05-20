@@ -39,7 +39,7 @@ const TransferBalance = ({
   return (
     <div>
       <Modal
-        width={671}
+       width={600}
         centered
         className="transfer-balance-model"
         isModalVisible={isModalVisible}

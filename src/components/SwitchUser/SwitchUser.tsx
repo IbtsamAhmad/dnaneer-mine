@@ -13,6 +13,7 @@ const SwitchUser = ({ userType, setUserType }) => {
   const onChangeIndividual = (e: RadioChangeEvent) => {
     // console.log("radio checkeddd", e.target.value);
     setUserType(e.target.value);
+    localStorage.setItem("institutional", e.target.value);
   };
 
   return (

@@ -17,6 +17,8 @@ type Props = {
 };
 
 function Sidebar({ setCollapsed, sideKey }: Props) {
+    const institutional = localStorage.getItem("institutional");
+    console.log("institutional", institutional);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
   const showModal = () => {
@@ -29,6 +31,8 @@ function Sidebar({ setCollapsed, sideKey }: Props) {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+
+
   return (
     <>
       <Modal
@@ -55,6 +59,9 @@ function Sidebar({ setCollapsed, sideKey }: Props) {
         <MenuClose />
       </div>
       <Menu
+        className={
+          institutional === "Institutional" ? "institutional-menu" : ""
+        }
         mode="inline"
         defaultSelectedKeys={[sideKey]}
         items={[

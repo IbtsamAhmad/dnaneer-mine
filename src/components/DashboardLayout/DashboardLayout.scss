@@ -526,3 +526,26 @@
     height: 52px;
   }
 }
+
+
+
+.institutional-menu{
+
+
+.ant-menu-item-selected {
+    &::before {
+   background: linear-gradient(297.81deg, #DC3D37 0%, #EF8B50 100%) !important;
+    }
+    svg {
+      path {
+        fill: #EF8B50 !important;
+      }
+    }
+
+    span {
+    background: linear-gradient(270deg, #DC3D37 0%, #EF8B50 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+  }  
+    }

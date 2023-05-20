@@ -76,8 +76,18 @@ const Naftah = ({ setShowNaftah, setShowPassword }) => {
           <div className={classes["naftah-download-wrapper"]}>
             <h5>Download Naftah App</h5>
             <div>
-              <AppleLogo />
-              <GoogleStore style={{ marginLeft: "16px" }} />
+              <a
+                href="https://apps.apple.com/sa/app/%D9%86%D9%81%D8%A7%D8%B0-nafath/id1598909871"
+                target="_blank"
+              >
+                <AppleLogo />
+              </a>
+              <a
+                href="https://play.google.com/store/apps/details?id=sa.gov.nic.myid&hl=en&gl=US&pli=1"
+                target="_blank"
+              >
+                <GoogleStore style={{ marginLeft: "16px" }} />
+              </a>
             </div>
           </div>
         </div>
