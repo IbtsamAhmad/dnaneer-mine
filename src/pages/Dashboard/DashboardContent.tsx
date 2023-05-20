@@ -335,12 +335,11 @@ const DashboardConent = () => {
               <h1>My Wallet</h1>
               <div
                 className="wallet-info-container"
-                style={{
-                  backgroundImage:
-                    institutional === "Institutional"
-                      ? `url(../../../public/assets/images/walletBGO.png)`
-                      : `url(../../../public/assets/images/walletBG.png)`,
-                }}
+                className={
+                  institutional === "Institutional"
+                    ? "wallet-info-container walletO"
+                    : "wallet-info-container"
+                }
               >
                 <div className="wallet-user-info">
                   <User />
