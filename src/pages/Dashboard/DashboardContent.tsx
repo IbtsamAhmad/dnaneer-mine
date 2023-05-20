@@ -27,7 +27,6 @@ import { ReactComponent as InvestmentThree } from "assets/svgs/InvestmentThree.s
 import { ReactComponent as InvestmentFour } from "assets/svgs/InvestmentFour.svg";
 import { ReactComponent as ContactModal } from "assets/svgs/ContactModal.svg";
 
-
 const investmentList = [
   {
     icon: <InvestmentOne />,
@@ -91,34 +90,31 @@ const DashboardConent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [transferModalOpen, setTransferModalOpen] = useState(false);
   const [balanceModalOpen, setBalanceModalOpen] = useState(false);
+  const institutional = localStorage.getItem("institutional");
 
-  
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
-    const showModal = () => {
-      setIsModalOpen(true);
-    };
-    const handleOk = () => {
-      setIsModalOpen(false);
-    };
-    const handleCancel = () => {
-      setIsModalOpen(false);
-    };
+  const onOk = () => {
+    setTransferModalOpen(false);
+  };
+  const onCancel = () => {
+    setTransferModalOpen(false);
+  };
 
-
-       const onOk = () => {
-         setTransferModalOpen(false);
-       };
-       const onCancel = () => {
-         setTransferModalOpen(false);
-       };
-
-            const balanceModelOk = () =>{
-            setBalanceModalOpen(false)
-            }
-            const balanceModelCancel = () =>{
-            setBalanceModalOpen(false);
-            }
-
+  const balanceModelOk = () => {
+    setBalanceModalOpen(false);
+  };
+  const balanceModelCancel = () => {
+    setBalanceModalOpen(false);
+  };
 
   return (
     <>
@@ -160,7 +156,11 @@ const DashboardConent = () => {
       <Row gutter={[32, 32]} className="investment-row">
         <Col lg={6} md={12} sm={12} xs={12}>
           <DashboardCard
-            icon={"/assets/images/Inves.png"}
+            icon={
+              institutional === "Institutional"
+                ? "/assets/images/InvesO.png"
+                : "/assets/images/Inves.png"
+            }
             heading="1,400,000"
             subHeading="Total Investments Amount"
             headingClassName="heading-black"
@@ -173,7 +173,11 @@ const DashboardConent = () => {
         <Col lg={6} md={12} sm={12} xs={12}>
           {" "}
           <DashboardCard
-            icon={"/assets/images/Return.png"}
+            icon={
+              institutional === "Institutional"
+                ? "/assets/images/ReturnO.png"
+                : "/assets/images/Return.png"
+            }
             heading="17.2"
             subHeading="Return of Investments (ROI)"
             headingClassName="heading-black"
@@ -186,7 +190,11 @@ const DashboardConent = () => {
         <Col lg={6} md={12} sm={12} xs={12}>
           {" "}
           <DashboardCard
-            icon={"/assets/images/ROI.png"}
+            icon={
+              institutional === "Institutional"
+                ? "/assets/images/ROIO.png"
+                : "/assets/images/ROI.png"
+            }
             heading="85,000"
             subHeading="Total Net ROI"
             headingClassName="heading-black"
@@ -198,7 +206,11 @@ const DashboardConent = () => {
         </Col>
         <Col lg={6} md={12} sm={12} xs={12}>
           <DashboardCard
-            icon={"/assets/images/Profit.png"}
+            icon={
+              institutional === "Institutional"
+                ? "/assets/images/ProfitO.png"
+                : "/assets/images/Profit.png"
+            }
             heading="110,000"
             subHeading="Unrealized profit"
             headingClassName="heading-black"
@@ -311,7 +323,7 @@ const DashboardConent = () => {
             isModalVisible={transferModalOpen}
             setIsModalVisible={setTransferModalOpen}
             onOk={onOk}
-             onCancel={onCancel}
+            onCancel={onCancel}
           />
           <AddBalance
             isModalVisible={balanceModalOpen}
@@ -321,7 +333,15 @@ const DashboardConent = () => {
           <DashboardCardsContainer>
             <Card className="wallet-card">
               <h1>My Wallet</h1>
-              <div className="wallet-info-container">
+              <div
+                className="wallet-info-container"
+                style={{
+                  backgroundImage:
+                    institutional === "Institutional"
+                      ? `url(../../../public/assets/images/walletBGO.png)`
+                      : `url(../../../public/assets/images/walletBG.png)`,
+                }}
+              >
                 <div className="wallet-user-info">
                   <User />
                   <div>

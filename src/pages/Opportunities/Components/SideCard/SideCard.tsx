@@ -11,6 +11,7 @@ import "./SideCard.scss";
 const SideCard = () => {
     const [transferModalOpen, setTransferModalOpen] = useState(false);
     const [balanceModalOpen, setBalanceModalOpen] = useState(false);
+        const institutional = localStorage.getItem("institutional");
     const onOk = () => {
       setTransferModalOpen(false);
     };
@@ -41,7 +42,13 @@ const SideCard = () => {
       />
       <Row justify="end">
         <Col style={{ minWidth: "262px", maxWidth: "262px" }}>
-          <div className="sideCard-container">
+          <div
+            className={
+              institutional === "Institutional"
+                ? "sideCard-container sideCardO"
+                : "sideCard-container"
+            }
+          >
             <div style={{ marginBottom: "-2rem" }}>
               <AppCard>
                 <h4 style={{ fontSize: "12px", color: "#140A2B", margin: "0" }}>
