@@ -35,6 +35,7 @@ function InstitutionForms({ setOpen }) {
     //   setCurrent(current + 1);
     // }
     // if (step == "3") {
+      setOpen(false);
     navigate("/dashboard");
     // }
   };
@@ -65,6 +66,7 @@ function InstitutionForms({ setOpen }) {
           handleSkip={handleSkip}
           onSuccess={handleSubmit}
           onBack={handlePrevStep}
+          setOpen={setOpen}
         />
       ),
     },

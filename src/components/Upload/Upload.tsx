@@ -51,9 +51,9 @@ const UploadComponent = () => {
           className="document-upload"
           onChange={onChange}
           onDrop={onDrop}
-          beforeUpload={beforeUpload}
+          // beforeUpload={beforeUpload}
           showUploadList={false}
-         customRequest={dummyRequest}
+        //  customRequest={dummyRequest}
         >
           <p className="import">Upload the commercial registration as PDF</p>
           <p className="browse">
