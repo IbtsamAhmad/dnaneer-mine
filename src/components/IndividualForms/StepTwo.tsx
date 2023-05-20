@@ -28,12 +28,20 @@ const incomeOptions: { label: string; value: string | number }[] = [
 
 const sourceOptions: { label: string; value: string | number }[] = [
   {
-    label: "Individual",
-    value: "individual",
+    label: "Salary",
+    value: "Salary",
   },
   {
-    label: "Institution",
-    value: "institution",
+    label: "Investments income",
+    value: "Investments income",
+  },
+  {
+    label: "Personal savings",
+    value: "Personal savings",
+  },
+  {
+    label: "Other",
+    value: "Other",
   },
 ];
 
@@ -115,8 +123,8 @@ function Step2Form({ onBack, handleSkip, onComplete }: Step2FormProps) {
         >
           <AppSelect
             className="drawer-select"
-            placeholder="Gender"
-            label="Gender"
+            placeholder="Select"
+            label="Select"
           >
             {sourceOptions.map((source, i) => {
               return (

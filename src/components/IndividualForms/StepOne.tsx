@@ -51,9 +51,15 @@ type Props = {
   data: any;
   onSuccess: (data: any) => void;
   setCurrent: Dispatch<SetStateAction<number>>;
+  handleSkip: (step?: string) => void;
 };
 
-export default function Step2Form({ data, onSuccess, setCurrent }: Props) {
+export default function Step2Form({
+  data,
+  onSuccess,
+  setCurrent,
+  handleSkip,
+}: Props) {
   return (
     <div className="stepForm-container">
       <h1>Personal Information</h1>
@@ -107,7 +113,7 @@ export default function Step2Form({ data, onSuccess, setCurrent }: Props) {
         </Form.Item>
         <Divider />
         <div className="drawer-next-container-two">
-          <div className="skip" onClick={() => setCurrent(0)}>
+          <div className="skip" onClick={() => handleSkip()}>
             Skip for now
           </div>
           <Button className="drawer-next-btn" onClick={() => setCurrent(1)}>

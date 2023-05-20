@@ -43,7 +43,12 @@ export default function App({ setOpen }) {
     {
       title: "Personal Information",
       content: (
-        <StepOne data={data} onSuccess={handleSubmit} setCurrent={setCurrent} />
+        <StepOne
+          handleSkip={handleSkip}
+          data={data}
+          onSuccess={handleSubmit}
+          setCurrent={setCurrent}
+        />
       ),
     },
     {

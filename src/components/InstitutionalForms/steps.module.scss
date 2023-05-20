@@ -117,3 +117,29 @@
     }
   }
 }
+.absher-otp-wrapper {
+  padding: 17px 2px;
+}
+.absher-otp-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  input {
+    height: 50px;
+    margin-right: 14px;
+    border-radius: 12px;
+    border: 1px solid #dcdde5;
+    font-weight: 700;
+    &:focus {
+      border-color: #0d99ff;
+      outline: #0d99ff;
+    }
+  }
+}
+.absher-header {
+  background-color: #140a2b;
+  color: #ffffff;
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-weight: 700px;
+}

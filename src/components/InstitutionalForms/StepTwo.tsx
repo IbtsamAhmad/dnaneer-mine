@@ -167,7 +167,7 @@ function Step2Form({ data, onSuccess, onBack, handleSkip }: Props) {
 
           <Button
             className="complete-btn"
-            onClick={() => handleSkip("2")}
+            onClick={() => onSuccess("2")}
             // onClick={() => message.success("Processing complete!")}
           >
             Complete

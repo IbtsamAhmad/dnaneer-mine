@@ -12,12 +12,8 @@ const App = () => {
   };
   return (
     <>
-      <Button
-        onClick={showDrawer}
-        className="activate-btn"
-        block
-      >
-        Activate Now
+      <Button onClick={showDrawer} className="activate-btn" block>
+        Individual Kyc Form
       </Button>
       <div className="institute-drawer-container">
         <Drawer

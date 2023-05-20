@@ -5,15 +5,25 @@ import "./otp.scss";
 interface OtpProps {
   otp: string;
   setOtp: Dispatch<SetStateAction<string>>;
+  width?: string;
+  height?: string;
+  containerClass?: string;
 }
 
-export default function Otp({ otp, setOtp }: OtpProps): JSX.Element {
+export default function Otp({
+  otp,
+  setOtp,
+  width,
+  height,
+  containerClass,
+}: OtpProps): JSX.Element {
   return (
     <OtpInput
-      containerStyle={"otp-container"}
+      containerStyle={containerClass ? containerClass : "otp-container"}
       shouldAutoFocus
       inputStyle={{
-        width: "55px",
+        width: width ? width : "55px",
+        height: height ? height : "",
       }}
       value={otp}
       onChange={setOtp}

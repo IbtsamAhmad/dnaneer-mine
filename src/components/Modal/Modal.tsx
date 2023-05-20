@@ -4,7 +4,6 @@ import { Modal } from "antd";
 import { ReactComponent as ModalClose } from "assets/svgs/ModalClose.svg";
 import "./Modal.scss";
 
-
 interface ModalProps {
   children: ReactNode | ReactNode[] | string;
   onOk?: () => void;
@@ -15,7 +14,7 @@ interface ModalProps {
   className?: string;
   okText?: string;
   cancelText?: string;
-  modalTitle?: string | boolean;
+  modalTitle?: ReactNode | string | boolean;
   width?: number;
   style?: React.CSSProperties;
 }
@@ -49,7 +48,7 @@ const AppModal = ({
         footer={footer}
         width={width}
         centered={centered}
-        closeIcon={<ModalClose/>}
+        closeIcon={<ModalClose />}
       >
         {children}
       </Modal>

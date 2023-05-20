@@ -14,8 +14,11 @@ function InstitutionForms({ setOpen }) {
 
   const handleSubmit = (step) => {
     console.log("Submit");
+    if (step === "2") {
+      return nextHandler();
+    }
     if (step === "3") {
-      navigate("/dashboard");
+      return navigate("/dashboard");
     }
   };
 

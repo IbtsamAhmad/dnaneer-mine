@@ -34,7 +34,7 @@ const OtpComponent = ({
         Please type the OTP received on your phone
       </p>
       <Otp otp={otp} setOtp={setOtp} />
-      <p className="timer">
+      <p className="">
         {time !== 0 ? timeConverter(time) : "OTP expired"}{" "}
         {time ? <span>left</span> : null}
       </p>
