@@ -334,7 +334,6 @@ const DashboardConent = () => {
             <Card className="wallet-card">
               <h1>My Wallet</h1>
               <div
-                className="wallet-info-container"
                 className={
                   institutional === "Institutional"
                     ? "wallet-info-container walletO"
