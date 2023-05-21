@@ -25,9 +25,9 @@ function Sidebar({ setCollapsed, sideKey }: Props) {
     setIsModalOpen(true);
   };
   const handleOk = () => {
+    console.log("handleOk", handleOk);
     localStorage.removeItem("institutional");
     setIsModalOpen(false);
-    navigate("/");
   };
   const handleCancel = () => {
     setIsModalOpen(false);
@@ -49,9 +49,12 @@ function Sidebar({ setCollapsed, sideKey }: Props) {
         </div>
 
         <h1>Are you sure you want to log out</h1>
-        <Button onClick={handleOk} block className="logout-btn">
-          Logout
-        </Button>
+        <a href="https://staging.dnaneer.com/">
+          <Button onClick={handleOk} block className="logout-btn">
+            Logout
+          </Button>
+        </a>
+
         <p className="cancel" onClick={() => handleCancel()}>
           Cancel
         </p>
