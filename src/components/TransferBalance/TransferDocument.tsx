@@ -2,7 +2,7 @@ import { Row, Col } from "antd";
 
 import Button from "components/Button/Button";
 import { ReactComponent as Copy } from "assets/svgs/Copy.svg";
-const TransferDocument = ({ onCancel, handleNext }) => {
+const TransferDocument = ({ onCancel }) => {
   const onFinish = () => {
     onCancel();
   };

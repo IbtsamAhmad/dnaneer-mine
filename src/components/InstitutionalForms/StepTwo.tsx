@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Form, Divider } from "antd";
+import { Form, Divider, Select } from "antd";
 import classes from "./steps.module.scss";
 
 import { ReactComponent as Doc } from "assets/svgs/Doc.svg";
@@ -13,6 +13,7 @@ import Upload from "components/Upload/Upload";
 
 // import { ReactComponent as Aggrement } from "assets/svgs/Aggrement.svg";
 import FloatSelect from "components/Select/Select";
+const { Option } = Select;
 
 const incomeOptions: { label: string; value: string | number }[] = [
   {

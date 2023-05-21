@@ -54,6 +54,18 @@
     color: #171717;
   }
 }
+.drawer-input-one-date {
+  .ant-picker-input{
+  input {
+      padding-left: 2px !important;
+      padding-top: 6px !important;
+    }
+  }
+
+   .ant-picker-suffix{
+    display: none !important;
+   }
+}
 
 .drawer-input-two {
   margin-right: 10px;

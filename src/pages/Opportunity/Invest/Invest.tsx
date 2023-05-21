@@ -35,7 +35,7 @@ const Invest = () => {
                 <h1 className="large-heading">You will receive</h1>
                 <div className="invest-net" style={{ marginTop: "9px" }}>
                   <span className="net-unit">
-                    {(+investInpuVal.replaceAll(",", "") * Percent * 4).toFixed(
+                    {(+investInpuVal.replaceAll(",", "") * +Percent * 4).toFixed(
                       2
                     )}
                     <span style={{ marginLeft: "8px" }}>SAR</span>
@@ -79,7 +79,7 @@ const Invest = () => {
                 </div>
                 <div className="invest-net">
                   <span className="net-unit">
-                    {(+investInpuVal.replaceAll(",", "") * Percent * 4).toFixed(
+                    {(+investInpuVal.replaceAll(",", "") * +Percent * 4).toFixed(
                       2
                     )}
                     <span style={{ marginLeft: "8px" }}>SAR</span>

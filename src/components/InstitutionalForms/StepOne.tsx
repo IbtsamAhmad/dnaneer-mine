@@ -3,6 +3,7 @@ import { Form, Divider } from "antd";
 
 import Input from "components/Input/Input";
 import Button from "components/Button/Button";
+import DatePicker from "components/DatePicker/DatePicker";
 
 type Props = {
   data: any;
@@ -190,10 +191,17 @@ function Step1Form({ data, onSuccess, setCurrent }: Props) {
             //   },
             // ]}
           >
-            <Input
+            {/* <Input
               label="Date of Birth"
               placeholder="Date of Birth"
               className="drawer-input-one"
+            /> */}
+            <DatePicker
+              block={true}
+              label="Date of Birth"
+              placeholder="Date of Birth"
+              className="drawer-input-one drawer-input-one-date"
+              // prefix={<Date />}
             />
           </Form.Item>
         </div>
