@@ -1,6 +1,7 @@
-import { Button, Drawer } from "antd";
+import {  Drawer } from "antd";
 import { useState } from "react";
 import InstitutionalForms from "../InstitutionalForms";
+import Button from "components/Button/Button";
 const App = () => {
   const [open, setOpen] = useState(false);
   const showDrawer = () => {
@@ -11,8 +12,8 @@ const App = () => {
   };
   return (
     <>
-      <Button type="primary" onClick={showDrawer}>
-        Complete your Profile Institute
+      <Button onClick={showDrawer} className="activate-btn" block>
+        Activate Now
       </Button>
       {/* <div className="institute-drawer-container"> */}
       <Drawer

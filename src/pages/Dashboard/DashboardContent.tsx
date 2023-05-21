@@ -6,10 +6,11 @@ import Card from "components/Card/Card";
 import Button from "components/Button/Button";
 import AppCard from "components/Card/Card";
 import Modal from "components/Modal/Modal";
+import IndividualDrawer from "components/IndividualDrawer/IndividualDrawer";
 import TransferBalance from "components/TransferBalance/TransferBalance";
 import AddBalance from "components/TransferBalance/AddBalance";
 import DashboardCardsContainer from "components/DashboardCardsContainer/DashboardCardsContainer";
-import IndividualDrawer from "components/IndividualDrawer/IndividualDrawer";
+import InstitutionalDrawer from "components/InstitutionalDrawer/InstitutionalDrawer";
 import { ReactComponent as AdvisorImage } from "assets/svgs/AdvisorImage.svg";
 import { ReactComponent as AdvisorLogo } from "assets/svgs/AdvisorLogo.svg";
 // import { ReactComponent as Amount } from "assets/svgs/Amount.svg";
@@ -149,7 +150,12 @@ const DashboardConent = () => {
         </Button>
       </Modal>
       <Greeting
-        role="Individual investor"
+        role={
+          institutional === "Institutional" ? "Institutional investor" : "Individual investor"
+        }
+        className={
+          institutional === "Institutional" ? "greetingO" : ""
+        }
         name="Omar"
         src="assets/images/Avatar 2.png"
       />
@@ -316,7 +322,12 @@ const DashboardConent = () => {
               {/* <Button className="activate-btn" block>
               Activate Now
             </Button> */}
-              <IndividualDrawer />
+              {institutional === "Institutional" ? (
+                <InstitutionalDrawer />
+              ) : (
+                <IndividualDrawer />
+              )}
+              {/*  */}
             </Card>
           </DashboardCardsContainer>
           <TransferBalance

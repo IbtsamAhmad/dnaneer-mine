@@ -45,8 +45,15 @@ const content = (
 );
 
 function Header({ setCollapsed, collapsed }: Props) {
+    const institutional = localStorage.getItem("institutional");
   return (
-    <div className="header-container">
+    <div
+      className={
+        institutional === "Institutional"
+          ? "header-container headerO"
+          : "header-container"
+      }
+    >
       <Row align="middle">
         <Col
           lg={{

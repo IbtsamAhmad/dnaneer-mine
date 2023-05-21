@@ -25,6 +25,7 @@ function Sidebar({ setCollapsed, sideKey }: Props) {
     setIsModalOpen(true);
   };
   const handleOk = () => {
+    localStorage.removeItem("institutional");
     setIsModalOpen(false);
     navigate("/");
   };

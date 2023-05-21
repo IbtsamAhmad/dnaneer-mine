@@ -13,7 +13,7 @@
         border-radius: 38px;
     // background-color: #e7e7e7;
     background: linear-gradient(to right, #edf6fe, #ededfc) border-box;
-   width: 97px;
+   width: 105px;
     padding: 6px;
     display: flex;
     justify-content: center;
@@ -51,4 +51,22 @@
         margin: 0px;
     }
 
+}
+
+.greetingO{
+        .ant-avatar {
+                background: linear-gradient(white, white) padding-box, linear-gradient(to right, #D87C5D 0%,
+                    #DC596B 42.55%,
+                    #8A86AB 77.97%,
+                    #6EB4DA 100%) border-box;
+            
+            }
+.role {
+        background: linear-gradient(to right, rgb(236,239,243), rgb(243,235,233)) border-box;
+        span {
+      background: linear-gradient(270deg, #DC3D37 0%, #EF8B50 100%) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        }
+    }
 }
