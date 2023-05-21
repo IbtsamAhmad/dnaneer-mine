@@ -14,6 +14,13 @@ const LoginFields = ({ onFinish, onFinishFailed, userType, loader }) => {
   const [phoneNum, setPhoneNum] = useState("+966");
   const onChangePhone = (e) => {
     const { value } = e.target;
+    if (value[4] === undefined) {
+      return setPhoneNum("+966");
+    }
+    if (value[4] !== "5") {
+      return message.error("Number must start with 5");
+    }
+
     if (value.length > 3 && /^\+\d*$/.test(value)) {
       return setPhoneNum(value);
     }

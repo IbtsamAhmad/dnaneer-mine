@@ -2,7 +2,7 @@ import { Row, Col } from "antd";
 
 import Button from "components/Button/Button";
 import { ReactComponent as Copy } from "assets/svgs/Copy.svg";
-const TransferDocument = ({ onCancel }) => {
+const TransferDocument = ({ onCancel, handleNext }) => {
   const onFinish = () => {
     onCancel();
   };
@@ -38,11 +38,11 @@ const TransferDocument = ({ onCancel }) => {
         <div className="document-info">
           <Row>
             <Col lg={8}>
-              <p>Account number</p>
+              <p>Dananeer Account #</p>
               <h1>96620302030</h1>
             </Col>
             <Col lg={8}>
-              <p>IBAN</p>
+              <p>Bank IBAN</p>
               <h1>C000-96620302030</h1>
             </Col>
             <Col

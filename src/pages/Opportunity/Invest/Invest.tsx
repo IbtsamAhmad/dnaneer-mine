@@ -6,6 +6,9 @@ import { ReactComponent as InvestmentBack } from "assets/svgs/InvestmentBack.svg
 const Invest = () => {
   const [investInpuVal, setInvestInput] = useState("");
   const [showInvestment, setShowInvestment] = useState(false);
+  let ROI = 17.5;
+  let Percent =  (ROI / 100).toFixed(2);
+  // console.log("Percent", Percent);
 
 
   return (
@@ -32,7 +35,9 @@ const Invest = () => {
                 <h1 className="large-heading">You will receive</h1>
                 <div className="invest-net" style={{ marginTop: "9px" }}>
                   <span className="net-unit">
-                    {+investInpuVal.replaceAll(",", "") * 1.75 * 4}
+                    {(+investInpuVal.replaceAll(",", "") * Percent * 4).toFixed(
+                      2
+                    )}
                     <span style={{ marginLeft: "8px" }}>SAR</span>
                   </span>
                 </div>
@@ -74,7 +79,9 @@ const Invest = () => {
                 </div>
                 <div className="invest-net">
                   <span className="net-unit">
-                    {+investInpuVal.replaceAll(",", "") * 1.75 * 4}
+                    {(+investInpuVal.replaceAll(",", "") * Percent * 4).toFixed(
+                      2
+                    )}
                     <span style={{ marginLeft: "8px" }}>SAR</span>
                   </span>
                   <span className="net-text">Net return of investment</span>

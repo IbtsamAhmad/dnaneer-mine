@@ -60,6 +60,14 @@ const Phone = ({
   const onChangePhone = (e) => {
     //  console.log(e.target.value.length)
     const { value } = e.target;
+    // console.log("value", value, value[4])
+    if (value[4] === undefined) {
+    return setPhoneNum("+966");      
+    }
+    if (value[4] !== "5") {
+      return message.error("Number must start with 5")
+    }
+
     if (value.length > 3 && /^\+\d*$/.test(value)) {
       return setPhoneNum(value);
     }
@@ -220,7 +228,7 @@ const Phone = ({
               <span className="terms">
                 I agree to <a href="#"> Terms & Conditions</a>
                 <span>&</span>
-                <a href="#">Privacy Policy</a>
+                <a href="https://dnaneer.com/privacy-policy/" target="_blank">Privacy Policy</a>
               </span>
             </Radio>
           </div>

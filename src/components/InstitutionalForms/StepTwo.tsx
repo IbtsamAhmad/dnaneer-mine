@@ -71,6 +71,60 @@ const approxyOptions: { label: string; value: string | number }[] = [
   },
 ];
 
+const bankOptions: { label: string; value: string | number }[] = [
+  {
+    label: "Saudi National Bank",
+    value: "Saudi National Bank",
+  },
+  {
+    label: "The Saudi British Bank (SABB)",
+    value: "The Saudi British Bank (SABB)",
+  },
+  {
+    label: "Saudi Investment Bank",
+    value: "Saudi Investment Bank",
+  },
+  {
+    label: "Alinma Bank",
+    value: "Alinma Bank",
+  },
+  {
+    label: "Banque Saudi Fransi",
+    value: "Banque Saudi Fransi",
+  },
+
+  {
+    label: "Riyad Bank",
+    value: "Riyad Bank",
+  },
+  {
+    label: "Al Rajhi Bank",
+    value: "Al Rajhi Bank",
+  },
+  {
+    label: "Arab National Bank",
+    value: "Arab National Bank",
+  },
+  {
+    label: "Bank AlBilad",
+    value: "Bank AlBilad",
+  },
+
+  {
+    label: "Bank AlJazira",
+    value: "Bank AlJazira",
+  },
+  {
+    label: "Gulf International Bank Saudi Arabia (GIB-SA)",
+    value: "Gulf International Bank Saudi Arabia (GIB-SA)",
+  },
+
+  {
+    label: "Emirates NBD",
+    value: "Emirates NBD",
+  },
+];
+
 type BackProps = {
   onBack: () => void;
 };
@@ -108,20 +162,28 @@ function Step2Form({ data, onSuccess, onBack, handleSkip }: Props) {
         <Divider style={{ margin: 0 }} />
         <div className="register-input-container">
           <Form.Item
-            name="Name"
+            name="bank"
             rules={[
               {
                 required: true,
-                message: "Please enter your IBAN number",
+                message: "Please select bank",
               },
             ]}
           >
             <FloatSelect
               // style={{ borderRadius: "24px" }}
-              label="Select"
-              placeholder="Select"
+              label="Select Bank"
+              placeholder="Select Bank"
               className="drawer-select"
-            />
+            >
+              {bankOptions.map((bank, i) => {
+                return (
+                  <Option key={i} value={bank.value}>
+                    {bank.label}
+                  </Option>
+                );
+              })}
+            </FloatSelect>
           </Form.Item>
           <Form.Item
             name="Name"

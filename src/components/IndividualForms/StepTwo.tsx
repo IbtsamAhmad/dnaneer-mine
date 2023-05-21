@@ -47,12 +47,55 @@ const sourceOptions: { label: string; value: string | number }[] = [
 
 const bankOptions: { label: string; value: string | number }[] = [
   {
+    label: "Saudi National Bank",
+    value: "Saudi National Bank",
+  },
+  {
+    label: "The Saudi British Bank (SABB)",
+    value: "The Saudi British Bank (SABB)",
+  },
+  {
+    label: "Saudi Investment Bank",
+    value: "Saudi Investment Bank",
+  },
+  {
     label: "Alinma Bank",
     value: "Alinma Bank",
   },
   {
-    label: "XYZ Bank",
-    value: "XYZ Bank",
+    label: "Banque Saudi Fransi",
+    value: "Banque Saudi Fransi",
+  },
+
+  {
+    label: "Riyad Bank",
+    value: "Riyad Bank",
+  },
+  {
+    label: "Al Rajhi Bank",
+    value: "Al Rajhi Bank",
+  },
+  {
+    label: "Arab National Bank",
+    value: "Arab National Bank",
+  },
+  {
+    label: "Bank AlBilad",
+    value: "Bank AlBilad",
+  },
+
+  {
+    label: "Bank AlJazira",
+    value: "Bank AlJazira",
+  },
+  {
+    label: "Gulf International Bank Saudi Arabia (GIB-SA)",
+    value: "Gulf International Bank Saudi Arabia (GIB-SA)",
+  },
+
+  {
+    label: "Emirates NBD",
+    value: "Emirates NBD",
   },
 ];
 
@@ -218,7 +261,7 @@ function Step2Form({ onBack, handleSkip, onComplete }: Step2FormProps) {
         {/* </div> */}
       </Form>
       <Divider />
-      <div className="drawer-final-container-two">
+      <div className="drawer-final-container-two" style={{ paddingBottom:"200px"}}>
         <div className="skip" onClick={() => handleSkip("2")}>
           Skip for now
         </div>

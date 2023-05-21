@@ -242,12 +242,12 @@ const Password = ({
             )}
 
             <div className="password-radio">
-              <Radio>
+              {/* <Radio>
                 <span className="terms">
                   I approve on <a href="#">terms & conditions</a> &{" "}
                   <a href="#">Privacy Policy</a>
                 </span>
-              </Radio>
+              </Radio> */}
             </div>
 
             <Form.Item>
