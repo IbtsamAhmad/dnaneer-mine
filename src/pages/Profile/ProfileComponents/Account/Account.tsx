@@ -88,7 +88,7 @@ const AccountContent = ({ tabKey, editAccount, setEditAccount }) => {
               {time ? <span>left</span> : null}
             </p>
             <Button
-           onClick={() => handleCancel()}
+              onClick={() => handleCancel()}
               block
               className="confirm-deactivate-btn"
             >
@@ -113,7 +113,7 @@ const AccountContent = ({ tabKey, editAccount, setEditAccount }) => {
             </p>
 
             <Button
-             onClick={confirmAccountDelete}
+              onClick={confirmAccountDelete}
               block
               className="confirm-deactivate-btn"
               style={{ marginTop: "35px" }}
@@ -146,7 +146,8 @@ const AccountContent = ({ tabKey, editAccount, setEditAccount }) => {
               name="basic"
               className="account-form-container"
               initialValues={{
-                remember: true,
+                email: "omar@example.com",
+                password: "12345678",
               }}
               layout="vertical"
               onFinish={onFinish}
@@ -157,7 +158,7 @@ const AccountContent = ({ tabKey, editAccount, setEditAccount }) => {
                 <Col lg={7} sm={12}>
                   <Form.Item
                     label="Change email"
-                    name="username"
+                    name="email"
                     rules={[
                       {
                         required: true,

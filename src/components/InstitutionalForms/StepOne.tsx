@@ -17,7 +17,9 @@ function Step1Form({ data, onSuccess, setCurrent }: Props) {
       <Form
         name="basic"
         initialValues={{
-          remember: true,
+          companyName: "IMMRSV Studio",
+          legal: "Value",
+          address: "Al Olaya Tower, Olaya, Riyadh, KSA",
         }}
         // onFinish={onFinish}
         // onFinishFailed={onFinishFailed}
@@ -25,7 +27,7 @@ function Step1Form({ data, onSuccess, setCurrent }: Props) {
       >
         <div className="register-input-container">
           <Form.Item
-            name="Name"
+            name="commercialName"
             rules={[
               {
                 required: true,
@@ -43,7 +45,7 @@ function Step1Form({ data, onSuccess, setCurrent }: Props) {
         </div>
         <div className="form-row">
           <Form.Item
-            name="name"
+            name="companyName"
             // rules={[
             //   {
             //     required: true,
@@ -77,7 +79,7 @@ function Step1Form({ data, onSuccess, setCurrent }: Props) {
         </div>
         <div className="form-row">
           <Form.Item
-            name="Address"
+            name="address"
             rules={[
               {
                 required: true,

@@ -6,7 +6,7 @@ import Button from "components/Button/Button";
 import { ReactComponent as FormLockIcon } from "assets/svgs/form-lock-icon.svg";
 import { ReactComponent as Mail } from "assets/svgs/Mail.svg";
 import { ReactComponent as Tick } from "assets/svgs/Tick.svg";
-import { ReactComponent as Cross } from "assets/svgs/Cross.svg";
+import { ReactComponent as Cross } from "assets/svgs/Cut.svg";
 import { register } from "services/Login";
 
 import SwitchUser from "components/SwitchUser/SwitchUser";
