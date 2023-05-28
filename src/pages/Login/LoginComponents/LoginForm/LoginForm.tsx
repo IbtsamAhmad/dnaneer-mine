@@ -11,7 +11,7 @@ const LoginForm = ({ userType, setSwitchForm, setUserId }) => {
     console.log("Success:", values);
     setLoader(true);
     let body = null;
-
+    console.log("userType",userType);
     if (userType === "individual") {
       body = {
         user_type: 1,
