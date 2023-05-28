@@ -1,28 +1,47 @@
 import { useState } from "react";
 import LoginFields from "./Form";
+import { message } from "antd";
 import { Link } from "react-router-dom";
+import { login } from "services/Login"
 
-const LoginForm = ({ userType, setSwitchForm }) => {
+const LoginForm = ({ userType, setSwitchForm, setUserId }) => {
   const [loader, setLoader] = useState<boolean>(false);
 
   const onFinish = async (values) => {
     console.log("Success:", values);
-    let data = null;
+    setLoader(true);
+    let body = null;
 
     if (userType === "individual") {
-      data = {
+      body = {
         user_type: 1,
-        phone_number: values.phone,
+        email: values.email,
+        password: values.password,
       };
     } else {
-      data = {
+      body = {
         user_type: 2,
         email: values.email,
-        password: values.passwor,
+        password: values.password,
       };
     }
+    try {
+      const {data} = await login(body);
+      if (data) {
+        console.log("login Res", data);
+        setUserId(data.user_id)
+        message.success(data.message);
+        setSwitchForm("otp");
+      }
+    } catch (error) {
+      console.log("err", error.response.data.message);
+      message.error(error.response.data.message);
+    } finally {
+      setLoader(false);
+    }
+
     // return;
-    setSwitchForm("otp");
+
     // setShowPhone(false);
     // setShowOtp(true);
   };

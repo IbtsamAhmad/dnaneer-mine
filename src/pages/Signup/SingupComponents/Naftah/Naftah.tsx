@@ -1,4 +1,5 @@
-import { Button, Input } from "antd";
+import { useState } from "react";
+import { Button, Input, message } from "antd";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
 import { ReactComponent as AppleLogo } from "assets/svgs/Apple-logo.svg";
@@ -7,20 +8,49 @@ import { ReactComponent as Close } from "assets/svgs/Close.svg";
 import { ReactComponent as Start } from "assets/svgs/Start.svg";
 import NafatLogo from "assets/images/Naftah-Logo.png";
 import classes from "./naftah.module.scss";
-
+import { nafathStatus } from "services/Login";
 // import Input from "components/Input/Input";
 
-const Naftah = ({ setShowNaftah, setShowPassword }) => {
+const Naftah = ({
+  setShowNaftah,
+  setShowPassword,
+  nafathInfo,
+  userId,
+  passwordIno,
+}) => {
   const navigate = useNavigate();
-
+  const [loader, setLoader] = useState(false);
   console.log("Naftah");
   const backHandler = () => {
     setShowPassword(true);
     // setShowOtp(true);
     setShowNaftah(false);
   };
-  const completeNaftahProcess = () => {
-    navigate("/dashboard");
+  const completeNaftahProcess = async () => {
+    const body = {
+      user_id: userId,
+      nationalId: passwordIno.national_id,
+      transId: nafathInfo.transId,
+      random: nafathInfo.random,
+      dob: passwordIno.dob,
+      email: passwordIno.email,
+      password: passwordIno.password,
+    };
+    try {
+      setLoader(true);
+      const { data } = await nafathStatus(body);
+      if (data) {
+        console.log("nafath Status Res", data);
+
+        message.success(`Your account status is ${data.status}`);
+      navigate("/dashboard");
+      }
+    } catch (error) {
+      console.log("err", error.response.data.message);
+      message.error(error.response.data.message);
+    } finally {
+      setLoader(false);
+    }
   };
   return (
     <div className={classes["naftah-wrapper"]}>

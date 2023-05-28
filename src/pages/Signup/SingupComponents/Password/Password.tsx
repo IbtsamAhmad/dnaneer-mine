@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Form, Radio } from "antd";
+import { Form, message } from "antd";
 import { ReactComponent as Close } from "assets/svgs/Close.svg";
 import { ReactComponent as Start } from "assets/svgs/Start.svg";
 import Input from "components/Input/Input";
@@ -14,6 +14,7 @@ import { ReactComponent as Cross } from "assets/svgs/Cut.svg";
 import DatePicker from "components/DatePicker/DatePicker";
 import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
 import AuthContainer from "components/AuthContainer/AuthContainer";
+import { registerId } from "services/Login";
 
 const Password = ({
   setShowPassword,
@@ -21,6 +22,9 @@ const Password = ({
   setAbsherCode,
   individual,
   setShowNaftah,
+  setNafathInfo,
+  userId,
+  setPasswordInfo,
 }) => {
   const [passwordLength, setPasswordLength] = useState(0);
   const [lengthVal, setLengthVal] = useState(false);
@@ -29,12 +33,49 @@ const Password = ({
   const [oneLowCaseVal, setOneLowCaseVal] = useState(false);
   const [specialVal, setSpecialVal] = useState(false);
   const [nationalId, setNationalId] = useState("");
+  const [loader, setLoader] = useState(false);
 
-  const onFinish = (values) => {
+  const onFinish = async (values) => {
     console.log("Success:", values);
-    // if (lengthVal && oneNumVal && oneUpCaseVal && oneLowCaseVal && specialVal) {
-    nextHandler();
-    // }
+    if (
+      !lengthVal ||
+      !oneNumVal ||
+      !oneUpCaseVal ||
+      (!oneLowCaseVal && specialVal)
+    ) {
+      return message.error("Please enter a valid Password");
+    }
+    if (nationalId.length < 10) {
+      return message.error("Please enter a national Id number");
+    }
+    const body = {
+      user_id: userId,
+      national_id: "1122649401",
+      dob: values.DOB.format("YYYY-MM-DD"),
+      locale: "ar",
+      service: "OpenAccount",
+      password: values.password,
+      email: values.email,
+    };
+
+    try {
+      setLoader(true);
+      const { data } = await registerId(body);
+      if (data) {
+        console.log("login Res", data);
+        setNafathInfo(data);
+        setPasswordInfo(body);
+        message.success(data.message);
+        nextHandler();
+      }
+    } catch (error) {
+      console.log("err", error.response.data.message);
+      message.error(error.response.data.message);
+    } finally {
+      setLoader(false);
+    }
+
+    // nextHandler();
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
@@ -96,8 +137,9 @@ const Password = ({
 
   const nationalIdHandler = (event) => {
     const { value } = event.target;
-    // console.log("value", value);
+    console.log("value", value);
     const isDigitsOnly = /^\d+$/.test(value);
+    console.log("isDigitsOnly", isDigitsOnly);
     if (isDigitsOnly) {
       setNationalId(value);
     }
@@ -145,15 +187,13 @@ const Password = ({
           >
             {individual === "individual" ? (
               <>
-                {" "}
                 {/* <Form.Item
               name="id"
               rules={[
                 {
-                  required: true,
+                   required: true,
                   message: "Please enter your national Id",
                 },
-              { validator: validateDigits },
               ]}
             > */}
                 <Input
@@ -189,7 +229,7 @@ const Password = ({
               rules={[
                 {
                   type: "email",
-                  // required: true,
+                  required: true,
                   message: "Please enter your email",
                 },
               ]}
@@ -202,7 +242,7 @@ const Password = ({
               rules={[
                 {
                   type: "string",
-                  // required: true,
+                  required: true,
                   message: "Please enter your password",
                 },
               ]}
@@ -252,6 +292,7 @@ const Password = ({
 
             <Form.Item>
               <Button
+                loading={loader}
                 htmlType="submit"
                 block={true}
                 className="password-next-btn"

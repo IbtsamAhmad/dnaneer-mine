@@ -13,6 +13,7 @@ const OtpComponent = ({
   setShowPhone,
   setShowOtp,
   individual,
+  userId,
 }) => {
   const [api, contextHolder] = notification.useNotification();
   const navigate = useNavigate();
@@ -45,33 +46,60 @@ const OtpComponent = ({
     setShowPhone(true);
   };
   const nextHandler = async () => {
-    if (otp.length >= 4) {
-      if (otp === "1234") {
-        if (individual === "individual") {
-          setShowOtp(false);
-          setShowPassword(true);
-        } else navigate("/dashboard");
-      }
-      // setLoader(true);
-      // verifyOTP({ user_id: 5, otp: otp })
-      //   .then((res) => {
-      //     // console.log("res", res);
-      //     if (individual === "individual") {
 
-      //     } else {
-      //       navigate("/dashboard");
-      //     }
-      //   })
-      //   .catch((err) => {
-      //     // console.log("err", err);
-      //     message.error(err.response.data.message);
-      //   })
-      //   .finally(() => {
-      //     setLoader(false);
-      //   });
-    } else {
-      message.error("Enter OTP");
-    }
+    if (otp.length < 4) {
+     return  message.error("Please enter a valid Otp")
+    } 
+          let body = {
+             user_id: userId,
+             otp: otp,
+             module_type: "register",
+           };
+
+        try {
+          setLoader(true);
+          const { data } = await verifyOTP(body);
+          if (data) {
+            console.log("OTP Res", data);
+            localStorage.setItem("token", data.data.token)
+            message.success(data.message);
+            if (individual === "individual") {
+               setShowOtp(false);
+               setShowPassword(true);
+            }
+            else{
+            navigate("/dashboard");
+            }
+
+          }
+        } catch (error) {
+          console.log("err", error.response.data.message);
+          message.error(error.response.data.message);
+        } finally {
+          setLoader(false);
+        }
+
+
+      //  try {
+      //    setLoader(true);
+      //    const { data } = await verifyOTP(body);
+      //    if (data) {
+      //      console.log("login Res", data);
+      //      message.success(data.message);
+
+      //      //  setShowPhone(false);
+      //      //  setShowOtp(true);
+      //    }
+      //  } catch (error) {
+      //    console.log("err", error.response.data.message);
+      //    message.error(error.response.data.message);
+      //  } finally {
+      //    setLoader(false);
+      //  }
+     
+     
+
+         
   };
   return (
     <AuthContainer>

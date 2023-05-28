@@ -1,13 +1,17 @@
 import axios, { AxiosError, AxiosResponse, AxiosInstance } from "axios";
 
 const axiosInstance: AxiosInstance = axios.create({
-  baseURL: "https://dan.htmlpro.net/",
+  baseURL: "https://stagingapp.dnaneer.com/",
 });
 
+
+
 axiosInstance.interceptors.request.use((config) => {
-  // if (token) {
-  //   config.headers.Authorization = `Bearer ${token}`;
-  // }
+  const token =localStorage.getItem("token");
+  // console.log("token", token);
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
   return config;
 });
 
@@ -20,6 +24,7 @@ axios.interceptors.response.use(
   },
   function (error: AxiosError) {
     const { data, status } = error.response!;
+    console.log("data Status", data, status)
     switch (status) {
       case 400:
         console.error(data);

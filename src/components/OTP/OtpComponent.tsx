@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Otp from "./Otp";
 import Button from "components/Button/Button";
 import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
@@ -12,7 +13,19 @@ const OtpComponent = ({
   nextHandler,
   userType,
   formType,
+  setTime,
 }) => {
+  useEffect(() => {
+    let timer;
+    if (time !== 0) {
+      timer = setInterval(() => {
+        setTime((prev) => prev - 1);
+      }, 1000);
+    }
+
+    return () => clearInterval(timer);
+  }, [time]);
+
   return (
     <div className="signUp-form-container">
       {/* {contextHolder} */}
@@ -34,7 +47,7 @@ const OtpComponent = ({
         Please type the OTP received on your phone
       </p>
       <Otp otp={otp} setOtp={setOtp} />
-      <p className="">
+      <p className="timer">
         {time !== 0 ? timeConverter(time) : "OTP expired"}{" "}
         {time ? <span>left</span> : null}
       </p>

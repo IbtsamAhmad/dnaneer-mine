@@ -22,6 +22,7 @@ const Phone = ({
   setIndividual,
   setShowPassword,
   individual,
+  setUserId,
 }) => {
   const [signUpForm] = Form.useForm();
   const [passwordLength, setPasswordLength] = useState(0);
@@ -62,10 +63,10 @@ const Phone = ({
     const { value } = e.target;
     // console.log("value", value, value[4])
     if (value[4] === undefined) {
-    return setPhoneNum("+966");      
+      return setPhoneNum("+966");
     }
     if (value[4] !== "5") {
-      return message.error("Number must start with 5")
+      return message.error("Number must start with 5");
     }
 
     if (value.length > 3 && /^\+\d*$/.test(value)) {
@@ -73,31 +74,29 @@ const Phone = ({
     }
   };
 
-  const registerUser = async (data) => {
-    setShowPhone(false);
-    setShowOtp(true);
-    //    if (lengthVal && oneNumVal && oneUpCaseVal && oneLowCaseVal && specialVal) {
-
-    // }
-
-    // setLoader(true);
-    // try {
-    //   const response = await register(data);
-    //   if (response) {
-    //     message.success(response.data.message);
-    //     console.log(response);
-
-    //   }
-    // } catch (err) {
-    //   console.log(err);
-    //   message.error(err.response.data.message);
-    // } finally {
-    //   setLoader(false);
-    // }
+  const registerUser = async (body) => {
+    console.log("body", body);
+    try {
+      setLoader(true);
+      const {data} = await register(body);
+      if (data) {
+        console.log("login Res", data);
+        setUserId(data.user_id);
+        message.success(data.message);
+        setShowPhone(false);
+        setShowOtp(true);
+      }
+    } catch (error) {
+      console.log("err", error.response.data.message);
+      message.error(error.response.data.message);
+    } finally {
+      setLoader(false);
+    }
   };
 
   const onFinish = async (values) => {
     console.log("Success:", values);
+
     let data = null;
 
     if (individual === "individual") {
@@ -106,10 +105,19 @@ const Phone = ({
         phone_number: phoneNum,
       };
     } else {
+          if (
+            !specialVal ||
+            !oneLowCaseVal ||
+            !oneUpCaseVal ||
+            !oneNumVal ||
+            !lengthVal
+          ) {
+            return message.error("Please Enter a valid Password");
+          }
       data = {
         user_type: 2,
         email: values.email,
-        password: values.passwor,
+        password: values.password,
       };
     }
     return registerUser(data);
@@ -228,7 +236,9 @@ const Phone = ({
               <span className="terms">
                 I agree to <a href="#"> Terms & Conditions</a>
                 <span>&</span>
-                <a href="https://dnaneer.com/privacy-policy/" target="_blank">Privacy Policy</a>
+                <a href="https://dnaneer.com/privacy-policy/" target="_blank">
+                  Privacy Policy
+                </a>
               </span>
             </Radio>
           </div>

@@ -11,6 +11,9 @@ const SingUpComponent = ({ individual, setIndividual }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [absherCode, setAbsherCode] = useState(false);
   const [showNaftah, setShowNaftah] = useState(false);
+  const [userId,setUserId] = useState(null);
+  const [nafathInfo,setNafathInfo] = useState(null);
+  const [passwordIno,setPasswordInfo] = useState(null)
 
   useLayoutEffect(() => {
     if (individual === "individual") {
@@ -30,6 +33,7 @@ const SingUpComponent = ({ individual, setIndividual }) => {
           setIndividual={setIndividual}
           setShowPassword={setShowPassword}
           individual={individual}
+          setUserId={setUserId}
         />
       )}
       {showOtp && (
@@ -38,6 +42,7 @@ const SingUpComponent = ({ individual, setIndividual }) => {
           setShowPassword={setShowPassword}
           setShowPhone={setShowPhone}
           setShowOtp={setShowOtp}
+          userId={userId}
         />
       )}
       {showPassword && (
@@ -47,6 +52,9 @@ const SingUpComponent = ({ individual, setIndividual }) => {
           setShowOtp={setShowOtp}
           setAbsherCode={setAbsherCode}
           individual={individual}
+          userId={userId}
+          setNafathInfo={setNafathInfo}
+          setPasswordInfo={setPasswordInfo}
         />
       )}
       {individual === "individual" && absherCode && (
@@ -60,6 +68,9 @@ const SingUpComponent = ({ individual, setIndividual }) => {
         <Naftah
           setShowPassword={setShowPassword}
           setShowNaftah={setShowNaftah}
+          nafathInfo={nafathInfo}
+          userId={userId}
+          passwordIno={passwordIno}
         />
       )}
     </>

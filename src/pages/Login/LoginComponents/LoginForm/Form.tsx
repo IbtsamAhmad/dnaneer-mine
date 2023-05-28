@@ -36,23 +36,33 @@ const LoginFields = ({ onFinish, onFinishFailed, userType, loader }) => {
       onFinishFailed={onFinishFailed}
       autoComplete="off"
     >
-      {userType === "individual" ? (
+      {/* {userType === "individual" ? (
         <>
-          <div className="phone-item">
-            <AppInput
-              // max={9}
-              maxLength={13}
-              value={phoneNum}
-              onChange={onChangePhone}
-              label="Phone number"
-              placeholder="XXXXXXXX"
-              prefix={<PhoneIcon />}
-              // disabled={disabled}
-              className={"appInput"}
-            />
-          </div>
+          <Form.Item
+            name="phone"
+            rules={[
+              {
+                required: true,
+                message: "Please enter your phone no",
+              },
+            ]}
+          >
+            <div className="phone-item">
+              <AppInput
+                // max={9}
+                maxLength={13}
+                value={phoneNum}
+                onChange={onChangePhone}
+                label="Phone number"
+                placeholder="XXXXXXXX"
+                prefix={<PhoneIcon />}
+                // disabled={disabled}
+                className={"appInput"}
+              />
+            </div>
+          </Form.Item>
         </>
-      ) : (
+      ) : ( */}
         <div style={{ marginTop: "34px" }}>
           <Form.Item
             name="email"
@@ -86,7 +96,7 @@ const LoginFields = ({ onFinish, onFinishFailed, userType, loader }) => {
             />
           </Form.Item>
         </div>
-      )}
+      {/* )} */}
       <div
         style={{
           display: "flex",
@@ -97,7 +107,7 @@ const LoginFields = ({ onFinish, onFinishFailed, userType, loader }) => {
         }}
         onClick={() => navigate("/forget-password")}
       >
-        Forget passowrd?
+        Forget password?
       </div>
       <Form.Item>
         <Button
@@ -105,7 +115,7 @@ const LoginFields = ({ onFinish, onFinishFailed, userType, loader }) => {
           htmlType="submit"
           block={true}
           style={{ height: "55px", marginTop: "5px" }}
-          onClick={() => navigate("/dashboard")}
+          // onClick={() => navigate("/dashboard")}
         >
           Login
         </Button>
