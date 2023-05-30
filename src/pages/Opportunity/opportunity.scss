@@ -293,4 +293,25 @@ $small-font: 12px;
       }
     }
   }
+
+  .details-card{
+    margin-top: 18px;
+    h1{
+font-weight: 700;
+  font-size: 16px;
+  color: #140A2B;
+    }
+    p{
+font-weight: 500;
+  font-size: 12px;
+margin-top: 28px;
+margin-bottom: 0px;
+  color: #8A8595;
+    }
+    h2{
+font-weight: 700;
+  font-size: 14px;
+  color: #140A2B;
+    }
+  }
 }

@@ -3,7 +3,7 @@ import { Row, Col } from "antd";
 // import { ReactComponent as Profits } from "assets/svgs/Profits.svg";
 
 import { ReactComponent as Charts } from "assets/svgs/Charts.svg";
-import { ReactComponent as Networks } from "assets/svgs/Networks.svg";
+// import { ReactComponent as Networks } from "assets/svgs/Networks.svg";
 
 const AuthWrapper = (Component): Function => {
   return function Auth({ ...props }): JSX.Element {
@@ -30,7 +30,16 @@ const AuthWrapper = (Component): Function => {
               order: 2,
             }}
           >
-            <div className="auth-col-one">
+            <div
+              className="auth-col-one"
+              // style={{
+              //   backgroundImage:
+              //     individual === individual
+              //       ? "url(/assets/images/individual.png)"
+              //       : "url(/assets/images/institutional.png)",
+              //       backgroundSize:"cover"
+              // }}
+            >
               <img
                 src={
                   individual === "individual"
@@ -44,7 +53,15 @@ const AuthWrapper = (Component): Function => {
                 <Charts />
               </div>
               <div className="networks">
-                <Networks />
+                {/* <Networks /> */}
+                <img
+                  src={
+                    individual === "individual"
+                      ? "/assets/images/Group 1000002367.png"
+                      : "/assets/images/Networks.png"
+                  }
+                  alt="networks"
+                />
               </div>
               <div className="description">
                 <h1

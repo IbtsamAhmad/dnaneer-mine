@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Col, Row, Button } from "antd";
 import InvestInput from "./InvestInput";
+import Card from "components/Card/Card";
 import { ReactComponent as InvestmentBack } from "assets/svgs/InvestmentBack.svg";
 
 const Invest = () => {
@@ -35,9 +36,10 @@ const Invest = () => {
                 <h1 className="large-heading">You will receive</h1>
                 <div className="invest-net" style={{ marginTop: "9px" }}>
                   <span className="net-unit">
-                    {(+investInpuVal.replaceAll(",", "") * +Percent * 4).toFixed(
-                      2
-                    )}
+                    {(
+                      +investInpuVal.replaceAll(",", "") * +Percent * 4 +
+                      +investInpuVal.replaceAll(",", "")
+                    ).toFixed(2)}
                     <span style={{ marginLeft: "8px" }}>SAR</span>
                   </span>
                 </div>
@@ -79,9 +81,11 @@ const Invest = () => {
                 </div>
                 <div className="invest-net">
                   <span className="net-unit">
-                    {(+investInpuVal.replaceAll(",", "") * +Percent * 4).toFixed(
-                      2
-                    )}
+                    {(
+                      +investInpuVal.replaceAll(",", "") *
+                      +Percent *
+                      4
+                    ).toFixed(2)}
                     <span style={{ marginLeft: "8px" }}>SAR</span>
                   </span>
                   <span className="net-text">Net return of investment</span>
@@ -109,6 +113,30 @@ const Invest = () => {
               </>
             )}
           </div>
+
+          <Card className="details-card">
+            <h1>Company Details</h1>
+            <Row>
+              <Col lg={12}>
+                <p>Commercial registration</p>
+                <h2>XXXXXX78056</h2>
+              </Col>
+              <Col lg={12}>
+                <p>Annual Revenue</p>
+                <h2>90M - 150M</h2>
+              </Col>
+            </Row>
+            <Row>
+              <Col lg={12}>
+                <p>Establishment Date</p>
+                <h2>1442/08/21</h2>
+              </Col>
+              <Col lg={12}>
+                <p>Location</p>
+                <h2>Riyadh</h2>
+              </Col>
+            </Row>
+          </Card>
         </Col>
       </Row>
     </div>
