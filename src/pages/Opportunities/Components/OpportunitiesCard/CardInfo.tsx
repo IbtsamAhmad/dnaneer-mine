@@ -1,6 +1,6 @@
 import { Progress } from "antd";
 import Tag from "components/Tags/Tags";
-import { commaSeparator } from "utils/Helper.ts";
+import { commaSeparator } from "utils/Helper";
 
 const tags = [
   "12 months",
@@ -91,7 +91,7 @@ const CardInfo = ({ id , opportunity}) => {
       <Progress
         strokeColor="#5B2CD3"
         //   type=""
-        percent={(
+        percent={+(
           (opportunity.amount_collected / opportunity.amount_needed) *
           100
         ).toFixed(2)}

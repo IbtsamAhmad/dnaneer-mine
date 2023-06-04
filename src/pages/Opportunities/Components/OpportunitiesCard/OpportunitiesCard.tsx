@@ -22,7 +22,7 @@ const OpportunitiesCard = ({ id, opportunity }) => {
           <CardInfo id={id} opportunity={opportunity} />
         </Col>
         <Col md={7}>
-          <ThirdColumn onViewDetail={onViewDetail} opportunity={opportunity} />
+          <ThirdColumn onViewDetail={onViewDetail}/>
         </Col>
       </Row>
     </AppCard>

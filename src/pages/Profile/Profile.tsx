@@ -47,7 +47,7 @@ const Profile = () => {
           <Col lg={24}>
             <div className="user-profile">
               <div>
-                <ImageUpload />
+                <ImageUpload src="/assets/images/Vector.png" />
               </div>
               <div className="profile-col-two">
                 <div className="user-role">

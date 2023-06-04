@@ -23,7 +23,7 @@ export const getOpportunityList = () => {
   return axiosInstance.get("api/admin/oppurtunity_list");
 };
 
-export const login = (data: DataProps) => {
+export const login = (data) => {
   return axiosInstance.post("api/login", data);
 };
 

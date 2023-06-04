@@ -14,7 +14,6 @@ const OtpComponent = ({
   setShowOtp,
   individual,
   userId,
-  passwordIno,
 }) => {
   console.log("userId", userId);
   const [api, contextHolder] = notification.useNotification();
