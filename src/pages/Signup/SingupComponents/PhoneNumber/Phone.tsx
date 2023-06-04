@@ -37,7 +37,7 @@ const Phone = ({
   const onChangePassword = (e) => {
     const { value } = e.target;
     setPasswordLength(value.length);
-    console.log("Value", value);
+    // console.log("Value", value);
 
     value.length >= 8 ? setLengthVal(true) : setLengthVal(false);
 
@@ -80,8 +80,8 @@ const Phone = ({
       setLoader(true);
       const {data} = await register(body);
       if (data) {
-        console.log("login Res", data);
-        setUserId(data.user_id);
+        console.log("registerUser", data);
+        setUserId(body.email);
         message.success(data.message);
         setShowPhone(false);
         setShowOtp(true);

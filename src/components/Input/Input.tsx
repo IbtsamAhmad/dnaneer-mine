@@ -13,7 +13,7 @@ interface MessageProps {
   block?: boolean;
   iconRender?: boolean;
   value?: string;
-  prefix?: JSX.Element | JSX.Element[];
+  prefix?: JSX.Element | JSX.Element[] | string;
   placeholder?: string;
   label: string;
   type?: string;
@@ -41,7 +41,6 @@ const AppInput = ({
   if (!placeholder) placeholder = label;
 
   const isOccupied = focus || (value && value.length !== 0);
-
 
   const labelClass = isOccupied ? "label as-label" : "label as-placeholder";
 

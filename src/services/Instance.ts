@@ -7,10 +7,11 @@ const axiosInstance: AxiosInstance = axios.create({
 
 
 axiosInstance.interceptors.request.use((config) => {
-  const token =localStorage.getItem("token");
-  // console.log("token", token);
+   const token =localStorage.getItem("token");
+   console.log("token", typeof(token),  token);
+    const token2 ="5|5Q7FXBjHVN0IDqZ2af97bGZaBF1iYUOwaAQjQ0ZI"
   if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
+     config.headers.Authorization = `Bearer ${token2}`;
   }
   return config;
 });

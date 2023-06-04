@@ -18,8 +18,9 @@ import { ReactComponent as AdvisorLogo } from "assets/svgs/AdvisorLogo.svg";
 // import { ReactComponent as RoiIcon } from "assets/svgs/RoiIcon.svg";
 // import { ReactComponent as Profit } from "assets/svgs/Profit.svg";
 import { ReactComponent as Email } from "assets/svgs/Email.svg";
-import { ReactComponent as Number } from "assets/svgs/Number.svg";
 import { ReactComponent as Call } from "assets/svgs/Call.svg";
+import { ReactComponent as Number } from "assets/svgs/Number.svg";
+
 import { ReactComponent as User } from "assets/svgs/User.svg";
 import { ReactComponent as BlueArrow } from "assets/svgs/BlueArrow.svg";
 import { ReactComponent as InvestmentOne } from "assets/svgs/InvestmentOne.svg";

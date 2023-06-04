@@ -1,21 +1,26 @@
-import { useState } from "react";
-import { Layout, Menu, Row, Col, Progress } from "antd";
-// import DasboardCard from "pages/Dashboard/DasboardComponents/DasboardCard/DasboardCard";
+import { useState, useMemo } from "react";
+import { Layout } from "antd";
+
 import AppHeader from "components/Header/Header";
 import Sidebar from "./Sidebar/Sidebar";
+import BorrowerSiderbar from "borrower/Components/BorrowerDashBoardSidebar/Sidebar";
 import "./DashboardLayout.scss";
 
 const { Sider, Content } = Layout;
 
-const DashboardLayout = ({ children, sideKey }) => {
+const DashboardLayout = ({ children, sideKey, userType = "" }) => {
   const [collapsed, setCollapsed] = useState(false);
+
+  const DashboardSidebar = useMemo(() => {
+    return userType && userType === "borrower" ? BorrowerSiderbar : Sidebar;
+  }, [userType]);
 
   return (
     <Layout style={{ paddingTop: "0" }} className="layout-container">
       <AppHeader setCollapsed={setCollapsed} collapsed={collapsed} />
       <Layout>
         <Sider trigger={null} collapsible collapsed={collapsed}>
-          <Sidebar setCollapsed={setCollapsed} sideKey={sideKey} />
+          <DashboardSidebar setCollapsed={setCollapsed} sideKey={sideKey} />
         </Sider>
         <Layout style={{ paddingTop: "0" }}>
           <Content

@@ -9,6 +9,7 @@ const LoginForm = ({ userType, setSwitchForm, setUserId }) => {
 
   const onFinish = async (values) => {
     console.log("Success:", values);
+    setUserId(values);
     setLoader(true);
     let body = null;
     console.log("userType",userType);
@@ -29,7 +30,6 @@ const LoginForm = ({ userType, setSwitchForm, setUserId }) => {
       const {data} = await login(body);
       if (data) {
         console.log("login Res", data);
-        setUserId(data.user_id)
         message.success(data.message);
         setSwitchForm("otp");
       }

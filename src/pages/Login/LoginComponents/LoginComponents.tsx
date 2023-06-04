@@ -6,7 +6,10 @@ import LoginOtp from "./LoginOtp/LoginOtp";
 
 const LoginComponent = ({ individual, setIndividual }) => {
   const [switchForms, setSwitchForm] = useState<"login" | "otp">("login");
-  const [userId,setUserId] = useState(null)
+  const [userId,setUserId] = useState(null);
+
+
+  console.log("userId", userId);
 
   return (
     <AuthContainer>

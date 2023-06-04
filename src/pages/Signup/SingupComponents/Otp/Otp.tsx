@@ -14,7 +14,9 @@ const OtpComponent = ({
   setShowOtp,
   individual,
   userId,
+  passwordIno,
 }) => {
+  console.log("userId", userId);
   const [api, contextHolder] = notification.useNotification();
   const navigate = useNavigate();
   const [time, setTime] = useState<number>(60);
@@ -46,60 +48,53 @@ const OtpComponent = ({
     setShowPhone(true);
   };
   const nextHandler = async () => {
-
     if (otp.length < 4) {
-     return  message.error("Please enter a valid Otp")
-    } 
-          let body = {
-             user_id: userId,
-             otp: otp,
-             module_type: "register",
-           };
+      return message.error("Please enter a valid Otp");
+    }
+    let body = {
+      source: userId,
+      otp: otp,
+      // user_id: userId,
+      // module_type: "register",
+    };
 
-        try {
-          setLoader(true);
-          const { data } = await verifyOTP(body);
-          if (data) {
-            console.log("OTP Res", data);
-            localStorage.setItem("token", data.data.token)
-            message.success(data.message);
-            if (individual === "individual") {
-               setShowOtp(false);
-               setShowPassword(true);
-            }
-            else{
-            navigate("/dashboard");
-            }
-
-          }
-        } catch (error) {
-          console.log("err", error.response.data.message);
-          message.error(error.response.data.message);
-        } finally {
-          setLoader(false);
+    try {
+      setLoader(true);
+      const { data } = await verifyOTP(body);
+      if (data) {
+        console.log("OTP Res", data);
+        // localStorage.setItem("token", data.data.token);
+        message.success(data.message);
+        if (individual === "individual") {
+          setShowOtp(false);
+          setShowPassword(true);
+        } else {
+          navigate("/dashboard");
         }
+      }
+    } catch (error) {
+      console.log("err", error.response.data.message);
+      message.error(error.response.data.message);
+    } finally {
+      setLoader(false);
+    }
 
+    //  try {
+    //    setLoader(true);
+    //    const { data } = await verifyOTP(body);
+    //    if (data) {
+    //      console.log("login Res", data);
+    //      message.success(data.message);
 
-      //  try {
-      //    setLoader(true);
-      //    const { data } = await verifyOTP(body);
-      //    if (data) {
-      //      console.log("login Res", data);
-      //      message.success(data.message);
-
-      //      //  setShowPhone(false);
-      //      //  setShowOtp(true);
-      //    }
-      //  } catch (error) {
-      //    console.log("err", error.response.data.message);
-      //    message.error(error.response.data.message);
-      //  } finally {
-      //    setLoader(false);
-      //  }
-     
-     
-
-         
+    //      //  setShowPhone(false);
+    //      //  setShowOtp(true);
+    //    }
+    //  } catch (error) {
+    //    console.log("err", error.response.data.message);
+    //    message.error(error.response.data.message);
+    //  } finally {
+    //    setLoader(false);
+    //  }
   };
   return (
     <AuthContainer>

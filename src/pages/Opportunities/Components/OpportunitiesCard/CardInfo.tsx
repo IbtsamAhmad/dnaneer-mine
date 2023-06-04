@@ -1,5 +1,6 @@
 import { Progress } from "antd";
 import Tag from "components/Tags/Tags";
+import { commaSeparator } from "utils/Helper.ts";
 
 const tags = [
   "12 months",
@@ -7,7 +8,7 @@ const tags = [
   "Annual ROI 17.5%",
 ];
 
-const CardInfo = ({ id }) => {
+const CardInfo = ({ id , opportunity}) => {
   return (
     <div className="card-info">
       <div
@@ -17,13 +18,18 @@ const CardInfo = ({ id }) => {
           alignItems: "center",
         }}
       >
-        <h3 style={{ fontWeight: "700" }}>#4197564</h3>
-        <h5 style={{ marginLeft: "10px" }}>Importing and Exporting Agency</h5>
+        <h3 style={{ fontWeight: "700" }}>#{opportunity.opportunity_number}</h3>
+        <h5 style={{ marginLeft: "10px" }}>{opportunity.industry_name}</h5>
       </div>
       <div style={{ display: "flex" }}>
-        {tags.map((tagName) => (
+        {/* {tags.map((tagName) => (
           <Tag key={tagName} tag={tagName} />
-        ))}
+        ))} */}
+        <Tag tag={opportunity.duration + " " + "months"}></Tag>
+        <Tag
+          tag={"Opportunity date:" + " " + opportunity.created_at.split("T")[0]}
+        ></Tag>
+        <Tag tag={"Annual ROI" + " " + opportunity.annual_roi + "%"}></Tag>
       </div>
       <div
         style={{
@@ -37,7 +43,7 @@ const CardInfo = ({ id }) => {
             <span
               style={{ fontSize: "18px", color: "#5B2CD3", fontWeight: "700" }}
             >
-              1,250,000
+              {commaSeparator(opportunity.fund_collected)}
             </span>
             <span
               style={{ fontSize: "12px", marginLeft: "5px", fontWeight: "500" }}
@@ -48,7 +54,11 @@ const CardInfo = ({ id }) => {
           <div
             style={{ fontSize: "12px", color: "#8A8595", fontWeight: "500" }}
           >
-            70% Collected
+            {(
+              (opportunity.fund_collected / opportunity.fund_needed) *
+              100
+            ).toFixed(2)}
+            % Collected
           </div>
         </div>
         <div
@@ -63,7 +73,7 @@ const CardInfo = ({ id }) => {
             <span
               style={{ fontSize: "15px", marginLeft: "5px", fontWeight: "800" }}
             >
-              2,250,000
+              {commaSeparator(opportunity.fund_needed)}
             </span>
             <span
               style={{ fontSize: "12px", marginLeft: "5px", fontWeight: "500" }}
@@ -81,7 +91,10 @@ const CardInfo = ({ id }) => {
       <Progress
         strokeColor="#5B2CD3"
         //   type=""
-        percent={75}
+        percent={(
+          (opportunity.amount_collected / opportunity.amount_needed) *
+          100
+        ).toFixed(2)}
         //   size={[600,15]}
       />
     </div>

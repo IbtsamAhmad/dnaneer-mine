@@ -5,6 +5,14 @@ export const timeConverter = (t: number): string => {
   return `${minutes}:${seconds < 10 ? "0" : ""}${seconds} seconds`;
 };
 
+ export const commaSeparator = (value) =>{
+    return    value.replace(
+            /\B(?=(\d{3})+(?!\d))/g,
+            ","
+          );
+     }
+     
+
 export const passwordTester = (testObj, value) => {
   const numRegex = new RegExp("(?=.*[0-9])");
   const numTest = numRegex.test(value);

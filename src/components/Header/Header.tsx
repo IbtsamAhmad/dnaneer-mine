@@ -12,6 +12,7 @@ import "./header.scss";
 type Props = {
   collapsed?: boolean;
   setCollapsed?: Dispatch<SetStateAction<boolean>>;
+  className?: string;
 };
 
 const content = (
@@ -44,12 +45,14 @@ const content = (
   </div>
 );
 
-function Header({ setCollapsed, collapsed }: Props) {
-    const institutional = localStorage.getItem("institutional");
+function Header({ setCollapsed, collapsed, className }: Props) {
+  const institutional = localStorage.getItem("institutional");
   return (
     <div
       className={
-        institutional === "Institutional"
+        className
+          ? `header-container ${className}`
+          : institutional === "Institutional"
           ? "header-container headerO"
           : "header-container"
       }

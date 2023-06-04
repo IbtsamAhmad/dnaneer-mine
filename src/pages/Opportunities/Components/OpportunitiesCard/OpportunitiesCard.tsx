@@ -6,7 +6,7 @@ import CardInfo from "./CardInfo";
 import ThirdColumn from "./ThirdColumn";
 import { useNavigate } from "react-router-dom";
 
-const OpportunitiesCard = ({ id }) => {
+const OpportunitiesCard = ({ id, opportunity }) => {
   const navigate = useNavigate();
   const onViewDetail = () => {
     const newId = Number(id) + 1;
@@ -19,10 +19,10 @@ const OpportunitiesCard = ({ id }) => {
           <InvestmentOne />
         </Col>
         <Col md={15}>
-          <CardInfo id={id} />
+          <CardInfo id={id} opportunity={opportunity} />
         </Col>
         <Col md={7}>
-          <ThirdColumn onViewDetail={onViewDetail} />
+          <ThirdColumn onViewDetail={onViewDetail} opportunity={opportunity} />
         </Col>
       </Row>
     </AppCard>

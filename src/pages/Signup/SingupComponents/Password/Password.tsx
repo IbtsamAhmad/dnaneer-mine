@@ -37,6 +37,7 @@ const Password = ({
 
   const onFinish = async (values) => {
     console.log("Success:", values);
+    
     if (
       !lengthVal ||
       !oneNumVal ||
@@ -58,13 +59,15 @@ const Password = ({
       email: values.email,
     };
 
+
+
     try {
       setLoader(true);
       const { data } = await registerId(body);
       if (data) {
-        console.log("login Res", data);
+        console.log("registerId Res", data);
         setNafathInfo(data);
-        setPasswordInfo(body);
+      
         message.success(data.message);
         nextHandler();
       }

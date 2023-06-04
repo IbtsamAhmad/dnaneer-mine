@@ -12,6 +12,18 @@ const Home = lazy(() => import("pages/Home"));
 const Opportunity = lazy(() => import("pages/Opportunity/Opportunity"));
 const ForgetPassword = lazy(() => import("pages/ForgetPassword"));
 const ConfirmPassword = lazy(() => import("pages/ConfirmPassword"));
+const BorrowerLogin = lazy(() => import("borrower/Login"));
+const BorrowerProfile = lazy(
+  () => import("borrower/BorrowerMyProfile/MyProfile")
+);
+
+const BorrowerRegister = lazy(
+  () => import("borrower/Signup/Register/Register")
+);
+
+const DashboardHome = lazy(
+  () => import("borrower/DashboardHome/DashboardHome")
+);
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -22,6 +34,27 @@ const Router = () => {
     {
       path: "/signup",
       element: <Signup />,
+    },
+    {
+      path: "/borrower/login",
+      element: <BorrowerLogin />,
+    },
+
+    {
+      path: "/borrower/register",
+      element: <BorrowerRegister />,
+    },
+    // {
+    //   path: "/borrower/otp",
+    //   element: <BorrowerOtp />,
+    // },
+    {
+      path: "/borrower/dashboard/my-profile",
+      element: <BorrowerProfile />,
+    },
+    {
+      path: "/borrower/dashboard",
+      element: <DashboardHome />,
     },
 
     {

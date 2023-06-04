@@ -20,9 +20,9 @@ const beforeUpload = (file) => {
   return isJpgOrPng && isLt2M;
 };
 //code here
-const ImageUpload = () => {
+const ImageUpload = ({src}) => {
   const [loading, setLoading] = useState(false);
-  const [profileUrl, setProfileUrl] = useState("/assets/images/Vector.png");
+  const [profileUrl, setProfileUrl] = useState( src ? src : "/assets/images/Vector.png");
 
   const handleChange = async (info) => {
     // console.log("onChange", info);

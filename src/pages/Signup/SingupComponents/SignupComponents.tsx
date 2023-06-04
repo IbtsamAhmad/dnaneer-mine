@@ -43,6 +43,7 @@ const SingUpComponent = ({ individual, setIndividual }) => {
           setShowPhone={setShowPhone}
           setShowOtp={setShowOtp}
           userId={userId}
+
         />
       )}
       {showPassword && (

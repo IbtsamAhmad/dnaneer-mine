@@ -3,7 +3,7 @@ import OtpComponent from "components/OTP/OtpComponent";
 import { LOGIN_FORM } from "constants";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { verifyOTP } from "services/Login";
+import { verifyLoginOTP } from "services/Login";
 
 const LoginOtp = ({ userType, setSwitchForm, userId }) => {
   const navigate = useNavigate();
@@ -26,25 +26,34 @@ const LoginOtp = ({ userType, setSwitchForm, userId }) => {
       setLoader(true);
       if (userType === "Institutional") {
         body = {
-          user_id: userId,
+          user_type: 2,
+          email: userId.email,
+          password: userId.password,
           otp: otp,
-          module_type: "login",
+          // user_type: 2,
         };
       } else {
         body = {
-          user_id: userId,
+          user_type: 1,
+          email: userId.email,
+          password: userId.password,
           otp: otp,
-          module_type: "login",
+          //  user_type: 1,
         };
       }
 
       try {
-        const res = await verifyOTP(body);
+        const res = await verifyLoginOTP(body);
         if (res) {
-          console.log("otp Res", res);
+          console.log("verifyLoginOTP Res", res);
           const { data } = res;
+          localStorage.setItem("token", data.data.token);
           message.success(data.message);
           // setSwitchForm("otp");
+          localStorage.setItem(
+            "institutional",
+            userType === "Institutional" ? "Institutional" : "Individual"
+          );
           navigate("/dashboard");
         }
       } catch (error) {
