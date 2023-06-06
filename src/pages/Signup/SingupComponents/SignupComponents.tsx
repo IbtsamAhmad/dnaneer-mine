@@ -5,6 +5,7 @@ import Phone from "../SingupComponents/PhoneNumber/Phone";
 import Password from "../SingupComponents/Password/Password";
 import Absher from "../SingupComponents/Absher/Absher";
 import Naftah from "./Naftah/Naftah";
+
 const SingUpComponent = ({ individual, setIndividual }) => {
   const [showPhone, setShowPhone] = useState(true);
   const [showOtp, setShowOtp] = useState(false);

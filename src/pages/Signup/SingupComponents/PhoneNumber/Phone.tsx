@@ -81,7 +81,7 @@ const Phone = ({
       const {data} = await register(body);
       if (data) {
         console.log("registerUser", data);
-        setUserId(body.email);
+        setUserId(body);
         message.success(data.message);
         setShowPhone(false);
         setShowOtp(true);

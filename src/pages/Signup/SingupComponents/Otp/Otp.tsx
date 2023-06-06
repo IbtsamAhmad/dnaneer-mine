@@ -5,7 +5,7 @@ import { ReactComponent as BackArrow } from "assets/svgs/BackArrow.svg";
 import { message, notification } from "antd";
 import { useNavigate } from "react-router-dom";
 import { timeConverter } from "utils/Helper";
-import { verifyOTP } from "services/Login";
+import { verifyOTP, signUpInstitutional } from "services/Login";
 import AuthContainer from "components/AuthContainer/AuthContainer";
 
 const OtpComponent = ({
@@ -15,7 +15,6 @@ const OtpComponent = ({
   individual,
   userId,
 }) => {
-  console.log("userId", userId);
   const [api, contextHolder] = notification.useNotification();
   const navigate = useNavigate();
   const [time, setTime] = useState<number>(60);
@@ -51,10 +50,8 @@ const OtpComponent = ({
       return message.error("Please enter a valid Otp");
     }
     let body = {
-      source: userId,
+      source: userId.email,
       otp: otp,
-      // user_id: userId,
-      // module_type: "register",
     };
 
     try {
@@ -68,7 +65,18 @@ const OtpComponent = ({
           setShowOtp(false);
           setShowPassword(true);
         } else {
-          navigate("/dashboard");
+          const { data } = await signUpInstitutional({
+            email: userId.password,
+            password: userId.password,
+            user_type:2,
+          });
+          if (data) {
+            console.log("signUpInstitutional", data);
+            message.success(data.message);
+            localStorage.setItem("token", data.token);
+            navigate("/dashboard");
+          }
+
         }
       }
     } catch (error) {

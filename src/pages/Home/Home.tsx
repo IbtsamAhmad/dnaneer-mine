@@ -22,7 +22,22 @@ const Home = () => {
       {/* <br />
       <Link to="/user-information">Personal Info</Link>
       <br /> */}
+
+      <br />
+      <br />
       <Link to="/dashboard">Dashboard</Link>
+      <br />
+      <br />
+      <Link to="/borrower/dashboard">borrower Dashboard</Link>
+      <br />
+      <br />
+      <Link to="/borrower/login">borrower Login</Link>
+      <br />
+      <br />
+      <Link to="/borrower/register">borrower Register</Link>
+      <br />
+      <br />
+      <Link to="/borrower-kyc">Borrower Kyc</Link>
     </div>
   );
 };

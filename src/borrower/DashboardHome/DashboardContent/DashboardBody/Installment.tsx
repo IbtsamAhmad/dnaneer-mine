@@ -101,10 +101,11 @@ const Body = () => {
 
   return (
     <Row>
+      <Col md={3}></Col>
       <Col md={6}>{content("Principle", "Amount")}</Col>
-      <Col md={6}>{content("Interest", "Amount")}</Col>
-      <Col md={6}>{content("Fees", "Amount")}</Col>
-      <Col md={6}>{content("Total is", "Amount")}</Col>
+      <Col md={5}>{content("Interest", "Amount")}</Col>
+      <Col md={5}>{content("Fees", "Amount")}</Col>
+      <Col md={5}>{content("Total is", "Amount")}</Col>
     </Row>
   );
 };

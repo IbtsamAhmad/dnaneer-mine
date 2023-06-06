@@ -25,11 +25,18 @@ const DashboardHome = lazy(
   () => import("borrower/DashboardHome/DashboardHome")
 );
 
+const BorrowerKyc = lazy(() => import("borrower/BorrowerKyc/BorrowerKyc"));
+
 const Router = () => {
+
   const router = createBrowserRouter([
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/borrower-kyc",
+      element: <BorrowerKyc />,
     },
     {
       path: "/signup",

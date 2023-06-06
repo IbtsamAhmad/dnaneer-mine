@@ -37,6 +37,10 @@ export const verifyOTP = (data) => {
   return axiosInstance.post("api/verify-otp", data);
 };
 
+export const signUpInstitutional = (data) => {
+  return axiosInstance.post("api/signup-institutional", data);
+};
+
 
 export const verifyLoginOTP = (data) => {
   return axiosInstance.post("api/verify-login-otp", data);
